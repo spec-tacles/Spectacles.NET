@@ -1,3 +1,9 @@
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+// ReSharper disable UnusedMember.Global
+// ReSharper disable EventNeverSubscribedTo.Global
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,7 +12,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Framing;
 
-namespace Spectacles.NET.Broker
+namespace Spectacles.NET.Broker.Amqp
 {
 	public class AmqpConnectOptions
 	{	
@@ -23,15 +29,15 @@ namespace Spectacles.NET.Broker
 	
 	public class AmqpBroker : Broker
 	{
-		public event EventHandler<string, string> Receive; 
+		public event EventHandler<AmqpReceiveEventArgs> Receive; 
 		
 		public IConnection Connection { get; set; }
 		
 		public IModel Channel { get; set; }
 		
-		public string Group { get; set; }
+		public string Group { get; }
 		
-		public string Subgroup { get; set; }
+		public string Subgroup { get; }
 		
 		public readonly Dictionary<string, string> ConsumerTags = new Dictionary<string, string>();
 
@@ -105,13 +111,16 @@ namespace Spectacles.NET.Broker
 
 		public override Task SubscribeAsync(string @event)
 		{
-			var queue = Channel.QueueDeclare();
+			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
+			
+			Channel.QueueDeclare(queueName);
+			Channel.QueueBind(queueName, Group, @event);
 			
 			var consumer = new EventingBasicConsumer(Channel);
 
 			consumer.Received += (ch, ea) =>
 			{
-				Receive?.Invoke(this, Encoding.UTF8.GetString(ea.Body));
+				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
 				
 				Channel.BasicAck(ea.DeliveryTag, false);
 			};
@@ -139,6 +148,8 @@ namespace Spectacles.NET.Broker
 			
 			Channel.BasicCancel(consumerTag);
 
+			ConsumerTags.Remove(@event);
+
 			return Task.CompletedTask;
 		}
 
@@ -150,4 +161,18 @@ namespace Spectacles.NET.Broker
 			}
 		}
 	}
+	
+	public class AmqpReceiveEventArgs : EventArgs
+	{
+		public string Event { get; }
+		
+		public string Data { get; }
+
+		public AmqpReceiveEventArgs(string @event, string data)
+		{
+			Event = @event;
+			Data = data;
+		}
+	}
+
 }
