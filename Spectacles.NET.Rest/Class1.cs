@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Spectacles.NET.Rest
+﻿namespace Spectacles.NET.Rest
 {
 	public class Class1
 	{

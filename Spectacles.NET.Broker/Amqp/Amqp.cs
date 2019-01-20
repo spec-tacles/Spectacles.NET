@@ -21,26 +21,19 @@ namespace Spectacles.NET.Broker.Amqp
 		public string VirtualHost { get; set; }
 		public string HostName { get; set; }
 		public int? Port { get; set; }
-		
 		public bool? AutomaticRecoveryEnabled { get; set; }
-		
 		public TimeSpan NetworkRecoveryInterval { get; set; }
 	}
 	
 	public class AmqpBroker : Broker
 	{
 		public event EventHandler<AmqpReceiveEventArgs> Receive; 
-		
 		public IConnection Connection { get; set; }
-		
 		public IModel Channel { get; set; }
-		
 		public string Group { get; }
-		
 		public string Subgroup { get; }
-		
 		public readonly Dictionary<string, string> ConsumerTags = new Dictionary<string, string>();
-
+		
 		public AmqpBroker(string group, string subgroup)
 		{
 			Group = group;
@@ -103,7 +96,6 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task PublishAsync(string @event, dynamic data)
 		{
 			var message = Encoding.UTF8.GetBytes(data);
-			
 			Channel.BasicPublish(Group, @event, false, new BasicProperties(), message);
 
 			return Task.CompletedTask;
@@ -112,7 +104,6 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			
 			Channel.QueueDeclare(queueName);
 			Channel.QueueBind(queueName, Group, @event);
 			
@@ -121,12 +112,10 @@ namespace Spectacles.NET.Broker.Amqp
 			consumer.Received += (ch, ea) =>
 			{
 				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
-				
 				Channel.BasicAck(ea.DeliveryTag, false);
 			};
 
 			var consumerTag = Channel.BasicConsume(@event, false, consumer);
-			
 			ConsumerTags.Add(@event, consumerTag);
 
 			return Task.CompletedTask;
@@ -143,11 +132,9 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task UnsubscribeAsync(string @event)
 		{
 			ConsumerTags.TryGetValue(@event, out var consumerTag);
-
-			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
 			
+			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
 			Channel.BasicCancel(consumerTag);
-
 			ConsumerTags.Remove(@event);
 
 			return Task.CompletedTask;
@@ -165,7 +152,6 @@ namespace Spectacles.NET.Broker.Amqp
 	public class AmqpReceiveEventArgs : EventArgs
 	{
 		public string Event { get; }
-		
 		public string Data { get; }
 
 		public AmqpReceiveEventArgs(string @event, string data)
