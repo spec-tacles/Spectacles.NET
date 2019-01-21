@@ -10,12 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RabbitMQ.Client.Exceptions;
 using RabbitMQ.Client.Framing;
 
 namespace Spectacles.NET.Broker.Amqp
 {
+	/// <summary>
+	/// Class representing ConnectOptions to Amqp.
+	/// </summary>
 	public class AmqpConnectOptions
-	{	
+	{
 		public string Username { get; set; }
 		public string Password { get; set; }
 		public string VirtualHost { get; set; }
@@ -25,14 +29,41 @@ namespace Spectacles.NET.Broker.Amqp
 		public TimeSpan NetworkRecoveryInterval { get; set; }
 	}
 	
+	/// <inheritdoc />
+	/// <summary>
+	/// Broker made for Amqp using RabbitMQ .NET Library.
+	/// </summary>
 	public class AmqpBroker : Broker
 	{
-		public event EventHandler<AmqpReceiveEventArgs> Receive; 
+		/// <summary>
+		/// Event for Received Messages this Client is Subscribed to.
+		/// </summary>
+		public event EventHandler<AmqpReceiveEventArgs> Receive;
+		
+		/// <summary>
+		/// The Connection of this Client.
+		/// </summary>
 		public IConnection Connection { get; set; }
+		
+		/// <summary>
+		/// The AMQP channel currently connected to.
+		/// </summary>
 		public IModel Channel { get; set; }
+		
+		/// <summary>
+		/// The AMQP exchange of this broker.
+		/// </summary>
 		public string Group { get; }
+		/// <summary>
+		/// The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same data.
+		/// Implemented internally as an extra identifier in the queue name.
+		/// </summary>
 		public string Subgroup { get; }
-		public readonly Dictionary<string, string> ConsumerTags = new Dictionary<string, string>();
+		
+		/// <summary>
+		/// The consumers that this broker has registered.
+		/// </summary>
+		private readonly Dictionary<string, string> _consumerTags = new Dictionary<string, string>();
 		
 		public AmqpBroker(string group, string subgroup)
 		{
@@ -40,6 +71,11 @@ namespace Spectacles.NET.Broker.Amqp
 			Subgroup = subgroup;
 		}
 
+		/// <summary>
+		/// ConnectAsync connects this Client to the Amqp Server .
+		/// </summary>
+		/// <param name="options">The options for the Connection.</param>
+		/// <returns>Task</returns>
 		public Task ConnectAsync(AmqpConnectOptions options)
 		{
 			var factory = new ConnectionFactory()
@@ -66,6 +102,11 @@ namespace Spectacles.NET.Broker.Amqp
 			return Task.CompletedTask;
 		}
 
+		/// <summary>
+		/// ConnectAsync connects this Client to the Amqp Server.
+		/// </summary>
+		/// <param name="connectionString">The Connection uri as string.</param>
+		/// <returns>Task</returns>
 		public Task ConnectAsync(string connectionString)
 		{
 			var factory = new ConnectionFactory()
@@ -77,7 +118,7 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				Connection = factory.CreateConnection();
 			}
-			catch (Exception e)
+			catch (BrokerUnreachableException e)
 			{
 				return Task.FromException(e);
 			}
@@ -87,6 +128,11 @@ namespace Spectacles.NET.Broker.Amqp
 			return Task.CompletedTask;
 		}
 
+		/// <summary>
+		/// Disconnect disconnects the Client from the Amqp Server.
+		/// </summary>
+		/// <param name="code">The status code of the disconnect.</param>
+		/// <param name="text">The status text of the disconnect.</param>
 		public void Disconnect(ushort code, string text)
 		{
 			Channel.Close(code, text);
@@ -116,7 +162,7 @@ namespace Spectacles.NET.Broker.Amqp
 			};
 
 			var consumerTag = Channel.BasicConsume(@event, false, consumer);
-			ConsumerTags.Add(@event, consumerTag);
+			_consumerTags.Add(@event, consumerTag);
 
 			return Task.CompletedTask;
 		}
@@ -131,11 +177,11 @@ namespace Spectacles.NET.Broker.Amqp
 
 		public override Task UnsubscribeAsync(string @event)
 		{
-			ConsumerTags.TryGetValue(@event, out var consumerTag);
+			_consumerTags.TryGetValue(@event, out var consumerTag);
 			
 			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
 			Channel.BasicCancel(consumerTag);
-			ConsumerTags.Remove(@event);
+			_consumerTags.Remove(@event);
 
 			return Task.CompletedTask;
 		}
@@ -149,6 +195,10 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 	}
 	
+	/// <inheritdoc />
+	/// <summary>
+	/// EventArgs for the <see cref="AmqpBroker"/> Receive event.
+	/// </summary>
 	public class AmqpReceiveEventArgs : EventArgs
 	{
 		public string Event { get; }
