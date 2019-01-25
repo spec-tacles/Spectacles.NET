@@ -17,7 +17,7 @@ namespace Spectacles.NET.Broker
 		/// <param name="event">The name of the event to publish</param>
 		/// <param name="data">The data of the event to publish</param>
 		/// <returns>Task</returns>
-		public abstract Task PublishAsync(string @event, dynamic data);
+		public abstract Task PublishAsync(string @event, byte[] data);
 
 		/// <summary>
 		/// SubscribeAsync subscribes to a queue

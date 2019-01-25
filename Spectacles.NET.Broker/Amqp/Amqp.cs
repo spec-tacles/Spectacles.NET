@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
@@ -98,6 +99,8 @@ namespace Spectacles.NET.Broker.Amqp
 			}
 
 			Channel = Connection.CreateModel();
+			
+			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
 
 			return Task.CompletedTask;
 		}
@@ -124,6 +127,36 @@ namespace Spectacles.NET.Broker.Amqp
 			}
 
 			Channel = Connection.CreateModel();
+			
+			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
+
+			return Task.CompletedTask;
+		}
+
+		/// <summary>
+		/// ConnectAsync connects this Client to the Amqp Server.
+		/// </summary>
+		/// <param name="uri">The Connection uri</param>
+		/// <returns>Task</returns>
+		public Task ConnectAsync(Uri uri)
+		{
+			var factory = new ConnectionFactory()
+			{
+				Uri = uri
+			};
+			
+			try
+			{
+				Connection = factory.CreateConnection();
+			}
+			catch (BrokerUnreachableException e)
+			{
+				return Task.FromException(e);
+			}
+
+			Channel = Connection.CreateModel();
+			
+			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
 
 			return Task.CompletedTask;
 		}
@@ -139,10 +172,9 @@ namespace Spectacles.NET.Broker.Amqp
 			Connection.Close(code, text);
 		}
 		
-		public override Task PublishAsync(string @event, dynamic data)
+		public override Task PublishAsync(string @event, byte[] data)
 		{
-			var message = Encoding.UTF8.GetBytes(data);
-			Channel.BasicPublish(Group, @event, false, new BasicProperties(), message);
+			Channel.BasicPublish(Group, @event, false, new BasicProperties(), data);
 
 			return Task.CompletedTask;
 		}
@@ -150,7 +182,7 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			Channel.QueueDeclare(queueName);
+			Channel.QueueDeclare(queueName, true, false, false );
 			Channel.QueueBind(queueName, Group, @event);
 			
 			var consumer = new EventingBasicConsumer(Channel);
@@ -161,20 +193,15 @@ namespace Spectacles.NET.Broker.Amqp
 				Channel.BasicAck(ea.DeliveryTag, false);
 			};
 
-			var consumerTag = Channel.BasicConsume(@event, false, consumer);
+			var consumerTag = Channel.BasicConsume(queueName, false, consumer);
 			_consumerTags.Add(@event, consumerTag);
 
 			return Task.CompletedTask;
 		}
 
-		public override async Task SubscribeAsync(IEnumerable<string> events)
-		{
-			foreach (var @event in events)
-			{
-				await SubscribeAsync(@event);
-			}
-		}
-
+		public override Task SubscribeAsync(IEnumerable<string> events)
+			=> Task.WhenAll(events.Select(SubscribeAsync));
+		
 		public override Task UnsubscribeAsync(string @event)
 		{
 			_consumerTags.TryGetValue(@event, out var consumerTag);
@@ -186,13 +213,8 @@ namespace Spectacles.NET.Broker.Amqp
 			return Task.CompletedTask;
 		}
 
-		public override async Task UnsubscribeAsync(IEnumerable<string> events)
-		{
-			foreach (var @event in events)
-			{
-				await UnsubscribeAsync(@event);
-			}
-		}
+		public override Task UnsubscribeAsync(IEnumerable<string> events)
+			=> Task.WhenAll(events.Select(UnsubscribeAsync));
 	}
 	
 	/// <inheritdoc />
