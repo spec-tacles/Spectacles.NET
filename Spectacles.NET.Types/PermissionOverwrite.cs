@@ -20,12 +20,12 @@ namespace Spectacles.NET.Types
 		/// permission bit set
 		/// </summary>
 		[JsonProperty("allow")]
-		public int Allow { get; set; }
+		public Permission Allow { get; set; }
 		
 		/// <summary>
 		/// permission bit set
 		/// </summary>
 		[JsonProperty("deny")]
-		public int Deny { get; set; }
+		public Permission Deny { get; set; }
 	}
 }

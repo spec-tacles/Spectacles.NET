@@ -1,11 +1,13 @@
 // ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable UnusedMember.Global
 
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	[Flags]
 	public enum ActivityFlags {
 		INSTANCE = 1 << 0,
 		JOIN = 1 << 1,

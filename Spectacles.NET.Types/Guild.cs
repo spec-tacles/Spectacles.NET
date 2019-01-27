@@ -77,7 +77,7 @@ namespace Spectacles.NET.Types
 		/// total permissions for the user in the guild (does not include channel overrides)
 		/// </summary>
 		[JsonProperty("permissions")]
-		public int? Permissions { get; set; }
+		public Permission? Permissions { get; set; }
 		
 		/// <summary>
 		/// voice region id for the guild

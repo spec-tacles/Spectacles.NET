@@ -100,7 +100,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 			Channel = Connection.CreateModel();
 			
-			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
+			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
 
 			return Task.CompletedTask;
 		}
@@ -108,13 +108,13 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <summary>
 		/// ConnectAsync connects this Client to the Amqp Server.
 		/// </summary>
-		/// <param name="connectionString">The Connection uri as string.</param>
+		/// <param name="url">The Connection uri as string.</param>
 		/// <returns>Task</returns>
-		public Task ConnectAsync(string connectionString)
+		public Task ConnectAsync(string url)
 		{
 			var factory = new ConnectionFactory()
 			{
-				Uri = new Uri(connectionString) 
+				Uri = new Uri(url) 
 			};
 			
 			try
@@ -128,7 +128,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 			Channel = Connection.CreateModel();
 			
-			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
+			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
 
 			return Task.CompletedTask;
 		}
@@ -156,7 +156,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 			Channel = Connection.CreateModel();
 			
-			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
+			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
 
 			return Task.CompletedTask;
 		}
@@ -182,7 +182,7 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			Channel.QueueDeclare(queueName, true, false, false );
+			Channel.QueueDeclare(queueName, false, false, false );
 			Channel.QueueBind(queueName, Group, @event);
 			
 			var consumer = new EventingBasicConsumer(Channel);

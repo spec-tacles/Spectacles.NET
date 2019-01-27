@@ -1,10 +1,12 @@
 // ReSharper disable UnusedMember.Global
 
+using System;
 using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	[Flags]
 	public enum UserFlags
 	{
 		NONE = 0,
