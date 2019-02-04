@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -47,19 +48,34 @@ namespace Spectacles.NET.Broker.Amqp
 		public IConnection Connection { get; set; }
 		
 		/// <summary>
-		/// The AMQP channel currently connected to.
-		/// </summary>
-		public IModel Channel { get; set; }
-		
-		/// <summary>
 		/// The AMQP exchange of this broker.
 		/// </summary>
 		public string Group { get; }
+
 		/// <summary>
 		/// The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same data.
 		/// Implemented internally as an extra identifier in the queue name.
 		/// </summary>
 		public string Subgroup { get; }
+		
+		/// <summary>
+		/// The AMQP channel currently connected to.
+		/// </summary>
+		public IModel Channel
+		{
+			get
+			{
+				if (_channelPool.Value == null) Channel = Connection.CreateModel();
+				
+				return _channelPool.Value;
+			}
+			set => _channelPool.Value = value;
+		}
+		
+		/// <summary>
+		/// A pool of Channels associated with the thread which created it.
+		/// </summary>
+		private readonly ThreadLocal<IModel> _channelPool  = new ThreadLocal<IModel>();
 		
 		/// <summary>
 		/// The consumers that this broker has registered.
@@ -97,8 +113,6 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				return Task.FromException(e);
 			}
-
-			Channel = Connection.CreateModel();
 			
 			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
 

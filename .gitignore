@@ -334,3 +334,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database 
 healthchecksdb
+
+# Tests
+Spectacles.NET.Test

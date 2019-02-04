@@ -1,6 +1,5 @@
 // ReSharper disable UnusedMember.Global
 
-using System.Data;
 using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
@@ -142,7 +141,7 @@ namespace Spectacles.NET.Types
 		/// The Data of this packet
 		/// </summary>
 		[JsonProperty("d")]
-		public string Data { get; set; }
+		public dynamic Data { get; set; }
 	}
 
 	/// <summary>
@@ -178,7 +177,7 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// The Identify data we send over the Discord Gateway
 	/// </summary>
-	public class IdentifyDispatch
+	public class IdentifyPacket
 	{
 		/// <summary>
 		/// authentication token
@@ -242,7 +241,49 @@ namespace Spectacles.NET.Types
 	}
 
 	/// <summary>
-	/// The Ready dispatch  
+	/// Used to replay missed events when a disconnected client resumes.
+	/// </summary>
+	public class ResumePacket
+	{
+		/// <summary>
+		/// session token
+		/// </summary>
+		[JsonProperty("token")]
+		public string Token { get; set; }
+		
+		/// <summary>
+		/// session id
+		/// </summary>
+		[JsonProperty("session_id")]
+		public string SessionID { get; set; }
+		
+		/// <summary>
+		/// session id
+		/// </summary>
+		[JsonProperty("seq")]
+		public int Sequence { get; set; }
+	}
+	
+	/// <summary>
+	/// Sent on connection to the websocket. Defines the heartbeat interval that the client should heartbeat to.
+	/// </summary>
+	public class HelloPacket
+	{
+		/// <summary>
+		/// the interval (in milliseconds) the client should heartbeat with
+		/// </summary>
+		[JsonProperty("heartbeat_interval")]
+		public long HeartbeatInterval { get; set; }
+		
+		/// <summary>
+		/// used for debugging
+		/// </summary>
+		[JsonProperty("_trace")]
+		public string[] Trace { get; set; }
+	}
+
+	/// <summary>
+	/// The ready event is dispatched when a client has completed the initial handshake with the gateway (for new sessions). The ready event can be the largest and most complex event the gateway will send, as it contains all the state required for a client to begin interacting with the rest of the platform.  
 	/// </summary>
 	public class ReadyDispatch
 	{
@@ -283,6 +324,9 @@ namespace Spectacles.NET.Types
 		public int?[] Shard { get; set; }
 	}
 
+	/// <summary>
+	/// The resumed event is dispatched when a client has sent a resume payload to the gateway (for resuming existing sessions).
+	/// </summary>
 	public class ResumedDispatch
 	{
 		/// <summary>
