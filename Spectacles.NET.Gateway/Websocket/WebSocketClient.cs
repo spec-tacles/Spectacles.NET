@@ -137,8 +137,7 @@ namespace Spectacles.NET.Gateway.Websocket
 			if (Status == WebSocketState.Closed) throw new Exception("Websocket already Closed");
 			_exit = true;
 			await _ws.CloseAsync(closeStatus, closeText, _cancellationToken);
-			Dispose();
-			Task.Run(() => Close?.Invoke(this, new WebSocketCloseEventArgs((int) closeStatus, closeText, false)), _cancellationToken).ConfigureAwait(false);
+			Close?.Invoke(this, new WebSocketCloseEventArgs((int) closeStatus, closeText, false));
 		}
 
 		/// <summary>
@@ -146,12 +145,14 @@ namespace Spectacles.NET.Gateway.Websocket
 		/// </summary>
 		private async void _listen()
 		{
-			while (_ws.State == WebSocketState.Open && !_exit)
+			while (_ws.State == WebSocketState.Open)
 			{
 				var message = "";
 				var binary = new List<byte>();
 				
 				READ:
+				if (_exit) return;
+				
 				
 				var buffer = new byte[1024];
 				WebSocketReceiveResult res;
@@ -197,7 +198,7 @@ namespace Spectacles.NET.Gateway.Websocket
 							}
 						else
 						{
-							Task.Run(() => Message?.Invoke(this, message), _cancellationToken).ConfigureAwait(false);
+							Message?.Invoke(this, message);
 						}
 						break;
 					}
@@ -212,12 +213,12 @@ namespace Spectacles.NET.Gateway.Websocket
 
 						binary.AddRange(exactDataBuffer);
 						var binaryData = binary.ToArray();
-						Task.Run(() => Data?.Invoke(this, binaryData), _cancellationToken).ConfigureAwait(false);
+						Data?.Invoke(this, binaryData);
 						break;
 				}
 			}
 
-			if (_ws.State != WebSocketState.Closed && _ws.State != WebSocketState.CloseReceived) return;
+			if (_ws.State == WebSocketState.Closed || _ws.State == WebSocketState.CloseReceived || _exit) return;
 			if (_ws.CloseStatus != null)
 				Close?.Invoke(this,
 					new WebSocketCloseEventArgs((int) _ws.CloseStatus.Value, _ws.CloseStatusDescription, true));

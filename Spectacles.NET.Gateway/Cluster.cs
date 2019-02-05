@@ -51,12 +51,12 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// The Ratelimiter for the Identify limit.
 		/// </summary>
-		public readonly TimeLimiter Ratelimiter = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromSeconds(5));
+		public readonly TimeLimiter Ratelimiter = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromMilliseconds(5250));
 		
 		/// <summary>
 		/// The ShardCount provided by the Constructor.
 		/// </summary>
-		private int? ShardCount { get; set; }
+		private int? ShardCount { get; }
 
 		/// <summary>
 		/// Creates a new instance and uses the recommend shard count.
@@ -72,6 +72,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
+		// ReSharper disable once UnusedMember.Global
 		public Cluster(string token, int shardCount)
 		{
 			Token = token;
@@ -104,9 +105,9 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		public void Dispose()
 		{
-			foreach (var shards in Shards.Values)
+			foreach (var shard in Shards.Values)
 			{
-				shards.Dispose();
+				shard.Dispose();
 			}
 		}
 
@@ -153,7 +154,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="message">The message</param>
 		private void _log(LogLevel level, string message)
 		{
-			Task.Run(() => Log?.Invoke(this, new LogEventArgs(level, $"[Cluster] {message}"))).ConfigureAwait(false);
+			Log?.Invoke(this, new LogEventArgs(level, $"[Cluster] {message}"));
 		}
 	}
 }
