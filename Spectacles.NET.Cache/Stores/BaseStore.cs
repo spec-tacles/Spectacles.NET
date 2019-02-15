@@ -6,6 +6,10 @@ using StackExchange.Redis;
 
 namespace Spectacles.NET.Cache.Stores
 {
+	/// <summary>
+	/// Base Store which all Stores extend.
+	/// </summary>
+	/// <typeparam name="T">The Type this store handles.</typeparam>
 	public abstract class BaseStore<T>
 	{
 		private CacheClient Client { get; }
@@ -14,6 +18,8 @@ namespace Spectacles.NET.Cache.Stores
 		{
 			Client = client;
 		}
+
+		public abstract Task SetAsync(string key);
 		
 		public abstract Task SetAsync(T entry);
 		

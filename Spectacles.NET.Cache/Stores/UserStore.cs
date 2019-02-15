@@ -13,7 +13,12 @@ namespace Spectacles.NET.Cache.Stores
 		{
 			
 		}
-		
+
+		public override Task SetAsync(string key)
+		{
+			return Database.HashSetAsync("users", new[] {new HashEntry(RedisValue.Unbox(key), RedisValue.Null)});
+		}
+
 		public override Task SetAsync(User entry)
 		{
 			return Database.HashSetAsync("users",

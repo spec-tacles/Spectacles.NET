@@ -1,16 +1,17 @@
 // ReSharper disable MemberCanBePrivate.Global
 
 using System;
-using System.IO;
-using System.Net;
+using System.Net.Http;
 using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using Newtonsoft.Json;
 using RateLimiter;
 using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Gateway.Websocket;
 using Spectacles.NET.Types;
+using Timer = System.Timers.Timer;
 
 namespace Spectacles.NET.Gateway
 {
@@ -33,7 +34,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// Event emitted when Shards receive Dispatches.
 		/// </summary>
-		public event EventHandler<dynamic> Dispatch;
+		public event EventHandler<DispatchEventArgs> Dispatch;
 
 		/// <summary>
 		/// Event emitted when this Shard send there Identify packet.
@@ -49,12 +50,6 @@ namespace Spectacles.NET.Gateway
 		/// The ID of this Shard.
 		/// </summary>
 		public int ID { get; }
-
-		/// <summary>
-		/// The State of the WebSocket Connection.
-		/// </summary>
-		public WebSocketState? State 
-			=> WebSocketClient?.Status;
 
 		/// <summary>
 		/// The WebSocketClient of this Shard.
@@ -85,7 +80,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// The current Sequence of this Shard.
 		/// </summary>
-		private int Sequence { get; set; }
+		private int? Sequence { get; set; }
 		
 		/// <summary>
 		/// The current SessionID of this Shard.
@@ -96,25 +91,26 @@ namespace Spectacles.NET.Gateway
 		/// The current Trace of this Shard.
 		/// </summary>
 		private string[] Trace { get; set; }
-		
+
 		/// <summary>
 		/// The Sequence the connection closed with.
 		/// </summary>
-		private int CloseSequence { get; set; }
-		
-		/// <summary>
-		/// If the client is Initialized
-		/// </summary>
-		private bool Initialized { get; set; }
+		private int? CloseSequence { get; set; }
 		
 		/// <summary>
 		/// The Ratelimiter for this Shard.
 		/// </summary>
 		private readonly TimeLimiter _ratelimiter = TimeLimiter.GetFromMaxCountByInterval(120, TimeSpan.FromMinutes(1));
 
-		private Thread _heartbeatThread;
+		/// <summary>
+		/// The Timer which handles Heartbeats of this Shard.
+		/// </summary>
+		private Timer _heartbeatTimer;
 
-		private bool _reconnecting;
+		/// <summary>
+		/// The delay which should be used between reconnect attempts in ms.
+		/// </summary>
+		private int _reconnectDelay;
 		
 		/// <summary>
 		/// Creates an instance from a Cluster.
@@ -134,7 +130,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="id">The ID of this Shard.</param>
 		/// <param name="shardCount">The ShardCount that is used.</param>
 		// ReSharper disable once UnusedMember.Global
-		public Shard(string token, int id, int? shardCount)
+		public Shard(string token, int id, int shardCount)
 		{
 			ProvidedToken = token;
 			ID = id;
@@ -147,36 +143,54 @@ namespace Spectacles.NET.Gateway
 		/// <returns>Task</returns>
 		public async Task ConnectAsync()
 		{
-			if (!Initialized)
+			LastHeartbeatAcked = true;
+			
+			if (WebSocketClient != null)
 			{
-				if (Cluster != null)
-				{
-					WebSocketClient = new WebSocketClient(Cluster.Gateway.URL, null);
-				} else {
-					var res = await _getGatewayAsync();
-					if (ProvidedShardCount == null) ProvidedShardCount = res.Shards;
-					WebSocketClient = new WebSocketClient(res.URL, null);
-				}
-
-				WebSocketClient.Open += _onOpen;
-				WebSocketClient.Message += _onMessage;
-				WebSocketClient.Close += _onClose;
-				WebSocketClient.Error += _onError;	
-				
-				Initialized = true;
+				_log(LogLevel.DEBUG, "Disposing old WebSocketClient...");
+				WebSocketClient.Open -= _onOpen;
+				WebSocketClient.Message -= _onMessage;
+				WebSocketClient.Close -= _onClose;
+				WebSocketClient.Error -= _onError;
+				WebSocketClient.Dispose();
+				_stopHeartbeatTimer();
 			}
 			
-			_log(LogLevel.DEBUG, "Connecting to Websocket...");
+			if (Cluster != null)
+			{
+				WebSocketClient = new WebSocketClient(Cluster.Gateway.URL, null);
+			} else {
+				var res = await _getGatewayAsync();
+				if (ProvidedShardCount == null) ProvidedShardCount = res.Shards;
+				WebSocketClient = new WebSocketClient(res.URL, null);
+			}
 
+			WebSocketClient.Open += _onOpen;
+			WebSocketClient.Message += _onMessage;
+			WebSocketClient.Close += _onClose;
+			WebSocketClient.Error += _onError;	
+			
+			
+			_log(LogLevel.DEBUG, "Connecting to Websocket...");
 			try
 			{
 				await WebSocketClient.ConnectAsync();
-				_reconnecting = false;
+				_reconnectDelay = 0;
 			}
 			catch (Exception e)
 			{
-				_log(LogLevel.ERROR, $"Websocket connection errored with {e.Message}, retrying...");
-				// await ConnectAsync();
+				if (_reconnectDelay == 0)
+				{
+					_reconnectDelay = 1000;
+				}
+				else
+				{
+					_reconnectDelay *= 2;	
+				}
+				_log(LogLevel.ERROR, $"Websocket connection errored with {e.Message}, retrying in {TimeSpan.FromMilliseconds(_reconnectDelay).Seconds} seconds...");
+				await Task.Delay(_reconnectDelay);
+				await ConnectAsync();
+				return;
 			}
 
 			await _waitForIdentify();
@@ -191,7 +205,7 @@ namespace Spectacles.NET.Gateway
 		public Task DisconnectAsync(int closeCode, string closeText)
 		{
 			_log(LogLevel.DEBUG, $"Disconnecting with reason {closeCode}: {closeText}...");
-			return WebSocketClient.Status == WebSocketState.Open ? WebSocketClient.CloseAsync((WebSocketCloseStatus) closeCode, closeText) : Task.FromException(new Exception("The WebSocket Connection is not open."));
+			return WebSocketClient.CloseAsync((WebSocketCloseStatus) closeCode, closeText);
 		}
 
 		/// <summary>
@@ -248,7 +262,7 @@ namespace Spectacles.NET.Gateway
 							SessionID = packet.Data["session_id"];
 							Trace = packet.Data["_trace"].ToObject<string[]>();
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {SessionID}");
-							_log(LogLevel.INFO, $"Shard {ID} got ready");
+							_log(LogLevel.INFO, $"Shard Ready");
 							Identified?.Invoke(this, null);
 							break;
 						case "RESUMED":
@@ -257,17 +271,17 @@ namespace Spectacles.NET.Gateway
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
 								$"RESUMED {Trace[0]} -> {Trace[1]} {SessionID} | replayed {replayed} events.");
-							_log(LogLevel.INFO, $"Shard {ID} resumed connection");
+							_log(LogLevel.INFO, $"Shard resumed connection");
 							break;
 						}
 					}
 
-					if (packet.Seq != null && packet.Seq > Sequence)
+					if (packet.Seq != null)
 					{
 						Sequence = (int) packet.Seq;
 					}
-					Dispatch?.Invoke(this, packet.Data);
-					//_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
+					Dispatch?.Invoke(this, new DispatchEventArgs(ID, packet.Data, packet.Type));
+					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 					break;
 				}
 				case OpCode.HEARTBEAT:
@@ -286,6 +300,7 @@ namespace Spectacles.NET.Gateway
 					}
 
 					SessionID = null;
+					Sequence = null;
 					Thread.Sleep(TimeSpan.FromSeconds(5));
 					DisconnectAsync((int) WebSocketCloseStatus.NormalClosure, "Session Invalidated").ConfigureAwait(false);
 					break;
@@ -293,8 +308,7 @@ namespace Spectacles.NET.Gateway
 					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
 					Trace = packet.Data["_trace"].ToObject<string[]>();
 					var heartbeat = packet.Data["heartbeat_interval"].ToObject<int>();
-					_heartbeatThread = new Thread(() => _heartbeatLoop(heartbeat));
-					_heartbeatThread.Start();
+					_startHeartbeatTimer(heartbeat);
 					
 					_authenticateAsync();
 					break;
@@ -324,9 +338,9 @@ namespace Spectacles.NET.Gateway
 		/// Queues an Identify Message.
 		/// </summary>
 		/// <returns>Task</returns>
-		private async Task _queueIdentifyAsync()
+		private Task _queueIdentifyAsync()
 		{
-			await Cluster.Ratelimiter.Perform(_identifyAsync);
+			return Cluster != null ? Cluster.Ratelimiter.Perform(_identifyAsync) : _identifyAsync();
 		}
 
 		/// <summary>
@@ -361,11 +375,13 @@ namespace Spectacles.NET.Gateway
 		{
 			_log(LogLevel.DEBUG, $"Attempting to resume session {SessionID}");
 
+			
 			return Send(OpCode.RESUME, new ResumePacket()
 			{
 				Token = Token,
 				SessionID = SessionID,
-				Sequence = Sequence
+				// ReSharper disable once PossibleInvalidOperationException
+				Sequence = (int) Sequence
 			});
 		}
 
@@ -382,23 +398,57 @@ namespace Spectacles.NET.Gateway
 		}
 
 		/// <summary>
-		/// Creates a Heartbeat loop.
+		/// Setups the Heartbeat Timer.
 		/// </summary>
-		/// <param name="interval">The interval this loop should Heartbeat with.</param>
-		/// <returns>Task</returns>
-		private async void _heartbeatLoop(int interval)
+		private void _startHeartbeatTimer(int heartbeat)
 		{
-			while (!_reconnecting)
+			_log(LogLevel.DEBUG, "Setup the Heartbeat Timer...");
+			_heartbeatTimer = new Timer(heartbeat);
+			_heartbeatTimer.Elapsed += _onHeartbeat;
+			_heartbeatTimer.AutoReset = true;
+			_heartbeatTimer.Enabled = true;
+		}
+
+		/// <summary>
+		/// Stops the Heartbeat Timer and disposes it.
+		/// </summary>
+		private void _stopHeartbeatTimer()
+		{
+			if (_heartbeatTimer == null) return;
+			_log(LogLevel.DEBUG, "Stop and dispose the Heartbeat Timer...");
+			_heartbeatTimer.Stop();
+			_heartbeatTimer.Dispose();
+		}
+
+		/// <summary>
+		/// Called when the Heartbeat Timer fires.
+		/// </summary>
+		/// <param name="sender">The sender of this event.</param>
+		/// <param name="args">The ElapsedEventArgs of this event.</param>
+		private async void _onHeartbeat(object sender, ElapsedEventArgs args)
+		{
+			if (!LastHeartbeatAcked)
 			{
-				Thread.Sleep(interval);
-				if (State != WebSocketState.Open) return;
-				if (!LastHeartbeatAcked)
+				try
 				{
 					await DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR,
-						"Received no heartbeat acknowledged in time, assuming zombie connection.");
+						"Received no heartbeat acknowledge in time, assuming zombie connection.");
 					return;
 				}
-				await _heartbeatAsync();	
+				catch (Exception e)
+				{
+					_log(LogLevel.WARN, $"Couldn't Disconnect the Connection with the reason: {e.Message}, Reconnecting...");
+					ConnectAsync().ConfigureAwait(false);
+				}
+			}
+			try
+			{
+				await _heartbeatAsync();
+			}
+			catch (Exception e)
+			{
+				_log(LogLevel.WARN, $"Couldn't send a Heartbeat with the reason: {e.Message}, Reconnecting...");
+				ConnectAsync().ConfigureAwait(false);
 			}
 		}
 		
@@ -408,18 +458,15 @@ namespace Spectacles.NET.Gateway
 		/// <returns>Task</returns>
 		private async Task<GatewayBot> _getGatewayAsync()
 		{
-			var request = (HttpWebRequest)WebRequest.Create($"{API.BaseURL}{API.BotGateway}");
-			request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-			request.Headers.Add("Authorization", ProvidedToken);
-			request.Headers.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-
-			using(var response = (HttpWebResponse)await request.GetResponseAsync())
-			using(var stream = response.GetResponseStream())
-			using(var reader = new StreamReader(stream ?? throw new Exception("No Body Content")))
+			using (var httpClient = new HttpClient())
 			{
-				var res = await reader.ReadToEndAsync();
-				return JsonConvert.DeserializeObject<GatewayBot>(res);
-			}	
+				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
+				httpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+				var res = await httpClient.GetAsync($"{APIEndpoints.BaseURL}{APIEndpoints.BotGateway}");
+				var body = await res.Content.ReadAsStringAsync();
+				httpClient.Dispose();
+				return JsonConvert.DeserializeObject<GatewayBot>(body);	
+			}
 		}
 
 		/// <summary>
@@ -435,16 +482,31 @@ namespace Spectacles.NET.Gateway
 			return tcs.Task;
 		}
 
+		/// <summary>
+		/// Called when the WebSocket Connection opens.
+		/// </summary>
+		/// <param name="sender">The sender of the Event.</param>
+		/// <param name="args">The EventArgs.</param>
 		private void _onOpen(object sender, EventArgs args)
 		{
 			_log(LogLevel.DEBUG, "Websocket connection opened");
 		}
 
+		/// <summary>
+		/// Called when the WebSocket Connection receives a Message.
+		/// </summary>
+		/// <param name="sender">The sender of the Event.</param>
+		/// <param name="json">The json string received.</param>
 		private void _onMessage(object sender, string json)
 		{
 			_handleMessage(json);
 		}
 
+		/// <summary>
+		/// Called when the WebSocket Connection Closes.
+		/// </summary>
+		/// <param name="sender">The sender of the Event.</param>
+		/// <param name="args">The WebSocketCloseEventArgs.</param>
 		private void _onClose(object sender, WebSocketCloseEventArgs args)
 		{
 			_log(LogLevel.WARN, $"Websocket disconnected with {args.CloseCode}: {args.Reason}");
@@ -455,25 +517,28 @@ namespace Spectacles.NET.Gateway
 				Error?.Invoke(this,
 					new Exception($"Websocket Disconnected with unrecoverable code {args.CloseCode}: {args.Reason}"));
 			else
-				_reconnecting = true;
 				ConnectAsync().ConfigureAwait(false);
 		}
 
+		/// <summary>
+		/// Called when the WebSocket Connection encounters an error.
+		/// </summary>
+		/// <param name="sender">The sender of the Event.</param>
+		/// <param name="error">The Exception.</param>
 		private void _onError(object sender, Exception error)
 		{
 			_log(LogLevel.WARN, $"Websocket encountered Exception {error.Message}, reconnecting...");
-			_reconnecting = true;
 			ConnectAsync().ConfigureAwait(false);
 		}
 
 		/// <summary>
-		/// Emits something on the Log event in another Thread
+		/// Emits something on the Log event
 		/// </summary>
-		/// <param name="level">The LogLevel of this message</param>
-		/// <param name="message">The message</param>
+		/// <param name="level">The LogLevel of this log</param>
+		/// <param name="message">The message of this log</param>
 		private void _log(LogLevel level, string message)
 		{
-			Log?.Invoke(this, new LogEventArgs(level, $"[Shard {ID}] {message}"));
+			Log?.Invoke(this, new LogEventArgs(level, $"Shard {ID}", message));
 		}
 	}
 }

@@ -65,7 +65,7 @@ namespace Spectacles.NET.Broker.Amqp
 		{
 			get
 			{
-				if (_channelPool.Value == null) Channel = Connection.CreateModel();
+				if (_channelPool.Value == null) _createChannel();
 				
 				return _channelPool.Value;
 			}
@@ -140,10 +140,6 @@ namespace Spectacles.NET.Broker.Amqp
 				return Task.FromException(e);
 			}
 
-			Channel = Connection.CreateModel();
-			
-			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
-
 			return Task.CompletedTask;
 		}
 
@@ -168,10 +164,6 @@ namespace Spectacles.NET.Broker.Amqp
 				return Task.FromException(e);
 			}
 
-			Channel = Connection.CreateModel();
-			
-			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
-
 			return Task.CompletedTask;
 		}
 
@@ -188,7 +180,11 @@ namespace Spectacles.NET.Broker.Amqp
 		
 		public override Task PublishAsync(string @event, byte[] data)
 		{
-			Channel.BasicPublish(Group, @event, false, new BasicProperties(), data);
+			Channel.BasicPublish(Group, @event, false, new BasicProperties()
+			{
+				ContentType = "json",
+				
+			}, data);
 
 			return Task.CompletedTask;
 		}
@@ -196,7 +192,7 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			Channel.QueueDeclare(queueName, false, false, false );
+			Channel.QueueDeclare(queueName, false, false, false);
 			Channel.QueueBind(queueName, Group, @event);
 			
 			var consumer = new EventingBasicConsumer(Channel);
@@ -229,6 +225,12 @@ namespace Spectacles.NET.Broker.Amqp
 
 		public override Task UnsubscribeAsync(IEnumerable<string> events)
 			=> Task.WhenAll(events.Select(UnsubscribeAsync));
+
+		private void _createChannel()
+		{
+			Channel = Connection.CreateModel();
+			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
+		}
 	}
 	
 	/// <inheritdoc />

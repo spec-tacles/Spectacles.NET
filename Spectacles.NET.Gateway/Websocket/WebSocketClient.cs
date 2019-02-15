@@ -154,7 +154,7 @@ namespace Spectacles.NET.Gateway.Websocket
 				if (_exit) return;
 				
 				
-				var buffer = new byte[1024];
+				var buffer = new byte[16 * 1024];
 				WebSocketReceiveResult res;
 				try
 				{
@@ -228,6 +228,7 @@ namespace Spectacles.NET.Gateway.Websocket
 		public void Dispose()
 		{
 			if (_disposed) return;
+			_ws?.Abort();
 			_ws?.Dispose();
 			_disposed = true;
 		}

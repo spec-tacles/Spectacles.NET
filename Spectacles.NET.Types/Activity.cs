@@ -104,13 +104,13 @@ namespace Spectacles.NET.Types
 		/// unix time (in milliseconds) of when the activity started
 		/// </summary>
 		[JsonProperty("start")]
-		public int? Start { get; set; }
+		public long? Start { get; set; }
 		
 		/// <summary>
 		/// unix time (in milliseconds) of when the activity ends
 		/// </summary>
 		[JsonProperty("end")]
-		public int? End { get; set; }
+		public long? End { get; set; }
 	}
 
 	public class ActivityParty

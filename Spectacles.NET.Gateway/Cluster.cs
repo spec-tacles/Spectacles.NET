@@ -2,8 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RateLimiter;
@@ -31,7 +30,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// Event emitted when Shards receive Dispatches.
 		/// </summary>
-		public event EventHandler<dynamic> Dispatch;
+		public event EventHandler<DispatchEventArgs> Dispatch;
 		
 		/// <summary>
 		/// The Token this Cluster uses.
@@ -87,16 +86,25 @@ namespace Spectacles.NET.Gateway
 		{
 			Gateway = await _getGateway();
 
-			_spawnShards(ShardCount ?? Gateway.Shards);
+			var shardCount = ShardCount ?? Gateway.Shards;
+			
+			for (var i = 0; i < shardCount; i++)
+			{
+				var shard = new Shard(this, i);
+				shard.Log += Log;
+				shard.Error += Error;
+				shard.Dispatch += Dispatch;
+				Shards.Add(i, shard);
+			}
 
-			_log(LogLevel.INFO, $"Starting {Shards.Count} shards");
+			_log(LogLevel.INFO, $"Spawning {Shards.Count} shards");
 			
 			foreach (var shard in Shards.Values)
 			{
-				_log(LogLevel.INFO, $"Spawning shard {shard.ID}");
 				await shard.ConnectAsync();
-				_log(LogLevel.INFO, $"Shard {shard.ID} successfully started");
 			}
+			
+			_log(LogLevel.INFO, $"Finished spawning shards");
 		}
 		
 		/// <inheritdoc />
@@ -112,49 +120,30 @@ namespace Spectacles.NET.Gateway
 		}
 
 		/// <summary>
-		/// Creates an amount of shards for this Cluster.
-		/// </summary>
-		/// <param name="shardCount">The amount of shards to spawn.</param>
-		private void _spawnShards(int shardCount)
-		{
-			for (var i = 0; i < shardCount; i++)
-			{
-				var shard = new Shard(this, i);
-				shard.Log += Log;
-				shard.Error += Error;
-				shard.Dispatch += Dispatch;
-				Shards.Add(i, shard);
-			}
-		}
-
-		/// <summary>
 		/// Gets the /gateway/bot response.
 		/// </summary>
 		/// <returns>Task</returns>
 		private async Task<GatewayBot> _getGateway()
 		{
-			var request = (HttpWebRequest)WebRequest.Create($"{API.BaseURL}{API.BotGateway}");
-			request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-			request.Headers.Add("Authorization", Token);
-			request.Headers.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-
-			using(var response = (HttpWebResponse)await request.GetResponseAsync())
-			using(var stream = response.GetResponseStream())
-			using(var reader = new StreamReader(stream ?? throw new Exception("No Body Content")))
+			using (var httpClient = new HttpClient())
 			{
-				var res = await reader.ReadToEndAsync();
-				return JsonConvert.DeserializeObject<GatewayBot>(res);
+				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
+				httpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+				var res = await httpClient.GetAsync($"{APIEndpoints.BaseURL}{APIEndpoints.BotGateway}");
+				var body = await res.Content.ReadAsStringAsync();
+				httpClient.Dispose();
+				return JsonConvert.DeserializeObject<GatewayBot>(body);	
 			}
 		}
 		
 		/// <summary>
-		/// Emits something on the Log event in another Thread
+		/// Emits something on the Log event
 		/// </summary>
-		/// <param name="level">The LogLevel of this message</param>
-		/// <param name="message">The message</param>
+		/// <param name="level">The LogLevel of this log</param>
+		/// <param name="message">The message of this log</param>
 		private void _log(LogLevel level, string message)
 		{
-			Log?.Invoke(this, new LogEventArgs(level, $"[Cluster] {message}"));
+			Log?.Invoke(this, new LogEventArgs(level, "Cluster", message));
 		}
 	}
 }
