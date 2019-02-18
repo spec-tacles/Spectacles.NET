@@ -1,11 +1,35 @@
+using Spectacles.NET.Types;
+
 namespace Spectacles.NET.Rest.View
 {
 	public class ChannelsView : View
 	{
+		public ChannelsView this[long id]
+		{
+			get
+			{
+				ID = id.ToString();
+				return this;
+			}
+		}
+
+		public ChannelsView this[string id]
+		{
+			get
+			{
+				ID = id;
+				return this;
+			}
+		}
+		
+		public ChannelMessagesView Messages
+			=> new ChannelMessagesView(Client, ID);
+		
+		protected override string Route
+			=> $"{APIEndpoints.BaseURL}/{(ID == null ? APIEndpoints.Channels : APIEndpoints.Channel(ID))}";
+
 		public ChannelsView(RestClient client) : base(client)
 		{
 		}
-
-		protected override string Route { get; }
 	}
 }
