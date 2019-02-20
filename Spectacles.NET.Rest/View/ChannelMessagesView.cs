@@ -22,6 +22,9 @@ namespace Spectacles.NET.Rest.View
 			}
 		}
 		
+		public MessageReactionView Reactions
+			=> new MessageReactionView(Client, ChannelID, ID);
+		
 		protected override string Route
 			=> $"{(ID != null ? APIEndpoints.Message(ChannelID, ID) : APIEndpoints.ChannelMessages(ChannelID))}";
 

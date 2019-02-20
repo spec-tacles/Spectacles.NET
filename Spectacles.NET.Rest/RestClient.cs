@@ -19,8 +19,8 @@ namespace Spectacles.NET.Rest
 		public UsersView Users
 			=> new UsersView(this);
 		
-		public InviteView Invite
-			=> new InviteView(this);
+		public InvitesView Invites
+			=> new InvitesView(this);
 
 		public bool GlobalRatelimited { get; set; }
 
@@ -43,7 +43,7 @@ namespace Spectacles.NET.Rest
 		{
 			var absolutePath = $"{APIEndpoints.BaseURL}/{path}";
 			var route = Bucket.Bucket.MakeRoute(method, path);
-			if ( _buckets.TryGetValue(route, out var bucket)) return bucket.Enqueue(method, absolutePath, content);
+			if (_buckets.TryGetValue(route, out var bucket)) return bucket.Enqueue(method, absolutePath, content);
 			bucket = new Bucket.Bucket(this);
 			_buckets.TryAdd(route, bucket);
 			return bucket.Enqueue(method, absolutePath, content);

@@ -16,9 +16,15 @@ namespace Spectacles.NET.Rest.APIError
 	{
 		public int StatusCode { get; }
 		
-		public DiscordAPIException(int statusCode, int errorCode, string errorMessage) : base($"{errorCode}: {errorMessage}")
+		public int? ErrorCode { get; }
+		
+		public string ErrorMessages { get; }
+
+		public DiscordAPIException(int statusCode, int? errorCode, string errorMessages) : base($"{(errorCode ?? statusCode)}: {errorMessages}")
 		{
 			StatusCode = statusCode;
+			ErrorCode = errorCode;
+			ErrorMessages = errorMessages;
 		}
 	}
 }

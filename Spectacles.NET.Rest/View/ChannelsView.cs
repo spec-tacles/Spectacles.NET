@@ -25,6 +25,21 @@ namespace Spectacles.NET.Rest.View
 		public ChannelMessagesView Messages
 			=> new ChannelMessagesView(Client, ID);
 		
+		public ChannelPermissionsView Permissions
+			=> new ChannelPermissionsView(Client, ID);
+		
+		public ChannelTypingView Typing
+			=> new ChannelTypingView(Client, ID);
+		
+		public ChannelInvitesView Invites
+			=> new ChannelInvitesView(Client, ID);
+		
+		public ChannelPinsView Pins
+			=> new ChannelPinsView(Client, ID);
+		
+		public DMChannelRecipientView Recipient
+			=> new DMChannelRecipientView(Client, ID);
+		
 		protected override string Route
 			=> $"{APIEndpoints.BaseURL}/{(ID == null ? APIEndpoints.Channels : APIEndpoints.Channel(ID))}";
 

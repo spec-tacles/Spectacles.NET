@@ -45,8 +45,11 @@ namespace Spectacles.NET.Types
 		public static string GuildBan(string guildID, string userID)
 			=> $"{GuildBans(guildID)}/{userID}";
 
+		public static string GuildRoles(string guildID)
+			=> $"{Guild(guildID)}/roles";
+
 		public static string GuildRole(string guildID, string roleID)
-			=> $"{Guild(guildID)}/role/{roleID}";
+			=> $"{GuildRoles(guildID)}/{roleID}";
 
 		public static string GuildPrune(string guildID)
 			=> $"{Guild(guildID)}/prune";
@@ -88,7 +91,7 @@ namespace Spectacles.NET.Types
 			=> $"{ChannelMessages(channelID)}/{messageID}";
 
 		public static string MessageReactions(string channelID, string messageID)
-			=> $"{Message(channelID, messageID)}/reaction";
+			=> $"{Message(channelID, messageID)}/reactions";
 
 		public static string MessageReaction(string channelID, string messageID, string emoji)
 			=> $"{MessageReactions(channelID, messageID)}/{emoji}";
@@ -99,7 +102,7 @@ namespace Spectacles.NET.Types
 		public static string ChannelPermission(string channelID, string overwriteID)
 			=> $"{Channel(channelID)}/permissions/{overwriteID}";
 
-		public static string ChannelInvite(string channelID)
+		public static string ChannelInvites(string channelID)
 			=> $"{Channel(channelID)}/invites";
 
 		public static string ChannelTyping(string channelID)

@@ -14,6 +14,8 @@ namespace Spectacles.NET.Rest.Bucket
 		public event EventHandler<dynamic> Success;
 		public event EventHandler<Exception> Error;
 
+		private int Retries { get; set; }
+
 		private RequestMethod Method { get; }
 
 		private string URL { get; }
@@ -39,7 +41,18 @@ namespace Spectacles.NET.Rest.Bucket
 			switch (Method)
 			{
 				case RequestMethod.GET:
-					task = Client.HttpClient.GetAsync(URL);
+					try
+					{
+					task = Client.HttpClient.GetAsync(new UriBuilder(URL)
+					{
+						Query = Content != null ? await ((FormUrlEncodedContent) Content).ReadAsStringAsync() : null
+					}.Uri);
+					}
+					catch (Exception e)
+					{
+						Error?.Invoke(this, e);
+						return;
+					}
 					break;
 				case RequestMethod.POST:
 					task = Client.HttpClient.PostAsync(URL, Content);
@@ -104,8 +117,17 @@ namespace Spectacles.NET.Rest.Bucket
 				Bucket.Enqueue(this);
 			} else if (statusCode >= 500 && statusCode < 600)
 			{
-				await Task.Delay(1000 + new Random().Next(1, 100) - 5);
-				Bucket.Enqueue(this);
+				Retries++;
+				if (Retries > 1)
+				{
+					Error?.Invoke(this, new DiscordAPIException(500, null, $"{HttpStatusCode.InternalServerError}"));
+					return;
+				}
+				Task.Run(async () =>
+				{
+					await Task.Delay(1000 + new Random().Next(1, 100) - 5);
+					Bucket.Enqueue(this);
+				}).ConfigureAwait(false);
 			}
 			else if (!res.IsSuccessStatusCode)
 			{

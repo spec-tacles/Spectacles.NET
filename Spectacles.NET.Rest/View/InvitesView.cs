@@ -3,9 +3,9 @@ using Spectacles.NET.Types;
 
 namespace Spectacles.NET.Rest.View
 {
-	public class InviteView : View
+	public class InvitesView : View
 	{
-		public InviteView this[long id]
+		public InvitesView this[long id]
 		{
 			get
 			{
@@ -14,7 +14,7 @@ namespace Spectacles.NET.Rest.View
 			}
 		}
 
-		public InviteView this[string id]
+		public InvitesView this[string id]
 		{
 			get
 			{
@@ -26,7 +26,7 @@ namespace Spectacles.NET.Rest.View
 		protected override string Route
 			=> $"{APIEndpoints.Invite(ID)}";
 		
-		public InviteView(RestClient client) : base(client)
+		public InvitesView(RestClient client) : base(client)
 		{
 		}
 	}
