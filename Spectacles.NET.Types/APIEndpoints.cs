@@ -11,14 +11,14 @@ namespace Spectacles.NET.Types
 		public const string BaseURL = "https://discordapp.com/api";
 
 		public const string Gateway = "gateway";
-		public const string BotGateway = Gateway + "bot";
+		public const string BotGateway = Gateway + "/bot";
 		public const string Guilds = "guilds";
 		public const string Channels = "channels";
 		public const string VoiceRegions = "voice/regions";
 		public const string CurrentUser = "users/@me";
-		public const string CurrentUserGuild = CurrentUser + "guilds";
-		public const string CurrentUserDMs = CurrentUser + "channels";
-		public const string CurrentUserConnections = CurrentUser + "connections";
+		public const string CurrentUserGuilds = CurrentUser + "/guilds";
+		public const string CurrentUserDMs = CurrentUser + "/channels";
+		public const string CurrentUserConnections = CurrentUser + "/connections";
 		public const string Webhooks = "webhooks";
 
 		public static string Guild(string id)

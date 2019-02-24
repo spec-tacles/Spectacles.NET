@@ -21,6 +21,9 @@ namespace Spectacles.NET.Rest
 		
 		public InvitesView Invites
 			=> new InvitesView(this);
+		
+		public VoiceView Voice
+			=> new VoiceView(this);
 
 		public bool GlobalRatelimited { get; set; }
 

@@ -2,9 +2,9 @@ using Spectacles.NET.Types;
 
 namespace Spectacles.NET.Rest.View
 {
-	public class GuildBansView : View
+	public class GuildInvitesView : View
 	{
-		public GuildBansView this[long id]
+		public GuildInvitesView this[long id]
 		{
 			get
 			{
@@ -13,7 +13,7 @@ namespace Spectacles.NET.Rest.View
 			}
 		}
 
-		public GuildBansView this[string id]
+		public GuildInvitesView this[string id]
 		{
 			get
 			{
@@ -23,11 +23,11 @@ namespace Spectacles.NET.Rest.View
 		}
 		
 		protected override string Route
-			=> $"{(ID != null ? APIEndpoints.GuildBan(GuildID, ID) : APIEndpoints.GuildBans(GuildID))}";
+			=> $"{APIEndpoints.GuildInvites(GuildID)}";
 		
 		private string GuildID { get; }
 		
-		public GuildBansView(RestClient client, string guildID) : base(client)
+		public GuildInvitesView(RestClient client, string guildID) : base(client)
 		{
 			GuildID = guildID;
 		}

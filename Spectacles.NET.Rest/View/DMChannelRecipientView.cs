@@ -4,6 +4,24 @@ namespace Spectacles.NET.Rest.View
 {
 	public class DMChannelRecipientView : View
 	{
+		public DMChannelRecipientView this[long id]
+		{
+			get
+			{
+				ID = id.ToString();
+				return this;
+			}
+		}
+
+		public DMChannelRecipientView this[string id]
+		{
+			get
+			{
+				ID = id;
+				return this;
+			}
+		}
+		
 		protected override string Route
 			=> $"{APIEndpoints.ChannelRecipient(ChannelID, ID)}";
 		

@@ -37,6 +37,30 @@ namespace Spectacles.NET.Rest.View
 		public GuildRolesView Roles
 			=> new GuildRolesView(Client, ID);
 		
+		public GuildPruneView Prune
+			=> new GuildPruneView(Client, ID);
+		
+		public GuildRegionsView Region
+			=> new GuildRegionsView(Client, ID);
+		
+		public GuildInvitesView Invites
+			=> new GuildInvitesView(Client, ID);
+		
+		public GuildIntegrationsView Integrations
+			=> new GuildIntegrationsView(Client, ID);
+		
+		public GuildEmbedView Embed
+			=> new GuildEmbedView(Client, ID);
+		
+		public GuildVanityURLView VanityURL
+			=> new GuildVanityURLView(Client, ID);
+		
+		public GuildWidgetView Widget
+			=> new GuildWidgetView(Client, ID);
+		
+		public CurrentGuildMemberNickView CurrentGuildMemberNick
+			=> new CurrentGuildMemberNickView(Client, ID);
+		
 		protected override string Route 
 			=> $"{(ID == null ? APIEndpoints.Guilds : APIEndpoints.Guild(ID))}";
 

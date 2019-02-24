@@ -40,6 +40,9 @@ namespace Spectacles.NET.Rest.View
 		public DMChannelRecipientView Recipient
 			=> new DMChannelRecipientView(Client, ID);
 		
+		public BulkDeleteView BulkDelete
+			=> new BulkDeleteView(Client, ID);
+		
 		protected override string Route
 			=> $"{APIEndpoints.BaseURL}/{(ID == null ? APIEndpoints.Channels : APIEndpoints.Channel(ID))}";
 

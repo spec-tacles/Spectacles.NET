@@ -4,6 +4,24 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildMemberRolesView : View
 	{
+		public GuildMemberRolesView this[long id]
+		{
+			get
+			{
+				ID = id.ToString();
+				return this;
+			}
+		}
+
+		public GuildMemberRolesView this[string id]
+		{
+			get
+			{
+				ID = id;
+				return this;
+			}
+		}
+		
 		protected override string Route
 			=> $"{APIEndpoints.GuildMemberRole(GuildID, UserID, ID)}";
 		
