@@ -61,6 +61,9 @@ namespace Spectacles.NET.Rest.View
 		public CurrentGuildMemberNickView CurrentGuildMemberNick
 			=> new CurrentGuildMemberNickView(Client, ID);
 		
+		public GuildEmojisView Emojis
+			=> new GuildEmojisView(Client, ID);
+		
 		protected override string Route 
 			=> $"{(ID == null ? APIEndpoints.Guilds : APIEndpoints.Guild(ID))}";
 

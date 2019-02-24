@@ -13,6 +13,9 @@ namespace Spectacles.NET.Rest.View
 		public CurrentUserConnectionsView CurrentUserConnections
 			=> new CurrentUserConnectionsView(Client);
 		
+		public CurrentUserDMView CurrentUserDMs
+			=> new CurrentUserDMView(Client);
+		
 		public UsersView this[long id]
 		{
 			get

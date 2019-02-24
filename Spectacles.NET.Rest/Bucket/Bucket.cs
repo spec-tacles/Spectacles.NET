@@ -1,6 +1,5 @@
-using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -8,55 +7,91 @@ using System.Threading.Tasks;
 
 namespace Spectacles.NET.Rest.Bucket
 {
+	/// <summary>
+	/// Bucket for handling Ratelimits of one Route.
+	/// </summary>
 	public class Bucket
 	{
+		/// <summary>
+		/// The amount of request that can be done before waiting.
+		/// </summary>
 		public int Limit { get; set; } = -1;
+		
+		/// <summary>
+		/// The remaining amount of request that can be done. 
+		/// </summary>
 		public int Remaining { get; set; } = 1;
+		
+		/// <summary>
+		/// The timeout to wait before continue sending requests.
+		/// </summary>
 		public int Timeout { get; set; }
+		
+		/// <summary>
+		/// The RestClient which instantiated this Bucket.
+		/// </summary>
 		public RestClient Client { get; }
 		
-		private readonly Queue<Request> _queue = new Queue<Request>();
+		/// <summary>
+		/// The queue holding all the request of this Bucket.
+		/// </summary>
+		private readonly ConcurrentQueue<Request> _queue = new ConcurrentQueue<Request>();
 
-		public bool Limited
+		/// <summary>
+		/// If this Bucket is currently Ratelimited
+		/// </summary>
+		private bool Limited
 			=> (Client.GlobalRatelimited || Remaining < 1) && Timeout > 0;
 
+		/// <summary>
+		/// If this Bucket is currently executing Requests.
+		/// </summary>
 		private bool Started { get; set; }
 		
+		/// <summary>
+		/// The Worker Thread of this Bucket.
+		/// </summary>
 		private Thread Worker { get; set; }
 
+		/// <summary>
+		/// Creates a new instance of Bucket.
+		/// </summary>
+		/// <param name="client">The RestClient which created this instance.</param>
 		public Bucket(RestClient client)
 		{
 			Client = client;
 		}
 
-		public Task<dynamic> Enqueue(RequestMethod method, string url, HttpContent content)
+		/// <summary>
+		/// Enqueues a Request in this Bucket.
+		/// </summary>
+		/// <param name="method">The HTTP Request method to use.</param>
+		/// <param name="url">The URL to use.</param>
+		/// <param name="content">The HTTPContent to use.</param>
+		/// <param name="reason">Optional AuditLog reason to use.</param>
+		/// <returns>Task resolving with response from Discord API</returns>
+		public Task<dynamic> Enqueue(RequestMethod method, string url, HttpContent content, string reason)
 		{
 			var tcs = new TaskCompletionSource<dynamic>();
-			var request = new Request(this, content, method, url);
+			var request = new Request(this, content, method, url, reason);
 			request.Success += (sender, data) => tcs.TrySetResult(data);
 			request.Error += (sender, exception) => tcs.TrySetException(exception);
 			Enqueue(request);
 			_execute();
 			return tcs.Task;
 		}
-		
-		
-		public bool Dequeue(out Request request)
-		{
-			lock (_queue)
-			{
-				return _queue.TryDequeue(out request);
-			}
-		}
 
+		/// <summary>
+		/// Enqueues a Request in this Bucket.
+		/// </summary>
+		/// <param name="request">The request to enqueue</param>
 		public void Enqueue(Request request)
-		{
-			lock (_queue)
-			{
-				_queue.Enqueue(request);
-			}
-		}
-
+			=> _queue.Enqueue(request);
+		
+		
+		/// <summary>
+		/// Creates the WorkerThread if needed.
+		/// </summary>
 		private void _execute()
 		{
 			if (Started) return;
@@ -66,9 +101,12 @@ namespace Spectacles.NET.Rest.Bucket
 			Worker.Start();
 		}
 
+		/// <summary>
+		/// The WorkerThread method to execute requests.
+		/// </summary>
 		private async void _run()
 		{
-			while (Dequeue(out var request))
+			while (_queue.TryDequeue(out var request))
 			{
 				if (Limited)
 				{
@@ -82,6 +120,12 @@ namespace Spectacles.NET.Rest.Bucket
 			Started = false;
 		}
 
+		/// <summary>
+		/// Creates a Route from an url.
+		/// </summary>
+		/// <param name="method">The HTTP request method to use.</param>
+		/// <param name="url">The url to use.</param>
+		/// <returns></returns>
 		public static string MakeRoute(RequestMethod method, string url)
 		{
 			var defaultRegEx = new Regex(@"\/([a-z-]+)\/(?:[0-9]{17,19})");
@@ -99,6 +143,11 @@ namespace Spectacles.NET.Rest.Bucket
 			return route;
 		}
 
+		/// <summary>
+		/// Default RegEx match method.
+		/// </summary>
+		/// <param name="m">The match instance.</param>
+		/// <returns></returns>
 		private static string _match(Match m)
 		{
 			var val = m.Groups[1].Value;
