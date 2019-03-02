@@ -129,7 +129,7 @@ namespace Spectacles.NET.Gateway
 			{
 				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
 				httpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-				var res = await httpClient.GetAsync($"{APIEndpoints.BaseURL}{APIEndpoints.BotGateway}");
+				var res = await httpClient.GetAsync($"{APIEndpoints.BaseURL}/{APIEndpoints.BotGateway}");
 				var body = await res.Content.ReadAsStringAsync();
 				return JsonConvert.DeserializeObject<GatewayBot>(body);	
 			}
