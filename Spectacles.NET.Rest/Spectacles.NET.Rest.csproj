@@ -2,6 +2,18 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>0.1.0</PackageVersion>
+        <Title>Spectacles.NET.Rest</Title>
+        <Authors>DevYukine</Authors>
+        <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIconUrl>https://avatars2.githubusercontent.com/u/26804383?s=200&amp;v=4</PackageIconUrl>
+        <RepositoryUrl>https://github.com/spec-tacles/Spectacles.NET/</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Spectacles</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Description>A REST module for the Discord API.</Description>
     </PropertyGroup>
 
     <ItemGroup>
