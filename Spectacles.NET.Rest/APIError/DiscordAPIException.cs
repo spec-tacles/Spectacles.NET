@@ -12,6 +12,10 @@ namespace Spectacles.NET.Rest.APIError
 		public string Message { get; set; }
 	}
 	
+	/// <inheritdoc />
+	/// <summary>
+	/// Class representing a Discord API exception.
+	/// </summary>
 	public class DiscordAPIException : Exception
 	{
 		/// <summary>

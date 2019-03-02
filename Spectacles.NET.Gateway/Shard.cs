@@ -187,7 +187,7 @@ namespace Spectacles.NET.Gateway
 				{
 					_reconnectDelay *= 2;	
 				}
-				_log(LogLevel.ERROR, $"Websocket connection errored with {e.Message}, retrying in {TimeSpan.FromMilliseconds(_reconnectDelay).Seconds} seconds...");
+				_log(LogLevel.ERROR, $"Websocket connection errored with {e.Message}, retrying in {TimeSpan.FromMilliseconds(_reconnectDelay).TotalSeconds} seconds...");
 				await Task.Delay(_reconnectDelay);
 				await ConnectAsync();
 				return;
