@@ -124,7 +124,7 @@ namespace Spectacles.NET.Types
 		/// when this message was edited (or null if never)
 		/// </summary>
 		[JsonProperty("edited_timestamp")]
-		public DateTime EditedTimestamp { get; set; }
+		public DateTime? EditedTimestamp { get; set; }
 		
 		/// <summary>
 		/// whether this was a TTS message
