@@ -335,4 +335,106 @@ namespace Spectacles.NET.Types
 		[JsonProperty("_trace")]
 		public string[] Trace { get; set; }
 	}
+
+	/// <summary>
+	/// A Packet Sent from the Worker to the Gateway where only the GuildID is known and not the ShardCount.
+	/// </summary>
+	public class SendableDispatch
+	{
+		/// <summary>
+		/// The GuildID from which the ShardID should be calculated.
+		/// </summary>
+		[JsonProperty("guild_id")]
+		public string GuildID { get; set; }
+		
+		/// <summary>
+		/// The SendPacket which should be send to the Discord Websocket API.
+		/// </summary>
+		[JsonProperty("packet")]
+		public SendPacket Packet { get; set; }
+	}
+
+	/// <summary>
+	/// Sent by the client to indicate a presence or status update.
+	/// </summary>
+	public class UpdateStatusDispatch
+	{
+		/// <summary>
+		/// unix time (in milliseconds) of when the client went idle, or null if the client is not idle
+		/// </summary>
+		[JsonProperty("since")]
+		public int? Since { get; set; }
+		
+		/// <summary>
+		/// null, or the user's new activity
+		/// </summary>
+		[JsonProperty("game")]
+		public Activity Game { get; set; }
+		
+		/// <summary>
+		/// the user's new status
+		/// </summary>
+		[JsonProperty("status")]
+		public string Status { get; set; }
+		
+		/// <summary>
+		/// whether or not the client is afk
+		/// </summary>
+		[JsonProperty("afk")]
+		public bool AFK { get; set; }
+	}
+	
+	/// <summary>
+	/// Used to request offline members for a guild or a list of guilds. When initially connecting, the gateway will only send offline members if a guild has less than the large_threshold members (value in the Gateway Identify). If a client wishes to receive additional members, they need to explicitly request them via this operation. The server will send Guild Members Chunk events in response with up to 1000 members per chunk until all members that match the request have been sent.
+	/// </summary>
+	public class RequestGuildMembersDispatch
+	{
+		/// <summary>
+		/// id of the guild(s) to get offline members for
+		/// </summary>
+		[JsonProperty("guild_id")]
+		public dynamic GuildID { get; set; }
+		
+		/// <summary>
+		/// string that username starts with, or an empty string to return all members
+		/// </summary>
+		[JsonProperty("query")]
+		public string Query { get; set; }
+		
+		/// <summary>
+		/// maximum number of members to send or 0 to request all members matched
+		/// </summary>
+		[JsonProperty("limit")]
+		public int Limit { get; set; }
+	}
+
+	/// <summary>
+	/// Sent when a client wants to join, move, or disconnect from a voice channel.
+	/// </summary>
+	public class UpdateVoiceStateDispatch
+	{
+		/// <summary>
+		/// id of the guild
+		/// </summary>
+		[JsonProperty("guild_id")]
+		public string GuildID { get; set; }
+		
+		/// <summary>
+		/// id of the voice channel client wants to join (null if disconnecting)
+		/// </summary>
+		[JsonProperty("channel_id")]
+		public string ChannelID { get; set; }
+		
+		/// <summary>
+		/// is the client muted
+		/// </summary>
+		[JsonProperty("self_mute")]
+		public bool SelfMute { get; set; }
+		
+		/// <summary>
+		/// is the client deafened
+		/// </summary>
+		[JsonProperty("self_deaf")]
+		public bool SelfDeaf { get; set; }
+	}
 }
