@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.1.0</PackageVersion>
+        <PackageVersion>0.1.1</PackageVersion>
         <Title>Spectacles.NET.Rest</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,6 +14,11 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>A REST module for the Discord API.</Description>
+        <PackageReleaseNotes>Added Docs</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\Spectacles.NET.Rest.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

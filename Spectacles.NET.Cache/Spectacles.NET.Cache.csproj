@@ -16,6 +16,10 @@
         <Description>A cache for Discord objects.</Description>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\Spectacles.NET.Cache.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <PackageReference Include="StackExchange.Redis" Version="2.0.519" />
     </ItemGroup>

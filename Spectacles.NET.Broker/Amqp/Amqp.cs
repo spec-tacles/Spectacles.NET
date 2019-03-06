@@ -22,12 +22,39 @@ namespace Spectacles.NET.Broker.Amqp
 	/// </summary>
 	public class AmqpConnectOptions
 	{
+		/// <summary>
+		/// The Username of the AMQP Server
+		/// </summary>
 		public string Username { get; set; }
+		
+		/// <summary>
+		/// The Password of the AMQP Server
+		/// </summary>
 		public string Password { get; set; }
+		
+		/// <summary>
+		/// The Virtual Host of the AMQP Server
+		/// </summary>
 		public string VirtualHost { get; set; }
+		
+		/// <summary>
+		/// The Host Name of the AMQP Server
+		/// </summary>
 		public string HostName { get; set; }
+		
+		/// <summary>
+		/// Optional Port for the AMQP Server
+		/// </summary>
 		public int? Port { get; set; }
+		
+		/// <summary>
+		/// If the Client should try to Recover connections which disconnect.
+		/// </summary>
 		public bool? AutomaticRecoveryEnabled { get; set; }
+		
+		/// <summary>
+		/// How long to wait before retrying to connect.
+		/// </summary>
 		public TimeSpan NetworkRecoveryInterval { get; set; }
 	}
 	
@@ -82,6 +109,11 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		private readonly Dictionary<string, string> _consumerTags = new Dictionary<string, string>();
 		
+		/// <summary>
+		/// Creates a new AMQPBroker instance.
+		/// </summary>
+		/// <param name="group">The AMQP exchange of this broker.</param>
+		/// <param name="subgroup">The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same data. Implemented internally as an extra identifier in the queue name.</param>
 		public AmqpBroker(string group, string subgroup)
 		{
 			Group = group;
@@ -113,8 +145,6 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				return Task.FromException(e);
 			}
-			
-			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
 
 			return Task.CompletedTask;
 		}
@@ -177,7 +207,8 @@ namespace Spectacles.NET.Broker.Amqp
 			Channel.Close(code, text);
 			Connection.Close(code, text);
 		}
-		
+
+		/// <inheritdoc />
 		public override Task PublishAsync(string @event, byte[] data)
 		{
 			Channel.BasicPublish(Group, @event, false, new BasicProperties()
@@ -189,18 +220,19 @@ namespace Spectacles.NET.Broker.Amqp
 			return Task.CompletedTask;
 		}
 
+		/// <inheritdoc />
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			Channel.QueueDeclare(queueName, false, false, false);
+			Channel.QueueDeclare(queueName, true, false, false);
 			Channel.QueueBind(queueName, Group, @event);
 			
 			var consumer = new EventingBasicConsumer(Channel);
 
 			consumer.Received += (ch, ea) =>
 			{
-				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
 				Channel.BasicAck(ea.DeliveryTag, false);
+				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
 			};
 
 			var consumerTag = Channel.BasicConsume(queueName, false, consumer);
@@ -209,9 +241,11 @@ namespace Spectacles.NET.Broker.Amqp
 			return Task.CompletedTask;
 		}
 
+		/// <inheritdoc />
 		public override Task SubscribeAsync(IEnumerable<string> events)
 			=> Task.WhenAll(events.Select(SubscribeAsync));
-		
+
+		/// <inheritdoc />
 		public override Task UnsubscribeAsync(string @event)
 		{
 			_consumerTags.TryGetValue(@event, out var consumerTag);
@@ -223,13 +257,14 @@ namespace Spectacles.NET.Broker.Amqp
 			return Task.CompletedTask;
 		}
 
+		/// <inheritdoc />
 		public override Task UnsubscribeAsync(IEnumerable<string> events)
 			=> Task.WhenAll(events.Select(UnsubscribeAsync));
 
 		private void _createChannel()
 		{
 			Channel = Connection.CreateModel();
-			Channel.ExchangeDeclare(Group, "direct", false, false, new Dictionary<string, object>());
+			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
 		}
 	}
 	
@@ -239,9 +274,22 @@ namespace Spectacles.NET.Broker.Amqp
 	/// </summary>
 	public class AmqpReceiveEventArgs : EventArgs
 	{
+		/// <summary>
+		/// The Event which is invoked.
+		/// </summary>
 		public string Event { get; }
+		
+		/// <summary>
+		/// The Data of this Event.
+		/// </summary>
 		public string Data { get; }
-
+		
+		/// <inheritdoc />
+		/// <summary>
+		/// Creates a new instance of AmqpReceiveEventArgs.
+		/// </summary>
+		/// <param name="event">The Event which is invoked.</param>
+		/// <param name="data">The Data of this Event.</param>
 		public AmqpReceiveEventArgs(string @event, string data)
 		{
 			Event = @event;

@@ -14,7 +14,11 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>Add missing Dispatches to Spectacles.NET.Types</PackageReleaseNotes>
+        <PackageReleaseNotes>Added Docs</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\Spectacles.NET.Types.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
