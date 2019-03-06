@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -84,31 +83,17 @@ namespace Spectacles.NET.Broker.Amqp
 		/// Implemented internally as an extra identifier in the queue name.
 		/// </summary>
 		public string Subgroup { get; }
-		
+
 		/// <summary>
 		/// The AMQP channel currently connected to.
 		/// </summary>
-		public IModel Channel
-		{
-			get
-			{
-				if (_channelPool.Value == null) _createChannel();
-				
-				return _channelPool.Value;
-			}
-			set => _channelPool.Value = value;
-		}
-		
-		/// <summary>
-		/// A pool of Channels associated with the thread which created it.
-		/// </summary>
-		private readonly ThreadLocal<IModel> _channelPool  = new ThreadLocal<IModel>();
-		
+		public IModel Channel { get; set; }
+
 		/// <summary>
 		/// The consumers that this broker has registered.
 		/// </summary>
 		private readonly Dictionary<string, string> _consumerTags = new Dictionary<string, string>();
-		
+
 		/// <summary>
 		/// Creates a new AMQPBroker instance.
 		/// </summary>
@@ -146,6 +131,8 @@ namespace Spectacles.NET.Broker.Amqp
 				return Task.FromException(e);
 			}
 
+			_createChannel();
+
 			return Task.CompletedTask;
 		}
 
@@ -169,6 +156,8 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				return Task.FromException(e);
 			}
+			
+			_createChannel();
 
 			return Task.CompletedTask;
 		}
@@ -193,6 +182,8 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				return Task.FromException(e);
 			}
+			
+			_createChannel();
 
 			return Task.CompletedTask;
 		}
@@ -204,18 +195,24 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <param name="text">The status text of the disconnect.</param>
 		public void Disconnect(ushort code, string text)
 		{
-			Channel.Close(code, text);
+			lock (Channel)
+			{
+				Channel.Close(code, text);
+			}
 			Connection.Close(code, text);
 		}
 
 		/// <inheritdoc />
 		public override Task PublishAsync(string @event, byte[] data)
 		{
-			Channel.BasicPublish(Group, @event, false, new BasicProperties()
+			lock (Channel)
 			{
-				ContentType = "json",
+				Channel.BasicPublish(Group, @event, false, new BasicProperties()
+				{
+					ContentType = "json",
 				
-			}, data);
+				}, data);	
+			}
 
 			return Task.CompletedTask;
 		}
@@ -224,14 +221,20 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			Channel.QueueDeclare(queueName, true, false, false);
-			Channel.QueueBind(queueName, Group, @event);
+			lock (Channel)
+			{
+				Channel.QueueDeclare(queueName, true, false, false);
+				Channel.QueueBind(queueName, Group, @event);	
+			}
 			
 			var consumer = new EventingBasicConsumer(Channel);
 
 			consumer.Received += (ch, ea) =>
 			{
-				Channel.BasicAck(ea.DeliveryTag, false);
+				lock (Channel)
+				{
+					Channel.BasicAck(ea.DeliveryTag, false);	
+				}
 				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
 			};
 
@@ -251,7 +254,10 @@ namespace Spectacles.NET.Broker.Amqp
 			_consumerTags.TryGetValue(@event, out var consumerTag);
 			
 			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
-			Channel.BasicCancel(consumerTag);
+			lock (Channel)
+			{
+				Channel.BasicCancel(consumerTag);	
+			}
 			_consumerTags.Remove(@event);
 
 			return Task.CompletedTask;
