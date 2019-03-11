@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Attachment
 	{
 		/// <summary>
@@ -38,13 +39,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// height of file (if image)
 		/// </summary>
-		[JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("height")]
 		public int? Height { get; set; }
 		
 		/// <summary>
 		/// width of file (if image)
 		/// </summary>
-		[JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("width")]
 		public int? Width { get; set; }
 	}
 }

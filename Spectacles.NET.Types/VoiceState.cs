@@ -5,18 +5,19 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Used to represent a user's voice connection status.
 	/// </summary>
+	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class VoiceState
 	{
 		/// <summary>
 		/// the guild id this voice state is for
 		/// </summary>
-		[JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("guild_id")]
 		public string GuildID { get; set; }
 		
 		/// <summary>
 		/// the channel id this user is connected to
 		/// </summary>
-		[JsonProperty("channel_id", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("channel_id")]
 		public string ChannelID { get; set; }
 		
 		/// <summary>
@@ -28,7 +29,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the guild member this voice state is for
 		/// </summary>
-		[JsonProperty("member", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("member")]
 		public GuildMember Member { get; set; }
 		
 		/// <summary>

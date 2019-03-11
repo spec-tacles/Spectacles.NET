@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Reaction
 	{
 		/// <summary>

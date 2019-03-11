@@ -6,6 +6,7 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// A user's presence is their current state on a guild.
 	/// </summary>
+	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Presence
 	{
 		/// <summary>
@@ -23,7 +24,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// null, or the user's current activity
 		/// </summary>
-		[JsonProperty("game", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("game")]
 		public Activity Game { get; set; }
 		
 		/// <summary>

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class GuildMember
 	{
 		/// <summary>
@@ -14,7 +15,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// this users guild nickname (if one is set)
 		/// </summary>
-		[JsonProperty("nick", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("nick")]
 		public string Nickname { get; set; }
 		
 		/// <summary>

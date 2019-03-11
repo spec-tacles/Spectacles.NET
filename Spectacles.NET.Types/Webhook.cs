@@ -5,6 +5,7 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Webhooks are a low-effort way to post messages to channels in Discord. They do not require a bot user or authentication to use.
 	/// </summary>
+	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Webhook
 	{
 		/// <summary>
@@ -16,7 +17,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the guild id this webhook is for
 		/// </summary>
-		[JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("guild_id")]
 		public long? GuildID { get; set; }
 		
 		/// <summary>
@@ -28,19 +29,19 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the user this webhook was created by (not returned when getting a webhook with its token)
 		/// </summary>
-		[JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("user")]
 		public User User { get; set; }
 		
 		/// <summary>
 		/// the default name of the webhook
 		/// </summary>
-		[JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// the default avatar of the webhook
 		/// </summary>
-		[JsonProperty("avatar", NullValueHandling = NullValueHandling.Ignore)]
+		[JsonProperty("avatar")]
 		public string Avatar { get; set; }
 		
 		/// <summary>
