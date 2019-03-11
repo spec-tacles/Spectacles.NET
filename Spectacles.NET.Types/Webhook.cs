@@ -16,7 +16,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the guild id this webhook is for
 		/// </summary>
-		[JsonProperty("guild_id")]
+		[JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
 		public long? GuildID { get; set; }
 		
 		/// <summary>
@@ -28,19 +28,19 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the user this webhook was created by (not returned when getting a webhook with its token)
 		/// </summary>
-		[JsonProperty("user")]
+		[JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
 		public User User { get; set; }
 		
 		/// <summary>
 		/// the default name of the webhook
 		/// </summary>
-		[JsonProperty("name")]
+		[JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// the default avatar of the webhook
 		/// </summary>
-		[JsonProperty("avatar")]
+		[JsonProperty("avatar", NullValueHandling = NullValueHandling.Ignore)]
 		public string Avatar { get; set; }
 		
 		/// <summary>

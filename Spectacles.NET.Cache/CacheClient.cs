@@ -2,6 +2,7 @@
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable UnusedMember.Global
 
+using System.Collections.Concurrent;
 using System.Threading.Tasks;
 using Spectacles.NET.Cache.Stores;
 using StackExchange.Redis;
@@ -12,12 +13,23 @@ namespace Spectacles.NET.Cache
 	{
 		public ConnectionMultiplexer Redis { get; }
 		
-		public UserStore Users { get; }
-
+		private ConcurrentDictionary<string, IStore> Stores { get; } = new ConcurrentDictionary<string, IStore>();
+		
 		public CacheClient(ConnectionMultiplexer redis)
 		{
 			Redis = redis;
-			Users = new UserStore(this);
+			Stores.TryAdd("Users", new UserStore(this));
+			Stores.TryAdd("Guilds", new GuildsStore(this));
+		}
+
+		public bool TryGetStore(string key, out IStore store)
+		{
+			return Stores.TryGetValue(key, out store);
+		}
+
+		public bool TryAddStore(string key, IStore value)
+		{
+			return Stores.TryAdd(key, value);
 		}
 		
 		public static async Task<CacheClient> ConnectAsync(string url)

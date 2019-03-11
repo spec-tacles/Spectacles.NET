@@ -7,43 +7,46 @@ using StackExchange.Redis;
 
 namespace Spectacles.NET.Cache.Stores
 {
-	public class UserStore : BaseStore<User>
+	public class UserStore : IStore
 	{
-		public UserStore(CacheClient client) : base(client)
+		public CacheClient Client { get; }
+
+		private IDatabase Redis
+			=> Client.Redis.GetDatabase();
+
+		public UserStore(CacheClient client)
 		{
-			
+			Client = client;
 		}
 
-		public override Task SetAsync(string key)
+		public Task SetAsync(string key)
 		{
-			return Database.HashSetAsync("users", new[] {new HashEntry(RedisValue.Unbox(key), RedisValue.Null)});
+			return Redis.HashDeleteAsync("USERS", key);
 		}
 
-		public override Task SetAsync(User entry)
+		public Task SetAsync(object entry)
 		{
-			return Database.HashSetAsync("users",
-				new[]
-				{
-					new HashEntry(RedisValue.Unbox(entry.ID), RedisValue.Unbox(JsonConvert.SerializeObject(entry)))
-				});
+			var user = (User) entry;
+			return Redis.HashSetAsync("USERS", new[] {new HashEntry(user.ID, JsonConvert.SerializeObject(entry))});
 		}
 
-		public override Task SetAsync(IEnumerable<User> entries)
+		public Task SetAsync(IEnumerable<object> entries)
 		{
-			var hashEntries = entries.Select(user => new HashEntry(RedisValue.Unbox(user.ID), RedisValue.Unbox(JsonConvert.SerializeObject(user)))).ToArray();
-			return Database.HashSetAsync("users", hashEntries);
+			var users = (IEnumerable<User>) entries;
+			var fields = users.Select(user => new HashEntry(user.ID, JsonConvert.SerializeObject(user))).ToArray();
+			return Redis.HashSetAsync("USERS", fields);
 		}
 
-		public override async Task<User> GetAsync(string id)
+		public async Task<string> GetAsync(string id)
 		{
-			var result = await Database.HashGetAsync("users", RedisValue.Unbox(id));
-			return result.Box() as User;
+			var res = await Redis.HashGetAsync("USERS", id);
+			return res.ToString();
 		}
 
-		public override async Task<User[]> GetAllAsync()
+		public async Task<string[]> GetAllAsync()
 		{
-			var result = await Database.HashGetAllAsync("users");
-			return result.Select(res => res.Value.Box()) as User[];
+			var res = await Redis.HashGetAllAsync("USERS");
+			return res.Select(user => user.Value.ToString()).ToArray();
 		}
 	}
 }

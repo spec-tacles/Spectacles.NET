@@ -64,13 +64,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// id of the affected entity (webhook, user, role, etc.)
 		/// </summary>
-		[JsonProperty("target_id")]
+		[JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
 		public string TargetID { get; set; }
 		
 		/// <summary>
 		/// changes made to the target_id
 		/// </summary>
-		[JsonProperty("changes")]
+		[JsonProperty("changes", NullValueHandling = NullValueHandling.Ignore)]
 		public AuditLogChange[] Changes { get; set; }
 		
 		/// <summary>
@@ -94,13 +94,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// additional info for certain action types
 		/// </summary>
-		[JsonProperty("options")]
+		[JsonProperty("options", NullValueHandling = NullValueHandling.Ignore)]
 		public AuditLogEntryInfo Options { get; set; }
 		
 		/// <summary>
 		/// the reason for the change (0-512 characters)
 		/// </summary>
-		[JsonProperty("reason")]
+		[JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
 		public string Reason { get; set; }
 	}
 
@@ -109,13 +109,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// new value of the key
 		/// </summary>
-		[JsonProperty("new_value")]
+		[JsonProperty("new_value", NullValueHandling = NullValueHandling.Ignore)]
 		public dynamic NewValue { get; set; }
 		
 		/// <summary>
 		/// old value of the key
 		/// </summary>
-		[JsonProperty("old_value")]
+		[JsonProperty("old_value", NullValueHandling = NullValueHandling.Ignore)]
 		public dynamic OldValue { get; set; }
 		
 		/// <summary>
@@ -130,43 +130,43 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// number of days after which inactive members were kicked
 		/// </summary>
-		[JsonProperty("delete_member_days")]
+		[JsonProperty("delete_member_days", NullValueHandling = NullValueHandling.Ignore)]
 		public string DeletedMemberDays { get; set; }
 		
 		/// <summary>
 		/// number of members removed by the prune
 		/// </summary>
-		[JsonProperty("members_removed")]
+		[JsonProperty("members_removed", NullValueHandling = NullValueHandling.Ignore)]
 		public string MembersRemoved { get; set; }
 		
 		/// <summary>
 		/// channel in which the messages were deleted
 		/// </summary>
-		[JsonProperty("channel_id")]
+		[JsonProperty("channel_id", NullValueHandling = NullValueHandling.Ignore)]
 		public string ChannelID { get; set; }
 
 		/// <summary>
 		/// number of deleted messages
 		/// </summary>
-		[JsonProperty("count")]
+		[JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
 		public string Count { get; set; }
 		
 		/// <summary>
 		/// id of the overwritten entity
 		/// </summary>
-		[JsonProperty("id")]
+		[JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
 		public string ID { get; set; }
 		
 		/// <summary>
 		/// type of overwritten entity ("member" or "role")
 		/// </summary>
-		[JsonProperty("type")]
+		[JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
 		public string Type { get; set; }
 		
 		/// <summary>
 		/// name of the role if type is "role"
 		/// </summary>
-		[JsonProperty("role_name")]
+		[JsonProperty("role_name", NullValueHandling = NullValueHandling.Ignore)]
 		public string RoleName { get; set; }
 	}
 }

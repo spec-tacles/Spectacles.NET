@@ -88,18 +88,35 @@ namespace Spectacles.NET.Rest
 		/// Enqueues a Request and Creates a Bucket if needed.
 		/// </summary>
 		/// <param name="method">The HTTP Method to use.</param>
-		/// <param name="path">The Path to use.</param>
+		/// <param name="route">The Path to use.</param>
 		/// <param name="content">The HttpContent to use.</param>
-		/// <param name="reason">Optional AuditLog Reason.</param>
+		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<dynamic> DoRequest(RequestMethod method, string path, HttpContent content, string reason)
+		public Task<dynamic> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
-			var absolutePath = $"{APIEndpoints.BaseURL}/{path}";
-			var route = Bucket.Bucket.MakeRoute(method, path);
-			if (_buckets.TryGetValue(route, out var bucket)) return bucket.Enqueue(method, absolutePath, content, reason);
+			var absolutePath = $"{APIEndpoints.BaseURL}/{route}";
+			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, absolutePath, content, auditLogReason);
 			bucket = new Bucket.Bucket(this);
-			_buckets.TryAdd(route, bucket);
-			return bucket.Enqueue(method, absolutePath, content, reason);
+			_buckets.TryAdd(bucketRoute, bucket);
+			return bucket.Enqueue(method, absolutePath, content, auditLogReason);
+		}
+		
+		/// <summary>
+		/// Enqueues a Request and Creates a Bucket if needed.
+		/// </summary>
+		/// <param name="method">The HTTP Method to use.</param>
+		/// <param name="route">The Path to use.</param>
+		/// <param name="content">The HttpContent to use.</param>
+		/// <returns></returns>
+		public Task<dynamic> Request(string route, RequestMethod method, HttpContent content)
+		{
+			var absolutePath = $"{APIEndpoints.BaseURL}/{route}";
+			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, absolutePath, content, null);
+			bucket = new Bucket.Bucket(this);
+			_buckets.TryAdd(bucketRoute, bucket);
+			return bucket.Enqueue(method, absolutePath, content, null);
 		}
 	}
 }

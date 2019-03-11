@@ -38,13 +38,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// height of file (if image)
 		/// </summary>
-		[JsonProperty("height")]
+		[JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Height { get; set; }
 		
 		/// <summary>
 		/// width of file (if image)
 		/// </summary>
-		[JsonProperty("width")]
+		[JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Width { get; set; }
 	}
 }

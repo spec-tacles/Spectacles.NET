@@ -23,7 +23,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// null, or the user's current activity
 		/// </summary>
-		[JsonProperty("game")]
+		[JsonProperty("game", NullValueHandling = NullValueHandling.Ignore)]
 		public Activity Game { get; set; }
 		
 		/// <summary>

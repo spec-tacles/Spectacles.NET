@@ -16,7 +16,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the guild this invite is for
 		/// </summary>
-		[JsonProperty("Guild")]
+		[JsonProperty("Guild", NullValueHandling = NullValueHandling.Ignore)]
 		public Guild Guild { get; set; }
 		
 		/// <summary>
@@ -28,13 +28,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// approximate count of online members
 		/// </summary>
-		[JsonProperty("approximate_presence_count")]
+		[JsonProperty("approximate_presence_count", NullValueHandling = NullValueHandling.Ignore)]
 		public int ApproximatePresenceCount { get; set; }
 		
 		/// <summary>
 		/// approximate count of total members
 		/// </summary>
-		[JsonProperty("approximate_member_count")]
+		[JsonProperty("approximate_member_count", NullValueHandling = NullValueHandling.Ignore)]
 		public int ApproximateMemberCount { get; set; }
 	}
 }

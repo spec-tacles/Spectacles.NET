@@ -10,13 +10,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the guild id this voice state is for
 		/// </summary>
-		[JsonProperty("guild_id")]
+		[JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
 		public string GuildID { get; set; }
 		
 		/// <summary>
 		/// the channel id this user is connected to
 		/// </summary>
-		[JsonProperty("channel_id")]
+		[JsonProperty("channel_id", NullValueHandling = NullValueHandling.Ignore)]
 		public string ChannelID { get; set; }
 		
 		/// <summary>
@@ -28,7 +28,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// the guild member this voice state is for
 		/// </summary>
-		[JsonProperty("member")]
+		[JsonProperty("member", NullValueHandling = NullValueHandling.Ignore)]
 		public GuildMember Member { get; set; }
 		
 		/// <summary>

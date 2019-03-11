@@ -54,49 +54,49 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// whether the user belongs to an OAuth2 application
 		/// </summary>
-		[JsonProperty(PropertyName = "bot", DefaultValueHandling = DefaultValueHandling.Populate), DefaultValue(false)]
+		[JsonProperty(PropertyName = "bot", DefaultValueHandling = DefaultValueHandling.Populate, NullValueHandling = NullValueHandling.Ignore), DefaultValue(false)]
 		public bool Bot { get; set; }
 		
 		/// <summary>
 		/// whether the user has two factor enabled on their account	
 		/// </summary>
-		[JsonProperty(PropertyName = "mfa_enabled", DefaultValueHandling = DefaultValueHandling.Populate), DefaultValue(false)]
+		[JsonProperty(PropertyName = "mfa_enabled", DefaultValueHandling = DefaultValueHandling.Populate, NullValueHandling = NullValueHandling.Ignore), DefaultValue(false)]
 		public bool MfaEnabled { get; set; }
 		
 		/// <summary>
 		/// the user's chosen language option
 		/// </summary>
-		[JsonProperty("locale")]
+		[JsonProperty("locale", NullValueHandling = NullValueHandling.Ignore)]
 		public string Locale { get; set; }
 		
 		/// <summary>
 		/// whether the email on this account has been verified	
 		/// </summary>
-		[JsonProperty("verified")]
+		[JsonProperty("verified", NullValueHandling = NullValueHandling.Ignore)]
 		public bool Verified { get; set; }
 		
 		/// <summary>
 		/// the user's email
 		/// </summary>
-		[JsonProperty("email")]
+		[JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
 		public string Email { get; set; }
 		
 		/// <summary>
 		/// the <see cref="UserFlags"/> on a user's account
 		/// </summary>
-		[JsonProperty("flags")]
+		[JsonProperty("flags", NullValueHandling = NullValueHandling.Ignore)]
 		public UserFlags Flags { get; set; }
 		
 		/// <summary>
 		/// the <see cref="PremiumType"/> of Nitro subscription on a user's account	
 		/// </summary>
-		[JsonProperty("premium_type")]
+		[JsonProperty("premium_type", NullValueHandling = NullValueHandling.Ignore)]
 		public PremiumType PremiumType { get; set; }
 		
 		/// <summary>
 		/// Optional Field for <see cref="Message"/> Mention Field
 		/// </summary>
-		[JsonProperty("member")]
+		[JsonProperty("member", NullValueHandling = NullValueHandling.Ignore)]
 		public GuildMember Member { get; set; }
 	}
 }

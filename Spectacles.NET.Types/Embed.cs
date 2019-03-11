@@ -9,79 +9,79 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// title of embed
 		/// </summary>
-		[JsonProperty("title")]
+		[JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
 		public string Title { get; set; }
 		
 		/// <summary>
 		/// type of embed (always "rich" for webhook embeds)
 		/// </summary>
-		[JsonProperty("type")]
+		[JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
 		public string Type { get; set; }
 		
 		/// <summary>
 		/// description of embed
 		/// </summary>
-		[JsonProperty("description")]
+		[JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
 		public string Description { get; set; }
 		
 		/// <summary>
 		/// url of embed
 		/// </summary>
-		[JsonProperty("url")]
+		[JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
 		public string URL { get; set; }
 		
 		/// <summary>
 		/// timestamp of embed content
 		/// </summary>
-		[JsonProperty("timestamp")]
+		[JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
 		public DateTime Timestamp { get; set; }
 		
 		/// <summary>
 		/// color code of the embed
 		/// </summary>
-		[JsonProperty("color")]
+		[JsonProperty("color", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Color { get; set; }
 		
 		/// <summary>
 		/// footer information
 		/// </summary>
-		[JsonProperty("footer")]
+		[JsonProperty("footer", NullValueHandling = NullValueHandling.Ignore)]
 		public EmbedFooter Footer { get; set; }
 		
 		/// <summary>
 		/// image information
 		/// </summary>
-		[JsonProperty("image")]
+		[JsonProperty("image", NullValueHandling = NullValueHandling.Ignore)]
 		public EmbedImage Image { get; set; }
 		
 		/// <summary>
 		/// thumbnail information
 		/// </summary>
-		[JsonProperty("thumbnail")]
+		[JsonProperty("thumbnail", NullValueHandling = NullValueHandling.Ignore)]
 		public EmbedThumbnail Thumbnail { get; set; }
 		
 		/// <summary>
 		/// video information
 		/// </summary>
-		[JsonProperty("video")]
+		[JsonProperty("video", NullValueHandling = NullValueHandling.Ignore)]
 		public EmbedVideo Video { get; set; }
 		
 		/// <summary>
 		/// provider information
 		/// </summary>
-		[JsonProperty("provider")]
+		[JsonProperty("provider", NullValueHandling = NullValueHandling.Ignore)]
 		public EmbedProvider Provider { get; set; }
 		
 		/// <summary>
 		/// author information
 		/// </summary>
-		[JsonProperty("author")]
+		[JsonProperty("author", NullValueHandling = NullValueHandling.Ignore)]
 		public EmbedAuthor Author { get; set; }
 		
 		/// <summary>
 		/// fields information
 		/// </summary>
-		[JsonProperty("fields")]
+		[JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
 		public List<EmbedField> Fields { get; set; }
 	}
 
@@ -90,25 +90,25 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// source url of thumbnail (only supports http(s) and attachments)
 		/// </summary>
-		[JsonProperty("url")]
+		[JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
 		public string URL { get; set; }
 		
 		/// <summary>
 		/// a proxied url of the thumbnail
 		/// </summary>
-		[JsonProperty("proxy_url")]
+		[JsonProperty("proxy_url", NullValueHandling = NullValueHandling.Ignore)]
 		public string ProxyURL { get; set; }
 		
 		/// <summary>
 		/// height of thumbnail
 		/// </summary>
-		[JsonProperty("height")]
+		[JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Height { get; set; }
 		
 		/// <summary>
 		/// width of thumbnail
 		/// </summary>
-		[JsonProperty("width")]
+		[JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Width { get; set; }
 	}
 
@@ -117,19 +117,19 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// source url of video
 		/// </summary>
-		[JsonProperty("url")]
+		[JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
 		public string URL { get; set; }
 		
 		/// <summary>
 		/// height of video
 		/// </summary>
-		[JsonProperty("height")]
+		[JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Height { get; set; }
 		
 		/// <summary>
 		/// width of video
 		/// </summary>
-		[JsonProperty("width")]
+		[JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Width { get; set; }
 	}
 
@@ -138,25 +138,25 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// source url of image (only supports http(s) and attachments)
 		/// </summary>
-		[JsonProperty("url")]
+		[JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
 		public string URL { get; set; }
 		
 		/// <summary>
 		/// a proxied url of the image
 		/// </summary>
-		[JsonProperty("proxy_url")]
+		[JsonProperty("proxy_url", NullValueHandling = NullValueHandling.Ignore)]
 		public string ProxyURL { get; set; }
 		
 		/// <summary>
 		/// height of image
 		/// </summary>
-		[JsonProperty("height")]
+		[JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Height { get; set; }
 		
 		/// <summary>
 		/// width of image
 		/// </summary>
-		[JsonProperty("width")]
+		[JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
 		public int? Width { get; set; }
 	}
 
@@ -165,13 +165,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// name of provider
 		/// </summary>
-		[JsonProperty("name")]
+		[JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// url of provider
 		/// </summary>
-		[JsonProperty("url")]
+		[JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
 		public string URL { get; set; }
 	}
 
@@ -180,25 +180,25 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// name of author
 		/// </summary>
-		[JsonProperty("name")]
+		[JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// url of author
 		/// </summary>
-		[JsonProperty("url")]
+		[JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
 		public string URL { get; set; }
 		
 		/// <summary>
 		/// url of author icon (only supports http(s) and attachments)
 		/// </summary>
-		[JsonProperty("icon_url")]
+		[JsonProperty("icon_url", NullValueHandling = NullValueHandling.Ignore)]
 		public string IconURL { get; set; }
 		
 		/// <summary>
 		/// a proxied url of author icon
 		/// </summary>
-		[JsonProperty("proxy_icon_url")]
+		[JsonProperty("proxy_icon_url", NullValueHandling = NullValueHandling.Ignore)]
 		public string ProxyIconURL { get; set; }
 	}
 
@@ -207,19 +207,19 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// footer text
 		/// </summary>
-		[JsonProperty("text")]
+		[JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
 		public string Text { get; set; }
 		
 		/// <summary>
 		/// url of footer icon (only supports http(s) and attachments)
 		/// </summary>
-		[JsonProperty("icon_url")]
+		[JsonProperty("icon_url", NullValueHandling = NullValueHandling.Ignore)]
 		public string IconURL { get; set; }
 		
 		/// <summary>
 		/// a proxied url of footer icon
 		/// </summary>
-		[JsonProperty("proxy_icon_url")]
+		[JsonProperty("proxy_icon_url", NullValueHandling = NullValueHandling.Ignore)]
 		public string ProxyIconURL { get; set; }
 	}
 
@@ -228,19 +228,19 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// name of the field
 		/// </summary>
-		[JsonProperty("name")]
+		[JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// value of the field
 		/// </summary>
-		[JsonProperty("value")]
+		[JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
 		public string Value { get; set; }
 		
 		/// <summary>
 		/// whether or not this field should display inline
 		/// </summary>
-		[JsonProperty("inline")]
+		[JsonProperty("inline", NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Inline { get; set; }
 	}
 }

@@ -23,31 +23,31 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// roles this emoji is whitelisted to
 		/// </summary>
-		[JsonProperty("roles")]
+		[JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
 		public List<string> Roles { get; set; }
 		
 		/// <summary>
 		/// user that created this emoji
 		/// </summary>
-		[JsonProperty("user")]
+		[JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
 		public User User { get; set; }
 		
 		/// <summary>
 		/// whether this emoji must be wrapped in colons
 		/// </summary>
-		[JsonProperty("require_colons")]
+		[JsonProperty("require_colons", NullValueHandling = NullValueHandling.Ignore)]
 		public bool? RequireColons { get; set; }
 		
 		/// <summary>
 		/// whether this emoji is managed
 		/// </summary>
-		[JsonProperty("managed")]
+		[JsonProperty("managed", NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Managed { get; set; }
 		
 		/// <summary>
 		/// whether this emoji is animated
 		/// </summary>
-		[JsonProperty("animated")]
+		[JsonProperty("animated", NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Animated { get; set; }
 	}
 }
