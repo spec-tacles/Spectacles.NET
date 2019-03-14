@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Broker", "Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Rest", "Spectacles.NET.Rest\Spectacles.NET.Rest.csproj", "{79A68579-17FB-456A-9D0A-31643248F480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Cache", "Spectacles.NET.Cache\Spectacles.NET.Cache.csproj", "{F45253D7-4C4A-4F64-85F8-57DCE84679EB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Gateway", "Spectacles.NET.Gateway\Spectacles.NET.Gateway.csproj", "{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}"
 EndProject
 Global
@@ -28,10 +26,6 @@ Global
 		{79A68579-17FB-456A-9D0A-31643248F480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79A68579-17FB-456A-9D0A-31643248F480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79A68579-17FB-456A-9D0A-31643248F480}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F45253D7-4C4A-4F64-85F8-57DCE84679EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F45253D7-4C4A-4F64-85F8-57DCE84679EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F45253D7-4C4A-4F64-85F8-57DCE84679EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F45253D7-4C4A-4F64-85F8-57DCE84679EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}.Release|Any CPU.ActiveCfg = Release|Any CPU
