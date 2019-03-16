@@ -74,13 +74,24 @@ namespace Spectacles.NET.Rest.View
 
 		public Task<dynamic> PostAsync(object data, string reason)
 		{
-			dynamic json = data;
+			var json = data as dynamic;
 
-			if (json.file != null)
+			string propertyName = null;
+			var jsonDic = ((IDictionary<string, object>) json);
+
+			if(jsonDic.ContainsKey("file"))
+			{
+				propertyName = "file";
+			} else if (jsonDic.ContainsKey("File"))
+			{
+				propertyName = "File";
+			}
+			
+			if (propertyName != null)
 			{
 				var content = new MultipartFormDataContent();
 
-				if (json.file is IEnumerable<IFile> files)
+				if (json[propertyName] is IEnumerable<IFile> files)
 				{
 					foreach (var file in files)
 					{
@@ -89,7 +100,7 @@ namespace Spectacles.NET.Rest.View
 					
 					json.file = null;
 					
-					content.Add(new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), "payload_json");
+					content.Add(new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), "payload_json");
 
 					return Client.Request(Route, RequestMethod.POST, content, reason);
 				}
@@ -97,20 +108,30 @@ namespace Spectacles.NET.Rest.View
 				throw new ArgumentException($"Expected IEnumerable<IFile>, got {json.file.GetType()}");
 			}
 			
-			return Client.Request(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+			return Client.Request(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
 		}
 		
 		public Task<T> PostAsync<T>(object data, string reason)
 		{
-			dynamic json = data;
+			var json = data as dynamic;
 
-			var dataFile = json.file ?? json.File;
+			string propertyName = null;
+
+			var jsonDic = ((IDictionary<string, object>) json);
+
+			if(jsonDic.ContainsKey("file"))
+			{
+				propertyName = "file";
+			} else if (jsonDic.ContainsKey("File"))
+			{
+				propertyName = "File";
+			}
 			
-			if (dataFile != null)
+			if (propertyName != null)
 			{
 				var content = new MultipartFormDataContent();
 
-				if (json.file is IEnumerable<IFile> files)
+				if (json[propertyName] is IEnumerable<IFile> files)
 				{
 					foreach (var file in files)
 					{
@@ -119,7 +140,7 @@ namespace Spectacles.NET.Rest.View
 					
 					json.file = null;
 					
-					content.Add(new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), "payload_json");
+					content.Add(new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), "payload_json");
 
 					return Client.Request<T>(Route, RequestMethod.POST, content, reason);
 				}
@@ -127,7 +148,7 @@ namespace Spectacles.NET.Rest.View
 				throw new ArgumentException($"Expected IEnumerable<IFile>, got {json.file.GetType()}");
 			}
 			
-			return Client.Request<T>(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+			return Client.Request<T>(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
 		}
 	}
 }
