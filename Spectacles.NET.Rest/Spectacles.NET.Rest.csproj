@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.3.0</PackageVersion>
+        <PackageVersion>0.3.1</PackageVersion>
         <Title>Spectacles.NET.Rest</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>A REST module for the Discord API.</Description>
-        <PackageReleaseNotes>Refactored DoRequest method into new Request method.</PackageReleaseNotes>
+        <PackageReleaseNotes>Bugfix to Routes using the wrong http method.</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

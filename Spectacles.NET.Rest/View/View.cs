@@ -22,17 +22,17 @@ namespace Spectacles.NET.Rest.View
 
 		public Task<dynamic> GetAsync()
 		{
-			return Client.Request(Route, RequestMethod.PUT, null, null);
+			return Client.Request(Route, RequestMethod.GET, null, null);
 		}
 
 		public Task<dynamic> GetAsync(Dictionary<string, string> queries)
 		{
-			return Client.Request(Route, RequestMethod.PUT, new FormUrlEncodedContent(queries), null);	
+			return Client.Request(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
 		}
 
 		public Task<dynamic> PatchAsync(Dictionary<string, dynamic> json, string reason)
 		{
-			return Client.Request(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+			return Client.Request(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 
 		public Task<dynamic> PutAsync(Dictionary<string, dynamic> json, string reason)
@@ -42,12 +42,12 @@ namespace Spectacles.NET.Rest.View
 
 		public Task<dynamic> DeleteAsync(string reason)
 		{
-			return Client.Request(Route, RequestMethod.PUT, null, reason);
+			return Client.Request(Route, RequestMethod.DELETE, null, reason);
 		}
 
 		public Task<dynamic> PostAsync(Dictionary<string, dynamic> json, string reason)
 		{
-			return Client.Request(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+			return Client.Request(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 
 		public Task<dynamic> PostAsync(IEnumerable<Tuple<HttpContent, dynamic>> formData, string reason)
@@ -57,7 +57,7 @@ namespace Spectacles.NET.Rest.View
 			{
 				content.Add(key, value);
 			}
-			return Client.Request(Route, RequestMethod.PUT, content, reason);
+			return Client.Request(Route, RequestMethod.POST, content, reason);
 		}
 	}
 }
