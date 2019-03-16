@@ -89,9 +89,9 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <param name="content">The HTTPContent to use.</param>
 		/// <param name="reason">Optional AuditLog reason to use.</param>
 		/// <returns>Task resolving with response from Discord API</returns>
-		public Task<dynamic> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason)
+		public Task<T> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason)
 		{
-			var tcs = new TaskCompletionSource<dynamic>();
+			var tcs = new TaskCompletionSource<T>();
 			var request = new Request(this, content, method, url, reason);
 			request.Success += (sender, data) => tcs.TrySetResult(JsonConvert.DeserializeObject<T>(data));
 			request.Error += (sender, exception) => tcs.TrySetException(exception);

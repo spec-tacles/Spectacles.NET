@@ -27,7 +27,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request(Route, RequestMethod.GET, null, null);
 		}
 		
-		public Task<dynamic> GetAsync<T>()
+		public Task<T> GetAsync<T>()
 		{
 			return Client.Request<T>(Route, RequestMethod.GET, null, null);
 		}
@@ -37,7 +37,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
 		}
 		
-		public Task<dynamic> GetAsync<T>(Dictionary<string, string> queries)
+		public Task<T> GetAsync<T>(Dictionary<string, string> queries)
 		{
 			return Client.Request<T>(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
 		}
@@ -47,7 +47,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 		
-		public Task<dynamic> PatchAsync<T>(object json, string reason)
+		public Task<T> PatchAsync<T>(object json, string reason)
 		{
 			return Client.Request<T>(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
@@ -57,7 +57,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 		
-		public Task<dynamic> PutAsync<T>(object json, string reason)
+		public Task<T> PutAsync<T>(object json, string reason)
 		{
 			return Client.Request<T>(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
@@ -67,7 +67,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request(Route, RequestMethod.DELETE, null, reason);
 		}
 		
-		public Task<dynamic> DeleteAsync<T>(string reason)
+		public Task<T> DeleteAsync<T>(string reason)
 		{
 			return Client.Request<T>(Route, RequestMethod.DELETE, null, reason);
 		}
@@ -100,7 +100,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 		
-		public Task<dynamic> PostAsync<T>(object data, string reason)
+		public Task<T> PostAsync<T>(object data, string reason)
 		{
 			dynamic json = data;
 
