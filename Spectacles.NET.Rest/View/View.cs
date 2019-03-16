@@ -104,7 +104,9 @@ namespace Spectacles.NET.Rest.View
 		{
 			dynamic json = data;
 
-			if (json.file != null)
+			var dataFile = json.file ?? json.File;
+			
+			if (dataFile != null)
 			{
 				var content = new MultipartFormDataContent();
 
