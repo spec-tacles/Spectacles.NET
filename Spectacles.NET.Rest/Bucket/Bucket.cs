@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Spectacles.NET.Rest.Bucket
 {
@@ -73,7 +74,26 @@ namespace Spectacles.NET.Rest.Bucket
 		{
 			var tcs = new TaskCompletionSource<dynamic>();
 			var request = new Request(this, content, method, url, reason);
-			request.Success += (sender, data) => tcs.TrySetResult(data);
+			request.Success += (sender, data) => tcs.TrySetResult(JsonConvert.DeserializeObject(data));
+			request.Error += (sender, exception) => tcs.TrySetException(exception);
+			Enqueue(request);
+			_execute();
+			return tcs.Task;
+		}
+		
+		/// <summary>
+		/// Enqueues a Request in this Bucket.
+		/// </summary>
+		/// <param name="method">The HTTP Request method to use.</param>
+		/// <param name="url">The URL to use.</param>
+		/// <param name="content">The HTTPContent to use.</param>
+		/// <param name="reason">Optional AuditLog reason to use.</param>
+		/// <returns>Task resolving with response from Discord API</returns>
+		public Task<dynamic> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason)
+		{
+			var tcs = new TaskCompletionSource<dynamic>();
+			var request = new Request(this, content, method, url, reason);
+			request.Success += (sender, data) => tcs.TrySetResult(JsonConvert.DeserializeObject<T>(data));
 			request.Error += (sender, exception) => tcs.TrySetException(exception);
 			Enqueue(request);
 			_execute();

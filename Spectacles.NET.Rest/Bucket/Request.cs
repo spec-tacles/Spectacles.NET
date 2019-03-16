@@ -192,7 +192,7 @@ namespace Spectacles.NET.Rest.Bucket
 			}
 			else
 			{
-				Success?.Invoke(this, JsonConvert.DeserializeObject(content));
+				Success?.Invoke(this, content);
 			}
 		}
 	}

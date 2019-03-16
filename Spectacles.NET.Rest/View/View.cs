@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Spectacles.NET.Rest.Interfaces;
 
 namespace Spectacles.NET.Rest.View
 {
@@ -24,40 +26,106 @@ namespace Spectacles.NET.Rest.View
 		{
 			return Client.Request(Route, RequestMethod.GET, null, null);
 		}
+		
+		public Task<dynamic> GetAsync<T>()
+		{
+			return Client.Request<T>(Route, RequestMethod.GET, null, null);
+		}
 
 		public Task<dynamic> GetAsync(Dictionary<string, string> queries)
 		{
 			return Client.Request(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
 		}
+		
+		public Task<dynamic> GetAsync<T>(Dictionary<string, string> queries)
+		{
+			return Client.Request<T>(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
+		}
 
-		public Task<dynamic> PatchAsync(Dictionary<string, dynamic> json, string reason)
+		public Task<dynamic> PatchAsync(object json, string reason)
 		{
 			return Client.Request(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
+		
+		public Task<dynamic> PatchAsync<T>(object json, string reason)
+		{
+			return Client.Request<T>(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+		}
 
-		public Task<dynamic> PutAsync(Dictionary<string, dynamic> json, string reason)
+		public Task<dynamic> PutAsync(object json, string reason)
 		{
 			return Client.Request(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+		}
+		
+		public Task<dynamic> PutAsync<T>(object json, string reason)
+		{
+			return Client.Request<T>(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 
 		public Task<dynamic> DeleteAsync(string reason)
 		{
 			return Client.Request(Route, RequestMethod.DELETE, null, reason);
 		}
-
-		public Task<dynamic> PostAsync(Dictionary<string, dynamic> json, string reason)
+		
+		public Task<dynamic> DeleteAsync<T>(string reason)
 		{
-			return Client.Request(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+			return Client.Request<T>(Route, RequestMethod.DELETE, null, reason);
 		}
 
-		public Task<dynamic> PostAsync(IEnumerable<Tuple<HttpContent, dynamic>> formData, string reason)
+		public Task<dynamic> PostAsync(object data, string reason)
 		{
-			var content = new MultipartFormDataContent();
-			foreach (var (key, value) in formData)
+			dynamic json = data;
+
+			if (json.file != null)
 			{
-				content.Add(key, value);
+				var content = new MultipartFormDataContent();
+
+				if (json.file is IEnumerable<IFile> files)
+				{
+					foreach (var file in files)
+					{
+						content.Add(new ByteArrayContent(file.Value), "file", file.Name);
+					}
+					
+					json.file = null;
+					
+					content.Add(new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), "payload_json");
+
+					return Client.Request(Route, RequestMethod.POST, content, reason);
+				}
+
+				throw new ArgumentException($"Expected IEnumerable<IFile>, got {json.file.GetType()}");
 			}
-			return Client.Request(Route, RequestMethod.POST, content, reason);
+			
+			return Client.Request(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
+		}
+		
+		public Task<dynamic> PostAsync<T>(object data, string reason)
+		{
+			dynamic json = data;
+
+			if (json.file != null)
+			{
+				var content = new MultipartFormDataContent();
+
+				if (json.file is IEnumerable<IFile> files)
+				{
+					foreach (var file in files)
+					{
+						content.Add(new ByteArrayContent(file.Value), "file", file.Name);
+					}
+					
+					json.file = null;
+					
+					content.Add(new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), "payload_json");
+
+					return Client.Request<T>(Route, RequestMethod.POST, content, reason);
+				}
+
+				throw new ArgumentException($"Expected IEnumerable<IFile>, got {json.file.GetType()}");
+			}
+			
+			return Client.Request<T>(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 	}
 }
