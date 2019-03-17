@@ -74,24 +74,20 @@ namespace Spectacles.NET.Rest.View
 
 		public Task<dynamic> PostAsync(object data, string reason)
 		{
-			var json = data as dynamic;
-
-			string propertyName = null;
-			var jsonDic = ((IDictionary<string, object>) json);
-
-			if(jsonDic.ContainsKey("file"))
-			{
-				propertyName = "file";
-			} else if (jsonDic.ContainsKey("File"))
-			{
-				propertyName = "File";
-			}
+			var type = data.GetType();
 			
-			if (propertyName != null)
+			var prop1 = type.GetProperty("file");
+			var prop2 = type.GetProperty("File");
+
+			var prop = prop1 ?? prop2;
+			
+			if (prop != null)
 			{
+				var json = data as dynamic;
+				
 				var content = new MultipartFormDataContent();
 
-				if (json[propertyName] is IEnumerable<IFile> files)
+				if (json[prop.GetValue(data)] is IEnumerable<IFile> files)
 				{
 					foreach (var file in files)
 					{
@@ -113,25 +109,20 @@ namespace Spectacles.NET.Rest.View
 		
 		public Task<T> PostAsync<T>(object data, string reason)
 		{
-			var json = data as dynamic;
-
-			string propertyName = null;
-
-			var jsonDic = ((IDictionary<string, object>) json);
-
-			if(jsonDic.ContainsKey("file"))
-			{
-				propertyName = "file";
-			} else if (jsonDic.ContainsKey("File"))
-			{
-				propertyName = "File";
-			}
+			var type = data.GetType();
 			
-			if (propertyName != null)
+			var prop1 = type.GetProperty("file");
+			var prop2 = type.GetProperty("File");
+
+			var prop = prop1 ?? prop2;
+			
+			if (prop != null)
 			{
+				var json = data as dynamic;
+				
 				var content = new MultipartFormDataContent();
 
-				if (json[propertyName] is IEnumerable<IFile> files)
+				if (json[prop.GetValue(data)] is IEnumerable<IFile> files)
 				{
 					foreach (var file in files)
 					{
