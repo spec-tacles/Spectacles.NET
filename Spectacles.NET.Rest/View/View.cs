@@ -118,25 +118,25 @@ namespace Spectacles.NET.Rest.View
 			
 			if (prop != null)
 			{
-				var json = data as dynamic;
-				
 				var content = new MultipartFormDataContent();
 
-				if (json[prop.GetValue(data)] is IEnumerable<IFile> files)
+				var fileValue = prop.GetValue(data);
+				
+				if (fileValue is IEnumerable<IFile> files)
 				{
 					foreach (var file in files)
 					{
 						content.Add(new ByteArrayContent(file.Value), "file", file.Name);
 					}
 					
-					json.file = null;
+					prop.SetValue(data, null);
 					
 					content.Add(new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), "payload_json");
 
 					return Client.Request<T>(Route, RequestMethod.POST, content, reason);
 				}
 
-				throw new ArgumentException($"Expected IEnumerable<IFile>, got {json.file.GetType()}");
+				throw new ArgumentException($"Expected IEnumerable<IFile>, got {fileValue.GetType()}");
 			}
 			
 			return Client.Request<T>(Route, RequestMethod.POST, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
