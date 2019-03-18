@@ -76,7 +76,7 @@ namespace Spectacles.NET.Types
 			=> $"{Guild(guildID)}/widget.png";
 
 		public static string Invite(string inviteID)
-			=> $"/invites/{inviteID}";
+			=> $"invites/{inviteID}";
 
 		public static string GuildAuditLogs(string guildID)
 			=> $"{Guild(guildID)}/audit-logs";
@@ -124,7 +124,7 @@ namespace Spectacles.NET.Types
 			=> $"{GuildEmojis(guildID)}/{emojiID}";
 
 		public static string User(string userID)
-			=> $"/users/{userID}";
+			=> $"users/{userID}";
 
 		public static string UserGuild(string guildID)
 			=> $"{Guilds}/{guildID}";
