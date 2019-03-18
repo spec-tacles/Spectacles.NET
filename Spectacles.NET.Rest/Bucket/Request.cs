@@ -91,9 +91,8 @@ namespace Spectacles.NET.Rest.Bucket
 					Uri uri;
 					try
 					{
-						uri = new UriBuilder()
+						uri = new UriBuilder(URL)
 						{
-							Host = URL,
 							Query = Content != null ? await ((FormUrlEncodedContent) Content).ReadAsStringAsync() : null
 						}.Uri;
 					}
