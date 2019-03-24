@@ -35,7 +35,7 @@ namespace Spectacles.NET.Types
 		/// timestamp of embed content
 		/// </summary>
 		[JsonProperty("timestamp")]
-		public DateTime Timestamp { get; set; }
+		public DateTime? Timestamp { get; set; }
 		
 		/// <summary>
 		/// color code of the embed

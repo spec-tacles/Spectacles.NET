@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.3.3</PackageVersion>
+        <PackageVersion>0.3.4</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>Use JsonObject instead JsonValue Attribute to omit null values.</PackageReleaseNotes>
+        <PackageReleaseNotes>Fix Embed#Timestamp to be nullable</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

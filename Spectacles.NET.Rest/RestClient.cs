@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -82,6 +83,7 @@ namespace Spectacles.NET.Rest
 			
 			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			HttpClient.BaseAddress = new Uri(APIEndpoints.BaseURL);
 		}
 
 		/// <summary>
@@ -94,12 +96,11 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<dynamic> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
-			var absolutePath = $"{APIEndpoints.BaseURL}/{route}";
 			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, absolutePath, content, auditLogReason);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, auditLogReason);
 			bucket = new Bucket.Bucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
-			return bucket.Enqueue(method, absolutePath, content, auditLogReason);
+			return bucket.Enqueue(method, route, content, auditLogReason);
 		}
 		
 		/// <summary>
@@ -112,12 +113,11 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
-			var absolutePath = $"{APIEndpoints.BaseURL}/{route}";
 			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, absolutePath, content, auditLogReason);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, auditLogReason);
 			bucket = new Bucket.Bucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
-			return bucket.Enqueue<T>(method, absolutePath, content, auditLogReason);
+			return bucket.Enqueue<T>(method, route, content, auditLogReason);
 		}
 		
 		/// <summary>
@@ -129,12 +129,11 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<dynamic> Request(string route, RequestMethod method, HttpContent content)
 		{
-			var absolutePath = $"{APIEndpoints.BaseURL}/{route}";
 			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, absolutePath, content, null);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, null);
 			bucket = new Bucket.Bucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
-			return bucket.Enqueue(method, absolutePath, content, null);
+			return bucket.Enqueue(method, route, content, null);
 		}
 		
 		/// <summary>
@@ -146,12 +145,11 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content)
 		{
-			var absolutePath = $"{APIEndpoints.BaseURL}/{route}";
 			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, absolutePath, content, null);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, null);
 			bucket = new Bucket.Bucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
-			return bucket.Enqueue<T>(method, absolutePath, content, null);
+			return bucket.Enqueue<T>(method, route, content, null);
 		}
 	}
 }
