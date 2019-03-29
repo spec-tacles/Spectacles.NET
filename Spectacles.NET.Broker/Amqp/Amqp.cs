@@ -5,13 +5,13 @@
 // ReSharper disable EventNeverSubscribedTo.Global
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using RabbitMQ.Client.Exceptions;
 using RabbitMQ.Client.Framing;
 
 namespace Spectacles.NET.Broker.Amqp
@@ -69,9 +69,14 @@ namespace Spectacles.NET.Broker.Amqp
 		public event EventHandler<AmqpReceiveEventArgs> Receive;
 		
 		/// <summary>
-		/// The Connection of this Client.
+		/// The read Connection of this Client.
 		/// </summary>
-		public IConnection Connection { get; set; }
+		public IConnection ReadConnection { get; set; }
+
+		/// <summary>
+		/// The write Connection of this Client.
+		/// </summary>
+		public IConnection WriteConnection { get; set; }
 		
 		/// <summary>
 		/// The AMQP exchange of this broker.
@@ -85,9 +90,14 @@ namespace Spectacles.NET.Broker.Amqp
 		public string Subgroup { get; }
 
 		/// <summary>
-		/// The AMQP channel currently connected to.
+		/// The AMQP channel for publishing events.
 		/// </summary>
-		public IModel Channel { get; set; }
+		public IModel PublishChannel { get; set; }
+		
+		/// <summary>
+		/// The AMQP channels for subscribing
+		/// </summary>
+		private readonly ConcurrentDictionary<string, IModel> _subscribeChannels = new ConcurrentDictionary<string, IModel>();
 
 		/// <summary>
 		/// The consumers that this broker has registered.
@@ -112,7 +122,7 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <returns>Task</returns>
 		public Task ConnectAsync(AmqpConnectOptions options)
 		{
-			var factory = new ConnectionFactory()
+			var factory = new ConnectionFactory
 			{
 				UserName = options.Username,
 				Password = options.Password,
@@ -124,14 +134,15 @@ namespace Spectacles.NET.Broker.Amqp
 			factory.AutomaticRecoveryEnabled = options.AutomaticRecoveryEnabled ?? factory.AutomaticRecoveryEnabled;
 			try
 			{
-				Connection = factory.CreateConnection();
+				ReadConnection = factory.CreateConnection();
+				WriteConnection = factory.CreateConnection();
 			}
 			catch (Exception e)
 			{
 				return Task.FromException(e);
 			}
 
-			_createChannel();
+			PublishChannel = WriteConnection.CreateModel();
 
 			return Task.CompletedTask;
 		}
@@ -143,21 +154,22 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <returns>Task</returns>
 		public Task ConnectAsync(string url)
 		{
-			var factory = new ConnectionFactory()
+			var factory = new ConnectionFactory
 			{
 				Uri = new Uri(url) 
 			};
 			
 			try
 			{
-				Connection = factory.CreateConnection();
+				ReadConnection = factory.CreateConnection();
+				WriteConnection = factory.CreateConnection();
 			}
-			catch (BrokerUnreachableException e)
+			catch (Exception e)
 			{
 				return Task.FromException(e);
 			}
-			
-			_createChannel();
+
+			PublishChannel = WriteConnection.CreateModel();
 
 			return Task.CompletedTask;
 		}
@@ -169,22 +181,23 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <returns>Task</returns>
 		public Task ConnectAsync(Uri uri)
 		{
-			var factory = new ConnectionFactory()
+			var factory = new ConnectionFactory
 			{
 				Uri = uri
 			};
 			
 			try
 			{
-				Connection = factory.CreateConnection();
+				ReadConnection = factory.CreateConnection();
+				WriteConnection = factory.CreateConnection();
 			}
-			catch (BrokerUnreachableException e)
+			catch (Exception e)
 			{
 				return Task.FromException(e);
 			}
 			
-			_createChannel();
-
+			PublishChannel = WriteConnection.CreateModel();
+			
 			return Task.CompletedTask;
 		}
 
@@ -195,19 +208,24 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <param name="text">The status text of the disconnect.</param>
 		public void Disconnect(ushort code, string text)
 		{
-			lock (Channel)
+			lock (PublishChannel)
 			{
-				Channel.Close(code, text);
+				PublishChannel.Close(code, text);
 			}
-			Connection.Close(code, text);
+			foreach (var (_, value) in _subscribeChannels)
+			{
+				value.Close();
+			}
+			WriteConnection.Close(code, text);
+			ReadConnection.Close(code, text);
 		}
 
 		/// <inheritdoc />
 		public override Task PublishAsync(string @event, byte[] data)
 		{
-			lock (Channel)
+			lock (PublishChannel)
 			{
-				Channel.BasicPublish(Group, @event, false, new BasicProperties()
+				PublishChannel.BasicPublish(Group, @event, false, new BasicProperties
 				{
 					ContentType = "json",
 				
@@ -221,24 +239,20 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
-			lock (Channel)
-			{
-				Channel.QueueDeclare(queueName, true, false, false);
-				Channel.QueueBind(queueName, Group, @event);	
-			}
+			var model = GetOrCreateChannel(@event);
+			model.QueueDeclare(queueName, true, false, false);
+			model.QueueBind(queueName, Group, @event);	
 			
-			var consumer = new EventingBasicConsumer(Channel);
+			
+			var consumer = new EventingBasicConsumer(model);
 
 			consumer.Received += (ch, ea) =>
 			{
-				lock (Channel)
-				{
-					Channel.BasicAck(ea.DeliveryTag, false);	
-				}
+				model.BasicAck(ea.DeliveryTag, false);
 				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
 			};
 
-			var consumerTag = Channel.BasicConsume(queueName, false, consumer);
+			var consumerTag = model.BasicConsume(queueName, false, consumer);
 			_consumerTags.Add(@event, consumerTag);
 
 			return Task.CompletedTask;
@@ -254,11 +268,10 @@ namespace Spectacles.NET.Broker.Amqp
 			_consumerTags.TryGetValue(@event, out var consumerTag);
 			
 			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
-			lock (Channel)
-			{
-				Channel.BasicCancel(consumerTag);	
-			}
-			_consumerTags.Remove(@event);
+
+			var channel = GetOrCreateChannel(@event);
+			channel.BasicCancel(consumerTag);
+				_consumerTags.Remove(@event);
 
 			return Task.CompletedTask;
 		}
@@ -267,10 +280,15 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task UnsubscribeAsync(IEnumerable<string> events)
 			=> Task.WhenAll(events.Select(UnsubscribeAsync));
 
-		private void _createChannel()
+		private IModel GetOrCreateChannel(string @event)
 		{
-			Channel = Connection.CreateModel();
-			Channel.ExchangeDeclare(Group, "direct", true, false, new Dictionary<string, object>());
+			if (_subscribeChannels.TryGetValue(@event, out var channel))
+			{
+				return channel;
+			}
+			var createChannel = ReadConnection.CreateModel();
+			_subscribeChannels.TryAdd(@event, createChannel);
+			return createChannel;
 		}
 	}
 	
