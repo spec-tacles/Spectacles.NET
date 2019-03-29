@@ -233,7 +233,7 @@ namespace Spectacles.NET.Gateway
 		/// <returns>Task</returns>
 		private Task _send(OpCode opCode, dynamic data)
 		{
-			var packet = new SendPacket()
+			var packet = new SendPacket
 			{
 				OpCode = opCode,
 				Data = data
@@ -354,10 +354,10 @@ namespace Spectacles.NET.Gateway
 			// ReSharper disable once PossibleNullReferenceException
 			var shardCount = (int) (Cluster?.Shards.Count ?? ProvidedShardCount);
 
-			return Send(OpCode.IDENTIFY, new IdentifyPacket()
+			return Send(OpCode.IDENTIFY, new IdentifyPacket
 			{
 				Token = Token,
-				Properties = new IdentifyProperties()
+				Properties = new IdentifyProperties
 				{
 					OS = Enum.GetName(typeof(PlatformID), Environment.OSVersion.Platform),
 					Browser = "Spectacles.NET",
@@ -376,7 +376,7 @@ namespace Spectacles.NET.Gateway
 			_log(LogLevel.DEBUG, $"Attempting to resume session {SessionID}");
 
 			
-			return Send(OpCode.RESUME, new ResumePacket()
+			return Send(OpCode.RESUME, new ResumePacket
 			{
 				Token = Token,
 				SessionID = SessionID,
