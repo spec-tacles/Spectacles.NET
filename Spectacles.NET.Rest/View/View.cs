@@ -24,22 +24,22 @@ namespace Spectacles.NET.Rest.View
 
 		public Task<dynamic> GetAsync()
 		{
-			return Client.Request(Route, RequestMethod.GET, null, null);
+			return Client.Request(Route, RequestMethod.GET, null);
 		}
 		
 		public Task<T> GetAsync<T>()
 		{
-			return Client.Request<T>(Route, RequestMethod.GET, null, null);
+			return Client.Request<T>(Route, RequestMethod.GET, null);
 		}
 
 		public Task<dynamic> GetAsync(Dictionary<string, string> queries)
 		{
-			return Client.Request(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
+			return Client.Request(Route, RequestMethod.GET, new FormUrlEncodedContent(queries));	
 		}
 		
 		public Task<T> GetAsync<T>(Dictionary<string, string> queries)
 		{
-			return Client.Request<T>(Route, RequestMethod.GET, new FormUrlEncodedContent(queries), null);	
+			return Client.Request<T>(Route, RequestMethod.GET, new FormUrlEncodedContent(queries));	
 		}
 
 		public Task<dynamic> PatchAsync(object json, string reason)
