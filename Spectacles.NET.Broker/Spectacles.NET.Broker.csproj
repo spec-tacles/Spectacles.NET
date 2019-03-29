@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.1.2</PackageVersion>
+        <PackageVersion>0.1.3</PackageVersion>
         <Title>Spectacles.NET.Broker</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,7 +16,7 @@
         <Description>Brokers for easy and powerful communication between applications.
 </Description>
         <Copyright>2018-2019</Copyright>
-        <PackageReleaseNotes>Fixes Broker to not ack events on the wrong channel</PackageReleaseNotes>
+        <PackageReleaseNotes>refactore AMQP Broker to follow best practise and have multiple connections for writing/reading aswell as multiple channels</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
