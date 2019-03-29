@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 using Spectacles.NET.Rest.APIError;
+using Spectacles.NET.Types;
 
 namespace Spectacles.NET.Rest.Bucket
 {
@@ -91,7 +92,7 @@ namespace Spectacles.NET.Rest.Bucket
 					Uri uri;
 					try
 					{
-						uri = new UriBuilder(URL)
+						uri = new UriBuilder(APIEndpoints.BaseURL + URL)
 						{
 							Query = Content != null ? await ((FormUrlEncodedContent) Content).ReadAsStringAsync() : null
 						}.Uri;
