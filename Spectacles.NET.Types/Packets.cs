@@ -213,7 +213,7 @@ namespace Spectacles.NET.Types
 		/// presence structure for initial presence information	
 		/// </summary>
 		[JsonProperty("presence")]
-		public dynamic Presence { get; set; }
+		public UpdateStatusDispatch Presence { get; set; }
 	}
 
 	/// <summary>
