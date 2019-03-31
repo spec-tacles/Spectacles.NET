@@ -141,7 +141,7 @@ namespace Spectacles.NET.Types
 		/// The Data of this packet
 		/// </summary>
 		[JsonProperty("d")]
-		public dynamic Data { get; set; }
+		public object Data { get; set; }
 	}
 
 	/// <summary>
@@ -159,7 +159,7 @@ namespace Spectacles.NET.Types
 		/// The Data of this packet
 		/// </summary>
 		[JsonProperty("d")]
-		public dynamic Data { get; set; }
+		public object Data { get; set; }
 		
 		/// <summary>
 		/// The current Sequence, if any
@@ -393,7 +393,7 @@ namespace Spectacles.NET.Types
 		/// id of the guild(s) to get offline members for
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public dynamic GuildID { get; set; }
+		public object GuildID { get; set; }
 		
 		/// <summary>
 		/// string that username starts with, or an empty string to return all members

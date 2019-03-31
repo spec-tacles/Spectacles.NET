@@ -231,7 +231,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="opCode">The OPCode of this Message.</param>
 		/// <param name="data">The Data of this Message.</param>
 		/// <returns>Task</returns>
-		private Task _send(OpCode opCode, dynamic data)
+		private Task _send(OpCode opCode, object data)
 		{
 			var packet = new SendPacket
 			{
@@ -259,19 +259,20 @@ namespace Spectacles.NET.Gateway
 					switch (packet.Type)
 					{
 						case "READY":
-							SessionID = packet.Data["session_id"];
-							Trace = packet.Data["_trace"].ToObject<string[]>();
-							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {SessionID}");
-							_log(LogLevel.INFO, $"Shard Ready");
+							var readyDispatch = (ReadyDispatch) packet.Data;
+							Trace = readyDispatch.Trace;
+							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
+							_log(LogLevel.INFO, "Shard Ready");
 							Identified?.Invoke(this, null);
 							break;
 						case "RESUMED":
 						{
-							Trace = packet.Data["_trace"].ToObject<string[]>();
+							var resumedDispatch = (ResumedDispatch) packet.Data;
+							Trace = resumedDispatch.Trace;
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
 								$"RESUMED {Trace[0]} -> {Trace[1]} {SessionID} | replayed {replayed} events.");
-							_log(LogLevel.INFO, $"Shard resumed connection");
+							_log(LogLevel.INFO, "Shard resumed connection");
 							break;
 						}
 					}
@@ -293,7 +294,8 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.INVALID_SESSION:
 					_log(LogLevel.DEBUG, $"Received Invalidate request (OP {packet.OpCode}). Invalidating....");
-					if (packet.Data)
+					var data = (bool) packet.Data;
+					if (data)
 					{
 						DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR, "Session Invalidated").ConfigureAwait(false);
 						break;
@@ -306,9 +308,9 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.HELLO:
 					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
-					Trace = packet.Data["_trace"].ToObject<string[]>();
-					var heartbeat = packet.Data["heartbeat_interval"].ToObject<int>();
-					_startHeartbeatTimer(heartbeat);
+					var helloData = (HelloPacket) packet.Data;
+					Trace = helloData.Trace;
+					_startHeartbeatTimer(helloData.HeartbeatInterval);
 					
 					_authenticateAsync();
 					break;
@@ -400,7 +402,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// Setups the Heartbeat Timer.
 		/// </summary>
-		private void _startHeartbeatTimer(int heartbeat)
+		private void _startHeartbeatTimer(long heartbeat)
 		{
 			_log(LogLevel.DEBUG, "Setup the Heartbeat Timer...");
 			_heartbeatTimer = new Timer(heartbeat);
