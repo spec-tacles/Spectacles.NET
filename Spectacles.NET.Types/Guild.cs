@@ -251,7 +251,7 @@ namespace Spectacles.NET.Types
 		public string VanityURLCode { get; set; }
 		
 		/// <summary>
-		/// the maximum amount of presences for the guild
+		/// the description for the guild
 		/// </summary>
 		[JsonProperty("description")]
 		public string Description { get; set; }
