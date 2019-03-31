@@ -231,5 +231,35 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("presences")]
 		public List<Presence> Presences { get; set; }
+		
+		/// <summary>
+		/// the maximum amount of presences for the guild
+		/// </summary>
+		[JsonProperty("max_presences")]
+		public int? MaxPresences { get; set; }
+		
+		/// <summary>
+		/// the maximum amount of members for the guild
+		/// </summary>
+		[JsonProperty("max_members")]
+		public int MaxMembers { get; set; }
+		
+		/// <summary>
+		/// the vanity url code for the guild
+		/// </summary>
+		[JsonProperty("vanity_url_code")]
+		public string VanityURLCode { get; set; }
+		
+		/// <summary>
+		/// the maximum amount of presences for the guild
+		/// </summary>
+		[JsonProperty("description")]
+		public string Description { get; set; }
+		
+		/// <summary>
+		/// banner hash
+		/// </summary>
+		[JsonProperty("banner")]
+		public string Banner { get; set; }
 	}
 }
