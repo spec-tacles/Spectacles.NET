@@ -214,7 +214,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="opCode">The OPCode of this Message.</param>
 		/// <param name="data">The Data of this Message.</param>
 		/// <returns>Task</returns>
-		public Task Send(OpCode opCode, dynamic data)
+		public Task Send(OpCode opCode, object data)
 		{
 			return _ratelimiter.Perform(() => _send(opCode, data));
 		}
