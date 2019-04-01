@@ -22,7 +22,7 @@ namespace Spectacles.NET.Rest.View
 			Client = client;
 		}
 
-		public Task<dynamic> GetAsync()
+		public Task<object> GetAsync()
 		{
 			return Client.Request(Route, RequestMethod.GET, null);
 		}
@@ -32,7 +32,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request<T>(Route, RequestMethod.GET, null);
 		}
 
-		public Task<dynamic> GetAsync(Dictionary<string, string> queries)
+		public Task<object> GetAsync(Dictionary<string, string> queries)
 		{
 			return Client.Request(Route, RequestMethod.GET, new FormUrlEncodedContent(queries));	
 		}
@@ -42,7 +42,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request<T>(Route, RequestMethod.GET, new FormUrlEncodedContent(queries));	
 		}
 
-		public Task<dynamic> PatchAsync(object json, string reason)
+		public Task<object> PatchAsync(object json, string reason)
 		{
 			return Client.Request(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
@@ -52,7 +52,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request<T>(Route, RequestMethod.PATCH, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 
-		public Task<dynamic> PutAsync(object json, string reason)
+		public Task<object> PutAsync(object json, string reason)
 		{
 			return Client.Request(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
@@ -62,7 +62,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request<T>(Route, RequestMethod.PUT, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 		}
 
-		public Task<dynamic> DeleteAsync(string reason)
+		public Task<object> DeleteAsync(string reason)
 		{
 			return Client.Request(Route, RequestMethod.DELETE, null, reason);
 		}
@@ -72,7 +72,7 @@ namespace Spectacles.NET.Rest.View
 			return Client.Request<T>(Route, RequestMethod.DELETE, null, reason);
 		}
 
-		public Task<dynamic> PostAsync(object data, string reason)
+		public Task<object> PostAsync(object data, string reason)
 		{
 			var type = data.GetType();
 			
