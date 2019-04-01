@@ -94,7 +94,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="content">The HttpContent to use.</param>
 		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<dynamic> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
+		public Task<object> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
 			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, auditLogReason);
@@ -127,7 +127,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="route">The Path to use.</param>
 		/// <param name="content">The HttpContent to use.</param>
 		/// <returns></returns>
-		public Task<dynamic> Request(string route, RequestMethod method, HttpContent content)
+		public Task<object> Request(string route, RequestMethod method, HttpContent content)
 		{
 			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, null);

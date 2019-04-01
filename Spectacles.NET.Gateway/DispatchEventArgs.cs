@@ -16,7 +16,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// Data of the Dispatch.
 		/// </summary>
-		public dynamic Data { get; }
+		public object Data { get; }
 		
 		/// <summary>
 		/// The Event name of this Dispatch.
