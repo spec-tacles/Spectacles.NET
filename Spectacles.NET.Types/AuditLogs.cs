@@ -113,7 +113,7 @@ namespace Spectacles.NET.Types
 		/// new value of the key
 		/// </summary>
 		[JsonProperty("new_value")]
-		public dynamic NewValue { get; set; }
+		public object NewValue { get; set; }
 		
 		/// <summary>
 		/// old value of the key
