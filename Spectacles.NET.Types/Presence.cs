@@ -6,7 +6,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// A user's presence is their current state on a guild.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Presence
 	{
 		/// <summary>

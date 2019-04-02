@@ -17,7 +17,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// A Discord Channel Represents a guild or DM channel within Discord. <see cref="http://discordapp.com/developers/docs/resources/channel"/>
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Channel
 	{
 		/// <summary>

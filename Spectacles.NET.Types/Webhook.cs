@@ -5,7 +5,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Webhooks are a low-effort way to post messages to channels in Discord. They do not require a bot user or authentication to use.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Webhook
 	{
 		/// <summary>

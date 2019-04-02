@@ -35,7 +35,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Guilds in Discord represent an isolated collection of users and channels, and are often referred to as "servers" in the UI. <see cref="http://discordapp.com/developers/docs/resources/guild"/>
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Guild
 	{
 		/// <summary>

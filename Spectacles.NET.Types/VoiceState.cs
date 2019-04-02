@@ -5,7 +5,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Used to represent a user's voice connection status.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class VoiceState
 	{
 		/// <summary>

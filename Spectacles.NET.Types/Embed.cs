@@ -4,7 +4,6 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Embed
 	{
 		/// <summary>
@@ -85,8 +84,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("fields")]
 		public List<EmbedField> Fields { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class EmbedThumbnail
 	{
 		/// <summary>
@@ -113,8 +111,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("width")]
 		public int? Width { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class EmbedVideo
 	{
 		/// <summary>
@@ -136,7 +133,6 @@ namespace Spectacles.NET.Types
 		public int? Width { get; set; }
 	}
 
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class EmbedImage
 	{
 		/// <summary>
@@ -163,8 +159,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("width")]
 		public int? Width { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class EmbedProvider
 	{
 		/// <summary>
@@ -179,8 +174,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("url")]
 		public string URL { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class EmbedAuthor
 	{
 		/// <summary>
@@ -207,8 +201,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("proxy_icon_url")]
 		public string ProxyIconURL { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class EmbedFooter
 	{
 		/// <summary>
@@ -229,8 +222,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("proxy_icon_url")]
 		public string ProxyIconURL { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class EmbedField
 	{
 		/// <summary>

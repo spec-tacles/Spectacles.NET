@@ -5,7 +5,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Represents a code that when used, adds a user to a guild or group DM channel.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Invite
 	{
 		/// <summary>

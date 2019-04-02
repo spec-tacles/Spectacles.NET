@@ -23,8 +23,7 @@ namespace Spectacles.NET.Types
 		LISTEN,
 		JOIN_REQUEST = 5
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class MessageActivity
 	{
 		/// <summary>
@@ -39,8 +38,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("party_id")]
 		public string PartyID { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class MessageApplication
 	{
 		/// <summary>
@@ -78,7 +76,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Represents a message sent in a channel within Discord.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Message
 	{
 		/// <summary>

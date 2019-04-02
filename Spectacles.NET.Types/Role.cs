@@ -5,7 +5,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Roles represent a set of permissions attached to a group of users. Roles have unique names, colors, and can be "pinned" to the side bar, causing their members to be listed separately. Roles are unique per guild, and can have separate permission profiles for the global context (guild) and channel context.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Role
 	{
 		/// <summary>

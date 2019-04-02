@@ -24,7 +24,6 @@ namespace Spectacles.NET.Types
 		WATCHING
 	}
 	
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Activity
 	{
 		/// <summary>
@@ -99,8 +98,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("flags")]
 		public ActivityFlags Flags { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class ActivityTimestamps
 	{
 		/// <summary>
@@ -115,8 +113,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("end")]
 		public long? End { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class ActivityParty
 	{
 		/// <summary>
@@ -131,8 +128,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("size")]
 		public List<int> Size { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class ActivityAssets
 	{
 		/// <summary>
@@ -159,8 +155,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("small_text")]
 		public string SmallText { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class ActivitySecrets
 	{
 		/// <summary>

@@ -35,7 +35,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// Whenever an admin action is performed on the API, an entry is added to the respective guild's audit log. You can specify the reason by attaching the X-Audit-Log-Reason request header. This header supports url encoded utf8 characters.
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class AuditLogs
 	{
 		/// <summary>
@@ -60,7 +59,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// An Audit Log Entry 
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class AuditLogEntry
 	{
 		/// <summary>
@@ -105,8 +103,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("reason")]
 		public string Reason { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class AuditLogChange
 	{
 		/// <summary>
@@ -127,8 +124,7 @@ namespace Spectacles.NET.Types
 		[JsonProperty("key")]
 		public string Key { get; set; }
 	}
-
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+	
 	public class AuditLogEntryInfo
 	{
 		/// <summary>

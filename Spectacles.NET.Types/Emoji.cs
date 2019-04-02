@@ -6,7 +6,6 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	/// An Emoji Represents a custom or unicode emote <see cref="http://discordapp.com/developers/docs/resources/emoji"/>
 	/// </summary>
-	[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
 	public class Emoji
 	{
 		/// <summary>
