@@ -287,7 +287,7 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		/// <param name="obj">The JObject version of this</param>
 		/// <returns>HelloPacket instance</returns>
-		public static implicit operator HelloPacket(JObject obj)
+		public static explicit operator HelloPacket(JObject obj)
 		{
 			return new HelloPacket
 			{
@@ -343,7 +343,7 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		/// <param name="obj">The JObject version of this</param>
 		/// <returns>ReadyDispatch instance</returns>
-		public static implicit operator ReadyDispatch(JObject obj)
+		public static explicit operator ReadyDispatch(JObject obj)
 		{
 			return new ReadyDispatch
 			{
@@ -373,7 +373,7 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		/// <param name="obj">The JObject version of this</param>
 		/// <returns>ResumedDispatch instance</returns>
-		public static implicit operator ResumedDispatch(JObject obj)
+		public static explicit operator ResumedDispatch(JObject obj)
 		{
 			return new ResumedDispatch
 			{
