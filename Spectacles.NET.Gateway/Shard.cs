@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RateLimiter;
 using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Gateway.Websocket;
@@ -308,7 +309,7 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.HELLO:
 					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
-					var helloData = (HelloPacket) packet.Data;
+					var helloData = (HelloPacket) (JObject) packet.Data;
 					Trace = helloData.Trace;
 					_startHeartbeatTimer(helloData.HeartbeatInterval);
 					
