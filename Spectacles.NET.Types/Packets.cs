@@ -1,6 +1,7 @@
 // ReSharper disable UnusedMember.Global
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Spectacles.NET.Types
 {
@@ -280,6 +281,20 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("_trace")]
 		public string[] Trace { get; set; }
+		
+		/// <summary>
+		/// Method to cast JObject to this class
+		/// </summary>
+		/// <param name="obj">The JObject version of this</param>
+		/// <returns>HelloPacket instance</returns>
+		public static implicit operator HelloPacket(JObject obj)
+		{
+			return new HelloPacket
+			{
+				HeartbeatInterval = obj["heartbeat_interval"].ToObject<long>(),
+				Trace = obj["_trace"].ToObject<string[]>()
+			};
+		}
 	}
 
 	/// <summary>
@@ -322,6 +337,24 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("shard")]
 		public int?[] Shard { get; set; }
+		
+		/// <summary>
+		/// Method to cast JObject to this class
+		/// </summary>
+		/// <param name="obj">The JObject version of this</param>
+		/// <returns>ReadyDispatch instance</returns>
+		public static implicit operator ReadyDispatch(JObject obj)
+		{
+			return new ReadyDispatch
+			{
+				GatewayVersion = obj["v"].ToObject<int>(),
+				User = obj["user"].ToObject<User>(),
+				Guilds = obj["guilds"].ToObject<UnavailableGuild[]>(),
+				SessionID = obj["session_id"].ToObject<string>(),
+				Trace = obj["_trace"].ToObject<string[]>(),
+				Shard = obj["shard"]?.ToObject<int?[]>()
+			};
+		}
 	}
 
 	/// <summary>
@@ -334,6 +367,19 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("_trace")]
 		public string[] Trace { get; set; }
+		
+		/// <summary>
+		/// Method to cast JObject to this class
+		/// </summary>
+		/// <param name="obj">The JObject version of this</param>
+		/// <returns>ResumedDispatch instance</returns>
+		public static implicit operator ResumedDispatch(JObject obj)
+		{
+			return new ResumedDispatch
+			{
+				Trace = obj["_trace"].ToObject<string[]>()
+			};
+		}
 	}
 
 	/// <summary>

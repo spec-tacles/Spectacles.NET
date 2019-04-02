@@ -256,16 +256,18 @@ namespace Spectacles.NET.Gateway
 				case OpCode.DISPATCH:
 				{
 					// ReSharper disable once SwitchStatementMissingSomeCases
-					switch (packet.Data)
+					switch (packet.Type)
 					{
-						case ReadyDispatch readyDispatch:
+						case "READY":
+							var readyDispatch = (ReadyDispatch) packet.Data;
 							Trace = readyDispatch.Trace;
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
 							Identified?.Invoke(this, null);
 							break;
-						case ResumedDispatch resumedDispatch:
+						case "RESUME":
 						{
+							var resumedDispatch = (ResumedDispatch) packet.Data;
 							Trace = resumedDispatch.Trace;
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
