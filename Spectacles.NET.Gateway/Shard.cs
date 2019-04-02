@@ -260,7 +260,7 @@ namespace Spectacles.NET.Gateway
 					switch (packet.Type)
 					{
 						case "READY":
-							var readyDispatch = (ReadyDispatch) packet.Data;
+							var readyDispatch = (ReadyDispatch) (JObject) packet.Data;
 							Trace = readyDispatch.Trace;
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
@@ -268,7 +268,7 @@ namespace Spectacles.NET.Gateway
 							break;
 						case "RESUME":
 						{
-							var resumedDispatch = (ResumedDispatch) packet.Data;
+							var resumedDispatch = (ResumedDispatch) (JObject) packet.Data;
 							Trace = resumedDispatch.Trace;
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
