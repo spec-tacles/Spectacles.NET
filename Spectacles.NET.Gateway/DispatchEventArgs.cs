@@ -30,7 +30,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="shardID">Shard where the Dispatch occured.</param>
 		/// <param name="data">Data of the Dispatch.</param>
 		/// <param name="event">The Event name of this Dispatch.</param>
-		public DispatchEventArgs(int shardID, dynamic data, string @event)
+		public DispatchEventArgs(int shardID, object data, string @event)
 		{
 			ShardID = shardID;
 			Data = data;
