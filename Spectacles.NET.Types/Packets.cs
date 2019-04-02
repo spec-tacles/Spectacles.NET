@@ -160,7 +160,7 @@ namespace Spectacles.NET.Types
 		/// The Data of this packet
 		/// </summary>
 		[JsonProperty("d")]
-		public object Data { get; set; }
+		public JObject Data { get; set; }
 		
 		/// <summary>
 		/// The current Sequence, if any
@@ -287,14 +287,8 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		/// <param name="obj">The JObject version of this</param>
 		/// <returns>HelloPacket instance</returns>
-		public static explicit operator HelloPacket(JObject obj)
-		{
-			return new HelloPacket
-			{
-				HeartbeatInterval = obj["heartbeat_interval"].ToObject<long>(),
-				Trace = obj["_trace"].ToObject<string[]>()
-			};
-		}
+		public static explicit operator HelloPacket(JObject obj) 
+			=> obj.ToObject<HelloPacket>();
 	}
 
 	/// <summary>
@@ -337,24 +331,14 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("shard")]
 		public int?[] Shard { get; set; }
-		
+
 		/// <summary>
 		/// Method to cast JObject to this class
 		/// </summary>
 		/// <param name="obj">The JObject version of this</param>
 		/// <returns>ReadyDispatch instance</returns>
 		public static explicit operator ReadyDispatch(JObject obj)
-		{
-			return new ReadyDispatch
-			{
-				GatewayVersion = obj["v"].ToObject<int>(),
-				User = obj["user"].ToObject<User>(),
-				Guilds = obj["guilds"].ToObject<UnavailableGuild[]>(),
-				SessionID = obj["session_id"].ToObject<string>(),
-				Trace = obj["_trace"].ToObject<string[]>(),
-				Shard = obj["shard"]?.ToObject<int?[]>()
-			};
-		}
+			=> obj.ToObject<ReadyDispatch>();
 	}
 
 	/// <summary>
@@ -367,19 +351,14 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("_trace")]
 		public string[] Trace { get; set; }
-		
+
 		/// <summary>
 		/// Method to cast JObject to this class
 		/// </summary>
 		/// <param name="obj">The JObject version of this</param>
 		/// <returns>ResumedDispatch instance</returns>
 		public static explicit operator ResumedDispatch(JObject obj)
-		{
-			return new ResumedDispatch
-			{
-				Trace = obj["_trace"].ToObject<string[]>()
-			};
-		}
+			=> obj.ToObject<ResumedDispatch>();
 	}
 
 	/// <summary>
