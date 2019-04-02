@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.3.11</PackageVersion>
+        <PackageVersion>0.3.12</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>Fix Cast issues by correct types.</PackageReleaseNotes>
+        <PackageReleaseNotes>Revert ReceivePacket#Data to be JObject</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
