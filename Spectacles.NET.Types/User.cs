@@ -92,7 +92,11 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("premium_type")]
 		public PremiumType PremiumType { get; set; }
-		
+	}
+
+	/// <inheritdoc />
+	public class MentionUser : User
+	{
 		/// <summary>
 		/// Optional Field for <see cref="Message"/> Mention Field
 		/// </summary>

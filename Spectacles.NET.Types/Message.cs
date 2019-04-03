@@ -142,7 +142,7 @@ namespace Spectacles.NET.Types
 		/// users specifically mentioned in the message
 		/// </summary>
 		[JsonProperty("mentions")]
-		public List<User> Mentions { get; set; }
+		public List<MentionUser> Mentions { get; set; }
 		
 		/// <summary>
 		/// roles specifically mentioned in this message
