@@ -4,6 +4,30 @@ using Newtonsoft.Json;
 namespace Spectacles.NET.Types
 {
 	/// <summary>
+	/// Active sessions are indicated with an "online", "idle", or "dnd" string per platform. If a user is offline or invisible, the corresponding field is not present.
+	/// </summary>
+	public class ClientStatus
+	{
+		/// <summary>
+		/// the user's status set for an active desktop (Windows, Linux, Mac) application session
+		/// </summary>
+		[JsonProperty("desktop")]
+		public string Desktop { get; set; }
+		
+		/// <summary>
+		/// the user's status set for an active mobile (iOS, Android) application session
+		/// </summary>
+		[JsonProperty("mobile")]
+		public string Mobile { get; set; }
+		
+		/// <summary>
+		/// the user's status set for an active web (browser, bot account) application session
+		/// </summary>
+		[JsonProperty("web")]
+		public string Web { get; set; }
+	}
+	
+	/// <summary>
 	/// A user's presence is their current state on a guild.
 	/// </summary>
 	public class Presence
@@ -43,5 +67,10 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("activities")]
 		public List<Activity> Activities { get; set; }
+		
+		/// <summary>
+		/// user's platform-dependent status
+		/// </summary>
+		public ClientStatus ClientStatus { get; set; }
 	}
 }
