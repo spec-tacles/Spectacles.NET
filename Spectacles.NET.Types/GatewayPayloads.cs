@@ -459,7 +459,7 @@ namespace Spectacles.NET.Types
 		/// roles this user is in
 		/// </summary>
 		[JsonProperty("roles")]	
-		public string[]? Roles { get; set; }
+		public string[] Roles { get; set; }
 		
 		/// <summary>
 		/// null, or the user's current activity
@@ -483,7 +483,7 @@ namespace Spectacles.NET.Types
 		/// user's current activities
 		/// </summary>
 		[JsonProperty("activities")]	
-		public Activity[]? Activities { get; set; }
+		public Activity[] Activities { get; set; }
 		
 		/// <summary>
 		/// user's platform-dependent status
