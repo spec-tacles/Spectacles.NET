@@ -71,6 +71,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// user's platform-dependent status
 		/// </summary>
+		[JsonProperty("client_status")]
 		public ClientStatus ClientStatus { get; set; }
 	}
 }
