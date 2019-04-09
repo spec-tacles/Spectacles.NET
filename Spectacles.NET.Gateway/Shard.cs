@@ -341,10 +341,8 @@ namespace Spectacles.NET.Gateway
 		/// Queues an Identify Message.
 		/// </summary>
 		/// <returns>Task</returns>
-		private Task _queueIdentifyAsync()
-		{
-			return Cluster != null ? Cluster.Ratelimiter.Perform(_identifyAsync) : _identifyAsync();
-		}
+		private Task _queueIdentifyAsync() 
+			=> Cluster != null ? Cluster.Ratelimiter.Perform(_identifyAsync) : _identifyAsync();
 
 		/// <summary>
 		/// Sends an Identify Message to the WebSocket Server.
@@ -499,10 +497,8 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="sender">The sender of the Event.</param>
 		/// <param name="json">The json string received.</param>
-		private void _onMessage(object sender, string json)
-		{
-			_handleMessage(json);
-		}
+		private void _onMessage(object sender, string json) 
+			=> _handleMessage(json);
 
 		/// <summary>
 		/// Called when the WebSocket Connection Closes.
@@ -538,9 +534,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="level">The LogLevel of this log</param>
 		/// <param name="message">The message of this log</param>
-		private void _log(LogLevel level, string message)
-		{
-			Log?.Invoke(this, new LogEventArgs(level, $"Shard {ID}", message));
-		}
+		private void _log(LogLevel level, string message) 
+			=> Log?.Invoke(this, new LogEventArgs(level, $"Shard {ID}", message));
 	}
 }
