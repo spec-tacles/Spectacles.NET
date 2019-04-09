@@ -61,10 +61,8 @@ namespace Spectacles.NET.Gateway
 		/// Creates a new instance and uses the recommend shard count.
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
-		public Cluster(string token)
-		{
-			Token = token;
-		}
+		public Cluster(string token) 
+			=> Token = token;
 
 		/// <summary>
 		/// Creates a new instance and uses the provided shard count.
@@ -99,11 +97,8 @@ namespace Spectacles.NET.Gateway
 
 			_log(LogLevel.INFO, $"Spawning {Shards.Count} shards");
 			
-			foreach (var shard in Shards.Values)
-			{
-				await shard.ConnectAsync();
-			}
-			
+			foreach (var shard in Shards.Values) await shard.ConnectAsync();
+
 			_log(LogLevel.INFO, $"Finished spawning shards");
 		}
 		
@@ -113,10 +108,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		public void Dispose()
 		{
-			foreach (var shard in Shards.Values)
-			{
-				shard.Dispose();
-			}
+			foreach (var shard in Shards.Values) shard.Dispose();
 		}
 
 		/// <summary>
@@ -140,9 +132,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="level">The LogLevel of this log</param>
 		/// <param name="message">The message of this log</param>
-		private void _log(LogLevel level, string message)
-		{
-			Log?.Invoke(this, new LogEventArgs(level, "Cluster", message));
-		}
+		private void _log(LogLevel level, string message) 
+			=> Log?.Invoke(this, new LogEventArgs(level, "Cluster", message));
 	}
 }
