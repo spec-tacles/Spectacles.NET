@@ -160,7 +160,7 @@ namespace Spectacles.NET.Types
 		/// The Data of this packet
 		/// </summary>
 		[JsonProperty("d")]
-		public object Data { get; set; }
+		public JObject Data { get; set; }
 		
 		/// <summary>
 		/// The current Sequence, if any
@@ -281,14 +281,6 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("_trace")]
 		public string[] Trace { get; set; }
-		
-		/// <summary>
-		/// Method to cast JObject to this class
-		/// </summary>
-		/// <param name="obj">The JObject version of this</param>
-		/// <returns>HelloPacket instance</returns>
-		public static explicit operator HelloPacket(JObject obj) 
-			=> obj.ToObject<HelloPacket>();
 	}
 
 	/// <summary>
@@ -331,14 +323,6 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("shard")]
 		public int?[] Shard { get; set; }
-
-		/// <summary>
-		/// Method to cast JObject to this class
-		/// </summary>
-		/// <param name="obj">The JObject version of this</param>
-		/// <returns>ReadyDispatch instance</returns>
-		public static explicit operator ReadyDispatch(JObject obj)
-			=> obj.ToObject<ReadyDispatch>();
 	}
 
 	/// <summary>
@@ -351,14 +335,6 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("_trace")]
 		public string[] Trace { get; set; }
-
-		/// <summary>
-		/// Method to cast JObject to this class
-		/// </summary>
-		/// <param name="obj">The JObject version of this</param>
-		/// <returns>ResumedDispatch instance</returns>
-		public static explicit operator ResumedDispatch(JObject obj)
-			=> obj.ToObject<ResumedDispatch>();
 	}
 
 	/// <summary>

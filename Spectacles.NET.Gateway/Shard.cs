@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RateLimiter;
 using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Gateway.Websocket;
@@ -215,10 +214,8 @@ namespace Spectacles.NET.Gateway
 		/// <param name="opCode">The OPCode of this Message.</param>
 		/// <param name="data">The Data of this Message.</param>
 		/// <returns>Task</returns>
-		public Task Send(OpCode opCode, object data)
-		{
-			return _ratelimiter.Perform(() => _send(opCode, data));
-		}
+		public Task Send(OpCode opCode, object data) 
+			=> _ratelimiter.Perform(() => _send(opCode, data));
 
 		/// <inheritdoc />
 		public void Dispose()
@@ -260,7 +257,7 @@ namespace Spectacles.NET.Gateway
 					switch (packet.Type)
 					{
 						case "READY":
-							var readyDispatch = (ReadyDispatch) (JObject) packet.Data;
+							var readyDispatch = packet.Data.ToObject<ReadyDispatch>();
 							Trace = readyDispatch.Trace;
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
@@ -268,7 +265,7 @@ namespace Spectacles.NET.Gateway
 							break;
 						case "RESUME":
 						{
-							var resumedDispatch = (ResumedDispatch) (JObject) packet.Data;
+							var resumedDispatch = packet.Data.ToObject<ResumedDispatch>();
 							Trace = resumedDispatch.Trace;
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
@@ -309,7 +306,7 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.HELLO:
 					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
-					var helloData = (HelloPacket) (JObject) packet.Data;
+					var helloData = packet.Data.ToObject<HelloPacket>();
 					Trace = helloData.Trace;
 					_startHeartbeatTimer(helloData.HeartbeatInterval);
 					
@@ -419,6 +416,7 @@ namespace Spectacles.NET.Gateway
 			_log(LogLevel.DEBUG, "Stop and dispose the Heartbeat Timer...");
 			_heartbeatTimer.Stop();
 			_heartbeatTimer.Dispose();
+			_heartbeatTimer = null;
 		}
 
 		/// <summary>
