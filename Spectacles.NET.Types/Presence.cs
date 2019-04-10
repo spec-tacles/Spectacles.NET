@@ -4,6 +4,32 @@ using Newtonsoft.Json;
 namespace Spectacles.NET.Types
 {
 	/// <summary>
+	/// Status of an User
+	/// </summary>
+	public enum Status
+	{
+		/// <summary>
+		/// The User is online
+		/// </summary>
+		ONLINE,
+		
+		/// <summary>
+		/// The User is idle
+		/// </summary>
+		IDLE,
+		
+		/// <summary>
+		/// The User is DnD
+		/// </summary>
+		DND,
+		
+		/// <summary>
+		/// The User is offline
+		/// </summary>
+		OFFLINE
+	}
+	
+	/// <summary>
 	/// Active sessions are indicated with an "online", "idle", or "dnd" string per platform. If a user is offline or invisible, the corresponding field is not present.
 	/// </summary>
 	public class ClientStatus
@@ -12,19 +38,19 @@ namespace Spectacles.NET.Types
 		/// the user's status set for an active desktop (Windows, Linux, Mac) application session
 		/// </summary>
 		[JsonProperty("desktop")]
-		public string Desktop { get; set; }
+		public Status Desktop { get; set; }
 		
 		/// <summary>
 		/// the user's status set for an active mobile (iOS, Android) application session
 		/// </summary>
 		[JsonProperty("mobile")]
-		public string Mobile { get; set; }
+		public Status Mobile { get; set; }
 		
 		/// <summary>
 		/// the user's status set for an active web (browser, bot account) application session
 		/// </summary>
 		[JsonProperty("web")]
-		public string Web { get; set; }
+		public Status Web { get; set; }
 	}
 	
 	/// <summary>
@@ -60,7 +86,7 @@ namespace Spectacles.NET.Types
 		/// either "idle", "dnd", "online", or "offline"
 		/// </summary>
 		[JsonProperty("status")]
-		public string Status { get; set; }
+		public Status Status { get; set; }
 		
 		/// <summary>
 		/// user's current activities

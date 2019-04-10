@@ -256,14 +256,14 @@ namespace Spectacles.NET.Gateway
 					// ReSharper disable once SwitchStatementMissingSomeCases
 					switch (packet.Type)
 					{
-						case "READY":
+						case GatewayEvent.READY:
 							var readyDispatch = packet.Data.ToObject<ReadyDispatch>();
 							Trace = readyDispatch.Trace;
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
 							Identified?.Invoke(this, null);
 							break;
-						case "RESUME":
+						case GatewayEvent.RESUMED:
 						{
 							var resumedDispatch = packet.Data.ToObject<ResumedDispatch>();
 							Trace = resumedDispatch.Trace;
@@ -279,7 +279,9 @@ namespace Spectacles.NET.Gateway
 					{
 						Sequence = (int) packet.Seq;
 					}
-					Dispatch?.Invoke(this, new DispatchEventArgs(ID, packet.Data, packet.Type));
+					
+					// ReSharper disable once PossibleInvalidOperationException
+					Dispatch?.Invoke(this, new DispatchEventArgs(ID, packet.Data, (GatewayEvent) packet.Type));
 					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 					break;
 				}

@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json.Linq;
+using Spectacles.NET.Types;
 
 namespace Spectacles.NET.Gateway
 {
@@ -20,9 +21,9 @@ namespace Spectacles.NET.Gateway
 		public JObject Data { get; }
 		
 		/// <summary>
-		/// The Event name of this Dispatch.
+		/// The Event of this Dispatch.
 		/// </summary>
-		public string Event { get; }
+		public GatewayEvent Event { get; }
 
 		/// <inheritdoc />
 		/// <summary>
@@ -30,8 +31,8 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="shardID">Shard where the Dispatch occured.</param>
 		/// <param name="data">Data of the Dispatch.</param>
-		/// <param name="event">The Event name of this Dispatch.</param>
-		public DispatchEventArgs(int shardID, JObject data, string @event)
+		/// <param name="event">The Event of this Dispatch.</param>
+		public DispatchEventArgs(int shardID, JObject data, GatewayEvent @event)
 		{
 			ShardID = shardID;
 			Data = data;
