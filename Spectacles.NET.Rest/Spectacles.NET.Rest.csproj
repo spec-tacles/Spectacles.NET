@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.4.10</PackageVersion>
+        <PackageVersion>0.5.0</PackageVersion>
         <Title>Spectacles.NET.Rest</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>A REST module for the Discord API.</Description>
-        <PackageReleaseNotes>Fixes Get Request to not create a proper URI.</PackageReleaseNotes>
+        <PackageReleaseNotes>Refactor code to allow using external IBucketFactory</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
