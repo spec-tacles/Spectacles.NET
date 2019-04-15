@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Concurrent;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Spectacles.NET.Rest.Bucket;
 using Spectacles.NET.Rest.View;
 using Spectacles.NET.Types;
 
@@ -49,11 +51,6 @@ namespace Spectacles.NET.Rest
 			=> new WebhooksView(this);
 
 		/// <summary>
-		/// If this Client is currently Global Ratelimited.
-		/// </summary>
-		public bool GlobalRatelimited { get; set; }
-
-		/// <summary>
 		/// Task Resolving when the Client isn't Global Ratelimited anymore.
 		/// </summary>
 		public Task GlobalTimeout { get; set; }
@@ -63,6 +60,8 @@ namespace Spectacles.NET.Rest
 		/// </summary>
 		public readonly HttpClient HttpClient = new HttpClient();
 		
+		private IBucketFactory BucketFactory { get; } = new BucketFactory();
+
 		/// <summary>
 		/// The Token of this RestClient.
 		/// </summary>
@@ -71,7 +70,7 @@ namespace Spectacles.NET.Rest
 		/// <summary>
 		/// The Buckets of this RestClient mapped by Route.
 		/// </summary>
-		private readonly ConcurrentDictionary<string, Bucket.Bucket> _buckets = new ConcurrentDictionary<string, Bucket.Bucket>();
+		private readonly ConcurrentDictionary<string, IBucket> _buckets = new ConcurrentDictionary<string, IBucket>();
 
 		/// <summary>
 		/// Creates a new Instance of RestClient.
@@ -85,6 +84,53 @@ namespace Spectacles.NET.Rest
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
 			HttpClient.BaseAddress = new Uri(APIEndpoints.BaseURL);
 		}
+		
+		/// <summary>
+		/// Creates a new Instance of RestClient.
+		/// </summary>
+		/// <param name="token">The Token of the Bot.</param>
+		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
+		public RestClient(string token, Uri proxy)
+		{
+			Token = token;
+			
+			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
+			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			HttpClient.BaseAddress = proxy;
+		}
+
+		/// <summary>
+		/// Creates a new Instance of RestClient.
+		/// </summary>
+		/// <param name="token">The Token of the Bot.</param>
+		/// <param name="factory">Factory which creates IBucket to use</param>
+		public RestClient(string token, IBucketFactory factory)
+		{
+			Token = token;
+			
+			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
+			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			HttpClient.BaseAddress = new Uri(APIEndpoints.BaseURL);
+
+			BucketFactory = factory;
+		}
+
+		/// <summary>
+		/// Creates a new Instance of RestClient.
+		/// </summary>
+		/// <param name="token">The Token of the Bot.</param>
+		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
+		/// <param name="factory">Factory which creates IBucket to use</param>
+		public RestClient(string token, Uri proxy, IBucketFactory factory)
+		{
+			Token = token;
+			
+			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
+			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			HttpClient.BaseAddress = proxy;
+			
+			BucketFactory = factory;
+		}
 
 		/// <summary>
 		/// Enqueues a Request and Creates a Bucket if needed.
@@ -96,9 +142,9 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<object> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
-			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
+			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, auditLogReason);
-			bucket = new Bucket.Bucket(this);
+			bucket = BucketFactory.CreateBucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, auditLogReason);
 		}
@@ -113,9 +159,9 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
-			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
+			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, auditLogReason);
-			bucket = new Bucket.Bucket(this);
+			bucket = BucketFactory.CreateBucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, auditLogReason);
 		}
@@ -129,9 +175,9 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<object> Request(string route, RequestMethod method, HttpContent content)
 		{
-			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
+			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, null);
-			bucket = new Bucket.Bucket(this);
+			bucket = BucketFactory.CreateBucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, null);
 		}
@@ -145,11 +191,45 @@ namespace Spectacles.NET.Rest
 		/// <returns></returns>
 		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content)
 		{
-			var bucketRoute = Bucket.Bucket.MakeRoute(method, route);
+			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, null);
-			bucket = new Bucket.Bucket(this);
+			bucket = BucketFactory.CreateBucket(this);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, null);
+		}
+
+		/// <summary>
+		/// Creates a Route from an url.
+		/// </summary>
+		/// <param name="method">The HTTP request method to use.</param>
+		/// <param name="url">The url to use.</param>
+		/// <returns></returns>
+		private static string MakeRoute(RequestMethod method, string url)
+		{
+			var defaultRegEx = new Regex(@"\/([a-z-]+)\/(?:[0-9]{17,19})");
+			var reactionRegEx = new Regex(@"\/reactions\/[^/]+");
+			var webhookRegEx = new Regex(@"^\/webhooks\/(\d+)\/[A-Za-z0-9-_]{64,}");
+			var route = defaultRegEx.Replace(url, _match);
+			route = reactionRegEx.Replace(route, "/reactions/:id");
+			route = webhookRegEx.Replace(route, "/webhooks/$1/:token");
+			
+			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id"))
+			{
+				route = $"{method}{url}";
+			}
+
+			return route;
+		}
+		
+		/// <summary>
+		/// Default RegEx match method.
+		/// </summary>
+		/// <param name="m">The match instance.</param>
+		/// <returns></returns>
+		private static string _match(Match m)
+		{
+			var val = m.Groups[1].Value;
+			return (val == "channels" || val == "guilds" || val == "webhooks") ? m.Value : $"/{val}/:id";
 		}
 	}
 }

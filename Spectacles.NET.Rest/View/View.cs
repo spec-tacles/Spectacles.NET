@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Spectacles.NET.Rest.Interfaces;
+using Spectacles.NET.Rest.Util;
 
 namespace Spectacles.NET.Rest.View
 {

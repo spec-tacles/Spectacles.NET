@@ -18,7 +18,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		/// The Success event of this request.
 		/// </summary>
-		public event EventHandler<dynamic> Success;
+		public event EventHandler<string> Success;
 		
 		/// <summary>
 		/// The Error event of this request.
@@ -48,7 +48,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		/// The Bucket this request is queued in.
 		/// </summary>
-		private Bucket Bucket { get; }
+		private IBucket Bucket { get; }
 		
 		/// <summary>
 		/// The optional AuditLog Reason of this Request.
@@ -69,7 +69,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <param name="method">The HTTP Method of this request.</param>
 		/// <param name="url">The URL of this request.</param>
 		/// <param name="reason">The optional AuditLog reason of this request.</param>
-		public Request(Bucket bucket, HttpContent content, RequestMethod method, string url, string reason)
+		public Request(IBucket bucket, HttpContent content, RequestMethod method, string url, string reason)
 		{
 			Bucket = bucket;
 			Content = content;
@@ -92,7 +92,7 @@ namespace Spectacles.NET.Rest.Bucket
 					Uri uri;
 					try
 					{
-						uri = new UriBuilder(APIEndpoints.BaseURL + URL)
+						uri = new UriBuilder($"{APIEndpoints.BaseURL}{URL}")
 						{
 							Query = Content != null ? await ((FormUrlEncodedContent) Content).ReadAsStringAsync() : null
 						}.Uri;
@@ -137,7 +137,6 @@ namespace Spectacles.NET.Rest.Bucket
 				return;
 			}
 
-
 			var ratelimit = new RateLimitInfo(res.Headers.ToDictionary(a => a.Key, a => a.Value.First()));
 			
 			var statusCode = (int) res.StatusCode;
@@ -153,22 +152,42 @@ namespace Spectacles.NET.Rest.Bucket
 				return;
 			}
 
-			if (ratelimit.Remaining != null) Bucket.Remaining = (int) ratelimit.Remaining;
-			if (ratelimit.Limit != null) Bucket.Limit = (int) ratelimit.Limit;
-			if (ratelimit.Reset != null) Bucket.Timeout = (int) ((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).TotalMilliseconds;
+			var timeout = 0;
+			
+			RATELIMIT:
+			timeout = timeout == 0 ? 100 : timeout * 2;
+			try
+			{
+				if (ratelimit.Remaining != null) await Bucket.SetRemaining((int) ratelimit.Remaining);
+				if (ratelimit.Limit != null) await Bucket.SetLimit((int) ratelimit.Limit);
+				if (ratelimit.Reset != null)
+					await Bucket.SetTimeout((int) ((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow)
+						.TotalMilliseconds);
+				timeout = 0;
+			}
+			catch (Exception)
+			{
+				await Task.Delay(timeout);
+				goto RATELIMIT;
+			}
 
 			if (res.StatusCode == HttpStatusCode.TooManyRequests)
 			{
-				if (ratelimit.RetryAfter != null) Bucket.Timeout = (int) ratelimit.RetryAfter;
-				if (ratelimit.IsGlobal)
+				TIMEOUT:
+				timeout = timeout == 0 ? 100 : timeout * 2;
+				try
 				{
-					if (ratelimit.RetryAfter != null) Client.GlobalTimeout = new Task(async () =>
+					if (ratelimit.RetryAfter != null) await Bucket.SetTimeout((int) ratelimit.RetryAfter);
+					if (ratelimit.IsGlobal)
 					{
-						Client.GlobalRatelimited = true;
-						await Task.Delay((int) ratelimit.RetryAfter);
-						Client.GlobalRatelimited = false;
-						Client.GlobalTimeout = null;
-					});
+						if (ratelimit.RetryAfter != null && Client.GlobalTimeout == null)
+							await Bucket.SetGloballyLimited((int) ratelimit.RetryAfter);
+					}
+				}
+				catch (Exception)
+				{
+					await Task.Delay(timeout);
+					goto TIMEOUT;
 				}
 				Bucket.Enqueue(this);
 			} else if (statusCode >= 500 && statusCode < 600)
@@ -179,11 +198,13 @@ namespace Spectacles.NET.Rest.Bucket
 					Error?.Invoke(this, new DiscordAPIException(500, null, $"{HttpStatusCode.InternalServerError}"));
 					return;
 				}
+#pragma warning disable 4014
 				Task.Run(async () =>
 				{
 					await Task.Delay(1000 + new Random().Next(1, 100) - 5);
 					Bucket.Enqueue(this);
 				}).ConfigureAwait(false);
+#pragma warning restore 4014
 			}
 			else if (!res.IsSuccessStatusCode)
 			{

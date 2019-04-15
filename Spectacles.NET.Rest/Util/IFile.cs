@@ -1,4 +1,4 @@
-namespace Spectacles.NET.Rest.Interfaces
+namespace Spectacles.NET.Rest.Util
 {
 	public interface IFile
 	{

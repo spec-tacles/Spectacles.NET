@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Concurrent;
 using System.Net.Http;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -8,40 +8,17 @@ using Newtonsoft.Json;
 namespace Spectacles.NET.Rest.Bucket
 {
 	/// <summary>
-	/// Bucket for handling Ratelimits of one Route.
+	/// Bucket for handling Ratelimits of one Route in memory.
 	/// </summary>
-	public class Bucket
+	public class Bucket : IBucket
 	{
-		/// <summary>
-		/// The amount of request that can be done before waiting.
-		/// </summary>
-		public int Limit { get; set; } = -1;
-		
-		/// <summary>
-		/// The remaining amount of request that can be done. 
-		/// </summary>
-		public int Remaining { get; set; } = 1;
-		
-		/// <summary>
-		/// The timeout to wait before continue sending requests.
-		/// </summary>
-		public int Timeout { get; set; }
-		
-		/// <summary>
-		/// The RestClient which instantiated this Bucket.
-		/// </summary>
+		/// <inheritdoc />
 		public RestClient Client { get; }
-		
+
 		/// <summary>
 		/// The queue holding all the request of this Bucket.
 		/// </summary>
 		private readonly ConcurrentQueue<Request> _queue = new ConcurrentQueue<Request>();
-
-		/// <summary>
-		/// If this Bucket is currently Ratelimited
-		/// </summary>
-		private bool Limited
-			=> (Client.GlobalRatelimited || Remaining < 1) && Timeout > 0;
 
 		/// <summary>
 		/// If this Bucket is currently executing Requests.
@@ -52,6 +29,21 @@ namespace Spectacles.NET.Rest.Bucket
 		/// The Worker Thread of this Bucket.
 		/// </summary>
 		private Thread Worker { get; set; }
+		
+		/// <summary>
+		/// The amount of request that can be done before waiting.
+		/// </summary>
+		private int Limit { get; set; } = -1;
+		
+		/// <summary>
+		/// The remaining amount of request that can be done. 
+		/// </summary>
+		private int Remaining { get; set; } = 1;
+		
+		/// <summary>
+		/// The timeout to wait before continue sending requests.
+		/// </summary>
+		private int Timeout { get; set; }
 
 		/// <summary>
 		/// Creates a new instance of Bucket.
@@ -62,14 +54,7 @@ namespace Spectacles.NET.Rest.Bucket
 			Client = client;
 		}
 
-		/// <summary>
-		/// Enqueues a Request in this Bucket.
-		/// </summary>
-		/// <param name="method">The HTTP Request method to use.</param>
-		/// <param name="url">The URL to use.</param>
-		/// <param name="content">The HTTPContent to use.</param>
-		/// <param name="reason">Optional AuditLog reason to use.</param>
-		/// <returns>Task resolving with response from Discord API</returns>
+		/// <inheritdoc />
 		public Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason)
 		{
 			var tcs = new TaskCompletionSource<object>();
@@ -81,14 +66,7 @@ namespace Spectacles.NET.Rest.Bucket
 			return tcs.Task;
 		}
 		
-		/// <summary>
-		/// Enqueues a Request in this Bucket.
-		/// </summary>
-		/// <param name="method">The HTTP Request method to use.</param>
-		/// <param name="url">The URL to use.</param>
-		/// <param name="content">The HTTPContent to use.</param>
-		/// <param name="reason">Optional AuditLog reason to use.</param>
-		/// <returns>Task resolving with response from Discord API</returns>
+		/// <inheritdoc />
 		public Task<T> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason)
 		{
 			var tcs = new TaskCompletionSource<T>();
@@ -100,14 +78,63 @@ namespace Spectacles.NET.Rest.Bucket
 			return tcs.Task;
 		}
 
-		/// <summary>
-		/// Enqueues a Request in this Bucket.
-		/// </summary>
-		/// <param name="request">The request to enqueue</param>
+		/// <inheritdoc />
 		public void Enqueue(Request request)
 			=> _queue.Enqueue(request);
 		
 		
+		/// <inheritdoc />
+		public Task SetLimit(int amount)
+		{
+			Limit = amount;
+			return Task.CompletedTask;
+		}
+
+		/// <inheritdoc />
+		public Task SetRemaining(int amount)
+		{
+			Remaining = amount;
+			return Task.CompletedTask;
+		}
+
+		/// <inheritdoc />
+		public Task SetTimeout(int amount)
+		{
+			Timeout = amount;
+			return Task.CompletedTask;
+		}
+
+		/// <inheritdoc />
+		public Task<int> GetLimit()
+			=> Task.FromResult(Limit);
+
+		/// <inheritdoc />
+		public Task<int> GetRemaining()
+			=> Task.FromResult(Remaining);
+
+		/// <inheritdoc />
+		public Task<int> GetTimeout()
+			=> Task.FromResult(Timeout);
+
+		/// <inheritdoc />
+		public async Task<bool> IsLimited()
+			=> (await IsGloballyLimited() || Remaining < 1) && Timeout > 0;
+
+		/// <inheritdoc />
+		public Task<bool> IsGloballyLimited()
+			=> Task.FromResult(Client.GlobalTimeout != null);
+
+		/// <inheritdoc />
+		public Task SetGloballyLimited(int until)
+		{
+			Client.GlobalTimeout = new Task(async () =>
+			{
+				await Task.Delay(until);
+				Client.GlobalTimeout = null;
+			});
+			return Task.CompletedTask;
+		}
+
 		/// <summary>
 		/// Creates the WorkerThread if needed.
 		/// </summary>
@@ -127,50 +154,27 @@ namespace Spectacles.NET.Rest.Bucket
 		{
 			while (_queue.TryDequeue(out var request))
 			{
-				if (Limited)
+				var timeout = 0;
+				LIMITED:
+				timeout = timeout == 0 ? 100 : timeout * 2;
+				try
 				{
-					if (Client.GlobalRatelimited) await Client.GlobalTimeout;
-					else await Task.Delay(Timeout);
-					Timeout = 0;
+					if (await IsLimited())
+					{
+						if (Client.GlobalTimeout != null) await Client.GlobalTimeout;
+						else await Task.Delay(Timeout);
+						Timeout = 0;
+					}
+				}
+				catch (Exception)
+				{
+					await Task.Delay(timeout);
+					goto LIMITED;
 				}
 				await request.Execute();
 			}
 
 			Started = false;
-		}
-
-		/// <summary>
-		/// Creates a Route from an url.
-		/// </summary>
-		/// <param name="method">The HTTP request method to use.</param>
-		/// <param name="url">The url to use.</param>
-		/// <returns></returns>
-		public static string MakeRoute(RequestMethod method, string url)
-		{
-			var defaultRegEx = new Regex(@"\/([a-z-]+)\/(?:[0-9]{17,19})");
-			var reactionRegEx = new Regex(@"\/reactions\/[^/]+");
-			var webhookRegEx = new Regex(@"^\/webhooks\/(\d+)\/[A-Za-z0-9-_]{64,}");
-			var route = defaultRegEx.Replace(url, _match);
-			route = reactionRegEx.Replace(route, "/reactions/:id");
-			route = webhookRegEx.Replace(route, "/webhooks/$1/:token");
-			
-			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id"))
-			{
-				route = $"{method}{url}";
-			}
-
-			return route;
-		}
-
-		/// <summary>
-		/// Default RegEx match method.
-		/// </summary>
-		/// <param name="m">The match instance.</param>
-		/// <returns></returns>
-		private static string _match(Match m)
-		{
-			var val = m.Groups[1].Value;
-			return (val == "channels" || val == "guilds" || val == "webhooks") ? m.Value : $"/{val}/:id";
 		}
 	}
 }
