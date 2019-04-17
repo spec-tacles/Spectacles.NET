@@ -4,7 +4,7 @@ namespace Spectacles.NET.Rest.Bucket
 	public class BucketFactory : IBucketFactory
 	{
 		/// <inheritdoc />
-		public IBucket CreateBucket(RestClient client)
+		public IBucket CreateBucket(RestClient client, string route)
 			=> new Bucket(client);
 	}
 }

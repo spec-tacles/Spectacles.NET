@@ -154,22 +154,11 @@ namespace Spectacles.NET.Rest.Bucket
 		{
 			while (_queue.TryDequeue(out var request))
 			{
-				var timeout = 0;
-				LIMITED:
-				timeout = timeout == 0 ? 100 : timeout * 2;
-				try
+				if (await IsLimited())
 				{
-					if (await IsLimited())
-					{
-						if (Client.GlobalTimeout != null) await Client.GlobalTimeout;
-						else await Task.Delay(Timeout);
-						Timeout = 0;
-					}
-				}
-				catch (Exception)
-				{
-					await Task.Delay(timeout);
-					goto LIMITED;
+					if (Client.GlobalTimeout != null) await Client.GlobalTimeout;
+					else await Task.Delay(Timeout);
+					Timeout = 0;
 				}
 				await request.Execute();
 			}

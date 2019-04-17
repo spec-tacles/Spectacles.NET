@@ -144,7 +144,7 @@ namespace Spectacles.NET.Rest
 		{
 			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, auditLogReason);
-			bucket = BucketFactory.CreateBucket(this);
+			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, auditLogReason);
 		}
@@ -161,7 +161,7 @@ namespace Spectacles.NET.Rest
 		{
 			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, auditLogReason);
-			bucket = BucketFactory.CreateBucket(this);
+			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, auditLogReason);
 		}
@@ -177,7 +177,7 @@ namespace Spectacles.NET.Rest
 		{
 			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, null);
-			bucket = BucketFactory.CreateBucket(this);
+			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, null);
 		}
@@ -193,7 +193,7 @@ namespace Spectacles.NET.Rest
 		{
 			var bucketRoute = MakeRoute(method, route);
 			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, null);
-			bucket = BucketFactory.CreateBucket(this);
+			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, null);
 		}

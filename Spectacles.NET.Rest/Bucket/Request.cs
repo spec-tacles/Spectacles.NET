@@ -56,6 +56,11 @@ namespace Spectacles.NET.Rest.Bucket
 		private string Reason { get; }
 
 		/// <summary>
+		/// The timeout of this request in ms.
+		/// </summary>
+		private int Timeout { get; set; } = 100;
+
+		/// <summary>
 		/// The RestClient of this Request (from the Bucket).
 		/// </summary>
 		private RestClient Client
@@ -152,43 +157,11 @@ namespace Spectacles.NET.Rest.Bucket
 				return;
 			}
 
-			var timeout = 0;
-			
-			RATELIMIT:
-			timeout = timeout == 0 ? 100 : timeout * 2;
-			try
-			{
-				if (ratelimit.Remaining != null) await Bucket.SetRemaining((int) ratelimit.Remaining);
-				if (ratelimit.Limit != null) await Bucket.SetLimit((int) ratelimit.Limit);
-				if (ratelimit.Reset != null)
-					await Bucket.SetTimeout((int) ((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow)
-						.TotalMilliseconds);
-				timeout = 0;
-			}
-			catch (Exception)
-			{
-				await Task.Delay(timeout);
-				goto RATELIMIT;
-			}
+			await _handleHeaders(ratelimit);
 
 			if (res.StatusCode == HttpStatusCode.TooManyRequests)
 			{
-				TIMEOUT:
-				timeout = timeout == 0 ? 100 : timeout * 2;
-				try
-				{
-					if (ratelimit.RetryAfter != null) await Bucket.SetTimeout((int) ratelimit.RetryAfter);
-					if (ratelimit.IsGlobal)
-					{
-						if (ratelimit.RetryAfter != null && Client.GlobalTimeout == null)
-							await Bucket.SetGloballyLimited((int) ratelimit.RetryAfter);
-					}
-				}
-				catch (Exception)
-				{
-					await Task.Delay(timeout);
-					goto TIMEOUT;
-				}
+				await _handleTooManyRequests(ratelimit);
 				Bucket.Enqueue(this);
 			} else if (statusCode >= 500 && statusCode < 600)
 			{
@@ -214,6 +187,46 @@ namespace Spectacles.NET.Rest.Bucket
 			else
 			{
 				Success?.Invoke(this, content);
+			}
+		}
+
+		private async Task _handleHeaders(RateLimitInfo ratelimit)
+		{
+			try
+			{
+				if (ratelimit.Remaining != null) await Bucket.SetRemaining((int) ratelimit.Remaining);
+				if (ratelimit.Limit != null) await Bucket.SetLimit((int) ratelimit.Limit);
+				if (ratelimit.Reset != null)
+					await Bucket.SetTimeout((int) ((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow)
+						.TotalMilliseconds);
+				Timeout = 100;
+			}
+			catch (Exception)
+			{
+				Timeout *= 2;
+				await Task.Delay(Timeout);
+				await _handleHeaders(ratelimit);
+			}
+
+		}
+
+		private async Task _handleTooManyRequests(RateLimitInfo ratelimit)
+		{
+			try
+			{
+				if (ratelimit.RetryAfter != null) await Bucket.SetTimeout((int) ratelimit.RetryAfter);
+				if (ratelimit.IsGlobal)
+				{
+					if (ratelimit.RetryAfter != null && Client.GlobalTimeout == null)
+						await Bucket.SetGloballyLimited((int) ratelimit.RetryAfter);
+				}
+				Timeout = 100;
+			}
+			catch (Exception)
+			{
+				Timeout *= 2;
+				await Task.Delay(Timeout);
+				await _handleTooManyRequests(ratelimit);
 			}
 		}
 	}

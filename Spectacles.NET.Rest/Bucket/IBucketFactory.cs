@@ -8,8 +8,9 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		/// Creates a new instance of IBucket
 		/// </summary>
-		/// <param name="client"></param>
+		/// <param name="client">The Client who creates the Buckets</param>
+		/// <param name="route">The route of the Bucket</param>
 		/// <returns>IBucket</returns>
-		IBucket CreateBucket(RestClient client);
+		IBucket CreateBucket(RestClient client, string route);
 	}
 }
