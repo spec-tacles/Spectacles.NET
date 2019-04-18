@@ -295,7 +295,7 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.INVALID_SESSION:
 					_log(LogLevel.DEBUG, $"Received Invalidate request (OP {packet.OpCode}). Invalidating....");
-					var data = ((JValue) packet.Data).ToObject<bool>();
+					var data = (bool) packet.Data;
 					if (data)
 					{
 						DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR, "Session Invalidated").ConfigureAwait(false);
