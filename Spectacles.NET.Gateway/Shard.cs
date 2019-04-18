@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RateLimiter;
 using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Gateway.Websocket;
@@ -257,7 +258,7 @@ namespace Spectacles.NET.Gateway
 					switch (packet.Type)
 					{
 						case GatewayEvent.READY:
-							var readyDispatch = packet.Data.ToObject<ReadyDispatch>();
+							var readyDispatch = ((JObject) packet.Data).ToObject<ReadyDispatch>();
 							Trace = readyDispatch.Trace;
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
@@ -265,7 +266,7 @@ namespace Spectacles.NET.Gateway
 							break;
 						case GatewayEvent.RESUMED:
 						{
-							var resumedDispatch = packet.Data.ToObject<ResumedDispatch>();
+							var resumedDispatch = ((JObject) packet.Data).ToObject<ResumedDispatch>();
 							Trace = resumedDispatch.Trace;
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
@@ -281,7 +282,7 @@ namespace Spectacles.NET.Gateway
 					}
 					
 					// ReSharper disable once PossibleInvalidOperationException
-					Dispatch?.Invoke(this, new DispatchEventArgs(ID, packet.Data, (GatewayEvent) packet.Type));
+					Dispatch?.Invoke(this, new DispatchEventArgs(ID, ((JObject) packet.Data), (GatewayEvent) packet.Type));
 					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 					break;
 				}
@@ -294,7 +295,7 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.INVALID_SESSION:
 					_log(LogLevel.DEBUG, $"Received Invalidate request (OP {packet.OpCode}). Invalidating....");
-					var data = (bool) packet.Data;
+					var data = ((JValue) packet.Data).ToObject<bool>();
 					if (data)
 					{
 						DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR, "Session Invalidated").ConfigureAwait(false);
@@ -308,7 +309,7 @@ namespace Spectacles.NET.Gateway
 					break;
 				case OpCode.HELLO:
 					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
-					var helloData = packet.Data.ToObject<HelloPacket>();
+					var helloData = ((JObject) packet.Data).ToObject<HelloPacket>();
 					Trace = helloData.Trace;
 					_startHeartbeatTimer(helloData.HeartbeatInterval);
 					

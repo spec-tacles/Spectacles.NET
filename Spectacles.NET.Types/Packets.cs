@@ -331,7 +331,7 @@ namespace Spectacles.NET.Types
 		/// The Data of this packet
 		/// </summary>
 		[JsonProperty("d")]
-		public JObject Data { get; set; }
+		public object Data { get; set; }
 		
 		/// <summary>
 		/// The current Sequence, if any
