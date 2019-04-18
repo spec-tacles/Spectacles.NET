@@ -80,6 +80,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// ID of the guild
 		/// </summary>
+		[JsonProperty("guild_id")]
 		public string GuildID { get; set; }
 	}
 
