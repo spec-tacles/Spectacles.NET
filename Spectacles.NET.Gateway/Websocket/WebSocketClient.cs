@@ -154,7 +154,7 @@ namespace Spectacles.NET.Gateway.Websocket
 				if (_exit) return;
 				
 				
-				var buffer = new byte[16 * 1024];
+				var buffer = new byte[32 * 1024];
 				WebSocketReceiveResult res;
 				try
 				{
