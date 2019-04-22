@@ -24,7 +24,7 @@ namespace Spectacles.NET.Rest.View
 		}
 		
 		protected override string Route
-			=> $"{APIEndpoints.MessageReaction(ChannelID, MessageID, ID)}/{User ?? "@me"}";
+			=> $"{APIEndpoints.MessageReaction(ChannelID, MessageID, ID)}/{User}";
 		
 		private string ChannelID { get; }
 		
