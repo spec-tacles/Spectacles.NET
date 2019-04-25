@@ -60,8 +60,8 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		/// whether the user has two factor enabled on their account	
 		/// </summary>
-		[JsonProperty(PropertyName = "mfa_enabled", DefaultValueHandling = DefaultValueHandling.Populate), DefaultValue(false)]
-		public bool MfaEnabled { get; set; }
+		[JsonProperty("mfa_enabled")]
+		public bool? MfaEnabled { get; set; }
 		
 		/// <summary>
 		/// the user's chosen language option
@@ -73,7 +73,7 @@ namespace Spectacles.NET.Types
 		/// whether the email on this account has been verified	
 		/// </summary>
 		[JsonProperty("verified")]
-		public bool Verified { get; set; }
+		public bool? Verified { get; set; }
 		
 		/// <summary>
 		/// the user's email
@@ -85,13 +85,13 @@ namespace Spectacles.NET.Types
 		/// the <see cref="UserFlags"/> on a user's account
 		/// </summary>
 		[JsonProperty("flags")]
-		public UserFlags Flags { get; set; }
+		public UserFlags? Flags { get; set; }
 		
 		/// <summary>
 		/// the <see cref="PremiumType"/> of Nitro subscription on a user's account	
 		/// </summary>
 		[JsonProperty("premium_type")]
-		public PremiumType PremiumType { get; set; }
+		public PremiumType? PremiumType { get; set; }
 	}
 
 	/// <inheritdoc />
