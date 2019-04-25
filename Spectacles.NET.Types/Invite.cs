@@ -26,6 +26,18 @@ namespace Spectacles.NET.Types
 		public Channel Channel { get; set; }
 		
 		/// <summary>
+		/// the target user for this invite
+		/// </summary>
+		[JsonProperty("target_user")]
+		public User TargetUser { get; set; }
+		
+		/// <summary>
+		/// the type of target user for this invite
+		/// </summary>
+		[JsonProperty("target_user_type")]
+		public int? TargetUserType { get; set; }
+		
+		/// <summary>
 		/// approximate count of online members
 		/// </summary>
 		[JsonProperty("approximate_presence_count")]
