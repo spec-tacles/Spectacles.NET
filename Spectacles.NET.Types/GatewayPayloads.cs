@@ -422,6 +422,42 @@ namespace Spectacles.NET.Types
 	}
 
 	/// <summary>
+	/// The Payload for the MessageReactionRemove events.
+	/// </summary>
+	public class MessageReactionRemovePayload
+	{
+		/// <summary>
+		/// the id of the user
+		/// </summary>
+		[JsonProperty("user_id")]
+		public string UserID { get; set; }
+		
+		/// <summary>
+		/// the ids of the message
+		/// </summary>
+		[JsonProperty("message_id")]
+		public string MessageID { get; set; }
+		
+		/// <summary>
+		/// the id of the channel
+		/// </summary>
+		[JsonProperty("channel_id")]
+		public string ChannelID { get; set; }
+		
+		/// <summary>
+		/// the id of the guild
+		/// </summary>
+		[JsonProperty("guild_id")]
+		public string GuildID { get; set; }
+		
+		/// <summary>
+		/// the emoji used to react
+		/// </summary>
+		[JsonProperty("emoji")]
+		public Emoji Emoji { get; set; }
+	}
+
+	/// <summary>
 	/// The Payload for the MessageDeleteBulk event.
 	/// </summary>
 	public class MessageReactionRemoveAllPayload
