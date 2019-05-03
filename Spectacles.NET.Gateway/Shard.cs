@@ -260,6 +260,7 @@ namespace Spectacles.NET.Gateway
 						case GatewayEvent.READY:
 							var readyDispatch = ((JObject) packet.Data).ToObject<ReadyDispatch>();
 							Trace = readyDispatch.Trace;
+							SessionID = readyDispatch.SessionID;
 							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
 							Identified?.Invoke(this, null);
