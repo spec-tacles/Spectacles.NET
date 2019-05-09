@@ -120,7 +120,7 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="options">The options for the Connection.</param>
 		/// <returns>Task</returns>
-		public Task ConnectAsync(AmqpConnectOptions options)
+		public async Task ConnectAsync(AmqpConnectOptions options)
 		{
 			var factory = new ConnectionFactory
 			{
@@ -132,19 +132,8 @@ namespace Spectacles.NET.Broker.Amqp
 			};
 			factory.Port = options.Port ?? factory.Port;
 			factory.AutomaticRecoveryEnabled = options.AutomaticRecoveryEnabled ?? factory.AutomaticRecoveryEnabled;
-			try
-			{
-				ReadConnection = factory.CreateConnection();
-				WriteConnection = factory.CreateConnection();
-			}
-			catch (Exception e)
-			{
-				return Task.FromException(e);
-			}
 
-			PublishChannel = WriteConnection.CreateModel();
-
-			return Task.CompletedTask;
+			await CreateConnections(factory);
 		}
 
 		/// <summary>
@@ -152,26 +141,14 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="url">The Connection uri as string.</param>
 		/// <returns>Task</returns>
-		public Task ConnectAsync(string url)
+		public async Task ConnectAsync(string url)
 		{
 			var factory = new ConnectionFactory
 			{
 				Uri = new Uri(url) 
 			};
-			
-			try
-			{
-				ReadConnection = factory.CreateConnection();
-				WriteConnection = factory.CreateConnection();
-			}
-			catch (Exception e)
-			{
-				return Task.FromException(e);
-			}
 
-			PublishChannel = WriteConnection.CreateModel();
-
-			return Task.CompletedTask;
+			await CreateConnections(factory);
 		}
 
 		/// <summary>
@@ -179,26 +156,14 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="uri">The Connection uri</param>
 		/// <returns>Task</returns>
-		public Task ConnectAsync(Uri uri)
+		public async Task ConnectAsync(Uri uri)
 		{
 			var factory = new ConnectionFactory
 			{
 				Uri = uri
 			};
-			
-			try
-			{
-				ReadConnection = factory.CreateConnection();
-				WriteConnection = factory.CreateConnection();
-			}
-			catch (Exception e)
-			{
-				return Task.FromException(e);
-			}
-			
-			PublishChannel = WriteConnection.CreateModel();
-			
-			return Task.CompletedTask;
+
+			await CreateConnections(factory);
 		}
 
 		/// <summary>
@@ -289,6 +254,25 @@ namespace Spectacles.NET.Broker.Amqp
 			var createChannel = ReadConnection.CreateModel();
 			_subscribeChannels.TryAdd(@event, createChannel);
 			return createChannel;
+		}
+
+		private Task CreateConnections(IConnectionFactory factory)
+		{
+			try
+			{
+				ReadConnection = factory.CreateConnection();
+				WriteConnection = factory.CreateConnection();
+			}
+			catch (Exception e)
+			{
+				return Task.FromException(e);
+			}
+
+			PublishChannel = WriteConnection.CreateModel();
+			
+			PublishChannel.ExchangeDeclare(Group, "direct");
+			
+			return Task.CompletedTask;
 		}
 	}
 	
