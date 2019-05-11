@@ -44,7 +44,7 @@ namespace Spectacles.NET.Rest.View
 			=> new BulkDeleteView(Client, ID);
 		
 		protected override string Route
-			=> $"{APIEndpoints.BaseURL}/{(ID == null ? APIEndpoints.Channels : APIEndpoints.Channel(ID))}";
+			=> ID == null ? APIEndpoints.Channels : APIEndpoints.Channel(ID);
 
 		public ChannelsView(RestClient client) : base(client)
 		{

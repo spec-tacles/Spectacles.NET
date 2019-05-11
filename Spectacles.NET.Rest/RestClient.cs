@@ -82,7 +82,7 @@ namespace Spectacles.NET.Rest
 			
 			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-			HttpClient.BaseAddress = new Uri(APIEndpoints.BaseURL);
+			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
 		}
 		
 		/// <summary>
@@ -110,7 +110,7 @@ namespace Spectacles.NET.Rest
 			
 			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-			HttpClient.BaseAddress = new Uri(APIEndpoints.BaseURL);
+			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
 
 			BucketFactory = factory;
 		}

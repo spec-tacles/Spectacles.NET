@@ -8,7 +8,9 @@ namespace Spectacles.NET.Types
 	/// </summary>
 	public class APIEndpoints
 	{
-		public const string BaseURL = "https://discordapp.com/api/";
+		public const string APIBaseURL = "https://discordapp.com/api/";
+		public const string CDNBaseURL = "https://cdn.discordapp.com/";
+		public const string InviteBaseURL = "https://discord.gg";
 
 		public const string Gateway = "gateway";
 		public const string BotGateway = Gateway + "/bot";
