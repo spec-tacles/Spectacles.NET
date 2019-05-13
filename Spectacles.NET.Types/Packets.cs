@@ -273,6 +273,12 @@ namespace Spectacles.NET.Types
 		PRESENCE_UPDATE,
 		
 		/// <summary>
+		/// used to replace presences after outages, data is null for bot accounts receiving it
+		/// <remarks>Bot Accounts should ignore this</remarks>
+		/// </summary>
+		PRESENCE_REPLACE,
+		
+		/// <summary>
 		/// user started typing in a channel
 		/// </summary>
 		TYPING_START,
