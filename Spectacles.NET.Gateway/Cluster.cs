@@ -31,6 +31,11 @@ namespace Spectacles.NET.Gateway
 		/// Event emitted when Shards receive Dispatches.
 		/// </summary>
 		public event EventHandler<DispatchEventArgs> Dispatch;
+
+		/// <summary>
+		/// Event emitted when Shards send packets.
+		/// </summary>
+		public event EventHandler<SendEventArgs> Send;
 		
 		/// <summary>
 		/// The Token this Cluster uses.
@@ -56,6 +61,11 @@ namespace Spectacles.NET.Gateway
 		/// The ShardCount provided by the Constructor.
 		/// </summary>
 		private int? ShardCount { get; }
+		
+		/// <summary>
+		/// If this Cluster is already disposed.
+		/// </summary>
+		private bool Disposed { get; set; }
 
 		/// <summary>
 		/// Creates a new instance and uses the recommend shard count.
@@ -92,6 +102,7 @@ namespace Spectacles.NET.Gateway
 				shard.Log += Log;
 				shard.Error += Error;
 				shard.Dispatch += Dispatch;
+				shard.Send += Send;
 				Shards.Add(i, shard);
 			}
 
@@ -108,7 +119,9 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		public void Dispose()
 		{
+			if (Disposed) return;
 			foreach (var shard in Shards.Values) shard.Dispose();
+			Disposed = true;
 		}
 
 		/// <summary>

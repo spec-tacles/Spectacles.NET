@@ -10,8 +10,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RateLimiter;
 using Spectacles.NET.Gateway.Logging;
-using Spectacles.NET.Gateway.Websocket;
 using Spectacles.NET.Types;
+using WS.NET;
 using Timer = System.Timers.Timer;
 
 namespace Spectacles.NET.Gateway
@@ -28,14 +28,19 @@ namespace Spectacles.NET.Gateway
 		public event EventHandler<LogEventArgs> Log;
 		
 		/// <summary>
-		/// Event emitted when one Shard fails to Connect with an unrecoverable code.
+		/// Event emitted when this Shard fails to Connect with an unrecoverable code.
 		/// </summary>
 		public event EventHandler<Exception> Error;
 		
 		/// <summary>
-		/// Event emitted when Shards receive Dispatches.
+		/// Event emitted when this Shard receive Dispatches.
 		/// </summary>
 		public event EventHandler<DispatchEventArgs> Dispatch;
+		
+		/// <summary>
+		/// Event emitted when this Shard send packets.
+		/// </summary>
+		public event EventHandler<SendEventArgs> Send;
 
 		/// <summary>
 		/// Event emitted when this Shard send there Identify packet.
@@ -112,6 +117,11 @@ namespace Spectacles.NET.Gateway
 		/// The delay which should be used between reconnect attempts in ms.
 		/// </summary>
 		private int _reconnectDelay;
+
+		/// <summary>
+		/// If this Shard is disposed;
+		/// </summary>
+		private bool Disposed { get; set; }
 		
 		/// <summary>
 		/// Creates an instance from a Cluster.
@@ -169,7 +179,7 @@ namespace Spectacles.NET.Gateway
 			WebSocketClient.Open += _onOpen;
 			WebSocketClient.Message += _onMessage;
 			WebSocketClient.Close += _onClose;
-			WebSocketClient.Error += _onError;	
+			WebSocketClient.Error += _onError;
 			
 			
 			_log(LogLevel.DEBUG, "Connecting to Websocket...");
@@ -215,13 +225,15 @@ namespace Spectacles.NET.Gateway
 		/// <param name="opCode">The OPCode of this Message.</param>
 		/// <param name="data">The Data of this Message.</param>
 		/// <returns>Task</returns>
-		public Task Send(OpCode opCode, object data) 
-			=> _ratelimiter.Perform(() => _send(opCode, data));
+		public Task SendAsync(OpCode opCode, object data) 
+			=> _ratelimiter.Perform(() => _sendAsync(opCode, data));
 
 		/// <inheritdoc />
 		public void Dispose()
 		{
+			if (Disposed) return;
 			WebSocketClient?.Dispose();
+			Disposed = true;
 		}
 
 		/// <summary>
@@ -230,13 +242,15 @@ namespace Spectacles.NET.Gateway
 		/// <param name="opCode">The OPCode of this Message.</param>
 		/// <param name="data">The Data of this Message.</param>
 		/// <returns>Task</returns>
-		private Task _send(OpCode opCode, object data)
+		private Task _sendAsync(OpCode opCode, object data)
 		{
 			var packet = new SendPacket
 			{
 				OpCode = opCode,
 				Data = data
 			};
+			
+			Send?.Invoke(this, new SendEventArgs(ID, opCode, data));
 
 			return WebSocketClient.SendAsync(JsonConvert.SerializeObject(packet));
 		}
@@ -356,7 +370,7 @@ namespace Spectacles.NET.Gateway
 			// ReSharper disable once PossibleNullReferenceException
 			var shardCount = (int) (Cluster?.Shards.Count ?? ProvidedShardCount);
 
-			return Send(OpCode.IDENTIFY, new IdentifyPacket
+			return SendAsync(OpCode.IDENTIFY, new IdentifyPacket
 			{
 				Token = Token,
 				Properties = new IdentifyProperties
@@ -378,7 +392,7 @@ namespace Spectacles.NET.Gateway
 			_log(LogLevel.DEBUG, $"Attempting to resume session {SessionID}");
 
 			
-			return Send(OpCode.RESUME, new ResumePacket
+			return SendAsync(OpCode.RESUME, new ResumePacket
 			{
 				Token = Token,
 				SessionID = SessionID,
@@ -396,7 +410,7 @@ namespace Spectacles.NET.Gateway
 			_log(LogLevel.DEBUG, "Sending a Heartbeat");
 			LastHeartbeatAcked = false;
 
-			return Send(OpCode.HEARTBEAT, Sequence);
+			return SendAsync(OpCode.HEARTBEAT, Sequence);
 		}
 
 		/// <summary>

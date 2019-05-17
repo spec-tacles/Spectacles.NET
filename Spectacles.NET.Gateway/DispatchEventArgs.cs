@@ -6,7 +6,7 @@ namespace Spectacles.NET.Gateway
 {
 	/// <inheritdoc />
 	/// <summary>
-	/// EventArgs for the Cluster DispatchEvent
+	/// EventArgs for the DispatchEvent
 	/// </summary>
 	public class DispatchEventArgs : EventArgs
 	{

@@ -1,7 +1,6 @@
 // ReSharper disable UnusedMember.Global
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Spectacles.NET.Types
 {
