@@ -290,7 +290,7 @@ namespace Spectacles.NET.Gateway
 					}
 					
 					// ReSharper disable once PossibleInvalidOperationException
-					Dispatch?.Invoke(this, new DispatchEventArgs(ID, ((JObject) packet.Data), (GatewayEvent) packet.Type));
+					Dispatch?.Invoke(this, new DispatchEventArgs(ID, (JObject) packet.Data, (GatewayEvent) packet.Type));
 					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 					break;
 				}

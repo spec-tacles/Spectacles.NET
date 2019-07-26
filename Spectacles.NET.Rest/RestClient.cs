@@ -229,7 +229,7 @@ namespace Spectacles.NET.Rest
 		private static string _match(Match m)
 		{
 			var val = m.Groups[1].Value;
-			return (val == "channels" || val == "guilds" || val == "webhooks") ? m.Value : $"/{val}/:id";
+			return val == "channels" || val == "guilds" || val == "webhooks" ? m.Value : $"/{val}/:id";
 		}
 	}
 }

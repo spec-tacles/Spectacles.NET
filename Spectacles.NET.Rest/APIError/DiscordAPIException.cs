@@ -40,7 +40,7 @@ namespace Spectacles.NET.Rest.APIError
 		/// <param name="statusCode">The StatusCode of the Exception.</param>
 		/// <param name="errorCode">Optional ErrorCode of the Exception.</param>
 		/// <param name="errorMessages">Optional ErrorMessage of the Exception.</param>
-		public DiscordAPIException(int statusCode, int? errorCode, string errorMessages) : base($"{(errorCode ?? statusCode)}: {errorMessages}")
+		public DiscordAPIException(int statusCode, int? errorCode, string errorMessages) : base($"{errorCode ?? statusCode}: {errorMessages}")
 		{
 			StatusCode = statusCode;
 			ErrorCode = errorCode;
