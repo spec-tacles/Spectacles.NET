@@ -457,12 +457,6 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("heartbeat_interval")]
 		public long HeartbeatInterval { get; set; }
-		
-		/// <summary>
-		/// used for debugging
-		/// </summary>
-		[JsonProperty("_trace")]
-		public string[] Trace { get; set; }
 	}
 
 	/// <summary>
@@ -493,30 +487,12 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("session_id")]
 		public string SessionID { get; set; }
-		
-		/// <summary>
-		/// used for debugging
-		/// </summary>
-		[JsonProperty("_trace")]
-		public string[] Trace { get; set; }
-		
+
 		/// <summary>
 		/// the shard information associated with this session, if sent when identifying
 		/// </summary>
 		[JsonProperty("shard")]
 		public int?[] Shard { get; set; }
-	}
-
-	/// <summary>
-	/// The resumed event is dispatched when a client has sent a resume payload to the gateway (for resuming existing sessions).
-	/// </summary>
-	public class ResumedDispatch
-	{
-		/// <summary>
-		/// used for debugging
-		/// </summary>
-		[JsonProperty("_trace")]
-		public string[] Trace { get; set; }
 	}
 
 	/// <summary>

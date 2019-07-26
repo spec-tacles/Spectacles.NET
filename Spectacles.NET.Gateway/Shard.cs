@@ -276,7 +276,6 @@ namespace Spectacles.NET.Gateway
 							break;
 						case GatewayEvent.RESUMED:
 						{
-							var resumedDispatch = ((JObject) packet.Data).ToObject<ResumedDispatch>();
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
 								$"RESUMED {SessionID} | replayed {replayed} events.");
