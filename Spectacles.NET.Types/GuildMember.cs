@@ -29,6 +29,9 @@ namespace Spectacles.NET.Types
 		[JsonProperty("joined_at")]
 		public string JoinedAt { get; set; }
 		
+		[JsonProperty("premium_since ")]
+		public string PremiumSince { get; set; }
+		
 		/// <summary>
 		/// whether the user is deafened
 		/// </summary>

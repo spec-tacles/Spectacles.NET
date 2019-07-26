@@ -93,10 +93,6 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		private string SessionID { get; set; }
 		
-		/// <summary>
-		/// The current Trace of this Shard.
-		/// </summary>
-		private string[] Trace { get; set; }
 
 		/// <summary>
 		/// The Sequence the connection closed with.
@@ -273,19 +269,17 @@ namespace Spectacles.NET.Gateway
 					{
 						case GatewayEvent.READY:
 							var readyDispatch = ((JObject) packet.Data).ToObject<ReadyDispatch>();
-							Trace = readyDispatch.Trace;
 							SessionID = readyDispatch.SessionID;
-							_log(LogLevel.DEBUG, $"Ready {Trace[0]} -> {Trace[1]} {readyDispatch.SessionID}");
+							_log(LogLevel.DEBUG, $"Ready {readyDispatch.SessionID}");
 							_log(LogLevel.INFO, "Shard Ready");
 							Identified?.Invoke(this, null);
 							break;
 						case GatewayEvent.RESUMED:
 						{
 							var resumedDispatch = ((JObject) packet.Data).ToObject<ResumedDispatch>();
-							Trace = resumedDispatch.Trace;
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
-								$"RESUMED {Trace[0]} -> {Trace[1]} {SessionID} | replayed {replayed} events.");
+								$"RESUMED {SessionID} | replayed {replayed} events.");
 							_log(LogLevel.INFO, "Shard resumed connection");
 							break;
 						}
@@ -325,7 +319,6 @@ namespace Spectacles.NET.Gateway
 				case OpCode.HELLO:
 					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
 					var helloData = ((JObject) packet.Data).ToObject<HelloPacket>();
-					Trace = helloData.Trace;
 					_startHeartbeatTimer(helloData.HeartbeatInterval);
 					
 					_authenticateAsync();

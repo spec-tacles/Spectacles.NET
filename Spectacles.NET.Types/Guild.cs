@@ -27,9 +27,18 @@ namespace Spectacles.NET.Types
 		ALL_MEMBERS
 	}
 	
-	public enum MFALevel {
+	public enum MFALevel 
+	{
 		NONE,
 		ELEVATED
+	}
+
+	public enum PREMIUM_TIER
+	{
+		NONE,
+		TIER_1,
+		TIER_2,
+		TIER_3
 	}
 	
 	/// <summary>
@@ -260,5 +269,17 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("banner")]
 		public string Banner { get; set; }
+		
+		/// <summary>
+		/// premium tier
+		/// </summary>
+		[JsonProperty("premium_tier")]
+		public PREMIUM_TIER PremiumTier { get; set; }
+		
+		/// <summary>
+		/// the total number of users currently boosting this server
+		/// </summary>
+		[JsonProperty("premium_subscription_count")]
+		public int? PremiumSubscriberCount { get; set; }
 	}
 }

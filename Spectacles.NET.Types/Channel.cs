@@ -12,6 +12,8 @@ namespace Spectacles.NET.Types
 		GUILD_VOICE,
 		GROUP_DM,
 		GUILD_CATEGORY,
+		GUILD_NEWS,
+		GUILD_STORE
 	}
 	
 	/// <summary>

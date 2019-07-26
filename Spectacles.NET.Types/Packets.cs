@@ -381,6 +381,12 @@ namespace Spectacles.NET.Types
 		public int LargeThreshold { get; set; }
 		
 		/// <summary>
+		/// enables dispatching of guild subscription events (presence and typing events)
+		/// </summary>
+		[JsonProperty("guild_subscriptions")]
+		public bool? GuildSubscription { get; set; }
+		
+		/// <summary>
 		/// used for Guild Sharding
 		/// </summary>
 		[JsonProperty("shard")]
