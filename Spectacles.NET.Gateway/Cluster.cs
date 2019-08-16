@@ -36,11 +36,20 @@ namespace Spectacles.NET.Gateway
 		/// Event emitted when Shards send packets.
 		/// </summary>
 		public event EventHandler<SendEventArgs> Send;
+
+		/// <summary>
+		/// The Prefixed Token this Cluster uses.
+		/// </summary>
+		public string Token
+		{
+			get => $"Bot {ProvidedToken}";
+			set => ProvidedToken = value.Replace(@"/^(Bot|Bearer)\s*/i", "");
+		}
 		
 		/// <summary>
 		/// The Token this Cluster uses.
 		/// </summary>
-		public string Token { get; }
+		private string ProvidedToken { get; set; }
 
 		/// <summary>
 		/// Cached /Gateway/Bot response.
@@ -132,7 +141,7 @@ namespace Spectacles.NET.Gateway
 		{
 			using (var httpClient = new HttpClient())
 			{
-				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
+				httpClient.DefaultRequestHeaders.Add("Authorization", ProvidedToken);
 				httpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
 				var res = await httpClient.GetAsync($"{APIEndpoints.APIBaseURL}/{APIEndpoints.BotGateway}");
 				var body = await res.Content.ReadAsStringAsync();

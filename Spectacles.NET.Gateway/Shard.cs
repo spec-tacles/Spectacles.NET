@@ -70,13 +70,16 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// The Token this shard should use.
 		/// </summary>
-		private string Token 
-			=> Cluster != null ? Cluster.Token : ProvidedToken;
+		private string Token
+		{
+			get => Cluster != null ? Cluster.Token : $"Bot {ProvidedToken}";
+			set => ProvidedToken = value.Replace(@"/^(Bot|Bearer)\s*/i", "");
+		}
 		
 		/// <summary>
 		/// The Token provided in the constructor.
 		/// </summary>
-		private string ProvidedToken { get; }
+		private string ProvidedToken { get; set; }
 		
 		/// <summary>
 		/// The ShardCount provided in the constructor.
@@ -139,7 +142,7 @@ namespace Spectacles.NET.Gateway
 		// ReSharper disable once UnusedMember.Global
 		public Shard(string token, int id, int shardCount)
 		{
-			ProvidedToken = token;
+			Token = token;
 			ID = id;
 			ProvidedShardCount = shardCount;
 		}
