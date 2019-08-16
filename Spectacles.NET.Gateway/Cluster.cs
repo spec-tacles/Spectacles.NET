@@ -115,7 +115,7 @@ namespace Spectacles.NET.Gateway
 				Shards.Add(i, shard);
 			}
 
-			_log(LogLevel.INFO, $"Spawning {Shards.Count} shards");
+			_log(LogLevel.INFO, $"Spawning {Shards.Count} shard(s)");
 			
 			foreach (var shard in Shards.Values) await shard.ConnectAsync();
 
