@@ -80,8 +80,7 @@ namespace Spectacles.NET.Rest
 		{
 			Token = token;
 			
-			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
-			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			SetDefaultHeaders();
 			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
 		}
 		
@@ -94,8 +93,7 @@ namespace Spectacles.NET.Rest
 		{
 			Token = token;
 			
-			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
-			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			SetDefaultHeaders();
 			HttpClient.BaseAddress = proxy;
 		}
 
@@ -107,9 +105,7 @@ namespace Spectacles.NET.Rest
 		public RestClient(string token, IBucketFactory factory)
 		{
 			Token = token;
-			
-			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
-			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			SetDefaultHeaders();
 			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
 
 			BucketFactory = factory;
@@ -124,9 +120,7 @@ namespace Spectacles.NET.Rest
 		public RestClient(string token, Uri proxy, IBucketFactory factory)
 		{
 			Token = token;
-			
-			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
-			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			SetDefaultHeaders();
 			HttpClient.BaseAddress = proxy;
 			
 			BucketFactory = factory;
@@ -196,6 +190,15 @@ namespace Spectacles.NET.Rest
 			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, null);
+		}
+
+		/// <summary>
+		/// Sets the Default Headers for the HttpClient
+		/// </summary>
+		private void SetDefaultHeaders()
+		{
+			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
+			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
 		}
 
 		/// <summary>
