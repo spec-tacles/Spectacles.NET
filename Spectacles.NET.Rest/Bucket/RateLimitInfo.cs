@@ -29,14 +29,14 @@ namespace Spectacles.NET.Rest.Bucket
 		public int? RetryAfter { get; }
 		
 		/// <summary>
+		/// The difference between the discord api and the local time.
+		/// </summary>
+		public TimeSpan Lag { get; }
+		
+		/// <summary>
 		/// The timeout before the ratelimit resets.
 		/// </summary>
 		public DateTimeOffset? Reset { get; }
-		
-		/// <summary>
-		/// The difference between the discord api and the local time.
-		/// </summary>
-		public TimeSpan? Lag { get; }
 
 		internal RateLimitInfo(IReadOnlyDictionary<string, string> headers)
 		{
@@ -46,12 +46,12 @@ namespace Spectacles.NET.Rest.Bucket
 			        int.TryParse(temp, out var limit) ? limit : (int?)null;
 			Remaining = headers.TryGetValue("X-RateLimit-Remaining", out temp) && 
 			            int.TryParse(temp, out var remaining) ? remaining : (int?)null;
+			Lag = headers.TryGetValue("Date", out temp) &&
+			      DateTimeOffset.TryParse(temp, out var date) ? date - DateTimeOffset.UtcNow : TimeSpan.Zero;
 			Reset = headers.TryGetValue("X-RateLimit-Reset", out temp) && 
-			        int.TryParse(temp, out var reset) ? DateTimeOffset.FromUnixTimeSeconds(reset) : (DateTimeOffset?)null;
+			        int.TryParse(temp, out var reset) ? DateTimeOffset.FromUnixTimeSeconds((long) (reset - Lag.TotalMilliseconds)) : (DateTimeOffset?)null;
 			RetryAfter = headers.TryGetValue("Retry-After", out temp) &&
 			             int.TryParse(temp, out var retryAfter) ? retryAfter : (int?)null;
-			Lag = headers.TryGetValue("Date", out temp) &&
-			      DateTimeOffset.TryParse(temp, out var date) ? DateTimeOffset.UtcNow - date : (TimeSpan?)null;
 		}
 	}
 }
