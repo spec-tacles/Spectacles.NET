@@ -230,7 +230,11 @@ namespace Spectacles.NET.Rest
 			var defaultRegEx = new Regex(@"\/([a-z-]+)\/(?:[0-9]{17,19})");
 			var reactionRegEx = new Regex(@"\/reactions\/[^/]+");
 			var webhookRegEx = new Regex(@"^\/webhooks\/(\d+)\/[A-Za-z0-9-_]{64,}");
-			var route = defaultRegEx.Replace(url, _match);
+			var route = defaultRegEx.Replace(url, m =>
+			{
+				var val = m.Groups[1].Value;
+				return val == "channels" || val == "guilds" || val == "webhooks" ? m.Value : $"/{val}/:id";
+			});
 			route = reactionRegEx.Replace(route, "/reactions/:id");
 			route = webhookRegEx.Replace(route, "/webhooks/$1/:token");
 			
@@ -240,17 +244,6 @@ namespace Spectacles.NET.Rest
 			}
 
 			return route;
-		}
-		
-		/// <summary>
-		/// Default RegEx match method.
-		/// </summary>
-		/// <param name="m">The match instance.</param>
-		/// <returns></returns>
-		private static string _match(Match m)
-		{
-			var val = m.Groups[1].Value;
-			return val == "channels" || val == "guilds" || val == "webhooks" ? m.Value : $"/{val}/:id";
 		}
 	}
 }
