@@ -49,8 +49,16 @@ namespace Spectacles.NET.Rest.Bucket
 		/// </summary>
 		private Thread Worker { get; set; }
 		
+		/// <summary>
+		/// Route where the `:` gets removed because in Redis `:` act as separator in keys
+		/// </summary>
 		private string FormattedRoute 
 			=> Route.Replace(":", "");
+		
+		/// <summary>
+		/// Delay to wait before retrying to Get/Set Ratelimit information from redis
+		/// </summary>
+		private int RetryDelay { get; set; }
 
 		/// <summary>
 		/// Creates a new instance of Bucket.
@@ -132,8 +140,11 @@ namespace Spectacles.NET.Rest.Bucket
 			=> !(await Redis.StringGetAsync(Constants.Global)).IsNullOrEmpty;
 
 		/// <inheritdoc />
-		public Task SetGloballyLimited(int until)
-			=> Redis.StringSetAsync(Constants.Global, "", TimeSpan.FromMilliseconds(until));
+		public async Task SetGloballyLimited(int until)
+		{
+			await Redis.StringSetAsync(Constants.Global, "", TimeSpan.FromMilliseconds(until));
+			Client.GlobalTimeout = Task.Delay(until);
+		}
 
 		/// <summary>
 		/// Creates the WorkerThread if needed.
@@ -166,14 +177,14 @@ namespace Spectacles.NET.Rest.Bucket
 				{
 					if (Client.GlobalTimeout != null) await Client.GlobalTimeout;
 					else await Task.Delay(await GetTimeout());
-					await SetTimeout(0);
+					RetryDelay = 0;
 				}
 
-				await SetTimeout(100);
+				RetryDelay = 100;
 			}
 			catch (Exception)
 			{
-				await SetTimeout(await GetTimeout() * 2);
+				await SetTimeout(RetryDelay * 2);
 				await Task.Delay(await GetTimeout());
 				await _handleTimeout();
 			}
