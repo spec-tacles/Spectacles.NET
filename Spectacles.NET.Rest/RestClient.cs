@@ -60,7 +60,10 @@ namespace Spectacles.NET.Rest
 		/// </summary>
 		public readonly HttpClient HttpClient = new HttpClient();
 		
-		private IBucketFactory BucketFactory { get; } = new BucketFactory();
+		/// <summary>
+		/// Factory which creates IBucket instances to use.
+		/// </summary>
+		private IBucketFactory BucketFactory { get; } = new InMemoryBucketFactory();
 
 		/// <summary>
 		/// The Token of this RestClient.

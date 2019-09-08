@@ -9,7 +9,7 @@ namespace Spectacles.NET.Rest.Bucket
 	/// <summary>
 	/// Bucket for handling Ratelimits of one Route in memory.
 	/// </summary>
-	public class Bucket : IBucket
+	public class InMemoryBucket : IBucket
 	{
 		/// <inheritdoc />
 		public RestClient Client { get; }
@@ -48,10 +48,8 @@ namespace Spectacles.NET.Rest.Bucket
 		/// Creates a new instance of Bucket.
 		/// </summary>
 		/// <param name="client">The RestClient which created this instance.</param>
-		public Bucket(RestClient client)
-		{
-			Client = client;
-		}
+		public InMemoryBucket(RestClient client) 
+			=> Client = client;
 
 		/// <inheritdoc />
 		public Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason)

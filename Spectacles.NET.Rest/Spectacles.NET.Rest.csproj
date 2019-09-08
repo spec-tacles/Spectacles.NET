@@ -25,4 +25,8 @@
       <ProjectReference Include="..\Spectacles.NET.Types\Spectacles.NET.Types.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+    </ItemGroup>
+
 </Project>
