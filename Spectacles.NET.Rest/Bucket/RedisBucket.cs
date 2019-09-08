@@ -177,15 +177,14 @@ namespace Spectacles.NET.Rest.Bucket
 				{
 					if (Client.GlobalTimeout != null) await Client.GlobalTimeout;
 					else await Task.Delay(await GetTimeout());
-					RetryDelay = 0;
 				}
 
 				RetryDelay = 100;
 			}
 			catch (Exception)
 			{
-				await SetTimeout(RetryDelay * 2);
-				await Task.Delay(await GetTimeout());
+				RetryDelay *= 2;
+				await Task.Delay(RetryDelay);
 				await _handleTimeout();
 			}
 		}
