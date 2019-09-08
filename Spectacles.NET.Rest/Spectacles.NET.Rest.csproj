@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.5.6</PackageVersion>
+        <PackageVersion>0.6.0</PackageVersion>
         <Title>Spectacles.NET.Rest</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,11 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>A REST module for the Discord API.</Description>
-        <PackageReleaseNotes>Fix Ratelimiting ignoring API Offset</PackageReleaseNotes>
+        <PackageReleaseNotes>- Rename Bucket &amp; BucketFactory to InMemoryBucket &amp; InMemoryBucketFactory
+
+- Add Redis implementation from the spec
+
+- Remove more code duplication</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
