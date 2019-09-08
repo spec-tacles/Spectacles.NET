@@ -83,8 +83,7 @@ namespace Spectacles.NET.Rest
 		{
 			Token = token;
 			
-			SetDefaultHeaders();
-			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
+			SetDefaultHeadersWithBaseUri();
 		}
 		
 		/// <summary>
@@ -95,9 +94,8 @@ namespace Spectacles.NET.Rest
 		public RestClient(string token, Uri proxy)
 		{
 			Token = token;
-			
-			SetDefaultHeaders();
-			HttpClient.BaseAddress = proxy;
+
+			SetDefaultHeadersWithBaseUri(proxy);
 		}
 
 		/// <summary>
@@ -108,8 +106,7 @@ namespace Spectacles.NET.Rest
 		public RestClient(string token, IBucketFactory factory)
 		{
 			Token = token;
-			SetDefaultHeaders();
-			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
+			SetDefaultHeadersWithBaseUri();
 
 			BucketFactory = factory;
 		}
@@ -123,8 +120,7 @@ namespace Spectacles.NET.Rest
 		public RestClient(string token, Uri proxy, IBucketFactory factory)
 		{
 			Token = token;
-			SetDefaultHeaders();
-			HttpClient.BaseAddress = proxy;
+			SetDefaultHeadersWithBaseUri(proxy);
 			
 			BucketFactory = factory;
 		}
@@ -202,6 +198,25 @@ namespace Spectacles.NET.Rest
 		{
 			HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bot {Token}");
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+		}
+
+		/// <summary>
+		/// Sets the Default Headers & BaseAddress for the HttpClient
+		/// </summary>
+		private void SetDefaultHeadersWithBaseUri()
+		{
+			SetDefaultHeaders();
+			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
+		}
+		
+		/// <summary>
+		/// Sets the Default Headers & BaseAddress for the HttpClient
+		/// </summary>
+		/// <param name="uri">The BaseAddress to set</param>
+		private void SetDefaultHeadersWithBaseUri(Uri uri)
+		{
+			SetDefaultHeaders();
+			HttpClient.BaseAddress = uri;
 		}
 
 		/// <summary>
