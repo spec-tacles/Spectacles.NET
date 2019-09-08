@@ -9,6 +9,7 @@ using System.Timers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RateLimiter;
+using Spectacles.NET.Gateway.Extensions;
 using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Types;
 using WS.NET;
@@ -474,8 +475,7 @@ namespace Spectacles.NET.Gateway
 			{
 				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
 				httpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-				var res = await httpClient.GetAsync($"{APIEndpoints.APIBaseURL}/{APIEndpoints.BotGateway}");
-				res.EnsureSuccessStatusCode();
+				var res = await httpClient.GetAndConfirmAsync($"{APIEndpoints.APIBaseURL}/{APIEndpoints.BotGateway}");
 				var body = await res.Content.ReadAsStringAsync();
 				return JsonConvert.DeserializeObject<GatewayBot>(body);	
 			}
