@@ -11,6 +11,7 @@ using RateLimiter;
 using Spectacles.NET.Gateway.Event;
 using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Types;
+using Spectacles.NET.Util.Extensions;
 using WS.NET;
 using Timer = System.Timers.Timer;
 
@@ -42,7 +43,7 @@ namespace Spectacles.NET.Gateway
 		// ReSharper disable once UnusedMember.Global
 		public Shard(string token, int id, int shardCount)
 		{
-			ShardGateway = Gateway.Get(token, shardCount);
+			ShardGateway = Gateway.Get(token.RemoveBotPrefix(), shardCount);
 			ID = id;
 		}
 

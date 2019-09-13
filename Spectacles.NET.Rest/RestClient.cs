@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Spectacles.NET.Rest.Bucket;
 using Spectacles.NET.Rest.View;
 using Spectacles.NET.Types;
+using Spectacles.NET.Util.Extensions;
 
 namespace Spectacles.NET.Rest
 {
@@ -19,6 +20,8 @@ namespace Spectacles.NET.Rest
 		/// </summary>
 		private readonly ConcurrentDictionary<string, IBucket> _buckets = new ConcurrentDictionary<string, IBucket>();
 
+		private readonly string _token;
+
 		/// <summary>
 		///     The HttpClient of this RestClient.
 		/// </summary>
@@ -30,7 +33,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="token">The Token of the Bot.</param>
 		public RestClient(string token)
 		{
-			Token = token;
+			_token = token.RemoveBotPrefix();
 
 			SetDefaultHeadersWithBaseUri();
 		}
@@ -42,7 +45,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
 		public RestClient(string token, Uri proxy)
 		{
-			Token = token;
+			_token = token.RemoveBotPrefix();
 
 			SetDefaultHeadersWithBaseUri(proxy);
 		}
@@ -123,7 +126,8 @@ namespace Spectacles.NET.Rest
 		/// <summary>
 		///     The Token of this RestClient.
 		/// </summary>
-		private string Token { get; }
+		private string Token
+			=> $"Bot {_token}";
 
 		/// <summary>
 		///     Enqueues a Request and Creates a Bucket if needed.

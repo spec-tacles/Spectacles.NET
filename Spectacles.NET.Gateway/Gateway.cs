@@ -13,6 +13,8 @@ namespace Spectacles.NET.Gateway
 	/// </summary>
 	public class Gateway
 	{
+		private readonly string _token;
+
 		/// <summary>
 		///     Creates a new instance of Gateway from a Token and uses the recommend shardCount
 		/// </summary>
@@ -20,7 +22,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="shardCount">Optional the shard count this token will use</param>
 		public Gateway(string token, int? shardCount = null)
 		{
-			Token = token;
+			_token = token;
 			ProvidedShardCount = shardCount;
 		}
 
@@ -66,7 +68,8 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		///     The Token of this Gateway
 		/// </summary>
-		public string Token { get; }
+		public string Token
+			=> $"Bot {_token}";
 
 		/// <summary>
 		///     Gets or Creates a Gateway from a token

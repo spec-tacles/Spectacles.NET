@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Rest", "Spec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Gateway", "Spectacles.NET.Gateway\Spectacles.NET.Gateway.csproj", "{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Util", "Spectacles.NET.Util\Spectacles.NET.Util.csproj", "{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

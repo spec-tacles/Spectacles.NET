@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Spectacles.NET.Types\Spectacles.NET.Types.csproj" />
+      <ProjectReference Include="..\Spectacles.NET.Util\Spectacles.NET.Util.csproj" />
     </ItemGroup>
 
     <ItemGroup>
