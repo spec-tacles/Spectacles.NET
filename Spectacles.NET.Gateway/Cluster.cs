@@ -41,12 +41,6 @@ namespace Spectacles.NET.Gateway
 		public Gateway Gateway { get; }
 
 		/// <summary>
-		///     The Prefixed Token this Cluster uses.
-		/// </summary>
-		public string Token
-			=> Gateway.Token;
-
-		/// <summary>
 		///     The ShardCount provided by the Constructor.
 		/// </summary>
 		private int ShardCount
