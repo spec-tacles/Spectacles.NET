@@ -31,19 +31,8 @@ namespace Spectacles.NET.Rest
 		///     Creates a new Instance of RestClient.
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
-		public RestClient(string token)
-		{
-			_token = token.RemoveBotPrefix();
-
-			SetDefaultHeadersWithBaseUri();
-		}
-
-		/// <summary>
-		///     Creates a new Instance of RestClient.
-		/// </summary>
-		/// <param name="token">The Token of the Bot.</param>
-		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
-		public RestClient(string token, Uri proxy)
+		/// <param name="proxy">Optional, Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
+		public RestClient(string token, Uri proxy = null)
 		{
 			_token = token.RemoveBotPrefix();
 
@@ -55,13 +44,8 @@ namespace Spectacles.NET.Rest
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
 		/// <param name="factory">Factory which creates IBucket to use</param>
-		public RestClient(string token, IBucketFactory factory)
-		{
-			Token = token;
-			SetDefaultHeadersWithBaseUri();
-
-			BucketFactory = factory;
-		}
+		public RestClient(string token, IBucketFactory factory) : this(token)
+			=> BucketFactory = factory;
 
 		/// <summary>
 		///     Creates a new Instance of RestClient.
@@ -69,13 +53,8 @@ namespace Spectacles.NET.Rest
 		/// <param name="token">The Token of the Bot.</param>
 		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
 		/// <param name="factory">Factory which creates IBucket to use</param>
-		public RestClient(string token, Uri proxy, IBucketFactory factory)
-		{
-			Token = token;
-			SetDefaultHeadersWithBaseUri(proxy);
-
-			BucketFactory = factory;
-		}
+		public RestClient(string token, Uri proxy, IBucketFactory factory) : this(token, proxy)
+			=> BucketFactory = factory;
 
 		/// <summary>
 		///     The Guilds View.
@@ -210,20 +189,11 @@ namespace Spectacles.NET.Rest
 		/// <summary>
 		///     Sets the Default Headers & BaseAddress for the HttpClient
 		/// </summary>
-		private void SetDefaultHeadersWithBaseUri()
-		{
-			SetDefaultHeaders();
-			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
-		}
-
-		/// <summary>
-		///     Sets the Default Headers & BaseAddress for the HttpClient
-		/// </summary>
 		/// <param name="uri">The BaseAddress to set</param>
-		private void SetDefaultHeadersWithBaseUri(Uri uri)
+		private void SetDefaultHeadersWithBaseUri(Uri uri = null)
 		{
 			SetDefaultHeaders();
-			HttpClient.BaseAddress = uri;
+			HttpClient.BaseAddress = uri ?? new Uri(APIEndpoints.APIBaseURL);
 		}
 
 		/// <summary>
