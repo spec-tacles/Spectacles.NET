@@ -7,49 +7,49 @@ using Newtonsoft.Json;
 namespace Spectacles.NET.Rest.Bucket
 {
 	/// <summary>
-	/// Bucket for handling Ratelimits of one Route in memory.
+	///     Bucket for handling Ratelimits of one Route in memory.
 	/// </summary>
 	public class InMemoryBucket : IBucket
 	{
-		/// <inheritdoc />
-		public RestClient Client { get; }
-
 		/// <summary>
-		/// The queue holding all the request of this Bucket.
+		///     The queue holding all the request of this Bucket.
 		/// </summary>
 		private readonly ConcurrentQueue<Request> _queue = new ConcurrentQueue<Request>();
 
 		/// <summary>
-		/// If this Bucket is currently executing Requests.
+		///     Creates a new instance of Bucket.
+		/// </summary>
+		/// <param name="client">The RestClient which created this instance.</param>
+		public InMemoryBucket(RestClient client)
+			=> Client = client;
+
+		/// <summary>
+		///     If this Bucket is currently executing Requests.
 		/// </summary>
 		private bool Started { get; set; }
-		
+
 		/// <summary>
-		/// The Worker Thread of this Bucket.
+		///     The Worker Thread of this Bucket.
 		/// </summary>
 		private Thread Worker { get; set; }
-		
+
 		/// <summary>
-		/// The amount of request that can be done before waiting.
+		///     The amount of request that can be done before waiting.
 		/// </summary>
 		private int Limit { get; set; } = -1;
-		
+
 		/// <summary>
-		/// The remaining amount of request that can be done. 
+		///     The remaining amount of request that can be done.
 		/// </summary>
 		private int Remaining { get; set; } = 1;
-		
+
 		/// <summary>
-		/// The timeout to wait before continue sending requests.
+		///     The timeout to wait before continue sending requests.
 		/// </summary>
 		private int Timeout { get; set; }
 
-		/// <summary>
-		/// Creates a new instance of Bucket.
-		/// </summary>
-		/// <param name="client">The RestClient which created this instance.</param>
-		public InMemoryBucket(RestClient client) 
-			=> Client = client;
+		/// <inheritdoc />
+		public RestClient Client { get; }
 
 		/// <inheritdoc />
 		public Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason)
@@ -62,7 +62,7 @@ namespace Spectacles.NET.Rest.Bucket
 			_execute();
 			return tcs.Task;
 		}
-		
+
 		/// <inheritdoc />
 		public Task<T> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason)
 		{
@@ -78,8 +78,8 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <inheritdoc />
 		public void Enqueue(Request request)
 			=> _queue.Enqueue(request);
-		
-		
+
+
 		/// <inheritdoc />
 		public Task SetLimit(int amount)
 		{
@@ -133,19 +133,19 @@ namespace Spectacles.NET.Rest.Bucket
 		}
 
 		/// <summary>
-		/// Creates the WorkerThread if needed.
+		///     Creates the WorkerThread if needed.
 		/// </summary>
 		private void _execute()
 		{
 			if (Started) return;
 			Started = true;
-			
+
 			Worker = new Thread(_run);
 			Worker.Start();
 		}
 
 		/// <summary>
-		/// The WorkerThread method to execute requests.
+		///     The WorkerThread method to execute requests.
 		/// </summary>
 		private async void _run()
 		{
@@ -157,6 +157,7 @@ namespace Spectacles.NET.Rest.Bucket
 					else await Task.Delay(Timeout);
 					Timeout = 0;
 				}
+
 				await request.Execute();
 			}
 

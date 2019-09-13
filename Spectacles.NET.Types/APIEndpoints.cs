@@ -4,7 +4,7 @@
 namespace Spectacles.NET.Types
 {
 	/// <summary>
-	/// Constants for the Endpoints of the Discord API.
+	///     Constants for the Endpoints of the Discord API.
 	/// </summary>
 	public class APIEndpoints
 	{

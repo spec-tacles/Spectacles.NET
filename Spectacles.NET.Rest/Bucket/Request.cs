@@ -11,63 +11,12 @@ using Spectacles.NET.Types;
 namespace Spectacles.NET.Rest.Bucket
 {
 	/// <summary>
-	/// Class representing a Request to the Discord REST API.
+	///     Class representing a Request to the Discord REST API.
 	/// </summary>
 	public class Request
 	{
 		/// <summary>
-		/// The Success event of this request.
-		/// </summary>
-		public event EventHandler<string> Success;
-		
-		/// <summary>
-		/// The Error event of this request.
-		/// </summary>
-		public event EventHandler<Exception> Error;
-
-		/// <summary>
-		/// How often this request was retried on a 5xx response.
-		/// </summary>
-		private int Retries { get; set; }
-
-		/// <summary>
-		/// The HTTP Method of this Request.
-		/// </summary>
-		private RequestMethod Method { get; }
-
-		/// <summary>
-		/// The URL of this Request.
-		/// </summary>
-		private string URL { get; }
-
-		/// <summary>
-		/// The HTTP Content of this Request (eg. Json or form-data body).
-		/// </summary>
-		private HttpContent Content { get; }
-
-		/// <summary>
-		/// The Bucket this request is queued in.
-		/// </summary>
-		private IBucket Bucket { get; }
-		
-		/// <summary>
-		/// The optional AuditLog Reason of this Request.
-		/// </summary>
-		private string Reason { get; }
-
-		/// <summary>
-		/// The timeout of this request in ms.
-		/// </summary>
-		private int Timeout { get; set; } = 100;
-
-		/// <summary>
-		/// The RestClient of this Request (from the Bucket).
-		/// </summary>
-		private RestClient Client
-			=> Bucket.Client;
-
-		/// <summary>
-		/// Creates a new instance of the Request class.
+		///     Creates a new instance of the Request class.
 		/// </summary>
 		/// <param name="bucket">The bucket this request was created in.</param>
 		/// <param name="content">The HTTP Content of this request.</param>
@@ -84,7 +33,58 @@ namespace Spectacles.NET.Rest.Bucket
 		}
 
 		/// <summary>
-		/// Executes this Request and Updates the Ratelimit information of the Bucket.
+		///     How often this request was retried on a 5xx response.
+		/// </summary>
+		private int Retries { get; set; }
+
+		/// <summary>
+		///     The HTTP Method of this Request.
+		/// </summary>
+		private RequestMethod Method { get; }
+
+		/// <summary>
+		///     The URL of this Request.
+		/// </summary>
+		private string URL { get; }
+
+		/// <summary>
+		///     The HTTP Content of this Request (eg. Json or form-data body).
+		/// </summary>
+		private HttpContent Content { get; }
+
+		/// <summary>
+		///     The Bucket this request is queued in.
+		/// </summary>
+		private IBucket Bucket { get; }
+
+		/// <summary>
+		///     The optional AuditLog Reason of this Request.
+		/// </summary>
+		private string Reason { get; }
+
+		/// <summary>
+		///     The timeout of this request in ms.
+		/// </summary>
+		private int Timeout { get; set; } = 100;
+
+		/// <summary>
+		///     The RestClient of this Request (from the Bucket).
+		/// </summary>
+		private RestClient Client
+			=> Bucket.Client;
+
+		/// <summary>
+		///     The Success event of this request.
+		/// </summary>
+		public event EventHandler<string> Success;
+
+		/// <summary>
+		///     The Error event of this request.
+		/// </summary>
+		public event EventHandler<Exception> Error;
+
+		/// <summary>
+		///     Executes this Request and Updates the Ratelimit information of the Bucket.
 		/// </summary>
 		/// <returns></returns>
 		/// <exception cref="ArgumentOutOfRangeException">Thrown when the RequestMethod is not an valid enum</exception>
@@ -107,6 +107,7 @@ namespace Spectacles.NET.Rest.Bucket
 						Error?.Invoke(this, e);
 						return;
 					}
+
 					request = new HttpRequestMessage(HttpMethod.Get, uri);
 					break;
 				case RequestMethod.POST:
@@ -128,7 +129,7 @@ namespace Spectacles.NET.Rest.Bucket
 				default:
 					throw new ArgumentOutOfRangeException(nameof(Method), Method, null);
 			}
-			
+
 			if (Reason != null) request.Headers.Add("X-Audit-Log-Reason", HttpUtility.UrlEncode(Reason));
 
 			HttpResponseMessage res;
@@ -143,7 +144,7 @@ namespace Spectacles.NET.Rest.Bucket
 			}
 
 			var ratelimit = new RateLimitInfo(res.Headers.ToDictionary(a => a.Key, a => a.Value.First()));
-			
+
 			var statusCode = (int) res.StatusCode;
 
 			string content;
@@ -163,7 +164,8 @@ namespace Spectacles.NET.Rest.Bucket
 			{
 				await _handleTooManyRequests(ratelimit);
 				Bucket.Enqueue(this);
-			} else if (statusCode >= 500 && statusCode < 600)
+			}
+			else if (statusCode >= 500 && statusCode < 600)
 			{
 				Retries++;
 				if (Retries > 1)
@@ -207,7 +209,6 @@ namespace Spectacles.NET.Rest.Bucket
 				await Task.Delay(Timeout);
 				await _handleHeaders(ratelimit);
 			}
-
 		}
 
 		private async Task _handleTooManyRequests(RateLimitInfo ratelimit)
@@ -216,10 +217,8 @@ namespace Spectacles.NET.Rest.Bucket
 			{
 				if (ratelimit.RetryAfter != null) await Bucket.SetTimeout((int) ratelimit.RetryAfter);
 				if (ratelimit.IsGlobal)
-				{
 					if (ratelimit.RetryAfter != null && Client.GlobalTimeout == null)
 						await Bucket.SetGloballyLimited((int) ratelimit.RetryAfter);
-				}
 				Timeout = 100;
 			}
 			catch (Exception)

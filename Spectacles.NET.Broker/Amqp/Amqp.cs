@@ -17,98 +17,71 @@ using RabbitMQ.Client.Framing;
 namespace Spectacles.NET.Broker.Amqp
 {
 	/// <summary>
-	/// Class representing ConnectOptions to Amqp.
+	///     Class representing ConnectOptions to Amqp.
 	/// </summary>
 	public class AmqpConnectOptions
 	{
 		/// <summary>
-		/// The Username of the AMQP Server
+		///     The Username of the AMQP Server
 		/// </summary>
 		public string Username { get; set; }
-		
+
 		/// <summary>
-		/// The Password of the AMQP Server
+		///     The Password of the AMQP Server
 		/// </summary>
 		public string Password { get; set; }
-		
+
 		/// <summary>
-		/// The Virtual Host of the AMQP Server
+		///     The Virtual Host of the AMQP Server
 		/// </summary>
 		public string VirtualHost { get; set; }
-		
+
 		/// <summary>
-		/// The Host Name of the AMQP Server
+		///     The Host Name of the AMQP Server
 		/// </summary>
 		public string HostName { get; set; }
-		
+
 		/// <summary>
-		/// Optional Port for the AMQP Server
+		///     Optional Port for the AMQP Server
 		/// </summary>
 		public int? Port { get; set; }
-		
+
 		/// <summary>
-		/// If the Client should try to Recover connections which disconnect.
+		///     If the Client should try to Recover connections which disconnect.
 		/// </summary>
 		public bool? AutomaticRecoveryEnabled { get; set; }
-		
+
 		/// <summary>
-		/// How long to wait before retrying to connect.
+		///     How long to wait before retrying to connect.
 		/// </summary>
 		public TimeSpan NetworkRecoveryInterval { get; set; }
 	}
-	
+
 	/// <inheritdoc />
 	/// <summary>
-	/// Broker made for Amqp using RabbitMQ .NET Library.
+	///     Broker made for Amqp using RabbitMQ .NET Library.
 	/// </summary>
 	public class AmqpBroker : Broker
 	{
 		/// <summary>
-		/// Event for Received Messages this Client is Subscribed to.
-		/// </summary>
-		public event EventHandler<AmqpReceiveEventArgs> Receive;
-		
-		/// <summary>
-		/// The read Connection of this Client.
-		/// </summary>
-		public IConnection ReadConnection { get; set; }
-
-		/// <summary>
-		/// The write Connection of this Client.
-		/// </summary>
-		public IConnection WriteConnection { get; set; }
-		
-		/// <summary>
-		/// The AMQP exchange of this broker.
-		/// </summary>
-		public string Group { get; }
-
-		/// <summary>
-		/// The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same data.
-		/// Implemented internally as an extra identifier in the queue name.
-		/// </summary>
-		public string Subgroup { get; }
-
-		/// <summary>
-		/// The AMQP channel for publishing events.
-		/// </summary>
-		public IModel PublishChannel { get; set; }
-		
-		/// <summary>
-		/// The AMQP channels for subscribing
-		/// </summary>
-		private readonly ConcurrentDictionary<string, IModel> _subscribeChannels = new ConcurrentDictionary<string, IModel>();
-
-		/// <summary>
-		/// The consumers that this broker has registered.
+		///     The consumers that this broker has registered.
 		/// </summary>
 		private readonly Dictionary<string, string> _consumerTags = new Dictionary<string, string>();
 
 		/// <summary>
-		/// Creates a new AMQPBroker instance.
+		///     The AMQP channels for subscribing
+		/// </summary>
+		private readonly ConcurrentDictionary<string, IModel> _subscribeChannels =
+			new ConcurrentDictionary<string, IModel>();
+
+		/// <summary>
+		///     Creates a new AMQPBroker instance.
 		/// </summary>
 		/// <param name="group">The AMQP exchange of this broker.</param>
-		/// <param name="subgroup">The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same data. Implemented internally as an extra identifier in the queue name.</param>
+		/// <param name="subgroup">
+		///     The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same
+		///     data. Implemented internally as an extra identifier in the queue name.
+		/// </param>
 		public AmqpBroker(string group, string subgroup)
 		{
 			Group = group;
@@ -116,7 +89,38 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <summary>
-		/// ConnectAsync connects this Client to the Amqp Server .
+		///     The read Connection of this Client.
+		/// </summary>
+		public IConnection ReadConnection { get; set; }
+
+		/// <summary>
+		///     The write Connection of this Client.
+		/// </summary>
+		public IConnection WriteConnection { get; set; }
+
+		/// <summary>
+		///     The AMQP exchange of this broker.
+		/// </summary>
+		public string Group { get; }
+
+		/// <summary>
+		///     The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same data.
+		///     Implemented internally as an extra identifier in the queue name.
+		/// </summary>
+		public string Subgroup { get; }
+
+		/// <summary>
+		///     The AMQP channel for publishing events.
+		/// </summary>
+		public IModel PublishChannel { get; set; }
+
+		/// <summary>
+		///     Event for Received Messages this Client is Subscribed to.
+		/// </summary>
+		public event EventHandler<AmqpReceiveEventArgs> Receive;
+
+		/// <summary>
+		///     ConnectAsync connects this Client to the Amqp Server .
 		/// </summary>
 		/// <param name="options">The options for the Connection.</param>
 		/// <returns>Task</returns>
@@ -137,7 +141,7 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <summary>
-		/// ConnectAsync connects this Client to the Amqp Server.
+		///     ConnectAsync connects this Client to the Amqp Server.
 		/// </summary>
 		/// <param name="url">The Connection uri as string.</param>
 		/// <returns>Task</returns>
@@ -145,14 +149,14 @@ namespace Spectacles.NET.Broker.Amqp
 		{
 			var factory = new ConnectionFactory
 			{
-				Uri = new Uri(url) 
+				Uri = new Uri(url)
 			};
 
 			await CreateConnections(factory);
 		}
 
 		/// <summary>
-		/// ConnectAsync connects this Client to the Amqp Server.
+		///     ConnectAsync connects this Client to the Amqp Server.
 		/// </summary>
 		/// <param name="uri">The Connection uri</param>
 		/// <returns>Task</returns>
@@ -167,7 +171,7 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <summary>
-		/// Disconnect disconnects the Client from the Amqp Server.
+		///     Disconnect disconnects the Client from the Amqp Server.
 		/// </summary>
 		/// <param name="code">The status code of the disconnect.</param>
 		/// <param name="text">The status text of the disconnect.</param>
@@ -177,10 +181,8 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				PublishChannel.Close(code, text);
 			}
-			foreach (var (_, value) in _subscribeChannels)
-			{
-				value.Close();
-			}
+
+			foreach (var (_, value) in _subscribeChannels) value.Close();
 			WriteConnection.Close(code, text);
 			ReadConnection.Close(code, text);
 		}
@@ -192,9 +194,8 @@ namespace Spectacles.NET.Broker.Amqp
 			{
 				PublishChannel.BasicPublish(Group, @event, false, new BasicProperties
 				{
-					ContentType = "json",
-				
-				}, data);	
+					ContentType = "json"
+				}, data);
 			}
 
 			return Task.CompletedTask;
@@ -206,9 +207,9 @@ namespace Spectacles.NET.Broker.Amqp
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
 			var model = GetOrCreateChannel(@event);
 			model.QueueDeclare(queueName, true, false, false);
-			model.QueueBind(queueName, Group, @event);	
-			
-			
+			model.QueueBind(queueName, Group, @event);
+
+
 			var consumer = new EventingBasicConsumer(model);
 
 			consumer.Received += (ch, ea) =>
@@ -231,12 +232,12 @@ namespace Spectacles.NET.Broker.Amqp
 		public override Task UnsubscribeAsync(string @event)
 		{
 			_consumerTags.TryGetValue(@event, out var consumerTag);
-			
+
 			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
 
 			var channel = GetOrCreateChannel(@event);
 			channel.BasicCancel(consumerTag);
-				_consumerTags.Remove(@event);
+			_consumerTags.Remove(@event);
 
 			return Task.CompletedTask;
 		}
@@ -247,10 +248,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 		private IModel GetOrCreateChannel(string @event)
 		{
-			if (_subscribeChannels.TryGetValue(@event, out var channel))
-			{
-				return channel;
-			}
+			if (_subscribeChannels.TryGetValue(@event, out var channel)) return channel;
 			var createChannel = ReadConnection.CreateModel();
 			_subscribeChannels.TryAdd(@event, createChannel);
 			return createChannel;
@@ -269,32 +267,22 @@ namespace Spectacles.NET.Broker.Amqp
 			}
 
 			PublishChannel = WriteConnection.CreateModel();
-			
+
 			PublishChannel.ExchangeDeclare(Group, "direct");
-			
+
 			return Task.CompletedTask;
 		}
 	}
-	
+
 	/// <inheritdoc />
 	/// <summary>
-	/// EventArgs for the <see cref="AmqpBroker"/> Receive event.
+	///     EventArgs for the <see cref="AmqpBroker" /> Receive event.
 	/// </summary>
 	public class AmqpReceiveEventArgs : EventArgs
 	{
-		/// <summary>
-		/// The Event which is invoked.
-		/// </summary>
-		public string Event { get; }
-		
-		/// <summary>
-		/// The Data of this Event.
-		/// </summary>
-		public string Data { get; }
-		
 		/// <inheritdoc />
 		/// <summary>
-		/// Creates a new instance of AmqpReceiveEventArgs.
+		///     Creates a new instance of AmqpReceiveEventArgs.
 		/// </summary>
 		/// <param name="event">The Event which is invoked.</param>
 		/// <param name="data">The Data of this Event.</param>
@@ -303,6 +291,15 @@ namespace Spectacles.NET.Broker.Amqp
 			Event = @event;
 			Data = data;
 		}
-	}
 
+		/// <summary>
+		///     The Event which is invoked.
+		/// </summary>
+		public string Event { get; }
+
+		/// <summary>
+		///     The Data of this Event.
+		/// </summary>
+		public string Data { get; }
+	}
 }

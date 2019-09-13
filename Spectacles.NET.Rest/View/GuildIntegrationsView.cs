@@ -4,9 +4,12 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildIntegrationsView : View
 	{
+		public GuildIntegrationsView(RestClient client, string guildID) : base(client)
+			=> GuildID = guildID;
+
 		public GuildIntegrationSyncView Sync
 			=> new GuildIntegrationSyncView(Client, GuildID, ID);
-		
+
 		public GuildIntegrationsView this[long id]
 		{
 			get
@@ -24,15 +27,10 @@ namespace Spectacles.NET.Rest.View
 				return this;
 			}
 		}
-		
+
 		protected override string Route
 			=> $"{(ID != null ? APIEndpoints.GuildIntegration(GuildID, ID) : APIEndpoints.GuildIntegrations(GuildID))}";
-		
+
 		private string GuildID { get; }
-		
-		public GuildIntegrationsView(RestClient client, string guildID) : base(client)
-		{
-			GuildID = guildID;
-		}
 	}
 }

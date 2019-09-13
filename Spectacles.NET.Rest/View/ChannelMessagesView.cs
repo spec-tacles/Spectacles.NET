@@ -4,6 +4,9 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelMessagesView : View
 	{
+		public ChannelMessagesView(RestClient client, string channelID) : base(client)
+			=> ChannelID = channelID;
+
 		public ChannelMessagesView this[long id]
 		{
 			get
@@ -21,18 +24,13 @@ namespace Spectacles.NET.Rest.View
 				return this;
 			}
 		}
-		
+
 		public MessageReactionView Reactions
 			=> new MessageReactionView(Client, ChannelID, ID);
-		
+
 		protected override string Route
 			=> $"{(ID != null ? APIEndpoints.Message(ChannelID, ID) : APIEndpoints.ChannelMessages(ChannelID))}";
 
 		private string ChannelID { get; }
-		
-		public ChannelMessagesView(RestClient client, string channelID) : base(client)
-		{
-			ChannelID = channelID;
-		}
 	}
 }

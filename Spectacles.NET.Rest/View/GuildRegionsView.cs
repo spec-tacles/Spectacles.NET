@@ -4,6 +4,9 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildRegionsView : View
 	{
+		public GuildRegionsView(RestClient client, string guildID) : base(client)
+			=> GuildID = guildID;
+
 		public GuildRegionsView this[long id]
 		{
 			get
@@ -21,15 +24,10 @@ namespace Spectacles.NET.Rest.View
 				return this;
 			}
 		}
-		
+
 		protected override string Route
 			=> $"{APIEndpoints.GuildVoiceRegion(GuildID)}";
-		
+
 		private string GuildID { get; }
-		
-		public GuildRegionsView(RestClient client, string guildID) : base(client)
-		{
-			GuildID = guildID;
-		}
 	}
 }

@@ -11,57 +11,22 @@ using StackExchange.Redis;
 namespace Spectacles.NET.Rest.Bucket
 {
 	/// <summary>
-	/// Bucket 
+	///     Bucket
 	/// </summary>
 	public class RedisBucket : IBucket
 	{
-		/// <inheritdoc />
-		public RestClient Client { get; }
-		
 		/// <summary>
-		/// The route of this Bucket
-		/// </summary>
-		private string Route { get; }
-
-		/// <summary>
-		/// The Redis Database used by this Bucket
-		/// </summary>
-		private IDatabase Redis 
-			=> RedisPool.BestConnection.GetDatabase();
-
-		/// <summary>
-		/// The ConnectionPool used by this Bucket
-		/// </summary>
-		private ConnectionPool RedisPool { get; set; }
-		
-		/// <summary>
-		/// The queue holding all the request of this Bucket.
+		///     The queue holding all the request of this Bucket.
 		/// </summary>
 		private readonly ConcurrentQueue<Request> _queue = new ConcurrentQueue<Request>();
 
 		/// <summary>
-		/// If this Bucket is currently executing Requests.
+		///     If this Bucket is currently executing Requests.
 		/// </summary>
 		private volatile bool _started;
-		
-		/// <summary>
-		/// The Worker Thread of this Bucket.
-		/// </summary>
-		private Thread Worker { get; set; }
-		
-		/// <summary>
-		/// Route where the `:` gets removed because in Redis `:` act as separator in keys
-		/// </summary>
-		private string FormattedRoute 
-			=> Route.Replace(":", "");
-		
-		/// <summary>
-		/// Delay to wait before retrying to Get/Set Ratelimit information from redis
-		/// </summary>
-		private int RetryDelay { get; set; }
 
 		/// <summary>
-		/// Creates a new instance of Bucket.
+		///     Creates a new instance of Bucket.
 		/// </summary>
 		/// <param name="client">The RestClient which created this instance.</param>
 		/// <param name="route">The route of the Bucket</param>
@@ -72,6 +37,41 @@ namespace Spectacles.NET.Rest.Bucket
 			Client = client;
 			Route = route;
 		}
+
+		/// <summary>
+		///     The route of this Bucket
+		/// </summary>
+		private string Route { get; }
+
+		/// <summary>
+		///     The Redis Database used by this Bucket
+		/// </summary>
+		private IDatabase Redis
+			=> RedisPool.BestConnection.GetDatabase();
+
+		/// <summary>
+		///     The ConnectionPool used by this Bucket
+		/// </summary>
+		private ConnectionPool RedisPool { get; }
+
+		/// <summary>
+		///     The Worker Thread of this Bucket.
+		/// </summary>
+		private Thread Worker { get; set; }
+
+		/// <summary>
+		///     Route where the `:` gets removed because in Redis `:` act as separator in keys
+		/// </summary>
+		private string FormattedRoute
+			=> Route.Replace(":", "");
+
+		/// <summary>
+		///     Delay to wait before retrying to Get/Set Ratelimit information from redis
+		/// </summary>
+		private int RetryDelay { get; set; }
+
+		/// <inheritdoc />
+		public RestClient Client { get; }
 
 		/// <inheritdoc />
 		public Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason)
@@ -95,12 +95,11 @@ namespace Spectacles.NET.Rest.Bucket
 			Enqueue(request);
 			_execute();
 			return tcs.Task;
-			
 		}
 
 
 		/// <inheritdoc />
-		public void Enqueue(Request request) 
+		public void Enqueue(Request request)
 			=> _queue.Enqueue(request);
 
 
@@ -136,7 +135,7 @@ namespace Spectacles.NET.Rest.Bucket
 			=> (await IsGloballyLimited() || await GetRemaining() < 1) && await GetTimeout() > 0;
 
 		/// <inheritdoc />
-		public async Task<bool> IsGloballyLimited() 
+		public async Task<bool> IsGloballyLimited()
 			=> !(await Redis.StringGetAsync(Constants.Global)).IsNullOrEmpty;
 
 		/// <inheritdoc />
@@ -147,13 +146,13 @@ namespace Spectacles.NET.Rest.Bucket
 		}
 
 		/// <summary>
-		/// Creates the WorkerThread if needed.
+		///     Creates the WorkerThread if needed.
 		/// </summary>
 		private void _execute()
 		{
 			if (_started) return;
 			_started = true;
-			
+
 			Worker = new Thread(_run);
 			Worker.Start();
 		}

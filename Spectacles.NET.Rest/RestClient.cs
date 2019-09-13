@@ -10,84 +10,33 @@ using Spectacles.NET.Types;
 namespace Spectacles.NET.Rest
 {
 	/// <summary>
-	/// Client to interact with the Discord REST API.
+	///     Client to interact with the Discord REST API.
 	/// </summary>
 	public class RestClient
 	{
 		/// <summary>
-		/// The Guilds View.
-		/// </summary>
-		public GuildsView Guilds 
-			=> new GuildsView(this);
-		
-		/// <summary>
-		/// The Channels View.
-		/// </summary>
-		public ChannelsView Channels
-			=> new ChannelsView(this);
-		
-		/// <summary>
-		/// The Users View.
-		/// </summary>
-		public UsersView Users
-			=> new UsersView(this);
-		
-		/// <summary>
-		/// The Invites View.
-		/// </summary>
-		public InvitesView Invites
-			=> new InvitesView(this);
-		
-		/// <summary>
-		/// The Voice View.
-		/// </summary>
-		public VoiceView Voice
-			=> new VoiceView(this);
-		
-		/// <summary>
-		/// The Webhook View.
-		/// </summary>
-		public WebhooksView Webhooks
-			=> new WebhooksView(this);
-
-		/// <summary>
-		/// Task Resolving when the Client isn't Global Ratelimited anymore.
-		/// </summary>
-		public Task GlobalTimeout { get; set; }
-		
-		/// <summary>
-		/// The HttpClient of this RestClient.
-		/// </summary>
-		public readonly HttpClient HttpClient = new HttpClient();
-		
-		/// <summary>
-		/// Factory which creates IBucket instances to use.
-		/// </summary>
-		private IBucketFactory BucketFactory { get; } = new InMemoryBucketFactory();
-
-		/// <summary>
-		/// The Token of this RestClient.
-		/// </summary>
-		private string Token { get; }
-		
-		/// <summary>
-		/// The Buckets of this RestClient mapped by Route.
+		///     The Buckets of this RestClient mapped by Route.
 		/// </summary>
 		private readonly ConcurrentDictionary<string, IBucket> _buckets = new ConcurrentDictionary<string, IBucket>();
 
 		/// <summary>
-		/// Creates a new Instance of RestClient.
+		///     The HttpClient of this RestClient.
+		/// </summary>
+		public readonly HttpClient HttpClient = new HttpClient();
+
+		/// <summary>
+		///     Creates a new Instance of RestClient.
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
 		public RestClient(string token)
 		{
 			Token = token;
-			
+
 			SetDefaultHeadersWithBaseUri();
 		}
-		
+
 		/// <summary>
-		/// Creates a new Instance of RestClient.
+		///     Creates a new Instance of RestClient.
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
 		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
@@ -99,7 +48,7 @@ namespace Spectacles.NET.Rest
 		}
 
 		/// <summary>
-		/// Creates a new Instance of RestClient.
+		///     Creates a new Instance of RestClient.
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
 		/// <param name="factory">Factory which creates IBucket to use</param>
@@ -112,7 +61,7 @@ namespace Spectacles.NET.Rest
 		}
 
 		/// <summary>
-		/// Creates a new Instance of RestClient.
+		///     Creates a new Instance of RestClient.
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
 		/// <param name="proxy">Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
@@ -121,12 +70,63 @@ namespace Spectacles.NET.Rest
 		{
 			Token = token;
 			SetDefaultHeadersWithBaseUri(proxy);
-			
+
 			BucketFactory = factory;
 		}
 
 		/// <summary>
-		/// Enqueues a Request and Creates a Bucket if needed.
+		///     The Guilds View.
+		/// </summary>
+		public GuildsView Guilds
+			=> new GuildsView(this);
+
+		/// <summary>
+		///     The Channels View.
+		/// </summary>
+		public ChannelsView Channels
+			=> new ChannelsView(this);
+
+		/// <summary>
+		///     The Users View.
+		/// </summary>
+		public UsersView Users
+			=> new UsersView(this);
+
+		/// <summary>
+		///     The Invites View.
+		/// </summary>
+		public InvitesView Invites
+			=> new InvitesView(this);
+
+		/// <summary>
+		///     The Voice View.
+		/// </summary>
+		public VoiceView Voice
+			=> new VoiceView(this);
+
+		/// <summary>
+		///     The Webhook View.
+		/// </summary>
+		public WebhooksView Webhooks
+			=> new WebhooksView(this);
+
+		/// <summary>
+		///     Task Resolving when the Client isn't Global Ratelimited anymore.
+		/// </summary>
+		public Task GlobalTimeout { get; set; }
+
+		/// <summary>
+		///     Factory which creates IBucket instances to use.
+		/// </summary>
+		private IBucketFactory BucketFactory { get; } = new InMemoryBucketFactory();
+
+		/// <summary>
+		///     The Token of this RestClient.
+		/// </summary>
+		private string Token { get; }
+
+		/// <summary>
+		///     Enqueues a Request and Creates a Bucket if needed.
 		/// </summary>
 		/// <param name="method">The HTTP Method to use.</param>
 		/// <param name="route">The Path to use.</param>
@@ -136,14 +136,15 @@ namespace Spectacles.NET.Rest
 		public Task<object> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
 			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, auditLogReason);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket))
+				return bucket.Enqueue(method, route, content, auditLogReason);
 			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, auditLogReason);
 		}
-		
+
 		/// <summary>
-		/// Enqueues a Request and Creates a Bucket if needed.
+		///     Enqueues a Request and Creates a Bucket if needed.
 		/// </summary>
 		/// <param name="method">The HTTP Method to use.</param>
 		/// <param name="route">The Path to use.</param>
@@ -153,14 +154,15 @@ namespace Spectacles.NET.Rest
 		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content, string auditLogReason)
 		{
 			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, auditLogReason);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket))
+				return bucket.Enqueue<T>(method, route, content, auditLogReason);
 			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, auditLogReason);
 		}
-		
+
 		/// <summary>
-		/// Enqueues a Request and Creates a Bucket if needed.
+		///     Enqueues a Request and Creates a Bucket if needed.
 		/// </summary>
 		/// <param name="method">The HTTP Method to use.</param>
 		/// <param name="route">The Path to use.</param>
@@ -174,9 +176,9 @@ namespace Spectacles.NET.Rest
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, null);
 		}
-		
+
 		/// <summary>
-		/// Enqueues a Request and Creates a Bucket if needed.
+		///     Enqueues a Request and Creates a Bucket if needed.
 		/// </summary>
 		/// <param name="method">The HTTP Method to use.</param>
 		/// <param name="route">The Path to use.</param>
@@ -185,14 +187,15 @@ namespace Spectacles.NET.Rest
 		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content)
 		{
 			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue<T>(method, route, content, null);
+			if (_buckets.TryGetValue(bucketRoute, out var bucket))
+				return bucket.Enqueue<T>(method, route, content, null);
 			bucket = BucketFactory.CreateBucket(this, bucketRoute);
 			_buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, null);
 		}
 
 		/// <summary>
-		/// Sets the Default Headers for the HttpClient
+		///     Sets the Default Headers for the HttpClient
 		/// </summary>
 		private void SetDefaultHeaders()
 		{
@@ -201,16 +204,16 @@ namespace Spectacles.NET.Rest
 		}
 
 		/// <summary>
-		/// Sets the Default Headers & BaseAddress for the HttpClient
+		///     Sets the Default Headers & BaseAddress for the HttpClient
 		/// </summary>
 		private void SetDefaultHeadersWithBaseUri()
 		{
 			SetDefaultHeaders();
 			HttpClient.BaseAddress = new Uri(APIEndpoints.APIBaseURL);
 		}
-		
+
 		/// <summary>
-		/// Sets the Default Headers & BaseAddress for the HttpClient
+		///     Sets the Default Headers & BaseAddress for the HttpClient
 		/// </summary>
 		/// <param name="uri">The BaseAddress to set</param>
 		private void SetDefaultHeadersWithBaseUri(Uri uri)
@@ -220,7 +223,7 @@ namespace Spectacles.NET.Rest
 		}
 
 		/// <summary>
-		/// Creates a Route from an url.
+		///     Creates a Route from an url.
 		/// </summary>
 		/// <param name="method">The HTTP request method to use.</param>
 		/// <param name="url">The url to use.</param>
@@ -237,11 +240,8 @@ namespace Spectacles.NET.Rest
 			});
 			route = reactionRegEx.Replace(route, "/reactions/:id");
 			route = webhookRegEx.Replace(route, "/webhooks/$1/:token");
-			
-			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id"))
-			{
-				route = $"{method}{url}";
-			}
+
+			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id")) route = $"{method}{url}";
 
 			return route;
 		}

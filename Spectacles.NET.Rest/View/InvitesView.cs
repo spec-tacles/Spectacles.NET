@@ -4,6 +4,10 @@ namespace Spectacles.NET.Rest.View
 {
 	public class InvitesView : View
 	{
+		public InvitesView(RestClient client) : base(client)
+		{
+		}
+
 		public InvitesView this[long id]
 		{
 			get
@@ -21,12 +25,8 @@ namespace Spectacles.NET.Rest.View
 				return this;
 			}
 		}
-		
+
 		protected override string Route
 			=> $"{APIEndpoints.Invite(ID)}";
-		
-		public InvitesView(RestClient client) : base(client)
-		{
-		}
 	}
 }

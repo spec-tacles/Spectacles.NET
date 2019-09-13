@@ -4,6 +4,9 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelPermissionsView : View
 	{
+		public ChannelPermissionsView(RestClient client, string channelID) : base(client)
+			=> ChannelID = channelID;
+
 		public ChannelPermissionsView this[long id]
 		{
 			get
@@ -21,15 +24,10 @@ namespace Spectacles.NET.Rest.View
 				return this;
 			}
 		}
-		
+
 		protected override string Route
 			=> $"{APIEndpoints.ChannelPermission(ChannelID, ID)}";
-		
+
 		private string ChannelID { get; }
-		
-		public ChannelPermissionsView(RestClient client, string channelID) : base(client)
-		{
-			ChannelID = channelID;
-		}
 	}
 }

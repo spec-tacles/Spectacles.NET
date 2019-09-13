@@ -31,140 +31,142 @@ namespace Spectacles.NET.Types
 		EMOJI_DELETE,
 		MESSAGE_DELETE = 72
 	}
-	
+
 	/// <summary>
-	/// Whenever an admin action is performed on the API, an entry is added to the respective guild's audit log. You can specify the reason by attaching the X-Audit-Log-Reason request header. This header supports url encoded utf8 characters.
+	///     Whenever an admin action is performed on the API, an entry is added to the respective guild's audit log. You can
+	///     specify the reason by attaching the X-Audit-Log-Reason request header. This header supports url encoded utf8
+	///     characters.
 	/// </summary>
 	public class AuditLogs
 	{
 		/// <summary>
-		/// list of webhooks found in the audit log
+		///     list of webhooks found in the audit log
 		/// </summary>
 		[JsonProperty("webhooks")]
 		public Webhook[] Webhooks { get; set; }
-		
+
 		/// <summary>
-		/// list of users found in the audit log
+		///     list of users found in the audit log
 		/// </summary>
 		[JsonProperty("users")]
 		public User[] Users { get; set; }
-		
+
 		/// <summary>
-		/// list of audit log entries
+		///     list of audit log entries
 		/// </summary>
 		[JsonProperty("audit_log_entries")]
 		public AuditLogEntry[] AuditLogEntries { get; set; }
 	}
 
 	/// <summary>
-	/// An Audit Log Entry 
+	///     An Audit Log Entry
 	/// </summary>
 	public class AuditLogEntry
 	{
 		/// <summary>
-		/// id of the affected entity (webhook, user, role, etc.)
+		///     id of the affected entity (webhook, user, role, etc.)
 		/// </summary>
 		[JsonProperty("target_id")]
 		public string TargetID { get; set; }
-		
+
 		/// <summary>
-		/// changes made to the target_id
+		///     changes made to the target_id
 		/// </summary>
 		[JsonProperty("changes")]
 		public AuditLogChange[] Changes { get; set; }
-		
+
 		/// <summary>
-		/// the user who made the changes
+		///     the user who made the changes
 		/// </summary>
 		[JsonProperty("user_id")]
 		public string UserID { get; set; }
-		
+
 		/// <summary>
-		/// id of the entry
+		///     id of the entry
 		/// </summary>
 		[JsonProperty("id")]
 		public string ID { get; set; }
-		
+
 		/// <summary>
-		/// type of action that occured
+		///     type of action that occured
 		/// </summary>
 		[JsonProperty("action_type")]
 		public AuditLogEvent ActionType { get; set; }
-		
+
 		/// <summary>
-		/// additional info for certain action types
+		///     additional info for certain action types
 		/// </summary>
 		[JsonProperty("options")]
 		public AuditLogEntryInfo Options { get; set; }
-		
+
 		/// <summary>
-		/// the reason for the change (0-512 characters)
+		///     the reason for the change (0-512 characters)
 		/// </summary>
 		[JsonProperty("reason")]
 		public string Reason { get; set; }
 	}
-	
+
 	public class AuditLogChange
 	{
 		/// <summary>
-		/// new value of the key
+		///     new value of the key
 		/// </summary>
 		[JsonProperty("new_value")]
 		public object NewValue { get; set; }
-		
+
 		/// <summary>
-		/// old value of the key
+		///     old value of the key
 		/// </summary>
 		[JsonProperty("old_value")]
 		public dynamic OldValue { get; set; }
-		
+
 		/// <summary>
-		/// type of audit log change key
+		///     type of audit log change key
 		/// </summary>
 		[JsonProperty("key")]
 		public string Key { get; set; }
 	}
-	
+
 	public class AuditLogEntryInfo
 	{
 		/// <summary>
-		/// number of days after which inactive members were kicked
+		///     number of days after which inactive members were kicked
 		/// </summary>
 		[JsonProperty("delete_member_days")]
 		public string DeletedMemberDays { get; set; }
-		
+
 		/// <summary>
-		/// number of members removed by the prune
+		///     number of members removed by the prune
 		/// </summary>
 		[JsonProperty("members_removed")]
 		public string MembersRemoved { get; set; }
-		
+
 		/// <summary>
-		/// channel in which the messages were deleted
+		///     channel in which the messages were deleted
 		/// </summary>
 		[JsonProperty("channel_id")]
 		public string ChannelID { get; set; }
 
 		/// <summary>
-		/// number of deleted messages
+		///     number of deleted messages
 		/// </summary>
 		[JsonProperty("count")]
 		public string Count { get; set; }
-		
+
 		/// <summary>
-		/// id of the overwritten entity
+		///     id of the overwritten entity
 		/// </summary>
 		[JsonProperty("id")]
 		public string ID { get; set; }
-		
+
 		/// <summary>
-		/// type of overwritten entity ("member" or "role")
+		///     type of overwritten entity ("member" or "role")
 		/// </summary>
 		[JsonProperty("type")]
 		public string Type { get; set; }
-		
+
 		/// <summary>
-		/// name of the role if type is "role"
+		///     name of the role if type is "role"
 		/// </summary>
 		[JsonProperty("role_name")]
 		public string RoleName { get; set; }

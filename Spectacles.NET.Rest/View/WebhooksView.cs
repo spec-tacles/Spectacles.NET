@@ -4,9 +4,13 @@ namespace Spectacles.NET.Rest.View
 {
 	public class WebhooksView : View
 	{
+		public WebhooksView(RestClient client) : base(client)
+		{
+		}
+
 		public ExecuteWebhookView Execute
 			=> new ExecuteWebhookView(Client, ID);
-		
+
 		public WebhooksView this[long id]
 		{
 			get
@@ -24,12 +28,8 @@ namespace Spectacles.NET.Rest.View
 				return this;
 			}
 		}
-		
+
 		protected override string Route
 			=> $"{APIEndpoints.Webhook(ID)}";
-		
-		public WebhooksView(RestClient client) : base(client)
-		{
-		}
 	}
 }

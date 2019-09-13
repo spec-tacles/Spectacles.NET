@@ -27,186 +27,186 @@ namespace Spectacles.NET.Types
 		LISTEN,
 		JOIN_REQUEST = 5
 	}
-	
+
 	public class MessageActivity
 	{
 		/// <summary>
-		/// type of message activity
+		///     type of message activity
 		/// </summary>
 		[JsonProperty("type")]
 		public MessageActivityType Type { get; set; }
-		
+
 		/// <summary>
-		/// id of the player's party, lobby, or group
+		///     id of the player's party, lobby, or group
 		/// </summary>
 		[JsonProperty("party_id")]
 		public string PartyID { get; set; }
 	}
-	
+
 	public class MessageApplication
 	{
 		/// <summary>
-		/// id of the application
+		///     id of the application
 		/// </summary>
 		[JsonProperty("id")]
 		public string ID { get; set; }
-		
+
 		// ReSharper disable once CommentTypo
 		/// <summary>
-		/// id of the embed's image asset
+		///     id of the embed's image asset
 		/// </summary>
 		[JsonProperty("cover_image")]
 		public string CoverImage { get; set; }
-		
+
 		/// <summary>
-		/// application's description
+		///     application's description
 		/// </summary>
 		[JsonProperty("description")]
 		public string Description { get; set; }
-		
+
 		/// <summary>
-		/// id of the application's icon
+		///     id of the application's icon
 		/// </summary>
 		[JsonProperty("icon")]
 		public string Icon { get; set; }
-		
+
 		/// <summary>
-		/// name of the application
+		///     name of the application
 		/// </summary>
 		[JsonProperty("name")]
 		public string Name { get; set; }
 	}
-	
+
 	/// <summary>
-	/// Represents a message sent in a channel within Discord.
+	///     Represents a message sent in a channel within Discord.
 	/// </summary>
 	public class Message
 	{
 		/// <summary>
-		/// id of the message
+		///     id of the message
 		/// </summary>
 		[JsonProperty("id")]
 		public string ID { get; set; }
-		
+
 		/// <summary>
-		/// id of the channel the message was sent in
+		///     id of the channel the message was sent in
 		/// </summary>
 		[JsonProperty("channel_id")]
 		public string ChannelID { get; set; }
-		
+
 		/// <summary>
-		/// id of the guild the message was sent in
+		///     id of the guild the message was sent in
 		/// </summary>
 		[JsonProperty("guild_id")]
 		public string GuildID { get; set; }
-		
+
 		/// <summary>
-		/// the author of this message
+		///     the author of this message
 		/// </summary>
 		[JsonProperty("author")]
 		public User Author { get; set; }
-		
+
 		/// <summary>
-		/// member properties for this message's author
+		///     member properties for this message's author
 		/// </summary>
 		[JsonProperty("member")]
 		public GuildMember Member { get; set; }
-		
+
 		/// <summary>
-		/// contents of the message
+		///     contents of the message
 		/// </summary>
 		[JsonProperty("content")]
 		public string Content { get; set; }
-		
+
 		/// <summary>
-		/// when this message was sent
+		///     when this message was sent
 		/// </summary>
 		[JsonProperty("timestamp")]
 		public DateTime Timestamp { get; set; }
-		
+
 		/// <summary>
-		/// when this message was edited (or null if never)
+		///     when this message was edited (or null if never)
 		/// </summary>
 		[JsonProperty("edited_timestamp")]
 		public DateTime? EditedTimestamp { get; set; }
-		
+
 		/// <summary>
-		/// whether this was a TTS message
+		///     whether this was a TTS message
 		/// </summary>
 		[JsonProperty("tts")]
 		public bool TTS { get; set; }
-		
+
 		/// <summary>
-		/// whether this message mentions everyone
+		///     whether this message mentions everyone
 		/// </summary>
 		[JsonProperty("mention_everyone")]
 		public bool MentionEveryone { get; set; }
-		
+
 		/// <summary>
-		/// users specifically mentioned in the message
+		///     users specifically mentioned in the message
 		/// </summary>
 		[JsonProperty("mentions")]
 		public List<MentionUser> Mentions { get; set; }
-		
+
 		/// <summary>
-		/// roles specifically mentioned in this message
+		///     roles specifically mentioned in this message
 		/// </summary>
 		[JsonProperty("mention_roles")]
 		public List<string> RoleMentions { get; set; }
-		
+
 		/// <summary>
-		/// any attached files
+		///     any attached files
 		/// </summary>
 		[JsonProperty("attachments")]
 		public List<Attachment> Attachments { get; set; }
-		
+
 		/// <summary>
-		/// any embedded content
+		///     any embedded content
 		/// </summary>
 		[JsonProperty("embeds")]
 		public List<Embed> Embeds { get; set; }
-		
+
 		/// <summary>
-		/// reactions to the message
+		///     reactions to the message
 		/// </summary>
 		[JsonProperty("reactions")]
 		public List<Reaction> Reactions { get; set; }
-		
+
 		/// <summary>
-		/// used for validating a message was sent
+		///     used for validating a message was sent
 		/// </summary>
 		[JsonProperty("nonce")]
 		public string Nonce { get; set; }
-		
+
 		/// <summary>
-		/// whether this message is pinned
+		///     whether this message is pinned
 		/// </summary>
 		[JsonProperty("pinned")]
 		public bool Pinned { get; set; }
-		
+
 		// ReSharper disable once CommentTypo
 		/// <summary>
-		/// if the message is generated by a webhook, this is the webhook's id
+		///     if the message is generated by a webhook, this is the webhook's id
 		/// </summary>
 		[JsonProperty("webhook_id")]
 		public string WebhookID { get; set; }
-		
+
 		/// <summary>
-		/// <see cref="MessageType"/>
+		///     <see cref="MessageType" />
 		/// </summary>
 		[JsonProperty("type")]
 		public MessageType Type { get; set; }
-		
+
 		/// <summary>
-		/// sent with Rich Presence-related chat embeds
+		///     sent with Rich Presence-related chat embeds
 		/// </summary>
 		[JsonProperty("activity")]
 		public MessageActivity Activity { get; set; }
-		
+
 		/// <summary>
-		/// sent with Rich Presence-related chat embeds
+		///     sent with Rich Presence-related chat embeds
 		/// </summary>
 		[JsonProperty("application")]
-		public  MessageApplication Application { get; set; }
+		public MessageApplication Application { get; set; }
 	}
 }
