@@ -2,32 +2,17 @@ using System;
 using Newtonsoft.Json.Linq;
 using Spectacles.NET.Types;
 
-namespace Spectacles.NET.Gateway
+namespace Spectacles.NET.Gateway.Event
 {
 	/// <inheritdoc />
 	/// <summary>
-	/// EventArgs for the DispatchEvent
+	///     EventArgs for the DispatchEvent
 	/// </summary>
 	public class DispatchEventArgs : EventArgs
 	{
-		/// <summary>
-		/// Shard where the Dispatch occured.
-		/// </summary>
-		public int ShardID { get; }
-		
-		/// <summary>
-		/// Data of the Dispatch.
-		/// </summary>
-		public JObject Data { get; }
-		
-		/// <summary>
-		/// The Event of this Dispatch.
-		/// </summary>
-		public GatewayEvent Event { get; }
-
 		/// <inheritdoc />
 		/// <summary>
-		/// Creates a new DispatchEventArgs instance
+		///     Creates a new DispatchEventArgs instance
 		/// </summary>
 		/// <param name="shardID">Shard where the Dispatch occured.</param>
 		/// <param name="data">Data of the Dispatch.</param>
@@ -38,5 +23,20 @@ namespace Spectacles.NET.Gateway
 			Data = data;
 			Event = @event;
 		}
+
+		/// <summary>
+		///     Shard where the Dispatch occured.
+		/// </summary>
+		public int ShardID { get; }
+
+		/// <summary>
+		///     Data of the Dispatch.
+		/// </summary>
+		public JObject Data { get; }
+
+		/// <summary>
+		///     The Event of this Dispatch.
+		/// </summary>
+		public GatewayEvent Event { get; }
 	}
 }
