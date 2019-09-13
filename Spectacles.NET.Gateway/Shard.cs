@@ -152,7 +152,7 @@ namespace Spectacles.NET.Gateway
 		public async Task ConnectAsync()
 		{
 			if (!Gateway.Ready) await Gateway.FetchGatewayAsync();
-			
+
 			LastHeartbeatAcked = true;
 
 			if (WebSocketClient != null)

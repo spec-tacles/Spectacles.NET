@@ -38,7 +38,8 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		///     If this Gateway is ready to use
 		/// </summary>
-		public bool Ready { get; private set; }
+		public bool Ready
+			=> Data != null;
 
 		/// <summary>
 		///     The Gateway Data of this instance, fetched from the Gateway/bot endpoint
@@ -88,7 +89,6 @@ namespace Spectacles.NET.Gateway
 		public async Task FetchGatewayAsync()
 		{
 			if (Ready) return;
-			Ready = true;
 			using (var httpClient = new HttpClient())
 			{
 				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
