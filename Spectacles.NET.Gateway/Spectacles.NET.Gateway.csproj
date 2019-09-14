@@ -15,7 +15,9 @@
         <Authors>DevYukine</Authors>
         <Copyright> </Copyright>
         <Description>Spawns shards and manages a bot's lifetime on the Discord WebSocket gateway.</Description>
-        <PackageReleaseNotes>- Add Helper method to reduce code duplication</PackageReleaseNotes>
+        <PackageReleaseNotes>- Abstract Gateway layer &amp; Ratelimiting logic out of Shard &amp; Cluster
+
+- use Spectacles.NET.Util to remove Token prefix</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -24,6 +26,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Spectacles.NET.Types\Spectacles.NET.Types.csproj" />
+      <ProjectReference Include="..\Spectacles.NET.Util\Spectacles.NET.Util.csproj" />
     </ItemGroup>
 
     <ItemGroup>
