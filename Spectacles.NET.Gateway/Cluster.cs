@@ -20,7 +20,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		public Cluster(string token)
-			=> Gateway = Gateway.Get(token.RemoveBotPrefix());
+			=> Gateway = Gateway.Get(token.RemoveTokenPrefix());
 
 		/// <summary>
 		///     Creates a new instance and uses the provided shard count.
@@ -29,7 +29,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="shardCount">The shard count to use.</param>
 		// ReSharper disable once UnusedMember.Global
 		public Cluster(string token, int shardCount)
-			=> Gateway = Gateway.Get(token.RemoveBotPrefix(), shardCount);
+			=> Gateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
 
 		/// <summary>
 		///     A Dictionary of Shards mapped to there ID.

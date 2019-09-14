@@ -43,7 +43,7 @@ namespace Spectacles.NET.Gateway
 		// ReSharper disable once UnusedMember.Global
 		public Shard(string token, int id, int shardCount)
 		{
-			ShardGateway = Gateway.Get(token.RemoveBotPrefix(), shardCount);
+			ShardGateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
 			ID = id;
 		}
 

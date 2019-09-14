@@ -34,7 +34,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="proxy">Optional, Uri of what to use as BaseAddress (useful for a Rest proxy)</param>
 		public RestClient(string token, Uri proxy = null)
 		{
-			_token = token.RemoveBotPrefix();
+			_token = token.RemoveTokenPrefix();
 
 			SetDefaultHeadersWithBaseUri(proxy);
 		}
