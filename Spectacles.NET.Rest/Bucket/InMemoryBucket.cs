@@ -55,7 +55,7 @@ namespace Spectacles.NET.Rest.Bucket
 
 		/// <inheritdoc />
 		public RestClient Client { get; }
-		
+
 		/// <inheritdoc />
 		public string Route { get; }
 

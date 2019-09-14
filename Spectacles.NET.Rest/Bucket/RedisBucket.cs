@@ -39,11 +39,6 @@ namespace Spectacles.NET.Rest.Bucket
 		}
 
 		/// <summary>
-		///     The route of this Bucket
-		/// </summary>
-		public string Route { get; }
-
-		/// <summary>
 		///     The Redis Database used by this Bucket
 		/// </summary>
 		private IDatabase Redis
@@ -69,6 +64,11 @@ namespace Spectacles.NET.Rest.Bucket
 		///     Delay to wait before retrying to Get/Set Ratelimit information from redis
 		/// </summary>
 		private int RetryDelay { get; set; }
+
+		/// <summary>
+		///     The route of this Bucket
+		/// </summary>
+		public string Route { get; }
 
 		/// <inheritdoc />
 		public RestClient Client { get; }

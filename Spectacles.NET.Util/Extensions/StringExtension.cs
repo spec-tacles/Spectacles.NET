@@ -7,8 +7,9 @@ namespace Spectacles.NET.Util.Extensions
 	/// </summary>
 	public static class StringExtension
 	{
-		private static Regex Regex { get; } = new Regex(@"^(Bot|Bearer)\s", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-		
+		private static Regex Regex { get; } =
+			new Regex(@"^(Bot|Bearer)\s", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
 		/// <summary>
 		///     Removes The `Bot` or `Bearer` Prefix from a token
 		/// </summary>
