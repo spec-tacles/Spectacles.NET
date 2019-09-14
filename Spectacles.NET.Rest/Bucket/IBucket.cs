@@ -13,9 +13,9 @@ namespace Spectacles.NET.Rest.Bucket
 		///     The RestClient which instantiated this Bucket.
 		/// </summary>
 		RestClient Client { get; }
-		
+
 		/// <summary>
-		/// The Route of this Bucket.
+		///     The Route of this Bucket.
 		/// </summary>
 		string Route { get; }
 

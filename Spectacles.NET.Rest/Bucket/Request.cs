@@ -92,7 +92,7 @@ namespace Spectacles.NET.Rest.Bucket
 		public async Task Execute()
 		{
 			HttpRequestMessage request;
-			
+
 			switch (Method)
 			{
 				case RequestMethod.GET:
@@ -148,8 +148,9 @@ namespace Spectacles.NET.Rest.Bucket
 			}
 
 			var ratelimit = new RateLimitInfo(res.Headers.ToDictionary(a => a.Key, a => a.Value.First()));
-			
-			_log(LogLevel.DEBUG, $"Created Ratelimit Info:\n{ratelimit.Lag.TotalSeconds} Seconds Lag\n{ratelimit.Limit} Limit\n{ratelimit.Remaining} Remaining\n{ratelimit.Reset} Reset\n{ratelimit.IsGlobal} Global?\n{ratelimit.RetryAfter} Retry-After");
+
+			_log(LogLevel.DEBUG,
+				$"Created Ratelimit Info:\n{ratelimit.Lag.TotalSeconds} Seconds Lag\n{ratelimit.Limit} Limit\n{ratelimit.Remaining} Remaining\n{ratelimit.Reset} Reset\n{ratelimit.IsGlobal} Global?\n{ratelimit.RetryAfter} Retry-After");
 
 			var statusCode = (int) res.StatusCode;
 
@@ -195,6 +196,7 @@ namespace Spectacles.NET.Rest.Bucket
 				Error?.Invoke(this, new DiscordAPIException(500, null, $"{HttpStatusCode.InternalServerError}"));
 				return;
 			}
+
 			Task.Run(async () =>
 			{
 				await Task.Delay(1000 + new Random().Next(1, 100) - 5);
@@ -224,15 +226,18 @@ namespace Spectacles.NET.Rest.Bucket
 					await Bucket.SetTimeout(
 						TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow)
 							.Milliseconds));
-					_log(LogLevel.DEBUG, $"Reset: {TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).Milliseconds)}");
+					_log(LogLevel.DEBUG,
+						$"Reset: {TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).Milliseconds)}");
 				}
+
 				_log(LogLevel.DEBUG, "Updated Bucket Ratelimit information");
 				Timeout = 100;
 			}
 			catch (Exception)
 			{
 				Timeout *= 2;
-				_log(LogLevel.WARN, $"Could not update Ratelimit information, retrying in {TimeSpan.FromMilliseconds(Timeout).TotalSeconds} Seconds");
+				_log(LogLevel.WARN,
+					$"Could not update Ratelimit information, retrying in {TimeSpan.FromMilliseconds(Timeout).TotalSeconds} Seconds");
 				await Task.Delay(Timeout);
 				await _handleHeaders(ratelimit);
 			}
@@ -246,19 +251,23 @@ namespace Spectacles.NET.Rest.Bucket
 				if (ratelimit.RetryAfter != null)
 				{
 					await Bucket.SetTimeout(TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter));
-					_log(LogLevel.DEBUG, $"Timeout: {TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter).TotalMilliseconds}");
+					_log(LogLevel.DEBUG,
+						$"Timeout: {TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter).TotalMilliseconds}");
 				}
 
 				if (ratelimit.IsGlobal && ratelimit.RetryAfter != null && Client.GlobalTimeout == null)
 				{
 					await Bucket.SetGloballyLimited(TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter));
-					_log(LogLevel.DEBUG, $"Global Limited: {TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter).TotalMilliseconds}");
+					_log(LogLevel.DEBUG,
+						$"Global Limited: {TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter).TotalMilliseconds}");
 				}
+
 				Timeout = 100;
 			}
 			catch (Exception)
 			{
-				_log(LogLevel.WARN, $"Could not update Ratelimit information, retrying in {TimeSpan.FromMilliseconds(Timeout).TotalSeconds} Seconds");
+				_log(LogLevel.WARN,
+					$"Could not update Ratelimit information, retrying in {TimeSpan.FromMilliseconds(Timeout).TotalSeconds} Seconds");
 				Timeout *= 2;
 				await Task.Delay(Timeout);
 				await _handleTooManyRequests(ratelimit);

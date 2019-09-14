@@ -22,11 +22,6 @@ namespace Spectacles.NET.Rest
 		private readonly string _token;
 
 		/// <summary>
-		///     Event emitted when Logs are received.
-		/// </summary>
-		public event EventHandler<LogEventArgs> Log; 
-
-		/// <summary>
 		///     Creates a new Instance of RestClient.
 		/// </summary>
 		/// <param name="token">The Token of the Bot.</param>
@@ -118,6 +113,11 @@ namespace Spectacles.NET.Rest
 			=> $"Bot {_token}";
 
 		/// <summary>
+		///     Event emitted when Logs are received.
+		/// </summary>
+		public event EventHandler<LogEventArgs> Log;
+
+		/// <summary>
 		///     Enqueues a Request and Creates a Bucket if needed.
 		/// </summary>
 		/// <param name="method">The HTTP Method to use.</param>
@@ -125,7 +125,8 @@ namespace Spectacles.NET.Rest
 		/// <param name="content">The HttpContent to use.</param>
 		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<object> Request(string route, RequestMethod method, HttpContent content, string auditLogReason = null)
+		public Task<object> Request(string route, RequestMethod method, HttpContent content,
+			string auditLogReason = null)
 		{
 			var bucketRoute = MakeRoute(method, route);
 			if (Buckets.TryGetValue(bucketRoute, out var bucket))
