@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
-        <PackageVersion>0.3.1</PackageVersion>
+        <PackageVersion>0.3.2</PackageVersion>
         <Title>Spectacles.NET.Gateway</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -15,7 +15,7 @@
         <Authors>DevYukine</Authors>
         <Copyright> </Copyright>
         <Description>Spawns shards and manages a bot's lifetime on the Discord WebSocket gateway.</Description>
-        <PackageReleaseNotes>- Fixes removing prefix from token</PackageReleaseNotes>
+        <PackageReleaseNotes>- Move Logging Classes to Spectacles.NET.Util</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
