@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Spectacles.NET.Gateway.Event;
-using Spectacles.NET.Gateway.Logging;
 using Spectacles.NET.Util.Extensions;
+using Spectacles.NET.Util.Logging;
 
 namespace Spectacles.NET.Gateway
 {

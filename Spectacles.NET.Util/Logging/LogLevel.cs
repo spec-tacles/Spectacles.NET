@@ -1,4 +1,4 @@
-namespace Spectacles.NET.Gateway.Logging
+namespace Spectacles.NET.Util.Logging
 {
 	/// <summary>
 	///     The LogLevel of all Logs.

@@ -7,6 +7,7 @@ using Spectacles.NET.Rest.Bucket;
 using Spectacles.NET.Rest.View;
 using Spectacles.NET.Types;
 using Spectacles.NET.Util.Extensions;
+using Spectacles.NET.Util.Logging;
 
 namespace Spectacles.NET.Rest
 {
@@ -16,16 +17,14 @@ namespace Spectacles.NET.Rest
 	public class RestClient
 	{
 		/// <summary>
-		///     The Buckets of this RestClient mapped by Route.
+		///     Unprefixed token
 		/// </summary>
-		private readonly ConcurrentDictionary<string, IBucket> _buckets = new ConcurrentDictionary<string, IBucket>();
-
 		private readonly string _token;
 
 		/// <summary>
-		///     The HttpClient of this RestClient.
+		///     Event emitted when Logs are received.
 		/// </summary>
-		public readonly HttpClient HttpClient = new HttpClient();
+		public event EventHandler<LogEventArgs> Log; 
 
 		/// <summary>
 		///     Creates a new Instance of RestClient.
@@ -55,6 +54,16 @@ namespace Spectacles.NET.Rest
 		/// <param name="factory">Factory which creates IBucket to use</param>
 		public RestClient(string token, Uri proxy, IBucketFactory factory) : this(token, proxy)
 			=> BucketFactory = factory;
+
+		/// <summary>
+		///     The Buckets of this RestClient mapped by Route.
+		/// </summary>
+		private ConcurrentDictionary<string, IBucket> Buckets { get; } = new ConcurrentDictionary<string, IBucket>();
+
+		/// <summary>
+		///     The HttpClient of this RestClient.
+		/// </summary>
+		public HttpClient HttpClient { get; } = new HttpClient();
 
 		/// <summary>
 		///     The Guilds View.
@@ -116,13 +125,13 @@ namespace Spectacles.NET.Rest
 		/// <param name="content">The HttpContent to use.</param>
 		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<object> Request(string route, RequestMethod method, HttpContent content, string auditLogReason)
+		public Task<object> Request(string route, RequestMethod method, HttpContent content, string auditLogReason = null)
 		{
 			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket))
+			if (Buckets.TryGetValue(bucketRoute, out var bucket))
 				return bucket.Enqueue(method, route, content, auditLogReason);
 			bucket = BucketFactory.CreateBucket(this, bucketRoute);
-			_buckets.TryAdd(bucketRoute, bucket);
+			Buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue(method, route, content, auditLogReason);
 		}
 
@@ -134,47 +143,14 @@ namespace Spectacles.NET.Rest
 		/// <param name="content">The HttpContent to use.</param>
 		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content, string auditLogReason)
+		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content, string auditLogReason = null)
 		{
 			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket))
+			if (Buckets.TryGetValue(bucketRoute, out var bucket))
 				return bucket.Enqueue<T>(method, route, content, auditLogReason);
 			bucket = BucketFactory.CreateBucket(this, bucketRoute);
-			_buckets.TryAdd(bucketRoute, bucket);
+			Buckets.TryAdd(bucketRoute, bucket);
 			return bucket.Enqueue<T>(method, route, content, auditLogReason);
-		}
-
-		/// <summary>
-		///     Enqueues a Request and Creates a Bucket if needed.
-		/// </summary>
-		/// <param name="method">The HTTP Method to use.</param>
-		/// <param name="route">The Path to use.</param>
-		/// <param name="content">The HttpContent to use.</param>
-		/// <returns></returns>
-		public Task<object> Request(string route, RequestMethod method, HttpContent content)
-		{
-			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket)) return bucket.Enqueue(method, route, content, null);
-			bucket = BucketFactory.CreateBucket(this, bucketRoute);
-			_buckets.TryAdd(bucketRoute, bucket);
-			return bucket.Enqueue(method, route, content, null);
-		}
-
-		/// <summary>
-		///     Enqueues a Request and Creates a Bucket if needed.
-		/// </summary>
-		/// <param name="method">The HTTP Method to use.</param>
-		/// <param name="route">The Path to use.</param>
-		/// <param name="content">The HttpContent to use.</param>
-		/// <returns></returns>
-		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content)
-		{
-			var bucketRoute = MakeRoute(method, route);
-			if (_buckets.TryGetValue(bucketRoute, out var bucket))
-				return bucket.Enqueue<T>(method, route, content, null);
-			bucket = BucketFactory.CreateBucket(this, bucketRoute);
-			_buckets.TryAdd(bucketRoute, bucket);
-			return bucket.Enqueue<T>(method, route, content, null);
 		}
 
 		/// <summary>
@@ -184,6 +160,8 @@ namespace Spectacles.NET.Rest
 		{
 			HttpClient.DefaultRequestHeaders.Add("Authorization", Token);
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			HttpClient.DefaultRequestHeaders.Add("X-RateLimit-Precision", "millisecond");
+			CreateLog(LogLevel.DEBUG, "Set HttpClient Default Headers");
 		}
 
 		/// <summary>
@@ -194,6 +172,7 @@ namespace Spectacles.NET.Rest
 		{
 			SetDefaultHeaders();
 			HttpClient.BaseAddress = uri ?? new Uri(APIEndpoints.APIBaseURL);
+			CreateLog(LogLevel.DEBUG, "Set HttpClient Base Address");
 		}
 
 		/// <summary>
@@ -219,5 +198,14 @@ namespace Spectacles.NET.Rest
 
 			return route;
 		}
+
+		/// <summary>
+		///     Emits something on the Log event
+		/// </summary>
+		/// <param name="level">The LogLevel of this log</param>
+		/// <param name="message">The message of this log</param>
+		/// <param name="sender">Optional sender of this Message</param>
+		public void CreateLog(LogLevel level, string message, string sender = null)
+			=> Log?.Invoke(this, new LogEventArgs(level, sender ?? "RestClient", message));
 	}
 }

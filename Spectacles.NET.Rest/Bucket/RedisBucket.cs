@@ -41,7 +41,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		///     The route of this Bucket
 		/// </summary>
-		private string Route { get; }
+		public string Route { get; }
 
 		/// <summary>
 		///     The Redis Database used by this Bucket
@@ -112,8 +112,8 @@ namespace Spectacles.NET.Rest.Bucket
 			=> Redis.StringSetAsync(Constants.Remaining(FormattedRoute), amount.ToString());
 
 		/// <inheritdoc />
-		public Task SetTimeout(int amount)
-			=> Redis.KeyExpireAsync(Constants.Remaining(FormattedRoute), TimeSpan.FromMilliseconds(amount));
+		public Task SetTimeout(TimeSpan duration)
+			=> Redis.KeyExpireAsync(Constants.Remaining(FormattedRoute), duration);
 
 		/// <inheritdoc />
 		public async Task<int> GetLimit()
@@ -139,10 +139,10 @@ namespace Spectacles.NET.Rest.Bucket
 			=> !(await Redis.StringGetAsync(Constants.Global)).IsNullOrEmpty;
 
 		/// <inheritdoc />
-		public async Task SetGloballyLimited(int until)
+		public async Task SetGloballyLimited(TimeSpan duration)
 		{
-			await Redis.StringSetAsync(Constants.Global, "", TimeSpan.FromMilliseconds(until));
-			Client.GlobalTimeout = Task.Delay(until);
+			await Redis.StringSetAsync(Constants.Global, "", duration);
+			Client.GlobalTimeout = Task.Delay(duration);
 		}
 
 		/// <summary>

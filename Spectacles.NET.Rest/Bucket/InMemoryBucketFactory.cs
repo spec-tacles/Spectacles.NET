@@ -5,6 +5,6 @@ namespace Spectacles.NET.Rest.Bucket
 	{
 		/// <inheritdoc />
 		public IBucket CreateBucket(RestClient client, string route)
-			=> new InMemoryBucket(client);
+			=> new InMemoryBucket(client, route);
 	}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using System.Net.Http;
 using System.Threading;
@@ -20,8 +21,12 @@ namespace Spectacles.NET.Rest.Bucket
 		///     Creates a new instance of Bucket.
 		/// </summary>
 		/// <param name="client">The RestClient which created this instance.</param>
-		public InMemoryBucket(RestClient client)
-			=> Client = client;
+		/// <param name="route">The route of this Bucket</param>
+		public InMemoryBucket(RestClient client, string route)
+		{
+			Client = client;
+			Route = route;
+		}
 
 		/// <summary>
 		///     If this Bucket is currently executing Requests.
@@ -50,6 +55,9 @@ namespace Spectacles.NET.Rest.Bucket
 
 		/// <inheritdoc />
 		public RestClient Client { get; }
+		
+		/// <inheritdoc />
+		public string Route { get; }
 
 		/// <inheritdoc />
 		public Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason)
@@ -95,9 +103,9 @@ namespace Spectacles.NET.Rest.Bucket
 		}
 
 		/// <inheritdoc />
-		public Task SetTimeout(int amount)
+		public Task SetTimeout(TimeSpan duration)
 		{
-			Timeout = amount;
+			Timeout = (int) duration.TotalMilliseconds;
 			return Task.CompletedTask;
 		}
 
@@ -122,11 +130,11 @@ namespace Spectacles.NET.Rest.Bucket
 			=> Task.FromResult(Client.GlobalTimeout != null);
 
 		/// <inheritdoc />
-		public Task SetGloballyLimited(int until)
+		public Task SetGloballyLimited(TimeSpan duration)
 		{
 			Client.GlobalTimeout = new Task(async () =>
 			{
-				await Task.Delay(until);
+				await Task.Delay(duration);
 				Client.GlobalTimeout = null;
 			});
 			return Task.CompletedTask;

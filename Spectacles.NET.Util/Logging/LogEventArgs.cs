@@ -1,6 +1,6 @@
 using System;
 
-namespace Spectacles.NET.Gateway.Logging
+namespace Spectacles.NET.Util.Logging
 {
 	/// <inheritdoc />
 	/// <summary>

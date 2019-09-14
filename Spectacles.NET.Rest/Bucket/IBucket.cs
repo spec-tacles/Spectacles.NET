@@ -1,3 +1,4 @@
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -12,6 +13,11 @@ namespace Spectacles.NET.Rest.Bucket
 		///     The RestClient which instantiated this Bucket.
 		/// </summary>
 		RestClient Client { get; }
+		
+		/// <summary>
+		/// The Route of this Bucket.
+		/// </summary>
+		string Route { get; }
 
 		/// <summary>
 		///     Enqueues a Request in this Bucket.
@@ -52,7 +58,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		///     Sets the timeout to wait before continue sending requests.
 		/// </summary>
-		Task SetTimeout(int amount);
+		Task SetTimeout(TimeSpan duration);
 
 		/// <summary>
 		///     Gets the amount of request that can be done before waiting.
@@ -83,6 +89,6 @@ namespace Spectacles.NET.Rest.Bucket
 		///     Sets The IsGloballyLimited property
 		/// </summary>
 		/// <returns></returns>
-		Task SetGloballyLimited(int until);
+		Task SetGloballyLimited(TimeSpan duration);
 	}
 }
