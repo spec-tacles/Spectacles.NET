@@ -150,7 +150,7 @@ namespace Spectacles.NET.Rest.Bucket
 			var ratelimit = new RateLimitInfo(res.Headers.ToDictionary(a => a.Key, a => a.Value.First()));
 
 			_log(LogLevel.DEBUG,
-				$"Created Ratelimit Info:\n{ratelimit.Lag.TotalSeconds} Seconds Lag\n{ratelimit.Limit} Limit\n{ratelimit.Remaining} Remaining\n{ratelimit.Reset} Reset\n{ratelimit.IsGlobal} Global?\n{ratelimit.RetryAfter} Retry-After");
+				$"Created Ratelimit Info:\nLag: {ratelimit.Lag.TotalSeconds} Seconds\nLimit: {ratelimit.Limit}\nRemaining: {ratelimit.Remaining}\nReset: {ratelimit.Reset}\nGlobal Ratelimited: {ratelimit.IsGlobal}\nRetry-After: {ratelimit.RetryAfter}");
 
 			var statusCode = (int) res.StatusCode;
 
@@ -158,7 +158,7 @@ namespace Spectacles.NET.Rest.Bucket
 			try
 			{
 				content = await res.Content.ReadAsStringAsync();
-				Client.CreateLog(LogLevel.DEBUG, "Parsed", $"[{Method}] {URL}");
+				_log(LogLevel.DEBUG, "Parsed Content");
 			}
 			catch (Exception e)
 			{
@@ -224,10 +224,10 @@ namespace Spectacles.NET.Rest.Bucket
 				if (ratelimit.Reset != null)
 				{
 					await Bucket.SetTimeout(
-						TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow)
+						TimeSpan.FromMilliseconds((DateTimeOffset.UtcNow - (DateTimeOffset) ratelimit.Reset)
 							.Milliseconds));
 					_log(LogLevel.DEBUG,
-						$"Reset: {TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).Milliseconds)}");
+						$"Reset: {TimeSpan.FromMilliseconds((DateTimeOffset.UtcNow - (DateTimeOffset) ratelimit.Reset).Milliseconds)}");
 				}
 
 				_log(LogLevel.DEBUG, "Updated Bucket Ratelimit information");
