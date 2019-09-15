@@ -224,10 +224,9 @@ namespace Spectacles.NET.Rest.Bucket
 				if (ratelimit.Reset != null)
 				{
 					await Bucket.SetTimeout(
-						TimeSpan.FromMilliseconds((DateTimeOffset.UtcNow - (DateTimeOffset) ratelimit.Reset)
-							.TotalMilliseconds));
+						TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).TotalMilliseconds));
 					_log(LogLevel.DEBUG,
-						$"Reset: {TimeSpan.FromMilliseconds((DateTimeOffset.UtcNow - (DateTimeOffset) ratelimit.Reset).TotalMilliseconds)}");
+						$"Reset: {TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).TotalMilliseconds)}");
 				}
 
 				_log(LogLevel.DEBUG, "Updated Bucket Ratelimit information");

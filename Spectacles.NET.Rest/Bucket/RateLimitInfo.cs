@@ -56,7 +56,7 @@ namespace Spectacles.NET.Rest.Bucket
 				: TimeSpan.Zero;
 			Reset = headers.TryGetValue("X-RateLimit-Reset", out temp) &&
 			        int.TryParse(temp, out var reset)
-				? DateTimeOffset.FromUnixTimeSeconds((long) (reset - Lag.TotalMilliseconds))
+				? DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(Math.Ceiling(reset - Lag.TotalSeconds)))
 				: (DateTimeOffset?) null;
 			RetryAfter = headers.TryGetValue("Retry-After", out temp) &&
 			             int.TryParse(temp, out var retryAfter)
