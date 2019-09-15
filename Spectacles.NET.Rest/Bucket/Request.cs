@@ -250,16 +250,16 @@ namespace Spectacles.NET.Rest.Bucket
 			{
 				if (ratelimit.RetryAfter != null)
 				{
-					await Bucket.SetTimeout(TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter));
+					await Bucket.SetTimeout(TimeSpan.FromMilliseconds((int) ratelimit.RetryAfter));
 					_log(LogLevel.DEBUG,
-						$"Timeout: {TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter).TotalMilliseconds}");
+						$"Timeout: {TimeSpan.FromMilliseconds((int) ratelimit.RetryAfter).TotalMilliseconds}");
 				}
 
 				if (ratelimit.IsGlobal && ratelimit.RetryAfter != null && Client.GlobalTimeout == null)
 				{
-					await Bucket.SetGloballyLimited(TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter));
+					await Bucket.SetGloballyLimited(TimeSpan.FromMilliseconds((int) ratelimit.RetryAfter));
 					_log(LogLevel.DEBUG,
-						$"Global Limited: {TimeSpan.FromMilliseconds((double) ratelimit.RetryAfter).TotalMilliseconds}");
+						$"Global Limited: {TimeSpan.FromMilliseconds((int) ratelimit.RetryAfter).TotalMilliseconds}");
 				}
 
 				Timeout = 100;

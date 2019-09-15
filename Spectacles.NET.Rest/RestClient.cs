@@ -161,7 +161,6 @@ namespace Spectacles.NET.Rest
 		{
 			HttpClient.DefaultRequestHeaders.Add("Authorization", Token);
 			HttpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-			HttpClient.DefaultRequestHeaders.Add("X-RateLimit-Precision", "millisecond");
 			CreateLog(LogLevel.DEBUG, "Set HttpClient Default Headers");
 		}
 

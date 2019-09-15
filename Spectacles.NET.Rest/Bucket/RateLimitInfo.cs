@@ -26,7 +26,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		///     Only there if response code is 429, represents the time to wait before doing another request in ms.
 		/// </summary>
-		public double? RetryAfter { get; }
+		public int? RetryAfter { get; }
 
 		/// <summary>
 		///     The difference between the discord api and the local time.
@@ -55,13 +55,13 @@ namespace Spectacles.NET.Rest.Bucket
 				? date - DateTimeOffset.UtcNow
 				: TimeSpan.Zero;
 			Reset = headers.TryGetValue("X-RateLimit-Reset", out temp) &&
-			        double.TryParse(temp, out var reset)
+			        int.TryParse(temp, out var reset)
 				? DateTimeOffset.FromUnixTimeSeconds((long) (reset - Lag.TotalMilliseconds))
 				: (DateTimeOffset?) null;
 			RetryAfter = headers.TryGetValue("Retry-After", out temp) &&
-			             double.TryParse(temp, out var retryAfter)
+			             int.TryParse(temp, out var retryAfter)
 				? retryAfter
-				: (double?) null;
+				: (int?) null;
 		}
 	}
 }
