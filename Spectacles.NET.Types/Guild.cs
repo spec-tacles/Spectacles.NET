@@ -43,67 +43,67 @@ namespace Spectacles.NET.Types
 	}
 
 	/// <summary>
-	/// Features of a Guild
+	///     Features of a Guild
 	/// </summary>
 	public enum GuildFeature
 	{
 		/// <summary>
-		/// guild has access to set an invite splash background
+		///     guild has access to set an invite splash background
 		/// </summary>
 		INVITE_SPLASH,
-		
+
 		/// <summary>
-		/// guild has access to set 320kbps bitrate in voice (previously VIP voice servers)
+		///     guild has access to set 320kbps bitrate in voice (previously VIP voice servers)
 		/// </summary>
 		VIP_REGIONS,
-		
+
 		/// <summary>
-		/// guild has access to set a vanity URL
+		///     guild has access to set a vanity URL
 		/// </summary>
 		VANITY_URL,
-		
+
 		/// <summary>
-		/// guild is verified
+		///     guild is verified
 		/// </summary>
 		VERIFIED,
-		
+
 		/// <summary>
-		/// guild is partnered
+		///     guild is partnered
 		/// </summary>
 		PARTNERED,
-		
+
 		/// <summary>
-		/// guild is public
+		///     guild is public
 		/// </summary>
 		PUBLIC,
-		
+
 		/// <summary>
-		/// guild has access to use commerce features (i.e. create store channels)
+		///     guild has access to use commerce features (i.e. create store channels)
 		/// </summary>
 		COMMERCE,
-		
+
 		/// <summary>
-		/// guild has access to create news channels
+		///     guild has access to create news channels
 		/// </summary>
 		NEWS,
-		
+
 		/// <summary>
-		/// guild is able to be discovered in the directory
+		///     guild is able to be discovered in the directory
 		/// </summary>
 		DISCOVERABLE,
-		
+
 		/// <summary>
-		/// guild is able to be featured in the directory
+		///     guild is able to be featured in the directory
 		/// </summary>
 		FEATURABLE,
-		
+
 		/// <summary>
-		/// guild has access to set an animated guild icon
+		///     guild has access to set an animated guild icon
 		/// </summary>
 		ANIMATED_ICON,
-		
+
 		/// <summary>
-		/// guild has access to set a guild banner image
+		///     guild has access to set a guild banner image
 		/// </summary>
 		BANNER
 	}
@@ -350,9 +350,9 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("premium_subscription_count")]
 		public int? PremiumSubscriberCount { get; set; }
-		
+
 		/// <summary>
-		/// the preferred locale of this guild only set if guild has the "DISCOVERABLE" feature, defaults to en-US
+		///     the preferred locale of this guild only set if guild has the "DISCOVERABLE" feature, defaults to en-US
 		/// </summary>
 		[JsonProperty("preferred_locale")]
 		public string PreferredLocale { get; set; }

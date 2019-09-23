@@ -224,7 +224,8 @@ namespace Spectacles.NET.Rest.Bucket
 				if (ratelimit.Reset != null)
 				{
 					await Bucket.SetTimeout(
-						TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).TotalMilliseconds));
+						TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow)
+							.TotalMilliseconds));
 					_log(LogLevel.DEBUG,
 						$"Reset: {TimeSpan.FromMilliseconds(((DateTimeOffset) ratelimit.Reset - DateTimeOffset.UtcNow).TotalMilliseconds)}");
 				}
