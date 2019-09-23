@@ -243,7 +243,16 @@ namespace Spectacles.NET.Gateway
 		/// <param name="json">the incoming json as string</param>
 		private void _handleMessage(string json)
 		{
-			var packet = JsonConvert.DeserializeObject<ReceivePacket>(json);
+			ReceivePacket packet;
+			try
+			{
+				packet = JsonConvert.DeserializeObject<ReceivePacket>(json);
+			}
+			catch (Exception e)
+			{
+				_log(LogLevel.WARN, $"Couldn't parse Packet JSON, {e}");
+				return;
+			}
 
 			// ReSharper disable once SwitchStatementMissingSomeCases
 			switch (packet.OpCode)
