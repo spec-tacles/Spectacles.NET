@@ -276,7 +276,7 @@ namespace Spectacles.NET.Types
 		///     used to replace presences after outages, data is null for bot accounts receiving it
 		///     <remarks>Bot Accounts should ignore this</remarks>
 		/// </summary>
-		PRESENCE_REPLACE,
+		PRESENCES_REPLACE,
 
 		/// <summary>
 		///     user started typing in a channel
