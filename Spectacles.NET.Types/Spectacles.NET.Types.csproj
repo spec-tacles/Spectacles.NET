@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.5.1</PackageVersion>
+        <PackageVersion>0.5.2</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,13 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>fix extra whitespace in JsonProperty</PackageReleaseNotes>
+        <PackageReleaseNotes>- PRESENCE_REPLACE renamed to  PRESENCES_REPLACE
+
+- Add Guild#PreferredLocale
+
+- use enum for Guild#features
+
+- Add Message#ChannelMentions</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
