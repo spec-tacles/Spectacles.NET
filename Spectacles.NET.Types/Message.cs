@@ -77,6 +77,33 @@ namespace Spectacles.NET.Types
 		public string Name { get; set; }
 	}
 
+	public class ChannelMention
+	{
+		/// <summary>
+		/// id of the channel
+		/// </summary>
+		[JsonProperty("id")]
+		public string ID { get; set; }
+		
+		/// <summary>
+		/// 	id of the guild containing the channel
+		/// </summary>
+		[JsonProperty("guild_id")]
+		public string GuildID { get; set; }
+		
+		/// <summary>
+		/// the type of channel
+		/// </summary>
+		[JsonProperty("type")]
+		public ChannelType Type { get; set; }
+		
+		/// <summary>
+		/// 	the name of the channel
+		/// </summary>
+		[JsonProperty("name")]
+		public string Name { get; set; }
+	}
+
 	/// <summary>
 	///     Represents a message sent in a channel within Discord.
 	/// </summary>
@@ -153,6 +180,13 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("mention_roles")]
 		public List<string> RoleMentions { get; set; }
+		
+		/// <summary>
+		/// channels specifically mentioned in this message
+		/// <warn>Not all channel mentions in a message will appear in mention_channels. Only textual channels that are visible to everyone in a lurkable guild will ever be included. Only crossposted messages (via Channel Following) currently include mention_channels at all. If no mentions in the message meet these requirements, this field will not be sent.</warn>
+		/// </summary>
+		[JsonProperty("mention_channels")]
+		public List<ChannelMention> ChannelMentions { get; set; }
 
 		/// <summary>
 		///     any attached files
