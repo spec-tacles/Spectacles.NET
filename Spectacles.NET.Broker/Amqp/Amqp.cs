@@ -8,8 +8,8 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Framing;
@@ -115,6 +115,16 @@ namespace Spectacles.NET.Broker.Amqp
 		public IModel PublishChannel { get; set; }
 
 		/// <summary>
+		///     The RPC Queue of this Broker
+		/// </summary>
+		public string RPCQueueName { get; set; }
+
+		/// <summary>
+		///     The Consumer of the RPC Queue
+		/// </summary>
+		public EventingBasicConsumer RPCConsumer { get; set; }
+
+		/// <summary>
 		///     Event for Received Messages this Client is Subscribed to.
 		/// </summary>
 		public event EventHandler<AmqpReceiveEventArgs> Receive;
@@ -188,17 +198,52 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <inheritdoc />
-		public override Task PublishAsync(string @event, byte[] data)
+		public override Task PublishAsync(string @event, byte[] data, object options = null)
 		{
 			lock (PublishChannel)
 			{
-				PublishChannel.BasicPublish(Group, @event, false, new BasicProperties
-				{
-					ContentType = "json"
-				}, data);
+				PublishChannel.BasicPublish(Group, @event, false, (IBasicProperties) options ?? new BasicProperties(), data);
 			}
 
 			return Task.CompletedTask;
+		}
+
+		/// <inheritdoc />
+		public override Task<byte[]> PublishAsync(string @event, byte[] data, int timeout = 15, object options = null)
+		{
+			var tcs = new TaskCompletionSource<byte[]>();
+
+			void OnRPCConsumerOnReceived(object sender, BasicDeliverEventArgs args)
+			{
+				tcs.TrySetResult(args.Body);
+				RPCConsumer.Received -= OnRPCConsumerOnReceived;
+			}
+
+			void OnTimerOnElapsed(object sender, ElapsedEventArgs args)
+				=> tcs.TrySetException(new Exception(""));
+
+			RPCConsumer.Received += OnRPCConsumerOnReceived;
+
+			var basicProperties = (IBasicProperties) options ?? new BasicProperties();
+
+			basicProperties.ReplyTo = RPCQueueName;
+
+			lock (PublishChannel)
+			{
+				PublishChannel.BasicPublish(Group, @event, false, basicProperties, data);
+			}
+
+			var timer = new Timer
+			{
+				AutoReset = false,
+				Enabled = true
+			};
+
+			timer.Elapsed += OnTimerOnElapsed;
+
+			timer.Start();
+
+			return tcs.Task;
 		}
 
 		/// <inheritdoc />
@@ -215,7 +260,7 @@ namespace Spectacles.NET.Broker.Amqp
 			consumer.Received += (ch, ea) =>
 			{
 				model.BasicAck(ea.DeliveryTag, false);
-				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, Encoding.UTF8.GetString(ea.Body)));
+				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body));
 			};
 
 			var consumerTag = model.BasicConsume(queueName, false, consumer);
@@ -268,6 +313,12 @@ namespace Spectacles.NET.Broker.Amqp
 
 			PublishChannel = WriteConnection.CreateModel();
 
+			var rpcModel = GetOrCreateChannel("RPC");
+
+			RPCQueueName = rpcModel.QueueDeclare().QueueName;
+
+			RPCConsumer = new EventingBasicConsumer(rpcModel);
+
 			PublishChannel.ExchangeDeclare(Group, "direct");
 
 			return Task.CompletedTask;
@@ -286,7 +337,7 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="event">The Event which is invoked.</param>
 		/// <param name="data">The Data of this Event.</param>
-		public AmqpReceiveEventArgs(string @event, string data)
+		public AmqpReceiveEventArgs(string @event, byte[] data)
 		{
 			Event = @event;
 			Data = data;
@@ -300,6 +351,6 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <summary>
 		///     The Data of this Event.
 		/// </summary>
-		public string Data { get; }
+		public byte[] Data { get; }
 	}
 }
