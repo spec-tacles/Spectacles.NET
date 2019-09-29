@@ -26,9 +26,9 @@ namespace Spectacles.NET.Broker
 		/// <param name="event">The name of the event to publish</param>
 		/// <param name="data">The data of the event to publish</param>
 		/// <param name="options">Optional options for this Publish</param>
-		/// <param name="timeout">Optional the timeout to wait for the response</param>
+		/// <param name="timeout">Optional the timeout to wait for the response, in ms</param>
 		/// <returns></returns>
-		public abstract Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15, object options = null);
+		public abstract Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15000, object options = null);
 
 		/// <summary>
 		///     SubscribeAsync subscribes to a queue

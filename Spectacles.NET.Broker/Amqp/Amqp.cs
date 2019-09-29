@@ -211,7 +211,7 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <inheritdoc />
-		public override async Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15, object options = null)
+		public override async Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15000, object options = null)
 		{
 			var tcs = new TaskCompletionSource<byte[]>();
 
@@ -324,8 +324,12 @@ namespace Spectacles.NET.Broker.Amqp
 			var rpcModel = GetOrCreateChannel("RPC");
 
 			RPCQueueName = rpcModel.QueueDeclare().QueueName;
+			
+			rpcModel.QueueBind(RPCQueueName, Group, RPCQueueName);
 
 			RPCConsumer = new EventingBasicConsumer(rpcModel);
+			
+			rpcModel.BasicConsume(RPCQueueName, false, RPCConsumer);
 
 			PublishChannel.ExchangeDeclare(Group, "direct");
 
