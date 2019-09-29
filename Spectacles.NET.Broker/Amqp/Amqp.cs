@@ -240,6 +240,7 @@ namespace Spectacles.NET.Broker.Amqp
 				tcs.TrySetException(new TimeoutException("RPC Response didn't arrive in time"));
 				timer.Stop();
 				timer.Dispose();
+				RPCConsumer.Received -= OnRPCConsumerOnReceived;
 			}
 
 			timer.Elapsed += OnTimerOnElapsed;
