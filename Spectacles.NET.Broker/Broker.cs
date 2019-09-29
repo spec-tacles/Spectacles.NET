@@ -21,14 +21,14 @@ namespace Spectacles.NET.Broker
 		public abstract Task PublishAsync(string @event, byte[] data, object options = null);
 
 		/// <summary>
-		///     PublishAsync Publishes a message and waits for the result via RPC
+		///     PublishWithResponseAsync Publishes a message and waits for the response
 		/// </summary>
 		/// <param name="event">The name of the event to publish</param>
 		/// <param name="data">The data of the event to publish</param>
 		/// <param name="options">Optional options for this Publish</param>
 		/// <param name="timeout">Optional the timeout to wait for the response</param>
 		/// <returns></returns>
-		public abstract Task<byte[]> PublishAsync(string @event, byte[] data, int timeout = 15, object options = null);
+		public abstract Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15, object options = null);
 
 		/// <summary>
 		///     SubscribeAsync subscribes to a queue

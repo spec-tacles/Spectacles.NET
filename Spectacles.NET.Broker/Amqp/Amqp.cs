@@ -202,14 +202,15 @@ namespace Spectacles.NET.Broker.Amqp
 		{
 			lock (PublishChannel)
 			{
-				PublishChannel.BasicPublish(Group, @event, false, (IBasicProperties) options ?? new BasicProperties(), data);
+				PublishChannel.BasicPublish(Group, @event, false, (IBasicProperties) options ?? new BasicProperties(),
+					data);
 			}
 
 			return Task.CompletedTask;
 		}
 
 		/// <inheritdoc />
-		public override Task<byte[]> PublishAsync(string @event, byte[] data, int timeout = 15, object options = null)
+		public override async Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15, object options = null)
 		{
 			var tcs = new TaskCompletionSource<byte[]>();
 
@@ -219,31 +220,33 @@ namespace Spectacles.NET.Broker.Amqp
 				RPCConsumer.Received -= OnRPCConsumerOnReceived;
 			}
 
-			void OnTimerOnElapsed(object sender, ElapsedEventArgs args)
-				=> tcs.TrySetException(new Exception(""));
-
 			RPCConsumer.Received += OnRPCConsumerOnReceived;
 
 			var basicProperties = (IBasicProperties) options ?? new BasicProperties();
 
 			basicProperties.ReplyTo = RPCQueueName;
 
-			lock (PublishChannel)
-			{
-				PublishChannel.BasicPublish(Group, @event, false, basicProperties, data);
-			}
+			await PublishAsync(@event, data, basicProperties);
 
 			var timer = new Timer
 			{
+				Interval = timeout,
 				AutoReset = false,
 				Enabled = true
 			};
+			
+			void OnTimerOnElapsed(object sender, ElapsedEventArgs args)
+			{
+				tcs.TrySetException(new TimeoutException("RPC Response didn't arrive in time"));
+				timer.Stop();
+				timer.Dispose();
+			}
 
 			timer.Elapsed += OnTimerOnElapsed;
 
 			timer.Start();
 
-			return tcs.Task;
+			return await tcs.Task;
 		}
 
 		/// <inheritdoc />
@@ -253,8 +256,7 @@ namespace Spectacles.NET.Broker.Amqp
 			var model = GetOrCreateChannel(@event);
 			model.QueueDeclare(queueName, true, false, false);
 			model.QueueBind(queueName, Group, @event);
-
-
+			
 			var consumer = new EventingBasicConsumer(model);
 
 			consumer.Received += (ch, ea) =>
