@@ -20,7 +20,7 @@ namespace Spectacles.NET.Rest.Redis
 		/// <summary>
 		///     If <see cref="ConnectAsync" /> was called
 		/// </summary>
-		public bool Connected { get; set; }
+		public bool Connected { get; private set; }
 
 		private ConcurrentDictionary<int, ConnectionMultiplexer> Connections { get; } =
 			new ConcurrentDictionary<int, ConnectionMultiplexer>();
@@ -31,7 +31,7 @@ namespace Spectacles.NET.Rest.Redis
 		/// <param name="options">Redis configuration to use for the Pool</param>
 		/// <param name="poolSize">Optional size of the pool, defaults to <see cref="Environment.ProcessorCount" /></param>
 		/// <returns></returns>
-		public async Task ConnectAsync(ConfigurationOptions options, int? poolSize)
+		public async Task ConnectAsync(ConfigurationOptions options, int? poolSize = null)
 		{
 			poolSize = poolSize ?? Environment.ProcessorCount;
 			for (var i = 0; i < poolSize; i++) Connections.TryAdd(i, await ConnectionMultiplexer.ConnectAsync(options));
