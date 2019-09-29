@@ -13,6 +13,7 @@ using System.Timers;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Framing;
+using static Spectacles.NET.Util.Util;
 
 namespace Spectacles.NET.Broker.Amqp
 {
@@ -214,8 +215,11 @@ namespace Spectacles.NET.Broker.Amqp
 		{
 			var tcs = new TaskCompletionSource<byte[]>();
 
+			var correlationID = RandomString(15);
+
 			void OnRPCConsumerOnReceived(object sender, BasicDeliverEventArgs args)
 			{
+				if (args.BasicProperties.CorrelationId != correlationID) return;
 				tcs.TrySetResult(args.Body);
 				RPCConsumer.Received -= OnRPCConsumerOnReceived;
 			}
@@ -225,6 +229,7 @@ namespace Spectacles.NET.Broker.Amqp
 			var basicProperties = (IBasicProperties) options ?? new BasicProperties();
 
 			basicProperties.ReplyTo = RPCQueueName;
+			basicProperties.CorrelationId = correlationID;
 
 			await PublishAsync(@event, data, basicProperties);
 

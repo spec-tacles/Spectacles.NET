@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.2.0</PackageVersion>
+        <PackageVersion>0.2.1</PackageVersion>
         <Title>Spectacles.NET.Broker</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -27,6 +27,10 @@
 
     <ItemGroup>
       <PackageReference Include="RabbitMQ.Client" Version="5.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Spectacles.NET.Util\Spectacles.NET.Util.csproj" />
     </ItemGroup>
 
 </Project>
