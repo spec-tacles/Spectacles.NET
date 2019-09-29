@@ -262,7 +262,7 @@ namespace Spectacles.NET.Broker.Amqp
 			consumer.Received += (ch, ea) =>
 			{
 				model.BasicAck(ea.DeliveryTag, false);
-				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body));
+				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body, ea.BasicProperties));
 			};
 
 			var consumerTag = model.BasicConsume(queueName, false, consumer);
@@ -339,8 +339,10 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="event">The Event which is invoked.</param>
 		/// <param name="data">The Data of this Event.</param>
-		public AmqpReceiveEventArgs(string @event, byte[] data)
+		/// <param name="properties">The Properties of this Event</param>
+		public AmqpReceiveEventArgs(string @event, byte[] data, IBasicProperties properties)
 		{
+			Properties = properties;
 			Event = @event;
 			Data = data;
 		}
@@ -354,5 +356,10 @@ namespace Spectacles.NET.Broker.Amqp
 		///     The Data of this Event.
 		/// </summary>
 		public byte[] Data { get; }
+		
+		/// <summary>
+		/// The Properties of this Event.
+		/// </summary>
+		public IBasicProperties Properties { get; }
 	}
 }
