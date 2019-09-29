@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.2.1</PackageVersion>
+        <PackageVersion>0.2.2</PackageVersion>
         <Title>Spectacles.NET.Broker</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,9 +16,7 @@
         <Description>Brokers for easy and powerful communication between applications.
 </Description>
         <Copyright>2018-2019</Copyright>
-        <PackageReleaseNotes>- Fix inconsistency with Receive vs Publish data
-
-- Add RPC to AMQP Broker</PackageReleaseNotes>
+        <PackageReleaseNotes>Bugixes</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
