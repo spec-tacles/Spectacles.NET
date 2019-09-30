@@ -321,6 +321,8 @@ namespace Spectacles.NET.Broker.Amqp
 
 			PublishChannel = WriteConnection.CreateModel();
 
+			PublishChannel.ExchangeDeclare(Group, "direct");
+
 			var rpcModel = GetOrCreateChannel("RPC");
 
 			RPCQueueName = rpcModel.QueueDeclare().QueueName;
@@ -330,8 +332,6 @@ namespace Spectacles.NET.Broker.Amqp
 			RPCConsumer = new EventingBasicConsumer(rpcModel);
 			
 			rpcModel.BasicConsume(RPCQueueName, false, RPCConsumer);
-
-			PublishChannel.ExchangeDeclare(Group, "direct");
 
 			return Task.CompletedTask;
 		}
