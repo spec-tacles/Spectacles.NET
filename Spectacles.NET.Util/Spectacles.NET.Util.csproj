@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageVersion>0.0.5</PackageVersion>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -16,6 +16,7 @@
         <Title>Spectacles.NET.Util</Title>
         <Authors>DevYukine</Authors>
         <Copyright>2019</Copyright>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
