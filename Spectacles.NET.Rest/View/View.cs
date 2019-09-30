@@ -31,29 +31,29 @@ namespace Spectacles.NET.Rest.View
 		public Task<T> GetAsync<T>(Dictionary<string, string> queries)
 			=> Client.Request<T>(Route, RequestMethod.GET, new FormUrlEncodedContent(queries));
 
-		public Task<object> PatchAsync(object json, string reason)
+		public Task<object> PatchAsync(object json, string reason = null)
 			=> Client.Request(Route, RequestMethod.PATCH,
 				new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 
-		public Task<T> PatchAsync<T>(object json, string reason)
+		public Task<T> PatchAsync<T>(object json, string reason = null)
 			=> Client.Request<T>(Route, RequestMethod.PATCH,
 				new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 
-		public Task<object> PutAsync(object json, string reason)
+		public Task<object> PutAsync(object json, string reason = null)
 			=> Client.Request(Route, RequestMethod.PUT,
 				new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 
-		public Task<T> PutAsync<T>(object json, string reason)
+		public Task<T> PutAsync<T>(object json, string reason = null)
 			=> Client.Request<T>(Route, RequestMethod.PUT,
 				new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json"), reason);
 
-		public Task<object> DeleteAsync(string reason)
+		public Task<object> DeleteAsync(string reason = null)
 			=> Client.Request(Route, RequestMethod.DELETE, null, reason);
 
-		public Task<T> DeleteAsync<T>(string reason)
+		public Task<T> DeleteAsync<T>(string reason = null)
 			=> Client.Request<T>(Route, RequestMethod.DELETE, null, reason);
 
-		public Task<object> PostAsync(object data, string reason)
+		public Task<object> PostAsync(object data, string reason = null)
 		{
 			var type = data.GetType();
 
@@ -87,7 +87,7 @@ namespace Spectacles.NET.Rest.View
 				new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
 		}
 
-		public Task<T> PostAsync<T>(object data, string reason)
+		public Task<T> PostAsync<T>(object data, string reason = null)
 		{
 			var type = data.GetType();
 
