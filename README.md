@@ -25,7 +25,7 @@ broker.Receive += (sender, receiveArgs) =>
 
 Connect the Broker
 ```csharp
-await broker.ConnectAsync();
+await broker.ConnectAsync("BROKER_URL");
 ```
 ### Gateway
 
