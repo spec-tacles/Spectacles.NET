@@ -13,6 +13,9 @@
         <Description>Util Classes &amp; Methods used in Spectacles.NET</Description>
         <PackageReleaseNotes>- Add Util#RandomString</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Title>Spectacles.NET.Util</Title>
+        <Authors>DevYukine</Authors>
+        <Copyright>2019</Copyright>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
