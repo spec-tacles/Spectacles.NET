@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageVersion>0.2.4</PackageVersion>
         <Title>Spectacles.NET.Broker</Title>
@@ -17,6 +17,7 @@
 </Description>
         <Copyright>2018-2019</Copyright>
         <PackageReleaseNotes>- Declare Exchange before using it (AMQP RPC Queue)</PackageReleaseNotes>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
