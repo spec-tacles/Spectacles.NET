@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.2.3</PackageVersion>
+        <PackageVersion>0.2.4</PackageVersion>
         <Title>Spectacles.NET.Broker</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,9 +16,7 @@
         <Description>Brokers for easy and powerful communication between applications.
 </Description>
         <Copyright>2018-2019</Copyright>
-        <PackageReleaseNotes>- Fix AMQP RPC
-
-- Change PublishWithResponseAsync timeout default to 15000 ms</PackageReleaseNotes>
+        <PackageReleaseNotes>- Declare Exchange before using it (AMQP RPC Queue)</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
