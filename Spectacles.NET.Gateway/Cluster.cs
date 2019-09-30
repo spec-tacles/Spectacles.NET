@@ -16,7 +16,7 @@ namespace Spectacles.NET.Gateway
 	public class Cluster : IDisposable
 	{
 		/// <summary>
-		///     Creates a new instance and uses the provided shard count.
+		///     Creates a new instance and uses either provided or recommended shard count.
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
