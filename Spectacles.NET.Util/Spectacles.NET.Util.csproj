@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.0.5</PackageVersion>
+        <PackageVersion>0.1.0</PackageVersion>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl>https://avatars2.githubusercontent.com/u/26804383?s=200&amp;v=4</PackageIconUrl>
@@ -11,7 +11,7 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>Spectacles</PackageTags>
         <Description>Util Classes &amp; Methods used in Spectacles.NET</Description>
-        <PackageReleaseNotes>- Fix Application Properties</PackageReleaseNotes>
+        <PackageReleaseNotes>- Target .Net Core 3.0 &amp; C# 8.0</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Title>Spectacles.NET.Util</Title>
         <Authors>DevYukine</Authors>

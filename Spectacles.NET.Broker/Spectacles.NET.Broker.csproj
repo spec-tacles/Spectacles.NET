@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.2.4</PackageVersion>
+        <PackageVersion>0.3.0</PackageVersion>
         <Title>Spectacles.NET.Broker</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,7 +16,7 @@
         <Description>Brokers for easy and powerful communication between applications.
 </Description>
         <Copyright>2018-2019</Copyright>
-        <PackageReleaseNotes>- Declare Exchange before using it (AMQP RPC Queue)</PackageReleaseNotes>
+        <PackageReleaseNotes>- Target .Net Core 3.0 &amp; C# 8.0</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
