@@ -16,20 +16,21 @@ namespace Spectacles.NET.Gateway
 	public class Cluster : IDisposable
 	{
 		/// <summary>
-		///     Creates a new instance and uses the recommend shard count.
-		/// </summary>
-		/// <param name="token">The token of the bot.</param>
-		public Cluster(string token)
-			=> Gateway = Gateway.Get(token.RemoveTokenPrefix());
-
-		/// <summary>
-		///     Creates a new instance and uses the provided shard count.
+		///     Creates a new instance and uses either provided or recommended shard count.
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
-		// ReSharper disable once UnusedMember.Global
-		public Cluster(string token, int shardCount)
+		public Cluster(string token, int? shardCount = null)
 			=> Gateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
+
+		/// <summary>
+		/// Creates a new instance which spawns a range of Shards from id.
+		/// </summary>
+		/// <param name="token">The token of the bot.</param>
+		/// <param name="shardCount">The shard count to use.</param>
+		/// <param name="shardIDs">The ids of shards to spawn.</param>
+		public Cluster(string token, int shardCount, IEnumerable<int> shardIDs) : this(token, shardCount)
+			=> ShardIDs = shardIDs;
 
 		/// <summary>
 		///     A Dictionary of Shards mapped to there ID.
@@ -40,6 +41,11 @@ namespace Spectacles.NET.Gateway
 		///     The Gateway of this Cluster
 		/// </summary>
 		public Gateway Gateway { get; }
+		
+		/// <summary>
+		/// The ShardIDs this Cluster will spawn
+		/// </summary>
+		public IEnumerable<int> ShardIDs { get; }
 
 		/// <summary>
 		///     The ShardCount provided by the Constructor.
@@ -91,19 +97,23 @@ namespace Spectacles.NET.Gateway
 		{
 			if (!Gateway.Ready) await Gateway.FetchGatewayAsync();
 
-			for (var i = 0; i < ShardCount; i++)
+			if (ShardIDs != null)
+				foreach (var shardID in ShardIDs)
+					Shards.Add(shardID, new Shard(this, shardID));
+			else
+				for (var i = 0; i < ShardCount; i++)
+					Shards.Add(i, new Shard(this, i));
+
+			_log(LogLevel.INFO, $"Spawning {Shards.Count} shard(s)");
+
+			foreach (var shard in Shards.Values)
 			{
-				var shard = new Shard(this, i);
 				shard.Log += Log;
 				shard.Error += (sender, e) => Error?.Invoke(sender, new ExceptionEventArgs(shard.ID, e));
 				shard.Dispatch += Dispatch;
 				shard.Send += Send;
-				Shards.Add(i, shard);
+				await shard.ConnectAsync();
 			}
-
-			_log(LogLevel.INFO, $"Spawning {Shards.Count} shard(s)");
-
-			foreach (var shard in Shards.Values) await shard.ConnectAsync();
 
 			_log(LogLevel.INFO, "Finished spawning shards");
 		}
