@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.8.0</PackageVersion>
+        <PackageVersion>0.9.0</PackageVersion>
         <Title>Spectacles.NET.Rest</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,8 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>A REST module for the Discord API.</Description>
-        <PackageReleaseNotes>- Target .Net Core 3.0 &amp; C# 8.0
-- Set default value for reason on View methods</PackageReleaseNotes>
+        <PackageReleaseNotes>- Switch to Id instead of ID</PackageReleaseNotes>
         <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
