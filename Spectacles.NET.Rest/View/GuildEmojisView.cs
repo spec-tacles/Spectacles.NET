@@ -4,12 +4,12 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildEmojisView : View
 	{
-		public GuildEmojisView(RestClient client, string guildID) : base(client)
-			=> GuildID = guildID;
+		public GuildEmojisView(RestClient client, string guildId) : base(client)
+			=> GuildId = guildId;
 
 		protected override string Route
-			=> $"{(ID != null ? APIEndpoints.GuildEmoji(GuildID, ID) : APIEndpoints.GuildEmojis(GuildID))}";
+			=> $"{(Id != null ? APIEndpoints.GuildEmoji(GuildId, Id) : APIEndpoints.GuildEmojis(GuildId))}";
 
-		private string GuildID { get; }
+		private string GuildId { get; }
 	}
 }

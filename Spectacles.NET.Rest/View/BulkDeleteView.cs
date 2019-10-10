@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class BulkDeleteView : View
 	{
-		public BulkDeleteView(RestClient client, string channelID) : base(client)
-			=> ChannelID = channelID;
+		public BulkDeleteView(RestClient client, string channelId) : base(client)
+			=> ChannelId = channelId;
 
 		public BulkDeleteView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.BulkDelete(ChannelID)}";
+			=> $"{APIEndpoints.BulkDelete(ChannelId)}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 	}
 }

@@ -11,6 +11,6 @@ namespace Spectacles.NET.Types
 		/// The ID of the Recipient
 		/// </summary>
 		[JsonProperty("recipient_id")]
-		public string RecipientID { get; set; }
+		public string RecipientId { get; set; }
 	}
 }

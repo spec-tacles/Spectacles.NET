@@ -81,7 +81,7 @@ namespace Spectacles.NET.Types
 		///     id of the guild
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public string GuildID { get; set; }
+		public string GuildId { get; set; }
 
 		/// <summary>
 		///     either "idle", "dnd", "online", or "offline"

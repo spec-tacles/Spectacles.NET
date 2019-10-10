@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ExecuteWebhookView : View
 	{
-		public ExecuteWebhookView(RestClient client, string webhookID) : base(client)
-			=> WebhookID = webhookID;
+		public ExecuteWebhookView(RestClient client, string webhookId) : base(client)
+			=> WebhookId = webhookId;
 
 		public ExecuteWebhookView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.Webhook(WebhookID)}/{ID}";
+			=> $"{APIEndpoints.Webhook(WebhookId)}/{Id}";
 
-		private string WebhookID { get; }
+		private string WebhookId { get; }
 	}
 }

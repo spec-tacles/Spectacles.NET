@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelTypingView : View
 	{
-		public ChannelTypingView(RestClient client, string channelID) : base(client)
-			=> ChannelID = channelID;
+		public ChannelTypingView(RestClient client, string channelId) : base(client)
+			=> ChannelId = channelId;
 
 		public ChannelTypingView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.ChannelTyping(ChannelID)}";
+			=> $"{APIEndpoints.ChannelTyping(ChannelId)}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 	}
 }

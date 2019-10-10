@@ -15,7 +15,7 @@ namespace Spectacles.NET.Rest.View
 
 		protected abstract string Route { get; }
 
-		protected string ID { get; set; }
+		protected string Id { get; set; }
 
 		protected RestClient Client { get; }
 

@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelMessagesView : View
 	{
-		public ChannelMessagesView(RestClient client, string channelID) : base(client)
-			=> ChannelID = channelID;
+		public ChannelMessagesView(RestClient client, string channelId) : base(client)
+			=> ChannelId = channelId;
 
 		public ChannelMessagesView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,17 +20,17 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		public MessageReactionView Reactions
-			=> new MessageReactionView(Client, ChannelID, ID);
+			=> new MessageReactionView(Client, ChannelId, Id);
 
 		protected override string Route
-			=> $"{(ID != null ? APIEndpoints.Message(ChannelID, ID) : APIEndpoints.ChannelMessages(ChannelID))}";
+			=> $"{(Id != null ? APIEndpoints.Message(ChannelId, Id) : APIEndpoints.ChannelMessages(ChannelId))}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 	}
 }

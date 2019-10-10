@@ -34,7 +34,7 @@ namespace Spectacles.NET.Types
 		///     the user's id
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     the user's username, not unique across the platform

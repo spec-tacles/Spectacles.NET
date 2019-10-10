@@ -13,7 +13,7 @@ namespace Spectacles.NET.Types
 		///     role id
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     role name

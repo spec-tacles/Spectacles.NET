@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelInvitesView : View
 	{
-		public ChannelInvitesView(RestClient client, string channelID) : base(client)
-			=> ChannelID = channelID;
+		public ChannelInvitesView(RestClient client, string channelId) : base(client)
+			=> ChannelId = channelId;
 
 		public ChannelInvitesView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.ChannelInvites(ChannelID)}";
+			=> $"{APIEndpoints.ChannelInvites(ChannelId)}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 	}
 }

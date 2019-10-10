@@ -12,7 +12,7 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -21,33 +21,33 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		public ChannelMessagesView Messages
-			=> new ChannelMessagesView(Client, ID);
+			=> new ChannelMessagesView(Client, Id);
 
 		public ChannelPermissionsView Permissions
-			=> new ChannelPermissionsView(Client, ID);
+			=> new ChannelPermissionsView(Client, Id);
 
 		public ChannelTypingView Typing
-			=> new ChannelTypingView(Client, ID);
+			=> new ChannelTypingView(Client, Id);
 
 		public ChannelInvitesView Invites
-			=> new ChannelInvitesView(Client, ID);
+			=> new ChannelInvitesView(Client, Id);
 
 		public ChannelPinsView Pins
-			=> new ChannelPinsView(Client, ID);
+			=> new ChannelPinsView(Client, Id);
 
 		public DMChannelRecipientView Recipient
-			=> new DMChannelRecipientView(Client, ID);
+			=> new DMChannelRecipientView(Client, Id);
 
 		public BulkDeleteView BulkDelete
-			=> new BulkDeleteView(Client, ID);
+			=> new BulkDeleteView(Client, Id);
 
 		protected override string Route
-			=> ID == null ? APIEndpoints.Channels : APIEndpoints.Channel(ID);
+			=> Id == null ? APIEndpoints.Channels : APIEndpoints.Channel(Id);
 	}
 }

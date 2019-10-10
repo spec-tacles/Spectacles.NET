@@ -4,12 +4,12 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildPruneView : View
 	{
-		public GuildPruneView(RestClient client, string guildID) : base(client)
-			=> GuildID = guildID;
+		public GuildPruneView(RestClient client, string guildId) : base(client)
+			=> GuildId = guildId;
 
 		protected override string Route
-			=> $"{APIEndpoints.GuildPrune(GuildID)}";
+			=> $"{APIEndpoints.GuildPrune(GuildId)}";
 
-		private string GuildID { get; }
+		private string GuildId { get; }
 	}
 }

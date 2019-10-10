@@ -122,7 +122,7 @@ namespace Spectacles.NET.Types
 		///     the id of the party
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     used to show the party's current and maximum size

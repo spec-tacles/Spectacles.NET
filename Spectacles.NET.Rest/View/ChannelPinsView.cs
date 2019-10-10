@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelPinsView : View
 	{
-		public ChannelPinsView(RestClient client, string channelID) : base(client)
-			=> ChannelID = channelID;
+		public ChannelPinsView(RestClient client, string channelId) : base(client)
+			=> ChannelId = channelId;
 
 		public ChannelPinsView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{(ID != null ? APIEndpoints.ChannelPins(ChannelID) : APIEndpoints.ChannelPin(ChannelID, ID))}";
+			=> $"{(Id != null ? APIEndpoints.ChannelPins(ChannelId) : APIEndpoints.ChannelPin(ChannelId, Id))}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 	}
 }

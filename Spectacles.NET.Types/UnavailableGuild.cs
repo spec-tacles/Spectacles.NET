@@ -12,7 +12,7 @@ namespace Spectacles.NET.Types
 		///     guild id
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     is this guild unavailable

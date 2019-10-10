@@ -4,10 +4,10 @@ namespace Spectacles.NET.Rest.View
 {
 	public class MessageReactionView : View
 	{
-		public MessageReactionView(RestClient client, string channelID, string messageID) : base(client)
+		public MessageReactionView(RestClient client, string channelId, string messageId) : base(client)
 		{
-			ChannelID = channelID;
-			MessageID = messageID;
+			ChannelId = channelId;
+			MessageId = messageId;
 		}
 
 		public MessageReactionView this[long id]
@@ -23,18 +23,18 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				if (ID == null) ID = id;
+				if (Id == null) Id = id;
 				else User = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.MessageReaction(ChannelID, MessageID, ID)}/{User}";
+			=> $"{APIEndpoints.MessageReaction(ChannelId, MessageId, Id)}/{User}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 
-		private string MessageID { get; }
+		private string MessageId { get; }
 
 		private string User { get; set; }
 	}
