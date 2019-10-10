@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildRolesView : View
 	{
-		public GuildRolesView(RestClient client, string guildID) : base(client)
-			=> GuildID = guildID;
+		public GuildRolesView(RestClient client, string guildId) : base(client)
+			=> GuildId = guildId;
 
 		public GuildRolesView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{(ID != null ? APIEndpoints.GuildRole(GuildID, ID) : APIEndpoints.GuildRoles(GuildID))}";
+			=> $"{(Id != null ? APIEndpoints.GuildRole(GuildId, Id) : APIEndpoints.GuildRoles(GuildId))}";
 
-		private string GuildID { get; }
+		private string GuildId { get; }
 	}
 }

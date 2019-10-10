@@ -4,12 +4,12 @@ namespace Spectacles.NET.Rest.View
 {
 	public class ChannelWebhooksView : View
 	{
-		public ChannelWebhooksView(RestClient client, string channelID) : base(client)
-			=> ChannelID = channelID;
+		public ChannelWebhooksView(RestClient client, string channelId) : base(client)
+			=> ChannelId = channelId;
 
 		protected override string Route
-			=> $"{APIEndpoints.ChannelWebhooks(ChannelID)}";
+			=> $"{APIEndpoints.ChannelWebhooks(ChannelId)}";
 
-		private string ChannelID { get; }
+		private string ChannelId { get; }
 	}
 }

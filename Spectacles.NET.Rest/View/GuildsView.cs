@@ -12,7 +12,7 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -21,54 +21,54 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		public GuildChannelsView Channels
-			=> new GuildChannelsView(Client, ID);
+			=> new GuildChannelsView(Client, Id);
 
 		public GuildMembersView Members
-			=> new GuildMembersView(Client, ID);
+			=> new GuildMembersView(Client, Id);
 
 		public GuildAuditLogsView AuditLogs
-			=> new GuildAuditLogsView(Client, ID);
+			=> new GuildAuditLogsView(Client, Id);
 
 		public GuildBansView Bans
-			=> new GuildBansView(Client, ID);
+			=> new GuildBansView(Client, Id);
 
 		public GuildRolesView Roles
-			=> new GuildRolesView(Client, ID);
+			=> new GuildRolesView(Client, Id);
 
 		public GuildPruneView Prune
-			=> new GuildPruneView(Client, ID);
+			=> new GuildPruneView(Client, Id);
 
 		public GuildRegionsView Region
-			=> new GuildRegionsView(Client, ID);
+			=> new GuildRegionsView(Client, Id);
 
 		public GuildInvitesView Invites
-			=> new GuildInvitesView(Client, ID);
+			=> new GuildInvitesView(Client, Id);
 
 		public GuildIntegrationsView Integrations
-			=> new GuildIntegrationsView(Client, ID);
+			=> new GuildIntegrationsView(Client, Id);
 
 		public GuildEmbedView Embed
-			=> new GuildEmbedView(Client, ID);
+			=> new GuildEmbedView(Client, Id);
 
 		public GuildVanityURLView VanityURL
-			=> new GuildVanityURLView(Client, ID);
+			=> new GuildVanityURLView(Client, Id);
 
 		public GuildWidgetView Widget
-			=> new GuildWidgetView(Client, ID);
+			=> new GuildWidgetView(Client, Id);
 
 		public CurrentGuildMemberNickView CurrentGuildMemberNick
-			=> new CurrentGuildMemberNickView(Client, ID);
+			=> new CurrentGuildMemberNickView(Client, Id);
 
 		public GuildEmojisView Emojis
-			=> new GuildEmojisView(Client, ID);
+			=> new GuildEmojisView(Client, Id);
 
 		protected override string Route
-			=> $"{(ID == null ? APIEndpoints.Guilds : APIEndpoints.Guild(ID))}";
+			=> $"{(Id == null ? APIEndpoints.Guilds : APIEndpoints.Guild(Id))}";
 	}
 }

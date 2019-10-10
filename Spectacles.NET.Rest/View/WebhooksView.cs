@@ -9,13 +9,13 @@ namespace Spectacles.NET.Rest.View
 		}
 
 		public ExecuteWebhookView Execute
-			=> new ExecuteWebhookView(Client, ID);
+			=> new ExecuteWebhookView(Client, Id);
 
 		public WebhooksView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -24,12 +24,12 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.Webhook(ID)}";
+			=> $"{APIEndpoints.Webhook(Id)}";
 	}
 }

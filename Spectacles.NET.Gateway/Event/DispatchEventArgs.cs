@@ -14,12 +14,12 @@ namespace Spectacles.NET.Gateway.Event
 		/// <summary>
 		///     Creates a new DispatchEventArgs instance
 		/// </summary>
-		/// <param name="shardID">Shard where the Dispatch occured.</param>
+		/// <param name="shardId">Shard where the Dispatch occured.</param>
 		/// <param name="data">Data of the Dispatch.</param>
 		/// <param name="event">The Event of this Dispatch.</param>
-		public DispatchEventArgs(int shardID, object data, GatewayEvent @event)
+		public DispatchEventArgs(int shardId, object data, GatewayEvent @event)
 		{
-			ShardID = shardID;
+			ShardId = shardId;
 			Data = data;
 			Event = @event;
 		}
@@ -27,7 +27,7 @@ namespace Spectacles.NET.Gateway.Event
 		/// <summary>
 		///     Shard where the Dispatch occured.
 		/// </summary>
-		public int ShardID { get; }
+		public int ShardId { get; }
 
 		/// <summary>
 		///     Data of the Dispatch.

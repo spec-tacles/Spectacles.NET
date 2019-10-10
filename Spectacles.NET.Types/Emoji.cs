@@ -12,7 +12,7 @@ namespace Spectacles.NET.Types
 		///     emoji id
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     emoji name

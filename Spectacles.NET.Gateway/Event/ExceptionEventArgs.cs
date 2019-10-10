@@ -11,18 +11,18 @@ namespace Spectacles.NET.Gateway.Event
 		/// <summary>
 		///     Creates a new ExceptionEventArgs instance
 		/// </summary>
-		/// <param name="shardID">Shard where the Dispatch occured.</param>
+		/// <param name="shardId">Shard where the Dispatch occured.</param>
 		/// <param name="exception">The Exception which occured.</param>
-		public ExceptionEventArgs(int shardID, Exception exception)
+		public ExceptionEventArgs(int shardId, Exception exception)
 		{
-			ShardID = shardID;
+			ShardId = shardId;
 			Exception = exception;
 		}
 
 		/// <summary>
 		///     Shard where the Exception occured.
 		/// </summary>
-		public int ShardID { get; }
+		public int ShardId { get; }
 
 		/// <summary>
 		///     The Exception which occured.

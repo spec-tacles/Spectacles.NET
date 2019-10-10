@@ -26,118 +26,118 @@ namespace Spectacles.NET.Types
 		public static string Guild(string id)
 			=> $"{Guilds}/{id}";
 
-		public static string GuildChannels(string guildID)
-			=> $"{Guild(guildID)}/channels";
+		public static string GuildChannels(string guildId)
+			=> $"{Guild(guildId)}/channels";
 
-		public static string GuildMembers(string guildID)
-			=> $"{Guild(guildID)}/members";
+		public static string GuildMembers(string guildId)
+			=> $"{Guild(guildId)}/members";
 
-		public static string GuildMember(string guildID, string memberID)
-			=> $"{GuildMembers(guildID)}/{memberID}";
+		public static string GuildMember(string guildId, string memberId)
+			=> $"{GuildMembers(guildId)}/{memberId}";
 
-		public static string CurrentGuildMember(string guildID)
-			=> $"{GuildMembers(guildID)}/members/@me";
+		public static string CurrentGuildMember(string guildId)
+			=> $"{GuildMembers(guildId)}/members/@me";
 
-		public static string GuildMemberRole(string guildID, string memberID, string roleID)
-			=> $"{GuildMember(guildID, memberID)}/roles/{roleID}";
+		public static string GuildMemberRole(string guildId, string memberId, string roleId)
+			=> $"{GuildMember(guildId, memberId)}/roles/{roleId}";
 
-		public static string GuildBans(string guildID)
-			=> $"{Guild(guildID)}/bans";
+		public static string GuildBans(string guildId)
+			=> $"{Guild(guildId)}/bans";
 
-		public static string GuildBan(string guildID, string userID)
-			=> $"{GuildBans(guildID)}/{userID}";
+		public static string GuildBan(string guildId, string userId)
+			=> $"{GuildBans(guildId)}/{userId}";
 
-		public static string GuildRoles(string guildID)
-			=> $"{Guild(guildID)}/roles";
+		public static string GuildRoles(string guildId)
+			=> $"{Guild(guildId)}/roles";
 
-		public static string GuildRole(string guildID, string roleID)
-			=> $"{GuildRoles(guildID)}/{roleID}";
+		public static string GuildRole(string guildId, string roleId)
+			=> $"{GuildRoles(guildId)}/{roleId}";
 
-		public static string GuildPrune(string guildID)
-			=> $"{Guild(guildID)}/prune";
+		public static string GuildPrune(string guildId)
+			=> $"{Guild(guildId)}/prune";
 
-		public static string GuildVoiceRegion(string guildID)
-			=> $"{Guild(guildID)}/regions";
+		public static string GuildVoiceRegion(string guildId)
+			=> $"{Guild(guildId)}/regions";
 
-		public static string GuildInvites(string guildID)
-			=> $"{Guild(guildID)}/invites";
+		public static string GuildInvites(string guildId)
+			=> $"{Guild(guildId)}/invites";
 
-		public static string GuildIntegrations(string guildID)
-			=> $"{Guild(guildID)}/integrations";
+		public static string GuildIntegrations(string guildId)
+			=> $"{Guild(guildId)}/integrations";
 
-		public static string GuildIntegration(string guildID, string integrationID)
-			=> $"{GuildIntegrations(guildID)}/{integrationID}";
+		public static string GuildIntegration(string guildId, string integrationId)
+			=> $"{GuildIntegrations(guildId)}/{integrationId}";
 
-		public static string GuildEmbed(string guildID)
-			=> $"{Guild(guildID)}/embed";
+		public static string GuildEmbed(string guildId)
+			=> $"{Guild(guildId)}/embed";
 
-		public static string GuildVanityURL(string guildID)
-			=> $"{Guild(guildID)}/vanity-url";
+		public static string GuildVanityURL(string guildId)
+			=> $"{Guild(guildId)}/vanity-url";
 
-		public static string GuildWidgetImage(string guildID)
-			=> $"{Guild(guildID)}/widget.png";
+		public static string GuildWidgetImage(string guildId)
+			=> $"{Guild(guildId)}/widget.png";
 
-		public static string Invite(string inviteID)
-			=> $"invites/{inviteID}";
+		public static string Invite(string inviteId)
+			=> $"invites/{inviteId}";
 
-		public static string GuildAuditLogs(string guildID)
-			=> $"{Guild(guildID)}/audit-logs";
+		public static string GuildAuditLogs(string guildId)
+			=> $"{Guild(guildId)}/audit-logs";
 
-		public static string Channel(string channelID)
-			=> $"{Channels}/{channelID}";
+		public static string Channel(string channelId)
+			=> $"{Channels}/{channelId}";
 
-		public static string ChannelMessages(string channelID)
-			=> $"{Channel(channelID)}/messages";
+		public static string ChannelMessages(string channelId)
+			=> $"{Channel(channelId)}/messages";
 
-		public static string Message(string channelID, string messageID)
-			=> $"{ChannelMessages(channelID)}/{messageID}";
+		public static string Message(string channelId, string messageId)
+			=> $"{ChannelMessages(channelId)}/{messageId}";
 
-		public static string MessageReactions(string channelID, string messageID)
-			=> $"{Message(channelID, messageID)}/reactions";
+		public static string MessageReactions(string channelId, string messageId)
+			=> $"{Message(channelId, messageId)}/reactions";
 
-		public static string MessageReaction(string channelID, string messageID, string emoji)
-			=> $"{MessageReactions(channelID, messageID)}/{emoji}";
+		public static string MessageReaction(string channelId, string messageId, string emoji)
+			=> $"{MessageReactions(channelId, messageId)}/{emoji}";
 
-		public static string BulkDelete(string channelID)
-			=> $"{Channel(channelID)}/bulk-delete";
+		public static string BulkDelete(string channelId)
+			=> $"{Channel(channelId)}/bulk-delete";
 
-		public static string ChannelPermission(string channelID, string overwriteID)
-			=> $"{Channel(channelID)}/permissions/{overwriteID}";
+		public static string ChannelPermission(string channelId, string overwriteId)
+			=> $"{Channel(channelId)}/permissions/{overwriteId}";
 
-		public static string ChannelInvites(string channelID)
-			=> $"{Channel(channelID)}/invites";
+		public static string ChannelInvites(string channelId)
+			=> $"{Channel(channelId)}/invites";
 
-		public static string ChannelTyping(string channelID)
-			=> $"{Channel(channelID)}/typing";
+		public static string ChannelTyping(string channelId)
+			=> $"{Channel(channelId)}/typing";
 
-		public static string ChannelPins(string channelID)
-			=> $"{Channel(channelID)}/pins";
+		public static string ChannelPins(string channelId)
+			=> $"{Channel(channelId)}/pins";
 
-		public static string ChannelPin(string channelID, string messageID)
-			=> $"{ChannelPins(channelID)}/{messageID}";
+		public static string ChannelPin(string channelId, string messageId)
+			=> $"{ChannelPins(channelId)}/{messageId}";
 
-		public static string ChannelRecipient(string channelID, string userID)
-			=> $"{Channel(channelID)}/recipients/{userID}";
+		public static string ChannelRecipient(string channelId, string userId)
+			=> $"{Channel(channelId)}/recipients/{userId}";
 
-		public static string GuildEmojis(string guildID)
-			=> $"{Guild(guildID)}/emojis";
+		public static string GuildEmojis(string guildId)
+			=> $"{Guild(guildId)}/emojis";
 
-		public static string GuildEmoji(string guildID, string emojiID)
-			=> $"{GuildEmojis(guildID)}/{emojiID}";
+		public static string GuildEmoji(string guildId, string emojiId)
+			=> $"{GuildEmojis(guildId)}/{emojiId}";
 
-		public static string User(string userID)
-			=> $"users/{userID}";
+		public static string User(string userId)
+			=> $"users/{userId}";
 
-		public static string UserGuild(string guildID)
-			=> $"{Guilds}/{guildID}";
+		public static string UserGuild(string guildId)
+			=> $"{Guilds}/{guildId}";
 
-		public static string ChannelWebhooks(string channelID)
-			=> $"{Channel(channelID)}/webhooks";
+		public static string ChannelWebhooks(string channelId)
+			=> $"{Channel(channelId)}/webhooks";
 
-		public static string GuildWebhooks(string guildID)
-			=> $"{Guild(guildID)}/webhooks";
+		public static string GuildWebhooks(string guildId)
+			=> $"{Guild(guildId)}/webhooks";
 
-		public static string Webhook(string webhookID)
-			=> $"{Webhooks}/{webhookID}";
+		public static string Webhook(string webhookId)
+			=> $"{Webhooks}/{webhookId}";
 	}
 }

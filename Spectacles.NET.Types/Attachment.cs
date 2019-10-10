@@ -8,7 +8,7 @@ namespace Spectacles.NET.Types
 		///     attachment id
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     name of file attached

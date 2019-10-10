@@ -24,7 +24,7 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -33,12 +33,12 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.User(ID)}";
+			=> $"{APIEndpoints.User(Id)}";
 	}
 }

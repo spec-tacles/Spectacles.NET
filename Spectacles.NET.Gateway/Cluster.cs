@@ -28,9 +28,9 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
-		/// <param name="shardIDs">The ids of shards to spawn.</param>
-		public Cluster(string token, int shardCount, IEnumerable<int> shardIDs) : this(token, shardCount)
-			=> ShardIDs = shardIDs;
+		/// <param name="shardIds">The ids of shards to spawn.</param>
+		public Cluster(string token, int shardCount, IEnumerable<int> shardIds) : this(token, shardCount)
+			=> ShardIds = shardIds;
 
 		/// <summary>
 		///     A Dictionary of Shards mapped to there ID.
@@ -45,7 +45,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// The ShardIDs this Cluster will spawn
 		/// </summary>
-		public IEnumerable<int> ShardIDs { get; }
+		public IEnumerable<int> ShardIds { get; }
 
 		/// <summary>
 		///     The ShardCount provided by the Constructor.
@@ -97,9 +97,9 @@ namespace Spectacles.NET.Gateway
 		{
 			if (!Gateway.Ready) await Gateway.FetchGatewayAsync();
 
-			if (ShardIDs != null)
-				foreach (var shardID in ShardIDs)
-					Shards.Add(shardID, new Shard(this, shardID));
+			if (ShardIds != null)
+				foreach (var shardId in ShardIds)
+					Shards.Add(shardId, new Shard(this, shardId));
 			else
 				for (var i = 0; i < ShardCount; i++)
 					Shards.Add(i, new Shard(this, i));
@@ -109,7 +109,7 @@ namespace Spectacles.NET.Gateway
 			foreach (var shard in Shards.Values)
 			{
 				shard.Log += Log;
-				shard.Error += (sender, e) => Error?.Invoke(sender, new ExceptionEventArgs(shard.ID, e));
+				shard.Error += (sender, e) => Error?.Invoke(sender, new ExceptionEventArgs(shard.Id, e));
 				shard.Dispatch += Dispatch;
 				shard.Send += Send;
 				await shard.ConnectAsync();

@@ -118,7 +118,7 @@ namespace Spectacles.NET.Types
 		///     guild id
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     guild name (2-100 characters)
@@ -149,7 +149,7 @@ namespace Spectacles.NET.Types
 		///     id of owner
 		/// </summary>
 		[JsonProperty("owner_id")]
-		public string OwnerID { get; set; }
+		public string OwnerId { get; set; }
 
 		/// <summary>
 		///     total permissions for the user in the guild (does not include channel overrides)
@@ -167,7 +167,7 @@ namespace Spectacles.NET.Types
 		///     id of afk channel
 		/// </summary>
 		[JsonProperty("afk_channel_id")]
-		public string AFKChannelID { get; set; }
+		public string AFKChannelId { get; set; }
 
 		/// <summary>
 		///     afk timeout in seconds
@@ -185,7 +185,7 @@ namespace Spectacles.NET.Types
 		///     if not null, the channel id that the widget will generate an invite to
 		/// </summary>
 		[JsonProperty("embed_channel_id")]
-		public string EmbedChannelID { get; set; }
+		public string EmbedChannelId { get; set; }
 
 		/// <summary>
 		///     verification level required for the guild
@@ -233,7 +233,7 @@ namespace Spectacles.NET.Types
 		///     application id of the guild creator if it is bot-created
 		/// </summary>
 		[JsonProperty("application_id")]
-		public string ApplicationID { get; set; }
+		public string ApplicationId { get; set; }
 
 		/// <summary>
 		///     whether or not the server widget is enabled
@@ -245,13 +245,13 @@ namespace Spectacles.NET.Types
 		///     the channel id for the server widget
 		/// </summary>
 		[JsonProperty("widget_channel_id")]
-		public string WidgetChannelID { get; set; }
+		public string WidgetChannelId { get; set; }
 
 		/// <summary>
 		///     the id of the channel to which system messages are sent
 		/// </summary>
 		[JsonProperty("system_channel_id")]
-		public string SystemChannelID { get; set; }
+		public string SystemChannelId { get; set; }
 
 		/// <summary>
 		///     when this guild was joined at

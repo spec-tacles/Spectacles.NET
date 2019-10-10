@@ -17,7 +17,7 @@ namespace Spectacles.NET.Types
 		public string[] Permissions { get; set; }
 
 		[JsonProperty("team_id")]
-		public string TeamID { get; set; }
+		public string TeamId { get; set; }
 
 		[JsonProperty("user")]
 		public User User { get; set; }
@@ -29,12 +29,12 @@ namespace Spectacles.NET.Types
 		public string Icon { get; set; }
 
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		[JsonProperty("members")]
 		public TeamMember[] Members { get; set; }
 
 		[JsonProperty("owner_user_id")]
-		public string OwnerUserID { get; set; }
+		public string OwnerUserId { get; set; }
 	}
 }

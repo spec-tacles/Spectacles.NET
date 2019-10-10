@@ -31,7 +31,7 @@ namespace Spectacles.NET.Gateway
 		public Shard(Cluster cluster, int id)
 		{
 			Cluster = cluster;
-			ID = id;
+			Id = id;
 		}
 
 		/// <summary>
@@ -44,7 +44,7 @@ namespace Spectacles.NET.Gateway
 		public Shard(string token, int id, int shardCount)
 		{
 			ShardGateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
-			ID = id;
+			Id = id;
 		}
 
 		/// <summary>
@@ -79,9 +79,9 @@ namespace Spectacles.NET.Gateway
 		public Cluster Cluster { get; }
 
 		/// <summary>
-		///     The ID of this Shard.
+		///     The Id of this Shard.
 		/// </summary>
-		public int ID { get; }
+		public int Id { get; }
 
 		/// <summary>
 		///     The WebSocketClient of this Shard.
@@ -101,7 +101,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		///     The current SessionID of this Shard.
 		/// </summary>
-		private string SessionID { get; set; }
+		private string SessionId { get; set; }
 
 		/// <summary>
 		///     The Sequence the connection closed with.
@@ -232,7 +232,7 @@ namespace Spectacles.NET.Gateway
 				Data = data
 			};
 
-			Send?.Invoke(this, new SendEventArgs(ID, opCode, data));
+			Send?.Invoke(this, new SendEventArgs(Id, opCode, data));
 
 			return WebSocketClient.SendAsync(JsonConvert.SerializeObject(packet));
 		}
@@ -264,8 +264,8 @@ namespace Spectacles.NET.Gateway
 					{
 						case GatewayEvent.READY:
 							var readyDispatch = ((JObject) packet.Data).ToObject<ReadyDispatch>();
-							SessionID = readyDispatch.SessionID;
-							_log(LogLevel.DEBUG, $"Ready {readyDispatch.SessionID}");
+							SessionId = readyDispatch.SessionId;
+							_log(LogLevel.DEBUG, $"Ready {readyDispatch.SessionId}");
 							_log(LogLevel.INFO, "Shard Ready");
 							Identified?.Invoke(this, null);
 							break;
@@ -273,7 +273,7 @@ namespace Spectacles.NET.Gateway
 						{
 							var replayed = CloseSequence - Sequence;
 							_log(LogLevel.DEBUG,
-								$"RESUMED {SessionID} | replayed {replayed} events.");
+								$"RESUMED {SessionId} | replayed {replayed} events.");
 							_log(LogLevel.INFO, "Shard resumed connection");
 							break;
 						}
@@ -282,7 +282,7 @@ namespace Spectacles.NET.Gateway
 					if (packet.Seq != null) Sequence = (int) packet.Seq;
 					
 					Dispatch?.Invoke(this,
-						new DispatchEventArgs(ID, packet.Data, (GatewayEvent) packet.Type));
+						new DispatchEventArgs(Id, packet.Data, (GatewayEvent) packet.Type));
 					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 					break;
 				}
@@ -303,7 +303,7 @@ namespace Spectacles.NET.Gateway
 						break;
 					}
 
-					SessionID = null;
+					SessionId = null;
 					Sequence = null;
 					Thread.Sleep(TimeSpan.FromSeconds(5));
 					DisconnectAsync((int) WebSocketCloseStatus.NormalClosure, "Session Invalidated")
@@ -335,7 +335,7 @@ namespace Spectacles.NET.Gateway
 		{
 			_log(LogLevel.DEBUG, "Authenticate to Discord");
 
-			return SessionID != null ? _resumeAsync() : _queueIdentifyAsync();
+			return SessionId != null ? _resumeAsync() : _queueIdentifyAsync();
 		}
 
 		/// <summary>
@@ -362,7 +362,7 @@ namespace Spectacles.NET.Gateway
 					Browser = "Spectacles.NET",
 					Device = "Spectacles.NET"
 				},
-				Shard = new[] {ID, Gateway.ShardCount}
+				Shard = new[] {Id, Gateway.ShardCount}
 			});
 		}
 
@@ -372,13 +372,13 @@ namespace Spectacles.NET.Gateway
 		/// <returns>Task</returns>
 		private Task _resumeAsync()
 		{
-			_log(LogLevel.DEBUG, $"Attempting to resume session {SessionID}");
+			_log(LogLevel.DEBUG, $"Attempting to resume session {SessionId}");
 
 
 			return SendAsync(OpCode.RESUME, new ResumePacket
 			{
 				Token = Gateway.Token,
-				SessionID = SessionID,
+				SessionId = SessionId,
 				// ReSharper disable once PossibleInvalidOperationException
 				Sequence = (int) Sequence
 			});
@@ -516,6 +516,6 @@ namespace Spectacles.NET.Gateway
 		/// <param name="level">The LogLevel of this log</param>
 		/// <param name="message">The message of this log</param>
 		private void _log(LogLevel level, string message)
-			=> Log?.Invoke(this, new LogEventArgs(level, $"Shard {ID}", message));
+			=> Log?.Invoke(this, new LogEventArgs(level, $"Shard {Id}", message));
 	}
 }

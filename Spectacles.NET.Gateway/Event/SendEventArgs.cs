@@ -10,12 +10,12 @@ namespace Spectacles.NET.Gateway.Event
 	{
 		/// <summary>
 		/// </summary>
-		/// <param name="shardID">Shard where the Packet was sent.</param>
+		/// <param name="shardId">Shard where the Packet was sent.</param>
 		/// <param name="data">Data of the Dispatch.</param>
 		/// <param name="opCode">The OPCode of this Dispatch.</param>
-		public SendEventArgs(int shardID, OpCode opCode, object data)
+		public SendEventArgs(int shardId, OpCode opCode, object data)
 		{
-			ShardID = shardID;
+			ShardId = shardId;
 			OpCode = opCode;
 			Data = data ?? throw new ArgumentNullException(nameof(data));
 		}
@@ -23,7 +23,7 @@ namespace Spectacles.NET.Gateway.Event
 		/// <summary>
 		///     Shard where the Dispatch occured.
 		/// </summary>
-		public int ShardID { get; }
+		public int ShardId { get; }
 
 		/// <summary>
 		///     The OpCode of this Packet

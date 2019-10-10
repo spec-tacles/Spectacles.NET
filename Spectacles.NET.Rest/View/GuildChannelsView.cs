@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildChannelsView : View
 	{
-		public GuildChannelsView(RestClient client, string guildID) : base(client)
-			=> GuildID = guildID;
+		public GuildChannelsView(RestClient client, string guildId) : base(client)
+			=> GuildId = guildId;
 
 		public GuildChannelsView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{APIEndpoints.GuildChannels(GuildID)}";
+			=> $"{APIEndpoints.GuildChannels(GuildId)}";
 
-		private string GuildID { get; }
+		private string GuildId { get; }
 	}
 }

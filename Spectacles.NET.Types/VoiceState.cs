@@ -11,19 +11,19 @@ namespace Spectacles.NET.Types
 		///     the guild id this voice state is for
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public string GuildID { get; set; }
+		public string GuildId { get; set; }
 
 		/// <summary>
 		///     the channel id this user is connected to
 		/// </summary>
 		[JsonProperty("channel_id")]
-		public string ChannelID { get; set; }
+		public string ChannelId { get; set; }
 
 		/// <summary>
 		///     the user id this voice state is for
 		/// </summary>
 		[JsonProperty("user_id")]
-		public string UserID { get; set; }
+		public string UserId { get; set; }
 
 		/// <summary>
 		///     the guild member this voice state is for
@@ -35,7 +35,7 @@ namespace Spectacles.NET.Types
 		///     the session id for this voice state
 		/// </summary>
 		[JsonProperty("session_id")]
-		public string SessionID { get; set; }
+		public string SessionId { get; set; }
 
 		/// <summary>
 		///     whether this user is deafened by the server

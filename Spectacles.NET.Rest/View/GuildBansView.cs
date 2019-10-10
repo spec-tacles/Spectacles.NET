@@ -4,14 +4,14 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildBansView : View
 	{
-		public GuildBansView(RestClient client, string guildID) : base(client)
-			=> GuildID = guildID;
+		public GuildBansView(RestClient client, string guildId) : base(client)
+			=> GuildId = guildId;
 
 		public GuildBansView this[long id]
 		{
 			get
 			{
-				ID = id.ToString();
+				Id = id.ToString();
 				return this;
 			}
 		}
@@ -20,14 +20,14 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				ID = id;
+				Id = id;
 				return this;
 			}
 		}
 
 		protected override string Route
-			=> $"{(ID != null ? APIEndpoints.GuildBan(GuildID, ID) : APIEndpoints.GuildBans(GuildID))}";
+			=> $"{(Id != null ? APIEndpoints.GuildBan(GuildId, Id) : APIEndpoints.GuildBans(GuildId))}";
 
-		private string GuildID { get; }
+		private string GuildId { get; }
 	}
 }

@@ -440,7 +440,7 @@ namespace Spectacles.NET.Types
 		///     session id
 		/// </summary>
 		[JsonProperty("session_id")]
-		public string SessionID { get; set; }
+		public string SessionId { get; set; }
 
 		/// <summary>
 		///     session id
@@ -490,7 +490,7 @@ namespace Spectacles.NET.Types
 		///     used for resuming connections
 		/// </summary>
 		[JsonProperty("session_id")]
-		public string SessionID { get; set; }
+		public string SessionId { get; set; }
 
 		/// <summary>
 		///     the shard information associated with this session, if sent when identifying
@@ -508,7 +508,7 @@ namespace Spectacles.NET.Types
 		///     The GuildID from which the ShardID should be calculated.
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public string GuildID { get; set; }
+		public string GuildId { get; set; }
 
 		/// <summary>
 		///     The SendPacket which should be send to the Discord Websocket API.
@@ -560,7 +560,7 @@ namespace Spectacles.NET.Types
 		///     id of the guild(s) to get offline members for
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public object GuildID { get; set; }
+		public object GuildId { get; set; }
 
 		/// <summary>
 		///     string that username starts with, or an empty string to return all members
@@ -584,13 +584,13 @@ namespace Spectacles.NET.Types
 		///     id of the guild
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public string GuildID { get; set; }
+		public string GuildId { get; set; }
 
 		/// <summary>
 		///     id of the voice channel client wants to join (null if disconnecting)
 		/// </summary>
 		[JsonProperty("channel_id")]
-		public string ChannelID { get; set; }
+		public string ChannelId { get; set; }
 
 		/// <summary>
 		///     is the client muted

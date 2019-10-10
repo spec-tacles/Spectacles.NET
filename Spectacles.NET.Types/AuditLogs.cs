@@ -67,7 +67,7 @@ namespace Spectacles.NET.Types
 		///     id of the affected entity (webhook, user, role, etc.)
 		/// </summary>
 		[JsonProperty("target_id")]
-		public string TargetID { get; set; }
+		public string TargetId { get; set; }
 
 		/// <summary>
 		///     changes made to the target_id
@@ -79,13 +79,13 @@ namespace Spectacles.NET.Types
 		///     the user who made the changes
 		/// </summary>
 		[JsonProperty("user_id")]
-		public string UserID { get; set; }
+		public string UserId { get; set; }
 
 		/// <summary>
 		///     id of the entry
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     type of action that occured
@@ -145,7 +145,7 @@ namespace Spectacles.NET.Types
 		///     channel in which the messages were deleted
 		/// </summary>
 		[JsonProperty("channel_id")]
-		public string ChannelID { get; set; }
+		public string ChannelId { get; set; }
 
 		/// <summary>
 		///     number of deleted messages
@@ -157,7 +157,7 @@ namespace Spectacles.NET.Types
 		///     id of the overwritten entity
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     type of overwritten entity ("member" or "role")

@@ -26,7 +26,7 @@ namespace Spectacles.NET.Types
 		///     The id of this channel
 		/// </summary>
 		[JsonProperty("id")]
-		public string ID { get; set; }
+		public string Id { get; set; }
 
 		/// <summary>
 		///     the type of channel see <see cref="ChannelType" />
@@ -38,7 +38,7 @@ namespace Spectacles.NET.Types
 		///     the id of the guild
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public string GuildID { get; set; }
+		public string GuildId { get; set; }
 
 		/// <summary>
 		///     sorting position of the channel
@@ -74,7 +74,7 @@ namespace Spectacles.NET.Types
 		///     the id of the last message sent in this channel (may not point to an existing or valid message)
 		/// </summary>
 		[JsonProperty("last_message_id")]
-		public string LastMessageID { get; set; }
+		public string LastMessageId { get; set; }
 
 		/// <summary>
 		///     the bitrate (in bits) of the voice channel
@@ -111,19 +111,19 @@ namespace Spectacles.NET.Types
 		///     id of the DM creator
 		/// </summary>
 		[JsonProperty("owner_id")]
-		public string OwnerID { get; set; }
+		public string OwnerId { get; set; }
 
 		/// <summary>
 		///     application id of the group DM creator if it is bot-created
 		/// </summary>
 		[JsonProperty("application_id")]
-		public string ApplicationID { get; set; }
+		public string ApplicationId { get; set; }
 
 		/// <summary>
 		///     id of the parent category for a channel
 		/// </summary>
 		[JsonProperty("parent_id")]
-		public string ParentID { get; set; }
+		public string ParentId { get; set; }
 
 		/// <summary>
 		///     when the last pinned message was pinned

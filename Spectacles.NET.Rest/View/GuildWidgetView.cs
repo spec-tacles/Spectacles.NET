@@ -4,12 +4,12 @@ namespace Spectacles.NET.Rest.View
 {
 	public class GuildWidgetView : View
 	{
-		public GuildWidgetView(RestClient client, string guildID) : base(client)
-			=> GuildID = guildID;
+		public GuildWidgetView(RestClient client, string guildId) : base(client)
+			=> GuildId = guildId;
 
 		protected override string Route
-			=> $"{APIEndpoints.GuildWidgetImage(GuildID)}";
+			=> $"{APIEndpoints.GuildWidgetImage(GuildId)}";
 
-		private string GuildID { get; }
+		private string GuildId { get; }
 	}
 }

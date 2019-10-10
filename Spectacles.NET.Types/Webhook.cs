@@ -12,19 +12,19 @@ namespace Spectacles.NET.Types
 		///     the id of the webhook
 		/// </summary>
 		[JsonProperty("id")]
-		public long ID { get; set; }
+		public long Id { get; set; }
 
 		/// <summary>
 		///     the guild id this webhook is for
 		/// </summary>
 		[JsonProperty("guild_id")]
-		public long? GuildID { get; set; }
+		public long? GuildId { get; set; }
 
 		/// <summary>
 		///     the channel id this webhook is for
 		/// </summary>
 		[JsonProperty("channel_id")]
-		public long ChannelID { get; set; }
+		public long ChannelId { get; set; }
 
 		/// <summary>
 		///     the user this webhook was created by (not returned when getting a webhook with its token)
