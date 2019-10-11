@@ -194,7 +194,7 @@ namespace Spectacles.NET.Rest
 			route = reactionRegEx.Replace(route, "/reactions/:id");
 			route = webhookRegEx.Replace(route, "/webhooks/$1/:token");
 
-			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id")) route = $"{method}{url}";
+			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id")) route = $"{method}{route}";
 
 			return route;
 		}
