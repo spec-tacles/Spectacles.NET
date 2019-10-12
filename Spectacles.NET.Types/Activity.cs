@@ -56,7 +56,7 @@ namespace Spectacles.NET.Types
 		///     application id for the game
 		/// </summary>
 		[JsonProperty("application_id")]
-		public string ApplicationID { get; set; }
+		public string ApplicationId { get; set; }
 
 		/// <summary>
 		///     what the player is currently doing

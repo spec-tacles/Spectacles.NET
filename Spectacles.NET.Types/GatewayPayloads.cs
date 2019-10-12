@@ -77,7 +77,7 @@ namespace Spectacles.NET.Types
 	public class GuildMemberAddPayload : GuildMember
 	{
 		/// <summary>
-		///     ID of the guild
+		///     Id of the guild
 		/// </summary>
 		[JsonProperty("guild_id")]
 		public string GuildId { get; set; }
@@ -200,7 +200,7 @@ namespace Spectacles.NET.Types
 		///     the deleted role id
 		/// </summary>
 		[JsonProperty("role_id")]
-		public string RoleID { get; set; }
+		public string RoleId { get; set; }
 	}
 
 	/// <summary>

@@ -33,7 +33,7 @@ namespace Spectacles.NET.Util.Logging
 		public string Message { get; }
 
 		/// <summary>
-		///     The Sender of this log, either "Cluster" or "Shard ID"
+		///     The Sender of this log, either "Cluster" or "Shard Id"
 		/// </summary>
 		public string Sender { get; }
 	}

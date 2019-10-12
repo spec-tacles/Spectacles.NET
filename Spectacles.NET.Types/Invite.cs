@@ -16,7 +16,7 @@ namespace Spectacles.NET.Types
 	public class Invite
 	{
 		/// <summary>
-		///     the invite code (unique ID)
+		///     the invite code (unique Id)
 		/// </summary>
 		[JsonProperty("code")]
 		public string Code { get; set; }

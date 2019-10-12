@@ -33,7 +33,7 @@ namespace Spectacles.NET.Gateway
 			=> ShardIds = shardIds;
 
 		/// <summary>
-		///     A Dictionary of Shards mapped to there ID.
+		///     A Dictionary of Shards mapped to there Id.
 		/// </summary>
 		public Dictionary<int, Shard> Shards { get; } = new Dictionary<int, Shard>();
 
@@ -43,7 +43,7 @@ namespace Spectacles.NET.Gateway
 		public Gateway Gateway { get; }
 		
 		/// <summary>
-		/// The ShardIDs this Cluster will spawn
+		/// The ShardIds this Cluster will spawn
 		/// </summary>
 		public IEnumerable<int> ShardIds { get; }
 
