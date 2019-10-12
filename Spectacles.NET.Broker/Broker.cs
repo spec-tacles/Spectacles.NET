@@ -7,55 +7,36 @@ using System.Threading.Tasks;
 namespace Spectacles.NET.Broker
 {
 	/// <summary>
-	///     Base Class All Brokers should extend
+	///     Interface all Brokers should implement
 	/// </summary>
-	public abstract class Broker
+	public interface IBroker
 	{
-		/// <summary>
-		///     PublishAsync Publishes a message
-		/// </summary>
-		/// <param name="event">The name of the event to publish</param>
-		/// <param name="data">The data of the event to publish</param>
-		/// <param name="options">Optional options for this Publish</param>
-		/// <returns>Task</returns>
-		public abstract Task PublishAsync(string @event, byte[] data, object options = null);
-
-		/// <summary>
-		///     PublishWithResponseAsync Publishes a message and waits for the response
-		/// </summary>
-		/// <param name="event">The name of the event to publish</param>
-		/// <param name="data">The data of the event to publish</param>
-		/// <param name="options">Optional options for this Publish</param>
-		/// <param name="timeout">Optional the timeout to wait for the response, in ms</param>
-		/// <returns></returns>
-		public abstract Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15000, object options = null);
-
 		/// <summary>
 		///     SubscribeAsync subscribes to a queue
 		/// </summary>
 		/// <param name="event">The name of the queue to subscribe to</param>
 		/// <returns>Task</returns>
-		public abstract Task SubscribeAsync(string @event);
+		Task SubscribeAsync(string @event);
 
 		/// <summary>
 		///     SubscribeAsync subscribes to multiple queues
 		/// </summary>
 		/// <param name="events">An Enumerable of all Events to subscribe to</param>
 		/// <returns>Task</returns>
-		public abstract Task SubscribeAsync(IEnumerable<string> events);
+		Task SubscribeAsync(IEnumerable<string> events);
 
 		/// <summary>
 		///     UnsubscribeAsync unsubscribe from a queue
 		/// </summary>
 		/// <param name="event">The name of the queue to unsubscribe from</param>
 		/// <returns>Task</returns>
-		public abstract Task UnsubscribeAsync(string @event);
+		Task UnsubscribeAsync(string @event);
 
 		/// <summary>
 		///     UnsubscribeAsync unsubscribe from multiple queues
 		/// </summary>
 		/// <param name="events">An Enumerable of all Events to unsubscribe from</param>
 		/// <returns>Task</returns>
-		public abstract Task UnsubscribeAsync(IEnumerable<string> events);
+		Task UnsubscribeAsync(IEnumerable<string> events);
 	}
 }

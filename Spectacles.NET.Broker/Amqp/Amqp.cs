@@ -62,7 +62,7 @@ namespace Spectacles.NET.Broker.Amqp
 	/// <summary>
 	///     Broker made for Amqp using RabbitMQ .NET Library.
 	/// </summary>
-	public class AmqpBroker : Broker
+	public class AmqpBroker : IBroker
 	{
 		/// <summary>
 		///     The consumers that this broker has registered.
@@ -198,20 +198,33 @@ namespace Spectacles.NET.Broker.Amqp
 			ReadConnection.Close(code, text);
 		}
 
-		/// <inheritdoc />
-		public override Task PublishAsync(string @event, byte[] data, object options = null)
+		/// <summary>
+		///     PublishAsync Publishes a message
+		/// </summary>
+		/// <param name="event">The name of the event to publish</param>
+		/// <param name="data">The data of the event to publish</param>
+		/// <param name="options">Optional options for this Publish</param>
+		/// <returns>Task</returns>
+		public Task PublishAsync(string @event, byte[] data, IBasicProperties options = null)
 		{
 			lock (PublishChannel)
 			{
-				PublishChannel.BasicPublish(Group, @event, false, (IBasicProperties) options ?? new BasicProperties(),
+				PublishChannel.BasicPublish(Group, @event, false, options ?? new BasicProperties(),
 					data);
 			}
 
 			return Task.CompletedTask;
 		}
 
-		/// <inheritdoc />
-		public override async Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15000, object options = null)
+		/// <summary>
+		///     PublishWithResponseAsync Publishes a message and waits for the response
+		/// </summary>
+		/// <param name="event">The name of the event to publish</param>
+		/// <param name="data">The data of the event to publish</param>
+		/// <param name="options">Optional options for this Publish</param>
+		/// <param name="timeout">Optional the timeout to wait for the response, in ms</param>
+		/// <returns>Task</returns>
+		public async Task<byte[]> PublishWithResponseAsync(string @event, byte[] data, int timeout = 15000, IBasicProperties options = null)
 		{
 			var tcs = new TaskCompletionSource<byte[]>();
 
@@ -226,7 +239,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 			RPCConsumer.Received += OnRPCConsumerOnReceived;
 
-			var basicProperties = (IBasicProperties) options ?? new BasicProperties();
+			var basicProperties = options ?? new BasicProperties();
 
 			basicProperties.ReplyTo = RPCQueueName;
 			basicProperties.CorrelationId = correlationID;
@@ -256,7 +269,7 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <inheritdoc />
-		public override Task SubscribeAsync(string @event)
+		public Task SubscribeAsync(string @event)
 		{
 			var queueName = $"{Group}{Subgroup ?? ""}{@event}";
 			var model = GetOrCreateChannel(@event);
@@ -278,11 +291,11 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <inheritdoc />
-		public override Task SubscribeAsync(IEnumerable<string> events)
+		public Task SubscribeAsync(IEnumerable<string> events)
 			=> Task.WhenAll(events.Select(SubscribeAsync));
 
 		/// <inheritdoc />
-		public override Task UnsubscribeAsync(string @event)
+		public Task UnsubscribeAsync(string @event)
 		{
 			_consumerTags.TryGetValue(@event, out var consumerTag);
 
@@ -296,7 +309,7 @@ namespace Spectacles.NET.Broker.Amqp
 		}
 
 		/// <inheritdoc />
-		public override Task UnsubscribeAsync(IEnumerable<string> events)
+		public Task UnsubscribeAsync(IEnumerable<string> events)
 			=> Task.WhenAll(events.Select(UnsubscribeAsync));
 
 		private IModel GetOrCreateChannel(string @event)
