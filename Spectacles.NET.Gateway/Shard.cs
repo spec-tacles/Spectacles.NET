@@ -27,7 +27,7 @@ namespace Spectacles.NET.Gateway
 		///     Creates an instance from a Cluster.
 		/// </summary>
 		/// <param name="cluster">The Cluster this Shard is part of.</param>
-		/// <param name="id">The ID of this Shard.</param>
+		/// <param name="id">The Id of this Shard.</param>
 		public Shard(Cluster cluster, int id)
 		{
 			Cluster = cluster;
@@ -38,7 +38,7 @@ namespace Spectacles.NET.Gateway
 		///     Creates an instance of Shard.
 		/// </summary>
 		/// <param name="token">The Token to use.</param>
-		/// <param name="id">The ID of this Shard.</param>
+		/// <param name="id">The Id of this Shard.</param>
 		/// <param name="shardCount">The shard count that is used.</param>
 		// ReSharper disable once UnusedMember.Global
 		public Shard(string token, int id, int shardCount)
@@ -99,7 +99,7 @@ namespace Spectacles.NET.Gateway
 		private int? Sequence { get; set; }
 
 		/// <summary>
-		///     The current SessionID of this Shard.
+		///     The current SessionId of this Shard.
 		/// </summary>
 		private string SessionId { get; set; }
 

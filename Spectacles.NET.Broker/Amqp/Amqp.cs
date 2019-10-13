@@ -215,11 +215,11 @@ namespace Spectacles.NET.Broker.Amqp
 		{
 			var tcs = new TaskCompletionSource<byte[]>();
 
-			var correlationID = RandomString(15);
+			var correlationId = RandomString(15);
 
 			void OnRPCConsumerOnReceived(object sender, BasicDeliverEventArgs args)
 			{
-				if (args.BasicProperties.CorrelationId != correlationID) return;
+				if (args.BasicProperties.CorrelationId != correlationId) return;
 				tcs.TrySetResult(args.Body);
 				RPCConsumer.Received -= OnRPCConsumerOnReceived;
 			}
@@ -229,7 +229,7 @@ namespace Spectacles.NET.Broker.Amqp
 			var basicProperties = (IBasicProperties) options ?? new BasicProperties();
 
 			basicProperties.ReplyTo = RPCQueueName;
-			basicProperties.CorrelationId = correlationID;
+			basicProperties.CorrelationId = correlationId;
 
 			await PublishAsync(@event, data, basicProperties);
 

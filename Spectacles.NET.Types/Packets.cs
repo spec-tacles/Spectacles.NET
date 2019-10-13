@@ -500,12 +500,12 @@ namespace Spectacles.NET.Types
 	}
 
 	/// <summary>
-	///     A Packet Sent from the Worker to the Gateway where only the GuildID is known and not the ShardCount.
+	///     A Packet Sent from the Worker to the Gateway where only the GuildId is known and not the ShardCount.
 	/// </summary>
 	public class SendableDispatch
 	{
 		/// <summary>
-		///     The GuildID from which the ShardID should be calculated.
+		///     The GuildId from which the ShardId should be calculated.
 		/// </summary>
 		[JsonProperty("guild_id")]
 		public string GuildId { get; set; }

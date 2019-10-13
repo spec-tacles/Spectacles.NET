@@ -8,7 +8,7 @@ namespace Spectacles.NET.Types
 	public class CreateDMPayload
 	{
 		/// <summary>
-		/// The ID of the Recipient
+		/// The Id of the Recipient
 		/// </summary>
 		[JsonProperty("recipient_id")]
 		public string RecipientId { get; set; }
