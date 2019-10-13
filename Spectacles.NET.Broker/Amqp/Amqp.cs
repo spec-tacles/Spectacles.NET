@@ -83,10 +83,12 @@ namespace Spectacles.NET.Broker.Amqp
 		///     The subgroup of this broker. Useful to setup multiple groups of queues that all receive the same
 		///     data. Implemented internally as an extra identifier in the queue name.
 		/// </param>
-		public AmqpBroker(string group, string subgroup)
+		/// <param name="autoAck">If the Events should be acknowledged automatically (default=false)</param>
+		public AmqpBroker(string group, string subgroup, bool autoAck = false)
 		{
 			Group = group;
 			Subgroup = subgroup;
+			AutoAck = autoAck;
 		}
 
 		/// <summary>
@@ -109,6 +111,11 @@ namespace Spectacles.NET.Broker.Amqp
 		///     Implemented internally as an extra identifier in the queue name.
 		/// </summary>
 		public string Subgroup { get; }
+		
+		/// <summary>
+		///     If the Events should be acknowledged automatically (default=false)
+		/// </summary>
+		public bool AutoAck { get; }
 
 		/// <summary>
 		///     The AMQP channel for publishing events.
@@ -268,6 +275,12 @@ namespace Spectacles.NET.Broker.Amqp
 			return await tcs.Task;
 		}
 
+		public void Ack(string @event, ulong deliveryTag)
+		{
+			var model = GetOrCreateChannel(@event);
+			model.BasicAck(deliveryTag, false);
+		}
+
 		/// <inheritdoc />
 		public Task SubscribeAsync(string @event)
 		{
@@ -280,11 +293,10 @@ namespace Spectacles.NET.Broker.Amqp
 
 			consumer.Received += (ch, ea) =>
 			{
-				model.BasicAck(ea.DeliveryTag, false);
-				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body, ea.BasicProperties));
+				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body, ea.BasicProperties, ea.DeliveryTag));
 			};
 
-			var consumerTag = model.BasicConsume(queueName, false, consumer);
+			var consumerTag = model.BasicConsume(queueName, AutoAck, consumer);
 			_consumerTags.Add(@event, consumerTag);
 
 			return Task.CompletedTask;
@@ -344,7 +356,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 			RPCConsumer = new EventingBasicConsumer(rpcModel);
 			
-			rpcModel.BasicConsume(RPCQueueName, false, RPCConsumer);
+			rpcModel.BasicConsume(RPCQueueName, AutoAck, RPCConsumer);
 
 			return Task.CompletedTask;
 		}
@@ -362,10 +374,12 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="event">The Event which is invoked.</param>
 		/// <param name="data">The Data of this Event.</param>
-		/// <param name="properties">The Properties of this Event</param>
-		public AmqpReceiveEventArgs(string @event, byte[] data, IBasicProperties properties)
+		/// <param name="properties">The Properties of this Event.</param>
+		/// <param name="deliveryTag">The Delivery tag of this Event.</param>
+		public AmqpReceiveEventArgs(string @event, byte[] data, IBasicProperties properties, ulong deliveryTag)
 		{
 			Properties = properties;
+			DeliveryTag = deliveryTag;
 			Event = @event;
 			Data = data;
 		}
@@ -379,10 +393,15 @@ namespace Spectacles.NET.Broker.Amqp
 		///     The Data of this Event.
 		/// </summary>
 		public byte[] Data { get; }
-		
+
 		/// <summary>
-		/// The Properties of this Event.
+		///     The Properties of this Event.
 		/// </summary>
 		public IBasicProperties Properties { get; }
+
+		/// <summary>
+		///     The Delivery Tag of this Event.
+		/// </summary>
+		public ulong DeliveryTag { get; }
 	}
 }
