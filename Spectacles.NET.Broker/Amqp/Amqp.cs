@@ -84,7 +84,7 @@ namespace Spectacles.NET.Broker.Amqp
 		///     data. Implemented internally as an extra identifier in the queue name.
 		/// </param>
 		/// <param name="autoAck">If the Events should be acknowledged automatically (default=false)</param>
-		public AmqpBroker(string group, string subgroup, bool autoAck = false)
+		public AmqpBroker(string group, string subgroup = null, bool autoAck = false)
 		{
 			Group = group;
 			Subgroup = subgroup;
