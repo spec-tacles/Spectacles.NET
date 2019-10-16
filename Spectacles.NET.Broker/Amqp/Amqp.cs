@@ -275,6 +275,11 @@ namespace Spectacles.NET.Broker.Amqp
 			return await tcs.Task;
 		}
 
+		/// <summary>
+		/// 	Acknowledges a Message by delivery message
+		/// </summary>
+		/// <param name="event">The Event of the message</param>
+		/// <param name="deliveryTag">The delivery tag of the message</param>
 		public void Ack(string @event, ulong deliveryTag)
 		{
 			var model = GetOrCreateChannel(@event);
