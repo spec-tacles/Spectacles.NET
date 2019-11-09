@@ -67,12 +67,12 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <summary>
 		///     The consumers that this broker has registered.
 		/// </summary>
-		private readonly Dictionary<string, string> _consumerTags = new Dictionary<string, string>();
+		private Dictionary<string, string> ConsumerTags { get; }= new Dictionary<string, string>();
 
 		/// <summary>
 		///     The AMQP channels for subscribing
 		/// </summary>
-		private readonly ConcurrentDictionary<string, IModel> _subscribeChannels =
+		private ConcurrentDictionary<string, IModel> SubscribeChannels { get; } =
 			new ConcurrentDictionary<string, IModel>();
 
 		/// <summary>
@@ -200,7 +200,7 @@ namespace Spectacles.NET.Broker.Amqp
 				PublishChannel.Close(code, text);
 			}
 
-			foreach (var (_, value) in _subscribeChannels) value.Close();
+			foreach (var value in SubscribeChannels.Values) value.Close();
 			WriteConnection.Close(code, text);
 			ReadConnection.Close(code, text);
 		}
@@ -302,7 +302,7 @@ namespace Spectacles.NET.Broker.Amqp
 			};
 
 			var consumerTag = model.BasicConsume(queueName, AutoAck, consumer);
-			_consumerTags.Add(@event, consumerTag);
+			ConsumerTags.Add(@event, consumerTag);
 
 			return Task.CompletedTask;
 		}
@@ -314,13 +314,13 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <inheritdoc />
 		public Task UnsubscribeAsync(string @event)
 		{
-			_consumerTags.TryGetValue(@event, out var consumerTag);
+			ConsumerTags.TryGetValue(@event, out var consumerTag);
 
 			if (consumerTag == null) return Task.FromException(new Exception("No Event with this name registered"));
 
 			var channel = GetOrCreateChannel(@event);
 			channel.BasicCancel(consumerTag);
-			_consumerTags.Remove(@event);
+			ConsumerTags.Remove(@event);
 
 			return Task.CompletedTask;
 		}
@@ -331,9 +331,9 @@ namespace Spectacles.NET.Broker.Amqp
 
 		private IModel GetOrCreateChannel(string @event)
 		{
-			if (_subscribeChannels.TryGetValue(@event, out var channel)) return channel;
+			if (SubscribeChannels.TryGetValue(@event, out var channel)) return channel;
 			var createChannel = ReadConnection.CreateModel();
-			_subscribeChannels.TryAdd(@event, createChannel);
+			SubscribeChannels.TryAdd(@event, createChannel);
 			return createChannel;
 		}
 
