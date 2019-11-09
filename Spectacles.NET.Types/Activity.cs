@@ -10,7 +10,7 @@ namespace Spectacles.NET.Types
 	[Flags]
 	public enum ActivityFlags
 	{
-		INSTANCE = 1 << 0,
+		INSTANCE = 1,
 		JOIN = 1 << 1,
 		SPECTATE = 1 << 2,
 		JOIN_REQUEST = 1 << 3,
@@ -23,7 +23,8 @@ namespace Spectacles.NET.Types
 		PLAYING,
 		STREAMING,
 		LISTENING,
-		WATCHING
+		WATCHING,
+		CUSTOM
 	}
 
 	public class Activity
@@ -69,6 +70,12 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("state")]
 		public string State { get; set; }
+		
+		/// <summary>
+		/// 	the emoji used for a custom status
+		/// </summary>
+		[JsonProperty("emoji")]
+		public ActivityEmoji Emoji { get; set; }
 
 		/// <summary>
 		///     information for the current party of the player
@@ -177,5 +184,26 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("match")]
 		public string Match { get; set; }
+	}
+
+	public class ActivityEmoji
+	{
+		/// <summary>
+		///     emoji id
+		/// </summary>
+		[JsonProperty("id")]
+		public string Id { get; set; }
+
+		/// <summary>
+		///     emoji name
+		/// </summary>
+		[JsonProperty("name")]
+		public string Name { get; set; }
+		
+		/// <summary>
+		///     whether this emoji is animated
+		/// </summary>
+		[JsonProperty("animated")]
+		public bool? Animated { get; set; }
 	}
 }
