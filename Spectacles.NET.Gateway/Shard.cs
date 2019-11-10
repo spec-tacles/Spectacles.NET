@@ -28,8 +28,10 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="cluster">The Cluster this Shard is part of.</param>
 		/// <param name="id">The Id of this Shard.</param>
-		public Shard(Cluster cluster, int id)
+		/// <param name="identifyOptions">Options to send while Identifying</param>
+		public Shard(Cluster cluster, int id, IdentifyOptions identifyOptions = null)
 		{
+			IdentifyOptions = identifyOptions;
 			Cluster = cluster;
 			Id = id;
 		}
@@ -40,12 +42,19 @@ namespace Spectacles.NET.Gateway
 		/// <param name="token">The Token to use.</param>
 		/// <param name="id">The Id of this Shard.</param>
 		/// <param name="shardCount">The shard count that is used.</param>
+		/// <param name="identifyOptions">Options to send while Identifying</param>
 		// ReSharper disable once UnusedMember.Global
-		public Shard(string token, int id, int shardCount)
+		public Shard(string token, int id, int shardCount, IdentifyOptions identifyOptions = null)
 		{
+			IdentifyOptions = identifyOptions;
 			ShardGateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
 			Id = id;
 		}
+		
+		/// <summary>
+		/// 	Options to send while Identifying
+		/// </summary>
+		private IdentifyOptions IdentifyOptions { get; set; }
 
 		/// <summary>
 		///     The Ratelimiter for this Shard.
@@ -362,7 +371,10 @@ namespace Spectacles.NET.Gateway
 					Browser = "Spectacles.NET",
 					Device = "Spectacles.NET"
 				},
-				Shard = new[] {Id, Gateway.ShardCount}
+				Shard = new[] {Id, Gateway.ShardCount},
+				GuildSubscription = IdentifyOptions?.GuildSubscriptions,
+				Presence = IdentifyOptions?.Presence,
+				LargeThreshold = IdentifyOptions?.LargeThreshold
 			});
 		}
 

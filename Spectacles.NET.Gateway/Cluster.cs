@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Spectacles.NET.Gateway.Event;
+using Spectacles.NET.Types;
 using Spectacles.NET.Util.Extensions;
 using Spectacles.NET.Util.Logging;
 
@@ -20,8 +21,12 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
-		public Cluster(string token, int? shardCount = null)
-			=> Gateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
+		/// <param name="identifyOptions">Options to send while Identifying</param>
+		public Cluster(string token, int? shardCount = null, IdentifyOptions identifyOptions = null)
+		{
+			Gateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
+			IdentifyOptions = identifyOptions;
+		}
 
 		/// <summary>
 		/// Creates a new instance which spawns a range of Shards from id.
@@ -29,7 +34,8 @@ namespace Spectacles.NET.Gateway
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
 		/// <param name="shardIds">The ids of shards to spawn.</param>
-		public Cluster(string token, int shardCount, IEnumerable<int> shardIds) : this(token, shardCount)
+		/// <param name="identifyOptions">Options to send while Identifying</param>
+		public Cluster(string token, int shardCount, IEnumerable<int> shardIds, IdentifyOptions identifyOptions = null) : this(token, shardCount, identifyOptions)
 			=> ShardIds = shardIds;
 
 		/// <summary>
@@ -46,6 +52,8 @@ namespace Spectacles.NET.Gateway
 		/// The ShardIds this Cluster will spawn
 		/// </summary>
 		public IEnumerable<int> ShardIds { get; }
+		
+		public IdentifyOptions IdentifyOptions { get; set; }
 
 		/// <summary>
 		///     The ShardCount provided by the Constructor.
@@ -99,10 +107,10 @@ namespace Spectacles.NET.Gateway
 
 			if (ShardIds != null)
 				foreach (var shardId in ShardIds)
-					Shards.Add(shardId, new Shard(this, shardId));
+					Shards.Add(shardId, new Shard(this, shardId, (IdentifyOptions) IdentifyOptions.Clone()));
 			else
 				for (var i = 0; i < ShardCount; i++)
-					Shards.Add(i, new Shard(this, i));
+					Shards.Add(i, new Shard(this, i, (IdentifyOptions) IdentifyOptions.Clone()));
 
 			_log(LogLevel.INFO, $"Spawning {Shards.Count} shard(s)");
 
