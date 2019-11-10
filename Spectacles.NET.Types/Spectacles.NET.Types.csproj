@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.8.0</PackageVersion>
+        <PackageVersion>0.8.1</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,9 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>- Fix leftover ID to Id
-
-- Add support for Custom Status</PackageReleaseNotes>
+        <PackageReleaseNotes>- Fix IdentifyPacket Compress &amp; LargeThreshold being optional</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 

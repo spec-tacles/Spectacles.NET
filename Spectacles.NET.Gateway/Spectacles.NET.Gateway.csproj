@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-        <PackageVersion>0.6.0</PackageVersion>
+        <PackageVersion>0.6.1</PackageVersion>
         <Title>Spectacles.NET.Gateway</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -15,7 +15,7 @@
         <Authors>DevYukine</Authors>
         <Copyright> </Copyright>
         <Description>Spawns shards and manages a bot's lifetime on the Discord WebSocket gateway.</Description>
-        <PackageReleaseNotes>- Fix leftover ID to Id</PackageReleaseNotes>
+        <PackageReleaseNotes>- Allow providing Identify Options</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
