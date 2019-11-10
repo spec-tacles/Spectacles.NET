@@ -373,14 +373,14 @@ namespace Spectacles.NET.Types
 		///     whether this connection supports compression of packets
 		/// </summary>
 		[JsonProperty("compress")]
-		public bool Compress { get; set; }
+		public bool? Compress { get; set; }
 
 		/// <summary>
 		///     value between 50 and 250, total number of members where the gateway will stop sending offline members in the guild
 		///     member list
 		/// </summary>
 		[JsonProperty("large_threshold")]
-		public int LargeThreshold { get; set; }
+		public int? LargeThreshold { get; set; }
 
 		/// <summary>
 		///     enables dispatching of guild subscription events (presence and typing events)
