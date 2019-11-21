@@ -57,9 +57,11 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     whether the user belongs to an OAuth2 application
 		/// </summary>
-		[JsonProperty(PropertyName = "bot", DefaultValueHandling = DefaultValueHandling.Populate)]
-		[DefaultValue(false)]
-		public bool Bot { get; set; }
+		public bool Bot
+		{
+			get => _bot ?? false;
+			set => _bot = value;
+		}
 
 		/// <summary>
 		///     whether the user has two factor enabled on their account
@@ -96,6 +98,12 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("premium_type")]
 		public PremiumType? PremiumType { get; set; }
+		
+		/// <summary>
+		///     whether the user belongs to an OAuth2 application
+		/// </summary>
+		[JsonProperty(PropertyName = "bot")]
+		private bool? _bot;
 	}
 
 	/// <inheritdoc />
