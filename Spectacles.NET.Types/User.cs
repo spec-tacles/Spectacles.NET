@@ -57,6 +57,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     whether the user belongs to an OAuth2 application
 		/// </summary>
+		[JsonIgnore]
 		public bool Bot
 		{
 			get => _bot ?? false;
@@ -102,7 +103,7 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     whether the user belongs to an OAuth2 application
 		/// </summary>
-		[JsonProperty(PropertyName = "bot")]
+		[JsonProperty("bot")]
 		private bool? _bot;
 	}
 
