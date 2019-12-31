@@ -241,7 +241,7 @@ namespace Spectacles.NET.Types
 		///     premium tier
 		/// </summary>
 		[JsonProperty("premium_tier")]
-		public PREMIUM_TIER PremiumTier { get; set; }
+		public PremiumTier PremiumTier { get; set; }
 
 		/// <summary>
 		///     the total number of users currently boosting this server
