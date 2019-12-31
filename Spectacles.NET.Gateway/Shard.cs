@@ -54,7 +54,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// 	Options to send while Identifying
 		/// </summary>
-		private IdentifyOptions IdentifyOptions { get; set; }
+		private IdentifyOptions IdentifyOptions { get; }
 
 		/// <summary>
 		///     The Ratelimiter for this Shard.
@@ -374,7 +374,8 @@ namespace Spectacles.NET.Gateway
 				Shard = new[] {Id, Gateway.ShardCount},
 				GuildSubscription = IdentifyOptions?.GuildSubscriptions,
 				Presence = IdentifyOptions?.Presence,
-				LargeThreshold = IdentifyOptions?.LargeThreshold
+				LargeThreshold = IdentifyOptions?.LargeThreshold,
+				Intents = IdentifyOptions?.Intents
 			});
 		}
 

@@ -54,6 +54,6 @@ namespace Spectacles.NET.Types
 		///		used for Intents System
 		/// </summary>
 		[JsonProperty("intents")]
-		public Intents Intents { get; }
+		public Intents? Intents { get; set; }
 	}
 }

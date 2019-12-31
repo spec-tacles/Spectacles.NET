@@ -22,6 +22,11 @@ namespace Spectacles.NET.Gateway
 		/// 	enables dispatching of guild subscription events (presence and typing events)	
 		/// </summary>
 		public bool? GuildSubscriptions { get; set; }
+		
+		/// <summary>
+		///		used for Intents System
+		/// </summary>
+		public Intents? Intents { get; set; }
 
 		/// <inheritdoc />
 		public object Clone()
