@@ -1,6 +1,6 @@
 namespace Spectacles.NET.Types
 {
-	public enum PREMIUM_TIER
+	public enum PremiumTier
 	{
 		NONE,
 		TIER_1,
