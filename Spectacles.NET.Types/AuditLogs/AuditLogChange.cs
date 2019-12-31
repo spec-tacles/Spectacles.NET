@@ -14,7 +14,7 @@ namespace Spectacles.NET.Types
 		///     old value of the key
 		/// </summary>
 		[JsonProperty("old_value")]
-		public dynamic OldValue { get; set; }
+		public object OldValue { get; set; }
 
 		/// <summary>
 		///     type of audit log change key

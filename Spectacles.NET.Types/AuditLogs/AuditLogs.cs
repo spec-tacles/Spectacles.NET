@@ -26,5 +26,11 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("audit_log_entries")]
 		public AuditLogEntry[] AuditLogEntries { get; set; }
+		
+		/// <summary>
+		/// 	list of partial integration objects
+		/// </summary>
+		[JsonProperty("integrations")]
+		public Integration[] Integration { get; set; }
 	}
 }

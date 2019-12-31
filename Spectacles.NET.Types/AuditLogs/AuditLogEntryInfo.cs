@@ -21,6 +21,12 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("channel_id")]
 		public string ChannelId { get; set; }
+		
+		/// <summary>
+		/// 	id of the message that was targeted
+		/// </summary>
+		[JsonProperty("message_id")]
+		public string MessageId { get; set; }
 
 		/// <summary>
 		///     number of deleted messages
