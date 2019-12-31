@@ -1,12 +1,11 @@
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
 	/// <summary>
-	///     A user's presence is their current state on a guild.
+	///     The Payload for the PresenceUpdate event.
 	/// </summary>
-	public class Presence
+	public class PresenceUpdatePayload
 	{
 		/// <summary>
 		///     the user presence is being updated for
@@ -18,7 +17,7 @@ namespace Spectacles.NET.Types
 		///     roles this user is in
 		/// </summary>
 		[JsonProperty("roles")]
-		public List<string> Roles { get; set; }
+		public string[] Roles { get; set; }
 
 		/// <summary>
 		///     null, or the user's current activity
@@ -36,13 +35,13 @@ namespace Spectacles.NET.Types
 		///     either "idle", "dnd", "online", or "offline"
 		/// </summary>
 		[JsonProperty("status")]
-		public Status Status { get; set; }
+		public string Status { get; set; }
 
 		/// <summary>
 		///     user's current activities
 		/// </summary>
 		[JsonProperty("activities")]
-		public List<Activity> Activities { get; set; }
+		public Activity[] Activities { get; set; }
 
 		/// <summary>
 		///     user's platform-dependent status

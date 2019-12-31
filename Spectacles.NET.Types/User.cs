@@ -1,27 +1,10 @@
 // ReSharper disable UnusedMember.Global
 
-using System;
 using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
-	[Flags]
-	public enum UserFlags
-	{
-		NONE = 0,
-		HYPESQUAD_EVENTS = 1 << 2,
-		HOUSE_BRAVERY = 1 << 6,
-		HOUSE_BRILLIANCE = 1 << 7,
-		HOUSE_BALANCE = 1 << 8
-	}
-
-	public enum PremiumType
-	{
-		CLASSIC = 1,
-		NITRO = 2
-	}
-
 	/// <summary>
 	///     Users in Discord are generally considered the base entity. Users can spawn across the entire platform, be members
 	///     of guilds, participate in text and voice chat, and much more. Users are separated by a distinction of "bot" vs
@@ -105,15 +88,5 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("bot")]
 		private bool? _bot;
-	}
-
-	/// <inheritdoc />
-	public class MentionUser : User
-	{
-		/// <summary>
-		///     Optional Field for <see cref="Message" /> Mention Field
-		/// </summary>
-		[JsonProperty("member")]
-		public GuildMember Member { get; set; }
 	}
 }

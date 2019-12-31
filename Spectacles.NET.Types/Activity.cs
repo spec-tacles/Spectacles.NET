@@ -1,32 +1,10 @@
 // ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable UnusedMember.Global
 
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
-	[Flags]
-	public enum ActivityFlags
-	{
-		INSTANCE = 1,
-		JOIN = 1 << 1,
-		SPECTATE = 1 << 2,
-		JOIN_REQUEST = 1 << 3,
-		SYNC = 1 << 4,
-		PLAY = 1 << 5
-	}
-
-	public enum ActivityType
-	{
-		PLAYING,
-		STREAMING,
-		LISTENING,
-		WATCHING,
-		CUSTOM
-	}
-
 	public class Activity
 	{
 		/// <summary>
@@ -106,104 +84,5 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("flags")]
 		public ActivityFlags Flags { get; set; }
-	}
-
-	public class ActivityTimestamps
-	{
-		/// <summary>
-		///     unix time (in milliseconds) of when the activity started
-		/// </summary>
-		[JsonProperty("start")]
-		public long? Start { get; set; }
-
-		/// <summary>
-		///     unix time (in milliseconds) of when the activity ends
-		/// </summary>
-		[JsonProperty("end")]
-		public long? End { get; set; }
-	}
-
-	public class ActivityParty
-	{
-		/// <summary>
-		///     the id of the party
-		/// </summary>
-		[JsonProperty("id")]
-		public string Id { get; set; }
-
-		/// <summary>
-		///     used to show the party's current and maximum size
-		/// </summary>
-		[JsonProperty("size")]
-		public List<int> Size { get; set; }
-	}
-
-	public class ActivityAssets
-	{
-		/// <summary>
-		///     the id for a large asset of the activity, usually a snowflake
-		/// </summary>
-		[JsonProperty("large_image")]
-		public string LargeImage { get; set; }
-
-		/// <summary>
-		///     text displayed when hovering over the large image of the activity
-		/// </summary>
-		[JsonProperty("large_text")]
-		public string LargeText { get; set; }
-
-		/// <summary>
-		///     the id for a small asset of the activity, usually a snowflake
-		/// </summary>
-		[JsonProperty("small_image")]
-		public string SmallImage { get; set; }
-
-		/// <summary>
-		///     text displayed when hovering over the small image of the activity
-		/// </summary>
-		[JsonProperty("small_text")]
-		public string SmallText { get; set; }
-	}
-
-	public class ActivitySecrets
-	{
-		/// <summary>
-		///     the secret for joining a party
-		/// </summary>
-		[JsonProperty("join")]
-		public string Join { get; set; }
-
-		/// <summary>
-		///     the secret for spectating a game
-		/// </summary>
-		[JsonProperty("spectate")]
-		public string Spectate { get; set; }
-
-		/// <summary>
-		///     the secret for a specific instanced match
-		/// </summary>
-		[JsonProperty("match")]
-		public string Match { get; set; }
-	}
-
-	public class ActivityEmoji
-	{
-		/// <summary>
-		///     emoji id
-		/// </summary>
-		[JsonProperty("id")]
-		public string Id { get; set; }
-
-		/// <summary>
-		///     emoji name
-		/// </summary>
-		[JsonProperty("name")]
-		public string Name { get; set; }
-		
-		/// <summary>
-		///     whether this emoji is animated
-		/// </summary>
-		[JsonProperty("animated")]
-		public bool? Animated { get; set; }
 	}
 }
