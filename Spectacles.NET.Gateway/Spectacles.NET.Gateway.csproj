@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <PackageVersion>0.6.1</PackageVersion>
         <Title>Spectacles.NET.Gateway</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
