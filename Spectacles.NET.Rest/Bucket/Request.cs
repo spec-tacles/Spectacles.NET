@@ -166,7 +166,7 @@ namespace Spectacles.NET.Rest.Bucket
 				return;
 			}
 
-			await _handleHeaders(ratelimit);
+			if (ratelimit.Limit != null && ratelimit.Remaining != null) await _handleHeaders(ratelimit);
 
 			if (res.StatusCode == HttpStatusCode.TooManyRequests)
 			{
