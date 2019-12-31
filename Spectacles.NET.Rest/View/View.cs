@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -54,71 +53,27 @@ namespace Spectacles.NET.Rest.View
 			=> Client.Request<T>(Route, RequestMethod.DELETE, null, reason);
 
 		public Task<object> PostAsync(object data, string reason = null)
-		{
-			var type = data.GetType();
-
-			var prop1 = type.GetProperty("file");
-			var prop2 = type.GetProperty("File");
-
-			var prop = prop1 ?? prop2;
-
-			var fileValue = prop?.GetValue(data);
-
-			if (fileValue != null)
-			{
-				var content = new MultipartFormDataContent();
-
-				if (fileValue is IEnumerable<IFile> files)
-				{
-					foreach (var file in files) content.Add(new ByteArrayContent(file.Value), "file", file.Name);
-
-					prop.SetValue(data, null);
-
-					content.Add(new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"),
-						"payload_json");
-
-					return Client.Request(Route, RequestMethod.POST, content, reason);
-				}
-
-				throw new ArgumentException($"Expected IEnumerable<IFile>, got {fileValue?.GetType()}");
-			}
-
-			return Client.Request(Route, RequestMethod.POST,
+			=> Client.Request(Route, RequestMethod.POST,
 				new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
-		}
 
 		public Task<T> PostAsync<T>(object data, string reason = null)
-		{
-			var type = data.GetType();
-
-			var prop1 = type.GetProperty("file");
-			var prop2 = type.GetProperty("File");
-
-			var prop = prop1 ?? prop2;
-
-			var fileValue = prop?.GetValue(data);
-
-			if (fileValue != null)
-			{
-				var content = new MultipartFormDataContent();
-
-				if (fileValue is IEnumerable<IFile> files)
-				{
-					foreach (var file in files) content.Add(new ByteArrayContent(file.Value), "file", file.Name);
-
-					prop.SetValue(data, null);
-
-					content.Add(new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"),
-						"payload_json");
-
-					return Client.Request<T>(Route, RequestMethod.POST, content, reason);
-				}
-
-				throw new ArgumentException($"Expected IEnumerable<IFile>, got {fileValue?.GetType()}");
-			}
-
-			return Client.Request<T>(Route, RequestMethod.POST,
+			=> Client.Request<T>(Route, RequestMethod.POST,
 				new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
+
+		public Task<T> PostAsync<T, TL>(TL data, string reason = null) where TL : SendableMessage
+		{
+			if (data.File == null)
+				return Client.Request<T>(Route, RequestMethod.POST,
+					new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"), reason);
+			
+			var content = new MultipartFormDataContent();
+
+			foreach (var file in data.File) content.Add(new ByteArrayContent(file.Value), "file", file.Name);
+
+			content.Add(new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"),
+				"payload_json");
+
+			return Client.Request<T>(Route, RequestMethod.POST, content, reason);
 		}
 	}
 }
