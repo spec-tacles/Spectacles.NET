@@ -49,5 +49,11 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("presence")]
 		public UpdateStatusDispatch Presence { get; set; }
+		
+		/// <summary>
+		///		used for Intents System
+		/// </summary>
+		[JsonProperty("intents")]
+		public Intents Intents { get; }
 	}
 }
