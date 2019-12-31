@@ -6,7 +6,7 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	///     Constants for the Endpoints of the Discord API.
 	/// </summary>
-	public class APIEndpoints
+	public static class APIEndpoints
 	{
 		public const string APIBaseURL = "https://discordapp.com/api/";
 		public const string CDNBaseURL = "https://cdn.discordapp.com/";
