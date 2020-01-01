@@ -56,7 +56,7 @@ namespace Spectacles.NET.Types
 		/// 	the emoji used for a custom status
 		/// </summary>
 		[JsonProperty("emoji")]
-		public ActivityEmoji Emoji { get; set; }
+		public Emoji Emoji { get; set; }
 
 		/// <summary>
 		///     information for the current party of the player
