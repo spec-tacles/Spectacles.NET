@@ -74,7 +74,7 @@ namespace Spectacles.NET.Rest.Bucket
 		public RestClient Client { get; }
 
 		/// <inheritdoc />
-		public Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason)
+		public Task<object> Enqueue(HttpMethod method, string url, HttpContent content, string reason)
 		{
 			var tcs = new TaskCompletionSource<object>();
 			var request = new Request(this, content, method, url, reason);
@@ -86,7 +86,7 @@ namespace Spectacles.NET.Rest.Bucket
 		}
 
 		/// <inheritdoc />
-		public Task<T> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason)
+		public Task<T> Enqueue<T>(HttpMethod method, string url, HttpContent content, string reason)
 		{
 			var tcs = new TaskCompletionSource<T>();
 			var request = new Request(this, content, method, url, reason);

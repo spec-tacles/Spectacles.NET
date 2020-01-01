@@ -131,7 +131,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="content">The HttpContent to use.</param>
 		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<object> Request(string route, RequestMethod method, HttpContent content,
+		public Task<object> Request(string route, HttpMethod method, HttpContent content,
 			string auditLogReason = null)
 		{
 			var bucketRoute = MakeRoute(method, route);
@@ -150,7 +150,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="content">The HttpContent to use.</param>
 		/// <param name="auditLogReason">Optional AuditLog Reason.</param>
 		/// <returns></returns>
-		public Task<T> Request<T>(string route, RequestMethod method, HttpContent content, string auditLogReason = null)
+		public Task<T> Request<T>(string route, HttpMethod method, HttpContent content, string auditLogReason = null)
 		{
 			var bucketRoute = MakeRoute(method, route);
 			if (Buckets.TryGetValue(bucketRoute, out var bucket))
@@ -187,7 +187,7 @@ namespace Spectacles.NET.Rest
 		/// <param name="method">The HTTP request method to use.</param>
 		/// <param name="url">The url to use.</param>
 		/// <returns></returns>
-		private static string MakeRoute(RequestMethod method, string url)
+		private static string MakeRoute(HttpMethod method, string url)
 		{
 			var defaultRegEx = new Regex(@"\/([a-z-]+)\/(?:[0-9]{17,19})");
 			var reactionRegEx = new Regex(@"\/reactions\/[^/]+");
@@ -200,7 +200,7 @@ namespace Spectacles.NET.Rest
 			route = reactionRegEx.Replace(route, "/reactions/:id");
 			route = webhookRegEx.Replace(route, "/webhooks/$1/:token");
 
-			if (method == RequestMethod.DELETE && route.EndsWith("/messages/:id")) route = $"{method}{route}";
+			if (method == HttpMethod.Delete && route.EndsWith("/messages/:id")) route = $"{method}{route}";
 
 			return route;
 		}

@@ -24,7 +24,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <param name="method">The HTTP Method of this request.</param>
 		/// <param name="url">The URL of this request.</param>
 		/// <param name="reason">The optional AuditLog reason of this request.</param>
-		public Request(IBucket bucket, HttpContent content, RequestMethod method, string url, string reason)
+		public Request(IBucket bucket, HttpContent content, HttpMethod method, string url, string reason)
 		{
 			Bucket = bucket;
 			Content = content;
@@ -41,7 +41,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <summary>
 		///     The HTTP Method of this Request.
 		/// </summary>
-		private RequestMethod Method { get; }
+		private HttpMethod Method { get; }
 
 		/// <summary>
 		///     The URL of this Request.
@@ -93,43 +93,30 @@ namespace Spectacles.NET.Rest.Bucket
 		{
 			HttpRequestMessage request;
 
-			switch (Method)
+			if (Method.Method == "GET")
 			{
-				case RequestMethod.GET:
-					Uri uri;
-					try
+				Uri uri;
+				try
+				{
+					uri = new UriBuilder($"{APIEndpoints.APIBaseURL}{URL}")
 					{
-						uri = new UriBuilder($"{APIEndpoints.APIBaseURL}{URL}")
-						{
-							Query = Content != null ? await ((FormUrlEncodedContent) Content).ReadAsStringAsync() : null
-						}.Uri;
-					}
-					catch (Exception e)
-					{
-						Error?.Invoke(this, e);
-						return;
-					}
+						Query = Content != null ? await ((FormUrlEncodedContent) Content).ReadAsStringAsync() : null
+					}.Uri;
+				}
+				catch (Exception e)
+				{
+					Error?.Invoke(this, e);
+					return;
+				}
 
-					request = new HttpRequestMessage(HttpMethod.Get, uri);
-					break;
-				case RequestMethod.POST:
-					request = new HttpRequestMessage(HttpMethod.Post, URL);
-					request.Content = Content;
-					break;
-				case RequestMethod.DELETE:
-					request = new HttpRequestMessage(HttpMethod.Delete, URL);
-					request.Content = Content;
-					break;
-				case RequestMethod.PUT:
-					request = new HttpRequestMessage(HttpMethod.Put, URL);
-					request.Content = Content;
-					break;
-				case RequestMethod.PATCH:
-					request = new HttpRequestMessage(HttpMethod.Patch, URL);
-					request.Content = Content;
-					break;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(Method), Method, null);
+				request = new HttpRequestMessage(Method, uri);
+			}
+			else
+			{
+				request = new HttpRequestMessage(Method, URL)
+				{
+					Content = Content
+				};
 			}
 
 			if (Reason != null) request.Headers.Add("X-Audit-Log-Reason", HttpUtility.UrlEncode(Reason));

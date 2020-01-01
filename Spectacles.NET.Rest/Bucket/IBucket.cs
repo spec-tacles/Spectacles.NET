@@ -27,7 +27,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <param name="content">The HTTPContent to use.</param>
 		/// <param name="reason">Optional AuditLog reason to use.</param>
 		/// <returns>Task resolving with response from Discord API</returns>
-		Task<object> Enqueue(RequestMethod method, string url, HttpContent content, string reason);
+		Task<object> Enqueue(HttpMethod method, string url, HttpContent content, string reason);
 
 		/// <summary>
 		///     Enqueues a Request in this Bucket.
@@ -37,7 +37,7 @@ namespace Spectacles.NET.Rest.Bucket
 		/// <param name="content">The HTTPContent to use.</param>
 		/// <param name="reason">Optional AuditLog reason to use.</param>
 		/// <returns>Task resolving with response from Discord API</returns>
-		Task<T> Enqueue<T>(RequestMethod method, string url, HttpContent content, string reason);
+		Task<T> Enqueue<T>(HttpMethod method, string url, HttpContent content, string reason);
 
 		/// <summary>
 		///     Enqueues a Request in this Bucket.
