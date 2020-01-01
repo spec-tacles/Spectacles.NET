@@ -63,6 +63,11 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     guild has access to set a guild banner image
 		/// </summary>
-		BANNER
+		BANNER,
+		
+		/// <summary>
+		/// guild cannot be public
+		/// </summary>
+		PUBLIC_DISABLED
 	}
 }
