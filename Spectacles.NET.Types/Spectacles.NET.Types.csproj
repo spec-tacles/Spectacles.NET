@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.9.0</PackageVersion>
+        <PackageVersion>0.9.1</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>- Fix User#Bot Ignore getter while serializing</PackageReleaseNotes>
+        <PackageReleaseNotes>- Bump Newtonsoft Json.NET version</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
