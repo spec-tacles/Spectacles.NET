@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.9.2</PackageVersion>
+        <PackageVersion>0.9.3</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,9 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>- Add GuildFeatures#PULIC_DISABLED
-
-- Refactor AuditLogsChanges to allow dynamic parsing based on Key</PackageReleaseNotes>
+        <PackageReleaseNotes>-AuditLogStringChange should not be abstract</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
