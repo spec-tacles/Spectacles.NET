@@ -83,12 +83,12 @@ namespace Spectacles.NET.Types
 
 		/// <summary>
 		///     channels specifically mentioned in this message
-		///     <warn>
+		///     <remarks>
 		///         Not all channel mentions in a message will appear in mention_channels. Only textual channels that are visible
 		///         to everyone in a lurkable guild will ever be included. Only crossposted messages (via Channel Following)
 		///         currently include mention_channels at all. If no mentions in the message meet these requirements, this field
 		///         will not be sent.
-		///     </warn>
+		///     </remarks>
 		/// </summary>
 		[JsonProperty("mention_channels")]
 		public List<ChannelMention> ChannelMentions { get; set; }
