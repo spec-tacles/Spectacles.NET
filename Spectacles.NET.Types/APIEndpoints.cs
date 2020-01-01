@@ -22,6 +22,8 @@ namespace Spectacles.NET.Types
 		public const string CurrentUserDMs = CurrentUser + "/channels";
 		public const string CurrentUserConnections = CurrentUser + "/connections";
 		public const string Webhooks = "webhooks";
+		public const string OAuth2 = "oauth2";
+		public const string Applications = OAuth2 + "/applications/@me";
 
 		public static string Guild(string id)
 			=> $"{Guilds}/{id}";

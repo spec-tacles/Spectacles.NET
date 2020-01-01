@@ -95,6 +95,12 @@ namespace Spectacles.NET.Rest
 		/// </summary>
 		public WebhooksView Webhooks
 			=> new WebhooksView(this);
+		
+		/// <summary>
+		/// 	The Application View.
+		/// </summary>
+		public ApplicationView Application
+			=> new ApplicationView(this);
 
 		/// <summary>
 		///     Task Resolving when the Client isn't Global Ratelimited anymore.
