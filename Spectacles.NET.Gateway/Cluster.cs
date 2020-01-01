@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Spectacles.NET.Gateway.Event;
-using Spectacles.NET.Types;
 using Spectacles.NET.Util.Extensions;
 using Spectacles.NET.Util.Logging;
 
@@ -53,7 +52,10 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		public IEnumerable<int> ShardIds { get; }
 		
-		public IdentifyOptions IdentifyOptions { get; set; }
+		/// <summary>
+		/// The Identify Options this Cluster should use for each shard
+		/// </summary>
+		public IdentifyOptions IdentifyOptions { get; }
 
 		/// <summary>
 		///     The ShardCount provided by the Constructor.

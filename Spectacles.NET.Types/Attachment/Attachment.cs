@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents an attachment in a message.
+	/// </summary>
 	public class Attachment
 	{
 		/// <summary>

@@ -5,6 +5,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents an activity which is part of a user's presence.
+	/// </summary>
 	public class Activity
 	{
 		/// <summary>

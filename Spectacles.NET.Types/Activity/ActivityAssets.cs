@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Assets for an Activity
+	/// </summary>
 	public class ActivityAssets
 	{
 		/// <summary>

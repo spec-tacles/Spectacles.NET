@@ -2,6 +2,9 @@ using System;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Flags describing an Activity
+	/// </summary>
 	[Flags]
 	public enum ActivityFlags
 	{

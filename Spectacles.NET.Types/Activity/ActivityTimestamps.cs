@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Unix timestamps for start and/or end of the game
+	/// </summary>
 	public class ActivityTimestamps
 	{
 		/// <summary>

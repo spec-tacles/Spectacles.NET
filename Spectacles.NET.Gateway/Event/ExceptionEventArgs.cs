@@ -7,7 +7,6 @@ namespace Spectacles.NET.Gateway.Event
 	/// </summary>
 	public class ExceptionEventArgs
 	{
-		/// <inheritdoc />
 		/// <summary>
 		///     Creates a new ExceptionEventArgs instance
 		/// </summary>

@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Party of an activity
+	/// </summary>
 	public class ActivityParty
 	{
 		/// <summary>
