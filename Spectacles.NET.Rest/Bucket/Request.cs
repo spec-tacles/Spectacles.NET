@@ -88,7 +88,6 @@ namespace Spectacles.NET.Rest.Bucket
 		///     Executes this Request and Updates the Ratelimit information of the Bucket.
 		/// </summary>
 		/// <returns></returns>
-		/// <exception cref="ArgumentOutOfRangeException">Thrown when the RequestMethod is not an valid enum</exception>
 		public async Task Execute()
 		{
 			HttpRequestMessage request;

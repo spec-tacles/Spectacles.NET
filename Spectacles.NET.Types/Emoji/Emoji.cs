@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace Spectacles.NET.Types
 {
 	/// <summary>
-	///     An Emoji Represents a custom or unicode emote <see cref="http://discordapp.com/developers/docs/resources/emoji" />
+	///     An Emoji Represents a custom or unicode emote. See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.
 	/// </summary>
 	public class Emoji
 	{

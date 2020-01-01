@@ -7,9 +7,9 @@ namespace Spectacles.NET.Rest.Bucket
 	public class RedisBucketFactory : IBucketFactory
 	{
 		/// <summary>
+		/// 
 		/// </summary>
 		/// <param name="redisPool">The ConnectionPool to use</param>
-		/// <exception cref="ArgumentException">If the ConnectionPool isn't connecteds</exception>
 		public RedisBucketFactory(ConnectionPool redisPool)
 		{
 			if (!redisPool.Connected)

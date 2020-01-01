@@ -29,7 +29,7 @@ namespace Spectacles.NET.Rest.Redis
 		///     Connects all ConnectionMultiplexer asynchronously
 		/// </summary>
 		/// <param name="options">Redis configuration to use for the Pool</param>
-		/// <param name="poolSize">Optional size of the pool, defaults to <see cref="Environment.ProcessorCount" /></param>
+		/// <param name="poolSize">Optional size of the pool, defaults to The Processor Count of the Environment.</param>
 		/// <returns></returns>
 		public async Task ConnectAsync(ConfigurationOptions options, int? poolSize = null)
 		{

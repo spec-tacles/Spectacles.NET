@@ -7,7 +7,7 @@ namespace Spectacles.NET.Types
 {
 	/// <summary>
 	///     A Discord Channel Represents a guild or DM channel within Discord.
-	///     <see cref="http://discordapp.com/developers/docs/resources/channel" />
+	///     See <a href="http://discordapp.com/developers/docs/resources/channel">here</a>.
 	/// </summary>
 	public class Channel
 	{

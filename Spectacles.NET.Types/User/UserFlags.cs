@@ -45,7 +45,6 @@ namespace Spectacles.NET.Types
 		
 		/// <summary>
 		/// House Balance
-
 		/// </summary>
 		HOUSE_BALANCE = 1 << 8,
 		
