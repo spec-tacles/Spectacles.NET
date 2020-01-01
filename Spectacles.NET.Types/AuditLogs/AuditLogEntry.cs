@@ -17,7 +17,7 @@ namespace Spectacles.NET.Types
 		///     changes made to the target_id
 		/// </summary>
 		[JsonProperty("changes")]
-		public AuditLogChange[] Changes { get; set; }
+		public AuditLogChangeBase[] Changes { get; set; }
 
 		/// <summary>
 		///     the user who made the changes
