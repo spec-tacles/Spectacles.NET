@@ -19,7 +19,7 @@ namespace Spectacles.NET.Types
 		///		- CHANNEL_DELETE
 		///		- CHANNEL_PINS_UPDATE
 		/// </summary>
-		GUILDS = 1 << 0,
+		GUILDS = 1,
 		
 		/// <summary>
 		///     - GUILD_MEMBER_ADD

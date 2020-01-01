@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// The information account for an integration.
+	/// </summary>
 	public class IntegrationAccount
 	{
 		/// <summary>

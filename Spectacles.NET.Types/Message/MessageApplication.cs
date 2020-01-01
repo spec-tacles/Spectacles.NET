@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents a Client OAuth2 Application.
+	/// </summary>
 	public class MessageApplication
 	{
 		/// <summary>

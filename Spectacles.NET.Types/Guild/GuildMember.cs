@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents a member of a guild on Discord.
+	/// </summary>
 	public class GuildMember
 	{
 		/// <summary>
@@ -29,6 +32,9 @@ namespace Spectacles.NET.Types
 		[JsonProperty("joined_at")]
 		public string JoinedAt { get; set; }
 
+		/// <summary>
+		/// The time of when the member used their Nitro boost on the guild, if it was used
+		/// </summary>
 		[JsonProperty("premium_since")]
 		public string PremiumSince { get; set; }
 

@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Activity sent in a message.
+	/// </summary>
 	public class MessageActivity
 	{
 		/// <summary>

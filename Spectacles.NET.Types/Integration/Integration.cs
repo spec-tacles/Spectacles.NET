@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents a guild integration.
+	/// </summary>
 	public class Integration
 	{
 		/// <summary>

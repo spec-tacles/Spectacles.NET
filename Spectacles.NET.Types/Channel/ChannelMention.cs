@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Channel Mentioned in a Cross Posted Message
+	/// </summary>
 	public class ChannelMention
 	{
 		/// <summary>

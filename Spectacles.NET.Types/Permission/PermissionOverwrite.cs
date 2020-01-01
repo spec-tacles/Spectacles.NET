@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents a permission overwrite for a role or member in a guild channel.
+	/// </summary>
 	public class PermissionOverwrite
 	{
 		/// <summary>

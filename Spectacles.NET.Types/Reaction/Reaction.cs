@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents a reaction to a message.
+	/// </summary>
 	public class Reaction
 	{
 		/// <summary>

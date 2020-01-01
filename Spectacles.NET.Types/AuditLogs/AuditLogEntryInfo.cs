@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Additional Audit Log info for certain action types
+	/// </summary>
 	public class AuditLogEntryInfo
 	{
 		/// <summary>

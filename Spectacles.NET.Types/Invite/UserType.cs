@@ -5,6 +5,9 @@ namespace Spectacles.NET.Types
 	/// </summary>
 	public enum UserType
 	{
+		/// <summary>
+		/// Stream User Type
+		/// </summary>
 		STREAM = 1
 	}
 }
