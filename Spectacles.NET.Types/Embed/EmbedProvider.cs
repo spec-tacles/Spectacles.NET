@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Provider of an Embed
+	/// </summary>
 	public class EmbedProvider
 	{
 		/// <summary>

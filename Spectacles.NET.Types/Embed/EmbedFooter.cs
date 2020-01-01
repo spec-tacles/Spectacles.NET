@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Footer of an Embed
+	/// </summary>
 	public class EmbedFooter
 	{
 		/// <summary>

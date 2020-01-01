@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 
 namespace Spectacles.NET.Types
 {
+	/// <summary>
+	/// Represents an embed in a message (image/video preview, rich embed, etc.)
+	/// </summary>
 	public class Embed
 	{
 		/// <summary>
