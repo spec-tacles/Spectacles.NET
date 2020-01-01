@@ -1,5 +1,4 @@
 using System;
-using Newtonsoft.Json.Linq;
 using Spectacles.NET.Types;
 
 namespace Spectacles.NET.Gateway.Event
