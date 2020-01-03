@@ -147,5 +147,17 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("application")]
 		public MessageApplication Application { get; set; }
+		
+		/// <summary>
+		/// 	reference data sent with crossposted messages
+		/// </summary>
+		[JsonProperty("message_reference")]
+		public MessageReference Reference { get; set; }
+		
+		/// <summary>
+		/// <see cref="MessageFlags"/> ORd together, describes extra features of the message
+		/// </summary>
+		[JsonProperty("flags")]
+		public MessageFlags? Flags { get; set; }
 	}
 }
