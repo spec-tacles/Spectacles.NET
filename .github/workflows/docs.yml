@@ -2,24 +2,24 @@ name: Docs
 on:
   push:
     branches:
-	  - master
-	  - docs
+    - docs
+    - master
   release:
     types: [created]
 jobs:
-	docs:
-	  runs-on: ubuntu-latest
-	  name: Create Docs from Source Code and Publish it to Github Pages
-	  steps:
-	  - uses: actions/checkout@v1
-	  - uses: nikeee/docfx-action@master
-		name: Build Documentation
-		with:
-		  args: .docs/docfx.json
+  docs:
+    runs-on: ubuntu-latest
+    name: Create Docs from Source Code and Publish it to Github Pages
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nikeee/docfx-action@master
+        name: Build Documentation
+        with:
+        args: .docs/docfx.json
   
-	  # Publish generated site using GitHub Pages
-	  - uses: maxheld83/ghpages@master
-		name: Publish Documentation on GitHub Pages
-		env:
-		  BUILD_DIR: _site # docfx's default output directory is _site
-		  GH_PAT: ${{ secrets.GH_PAT }} # See https://github.com/maxheld83/ghpages
+    # Publish generated site using GitHub Pages
+      - uses: maxheld83/ghpages@master
+        name: Publish Documentation on GitHub Pages
+        env:
+          BUILD_DIR: _site # docfx's default output directory is _site
+          GH_PAT: ${{ secrets.GH_PAT }} # See https://github.com/maxheld83/ghpages
