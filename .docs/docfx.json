@@ -1,0 +1,70 @@
+{
+	"metadata": [
+	  {
+		"src": [
+		  {
+			"files": [
+			  "**/**.csproj"
+			],
+			"src": ".."
+		  }
+		],
+		"dest": "api",
+		"disableGitFeatures": false,
+		"disableDefaultFilter": false,
+		"properties": {
+			"TargetFramework": "netcoreapp3.1"
+		  }
+	  }
+	],
+	"build": {
+	  "content": [
+		{
+		  "files": [
+			"api/**.yml",
+			"api/index.md"
+		  ]
+		},
+		{
+		  "files": [
+			"toc.yml",
+			"*.md"
+		  ]
+		}
+	  ],
+	  "resource": [
+		{
+		  "files": [
+			"images/**"
+		  ]
+		}
+	  ],
+	  "overwrite": [
+		{
+		  "files": [
+			"apidoc/**.md"
+		  ],
+		  "exclude": [
+			"obj/**",
+			"_site/**"
+		  ]
+		}
+	  ],
+	  "dest": "_site",
+	  "globalMetadata": {
+		"_appTitle": "Spectacles.Net Documentation",
+		"_appFooter": "Spectacles (c) 2018-2019",
+		"_enableSearch": true
+	  },
+	  "fileMetadataFiles": [],
+	  "template": [
+		"default"
+	  ],
+	  "postProcessors": [],
+	  "markdownEngineName": "markdig",
+	  "noLangKeyword": false,
+	  "keepFileLink": false,
+	  "cleanupCacheHistory": false,
+	  "disableGitFeatures": false
+	}
+  }
