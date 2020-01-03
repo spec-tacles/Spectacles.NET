@@ -14,6 +14,7 @@ using Spectacles.NET.Util.Extensions;
 using Spectacles.NET.Util.Logging;
 using WS.NET;
 using Timer = System.Timers.Timer;
+#pragma warning disable 4014
 
 namespace Spectacles.NET.Gateway
 {
@@ -452,6 +453,7 @@ namespace Spectacles.NET.Gateway
 					_log(LogLevel.WARN,
 						$"Couldn't Disconnect the Connection with the reason: {e.Message}, Reconnecting...");
 					ConnectAsync().ConfigureAwait(false);
+					return;
 				}
 
 			try
