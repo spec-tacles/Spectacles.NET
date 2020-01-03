@@ -8,10 +8,10 @@ on:
     types: [created]
 jobs:
   docs:
+    name: Docs
     runs-on: ubuntu-latest
-    name: Create Docs from Source Code and Publish it to Github Pages
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - uses: nikeee/docfx-action@master
         name: Build Documentation
         with:
@@ -21,5 +21,5 @@ jobs:
       - uses: maxheld83/ghpages@master
         name: Publish Documentation on GitHub Pages
         env:
-          BUILD_DIR: _site # docfx's default output directory is _site
+          BUILD_DIR: .docs/_site # docfx's default output directory is _site
           GH_PAT: ${{ secrets.GH_PAT }} # See https://github.com/maxheld83/ghpages
