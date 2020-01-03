@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+        name: Checkout Git
       - uses: nikeee/docfx-action@master
         name: Build Documentation
         with:
