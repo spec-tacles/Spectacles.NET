@@ -15,7 +15,7 @@ jobs:
       - uses: nikeee/docfx-action@master
         name: Build Documentation
         with:
-        args: .docs/docfx.json
+          args: .docs/docfx.json
   
     # Publish generated site using GitHub Pages
       - uses: maxheld83/ghpages@master
