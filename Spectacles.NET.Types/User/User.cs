@@ -45,6 +45,12 @@ namespace Spectacles.NET.Types
 			get => _bot ?? false;
 			set => _bot = value;
 		}
+		
+		/// <summary>
+		/// 	whether the user is an Official Discord System user (part of the urgent message system)	
+		/// </summary>
+		[JsonProperty("system")]
+		public bool? System { get; set; }
 
 		/// <summary>
 		///     whether the user has two factor enabled on their account
