@@ -33,7 +33,7 @@ namespace Spectacles.NET.Rest.Redis
 		/// <returns></returns>
 		public async Task ConnectAsync(ConfigurationOptions options, int? poolSize = null)
 		{
-			poolSize = poolSize ?? Environment.ProcessorCount;
+			poolSize ??= Environment.ProcessorCount;
 			for (var i = 0; i < poolSize; i++) Connections.TryAdd(i, await ConnectionMultiplexer.ConnectAsync(options));
 
 			Connected = true;
