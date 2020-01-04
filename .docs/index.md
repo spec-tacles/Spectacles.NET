@@ -13,4 +13,4 @@
 
 ## What is Spectacles.NET
 
-Spectacles.NET is an asynchronous, multi-platform .NET Library which provides a .NET implementation of the Spectacles spec.
+Spectacles.NET is an asynchronous, multi-platform .NET Library which provides a .NET implementation of Spectacles.
