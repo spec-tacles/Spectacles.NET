@@ -19,14 +19,13 @@ jobs:
           args: .docs/docfx.json
       - name: Move docs
         run: |
-          branch=$(echo ${GITHUB_REF#refs/heads/})
-          mkdir -p $branch
-          sudo mv .docs/_site $branch
+          mkdir -p ${GITHUB_REF#refs/heads/}
+          sudo mv .docs/_site/* ${GITHUB_REF#refs/heads/}
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GH_PAT }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./docs
+          PUBLISH_DIR: .
         with:
           keepFiles: true
