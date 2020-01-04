@@ -1,0 +1,2417 @@
+{
+  "homepages": [],
+  "source_base_path": "/github/workspace/.docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpBroker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpBroker.html",
+          "hash": "Qdhe21D+O2ShBOMeWeVkzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html",
+          "hash": "A6UExbZMpfqToRwAnxp7lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html",
+          "hash": "t06bsdVjbBRTkibvoGeq/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Broker.Amqp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Broker.Amqp.html",
+          "hash": "bUZn/+Wwdcni1QFk9DrrVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Broker.IBroker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Broker.IBroker.html",
+          "hash": "e0lskqXo39r4IfSGS4gR5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Broker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Broker.html",
+          "hash": "TXYJcFuIDNxNhGXTbpJZLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Cluster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Cluster.html",
+          "hash": "1Ex4rq1AAfAKm6lGQAcXCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Event.DispatchEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html",
+          "hash": "hggTUAWxfD4cSBVMJ80gnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html",
+          "hash": "5rjWETCY5RRs6kSB4BAsig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Event.SendEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Event.SendEventArgs.html",
+          "hash": "ZsucZZ87aAH9P4H4sQK6MQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Event.html",
+          "hash": "42o8dvdZ5KRdNYG7f+J2wQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Gateway.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Gateway.html",
+          "hash": "Vn6zqjQh/Mh803Vt8bZRKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.IdentifyOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.IdentifyOptions.html",
+          "hash": "ok0g0uuZr4Q+CfEFFvFBWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.Shard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.Shard.html",
+          "hash": "Qe8KrQz9GEdb9kwOKsNJbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Gateway.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Gateway.html",
+          "hash": "XjIrbya24liT3j/D92lXAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.APIError.DiscordAPIErrorResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.APIError.DiscordAPIErrorResponse.html",
+          "hash": "Gg8DdDkrtMi1FFR4rJ0p2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.APIError.DiscordAPIException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.APIError.DiscordAPIException.html",
+          "hash": "rAf82L3jkg7NzdDFn9C6OA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.APIError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.APIError.html",
+          "hash": "k/JpMaKoceVeRD3DYpVd+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.IBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.IBucket.html",
+          "hash": "jfMCHPEniBIbgOczCA14WA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.IBucketFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.IBucketFactory.html",
+          "hash": "NoHSSiioTxR1noOZE9qEZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.InMemoryBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.InMemoryBucket.html",
+          "hash": "PuUj9fKRQjYbfgXADA49tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.InMemoryBucketFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.InMemoryBucketFactory.html",
+          "hash": "WSD9Ntk9autLDRr/G20Gbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.RateLimitInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.RateLimitInfo.html",
+          "hash": "8M03fmvBrED4d0gMslRkSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.RedisBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.RedisBucket.html",
+          "hash": "MQOCHdx31HBtay2DKU2NSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.RedisBucketFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.RedisBucketFactory.html",
+          "hash": "BejePOrj2npo454ImaentQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.Request.html",
+          "hash": "uTO57ujerBBIZKfNpDJ4WA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Bucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Bucket.html",
+          "hash": "ywY0Hx09LSsGJ7Fk0gctMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Redis.ConnectionPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Redis.ConnectionPool.html",
+          "hash": "tvt5nzqt5Ziq2DY90nNDKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Redis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Redis.html",
+          "hash": "lL9aNZFuKR6rR01isXGhqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.RestClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.RestClient.html",
+          "hash": "3ez1Ts9O8KyXc1msXfdqlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Util.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Util.Constants.html",
+          "hash": "I1UXmGS13hYCwI8sz6RO7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.Util.html",
+          "hash": "YtKDMh1ZtPA1zLqhoHQ6Ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ApplicationView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ApplicationView.html",
+          "hash": "tyN5/ZbSfj9Z0qpdwzuFHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.BulkDeleteView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.BulkDeleteView.html",
+          "hash": "/IOHv836xWvF13ws6KbzAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelInvitesView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelInvitesView.html",
+          "hash": "N3r7MtuAz4i00DOgZdZ6Cw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelMessagesView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelMessagesView.html",
+          "hash": "Ruh02NTCc/1vCCSo15Ju9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelPermissionsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelPermissionsView.html",
+          "hash": "yIXwFGC4sJSLAlf0nxAqXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelPinsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelPinsView.html",
+          "hash": "5+bNS/nm0XFkOd+jHVOnTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelTypingView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelTypingView.html",
+          "hash": "FShKHrRHcZ173dR31kZvZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelWebhooksView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelWebhooksView.html",
+          "hash": "zDHWlCEyE0rw9AX5uzCrAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ChannelsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ChannelsView.html",
+          "hash": "8xCsVDPjxVAXQywNh91aBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.CurrentGuildMemberNickView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.CurrentGuildMemberNickView.html",
+          "hash": "t0X8i3XaHX+IYfjjN8QAwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.CurrentUserChannelsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserChannelsView.html",
+          "hash": "NqQlGfWyHhM7uBFJpBZerQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.CurrentUserConnectionsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserConnectionsView.html",
+          "hash": "KkCvtcRMFOT38ppJNjwvig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.CurrentUserDMView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserDMView.html",
+          "hash": "Y05BDyiQPTtrlbsUhI+mHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.CurrentUserGuildsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserGuildsView.html",
+          "hash": "dvo8vsHKX4tIw3XIQWUUsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.DMChannelRecipientView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.DMChannelRecipientView.html",
+          "hash": "azWHVD5bnsJxPnGWyhskUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.ExecuteWebhookView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.ExecuteWebhookView.html",
+          "hash": "DbW56vnTcnlPeGLQRxyIrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildAuditLogsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildAuditLogsView.html",
+          "hash": "RRViIB/dUgw/PWyW/UgEqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildBansView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildBansView.html",
+          "hash": "TpwJncnIeVq6efbsIgrJ5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildChannelsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildChannelsView.html",
+          "hash": "u8VUVRCCVASaw9Npa1vwew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildEmbedView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildEmbedView.html",
+          "hash": "YnFhLkEyPJQTxA8LoiZVmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildEmojisView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildEmojisView.html",
+          "hash": "uY3XX8KpzgfSpt4xXdZ1zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildIntegrationSyncView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildIntegrationSyncView.html",
+          "hash": "IxDFZaLtV/VE6OX4CVBnyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildIntegrationsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildIntegrationsView.html",
+          "hash": "XdBkl0oo4eKE/2gfGu4xFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildInvitesView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildInvitesView.html",
+          "hash": "ryqq1iLu0d33HIomufTDag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildMemberRolesView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildMemberRolesView.html",
+          "hash": "ktPskK4ceuhWFxJF0ZW9/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildMembersView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildMembersView.html",
+          "hash": "QsBWrt8ykuU8kgqkZWhPcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildPruneView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildPruneView.html",
+          "hash": "qauXhdgFor3gQVO5DlFpHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildRegionsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildRegionsView.html",
+          "hash": "OTgIuTnURMDWrG7qoz9o+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildRolesView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildRolesView.html",
+          "hash": "rsW2rOEWeyoUPbSaKklLPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildVanityURLView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildVanityURLView.html",
+          "hash": "DtMIDiu4NSYlt8Pu5eZGfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildWebhooksView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildWebhooksView.html",
+          "hash": "H7MZtHOAa1XHpycZOl6xpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildWidgetView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildWidgetView.html",
+          "hash": "ubDCvf+2tljI6qOwt7sTrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.GuildsView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.GuildsView.html",
+          "hash": "FQlEnSN08Hr9nwDMg9CyPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.InvitesView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.InvitesView.html",
+          "hash": "xwUn0Wyabp/7v3Bxpbnc7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.MessageReactionView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.MessageReactionView.html",
+          "hash": "3XbVFIAfL84MfoB8H7owmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.UsersView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.UsersView.html",
+          "hash": "iq2vWnmmuSSO8SKMQ2Rlfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.View.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.View.html",
+          "hash": "snfS5zIVCdNgfH5l2d4d3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.VoiceView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.VoiceView.html",
+          "hash": "xwxmbVSVNu/jLM/OlTNC1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.WebhooksView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.WebhooksView.html",
+          "hash": "oNT7uu20lJvfy+QACxhsAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.View.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.View.html",
+          "hash": "pbFFhkwTl+L01CE50D16sw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Rest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Rest.html",
+          "hash": "5PtSw7LfLdA0hzN3EbVZtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.APIEndpoints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.APIEndpoints.html",
+          "hash": "Aee7b/99/NSNMCKD7wx5ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Activity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Activity.html",
+          "hash": "fB+7ieYTESqRNEaSbOiVtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ActivityAssets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ActivityAssets.html",
+          "hash": "9LgD8CjB5zxyOoq6eF4N0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ActivityFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ActivityFlags.html",
+          "hash": "cip17EOdca8EPK2V5DLLZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ActivityParty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ActivityParty.html",
+          "hash": "tD8215eZRkc82QT9fL3VGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ActivitySecrets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ActivitySecrets.html",
+          "hash": "LrI1oquZ7wc0K3DA9BPMUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ActivityTimestamps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ActivityTimestamps.html",
+          "hash": "dgKnkhrPlTreO/HfbCNcJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ActivityType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ActivityType.html",
+          "hash": "REmEZN2sTvxsAhGw8SyznA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Attachment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Attachment.html",
+          "hash": "YA/es4ez8POmFsgo3bNDoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogBoolChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogBoolChange.html",
+          "hash": "c23ExeQmoHGgLE+2pppJ9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogChangeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogChangeBase.html",
+          "hash": "ap/DBCul6FBemvFZrU7oGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogEntry.html",
+          "hash": "1Umk43P/ZS6XuehOGvNCSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogEntryInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogEntryInfo.html",
+          "hash": "npxs2Ug21f/fpIoZzocWqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogEvent.html",
+          "hash": "fxSM7BkfXukePfWO9zDPGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogIntegerChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogIntegerChange.html",
+          "hash": "vpgtunCcGJ311nt9iGlAug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogOverwriteChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogOverwriteChange.html",
+          "hash": "qeqmhYKQi+k48y6AjkBthA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogRoleChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogRoleChange.html",
+          "hash": "OI3z7MiRyFoEecsl7TagPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogStringChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogStringChange.html",
+          "hash": "7+2DbZD7LO+V0lHZTHkJBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.AuditLogs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.AuditLogs.html",
+          "hash": "5+Yuc9Ivox/zpanlB6AdVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Channel.html",
+          "hash": "rl50NVzCSyl3HNpHcw6SaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ChannelMention.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ChannelMention.html",
+          "hash": "grqJFIQJToQEF+HNYwVRuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ChannelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ChannelType.html",
+          "hash": "wdxDGDKx6K+AMH/Xwgf37A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ClientApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ClientApplication.html",
+          "hash": "gC5s1gHnCwTCuRcHWx/7rA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ClientStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ClientStatus.html",
+          "hash": "6Yf8NwD/MWvHzH7aE+OqWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.CreateDMPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.CreateDMPayload.html",
+          "hash": "ncyUErNWZgxgLoYfnEZMlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.DefaultMessageNotificationLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.DefaultMessageNotificationLevel.html",
+          "hash": "ZcxRUDroYWnUR+QhkOae7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Embed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Embed.html",
+          "hash": "z+42GMW6IgehrbJDfg9w4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedAuthor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedAuthor.html",
+          "hash": "VeIc8yNTl+BMxy/CuMWDOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedField.html",
+          "hash": "PqJhGf5Lq30Ik5e8Y9h+JA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedFooter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedFooter.html",
+          "hash": "hhSuUtJpHtRUAeszitbA7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedImage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedImage.html",
+          "hash": "7kwOsUf04p2KhKAJxz2X4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedProvider.html",
+          "hash": "aLK+Z2YYhcflc5fASVLUiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedThumbnail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedThumbnail.html",
+          "hash": "StyvqnQVc5Ch1WXwHFCZgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.EmbedVideo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.EmbedVideo.html",
+          "hash": "sdfat5VYxRTiewfOFzD/Ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Emoji.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Emoji.html",
+          "hash": "20MeveiNCv6vubR0M+jtMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ExplicitContentFilterLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ExplicitContentFilterLevel.html",
+          "hash": "h5ditDzgHlBRqMbuPJwEow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Gateway.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Gateway.html",
+          "hash": "j0P0jGqEqpkQbxQuf3UTtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GatewayBot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GatewayBot.html",
+          "hash": "j1VPiwMuxVkf4rF4pQjN+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GatewayCloseCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GatewayCloseCode.html",
+          "hash": "3bn5sebHCTVWCFOODFAgGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GatewayEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GatewayEvent.html",
+          "hash": "awKU8IBXdIZYyOc675Q6aA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Guild.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Guild.html",
+          "hash": "dN+4GfXM+nj1/QW37JMNQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildBanAddPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildBanAddPayload.html",
+          "hash": "tP2Chy8y+DFnjcn1Kn4DZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildBanRemovePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildBanRemovePayload.html",
+          "hash": "JBauQIBpwWdP8HmCBA4UZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildEmojisUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildEmojisUpdate.html",
+          "hash": "S6eKCet+PcIy7iCJt8bjyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildFeature.html",
+          "hash": "nS/s/iS//UBpPhOA82Yo7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildIntegrationsUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildIntegrationsUpdatePayload.html",
+          "hash": "gGWtddF5XlXXs6andeAqpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildMember.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildMember.html",
+          "hash": "crhkyIhLSL6JPhYC4Hl57w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildMemberAddPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildMemberAddPayload.html",
+          "hash": "HetBbw2t3pUUYeNqYyjsRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildMemberChunkPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildMemberChunkPayload.html",
+          "hash": "WjgC+e72aPS0Q3WisiBl6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildMemberRemovePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildMemberRemovePayload.html",
+          "hash": "pR2PJ6O82+gO6dL+JBPGdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildMemberUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildMemberUpdatePayload.html",
+          "hash": "Ki+bb8rOAS1vGh82rkON0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildRoleCreatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildRoleCreatePayload.html",
+          "hash": "WQ9RJzQUMQFZkQEIukENSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildRoleDeletePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildRoleDeletePayload.html",
+          "hash": "0ZWjWW6cahsJuxaeogaUwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.GuildRoleUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.GuildRoleUpdatePayload.html",
+          "hash": "q1J74RpjSyfie81plknwRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.HelloPacket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.HelloPacket.html",
+          "hash": "m/gYgc+TRowquUN+VJf6Dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.IAuditLogChange-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.IAuditLogChange-1.html",
+          "hash": "5RVGs+2sKhRQFOcV3sNDIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.IFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.IFile.html",
+          "hash": "x350VIdaGn05HKYrnzvWvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.IdentifyPacket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.IdentifyPacket.html",
+          "hash": "X1cmeM/BqxKRfRJ9z4yPSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.IdentifyProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.IdentifyProperties.html",
+          "hash": "G7TcFNYJQ/4sUk/yprILyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Integration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Integration.html",
+          "hash": "dcGkq8B65KrxIp8wnxmnwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.IntegrationAccount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.IntegrationAccount.html",
+          "hash": "MtEka2LN4CW6d2VfvQnUTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Intents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Intents.html",
+          "hash": "yrZ/RR6evh8S927Qek0h4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Invite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Invite.html",
+          "hash": "p6i2OLcnuYNG2OB3U2/LfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MFALevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MFALevel.html",
+          "hash": "MJHIc4bAjYpi7D/TuL4UFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MembershipState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MembershipState.html",
+          "hash": "yKPxIsa74zG5GYW/C7oRVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MentionUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MentionUser.html",
+          "hash": "ir7/S/7oPj8SynAF6k9CIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Message.html",
+          "hash": "txq4xjo9pTafVM0LLWNBwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageActivity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageActivity.html",
+          "hash": "CCbIGHjraWgLpFtKGSaFjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageActivityType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageActivityType.html",
+          "hash": "HszMwOnxah7bnAu7uHYwLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageApplication.html",
+          "hash": "ltKsJUpUcb4EKHTf1X6obw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageDeleteBulkPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageDeleteBulkPayload.html",
+          "hash": "FOgv9j3CrPlZd3U/+UrHVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageDeletePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageDeletePayload.html",
+          "hash": "TDm1BYOw2RcymTvmoT+FZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageFlags.html",
+          "hash": "MyJJ1YxAFKYJV4gvPKB4TA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageReactionAddPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageReactionAddPayload.html",
+          "hash": "iTh465QQAARIj9Q9l/OXGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageReactionRemoveAllPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageReactionRemoveAllPayload.html",
+          "hash": "0QFXHQUbyJ9TRdGr/n9/nA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageReactionRemovePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageReactionRemovePayload.html",
+          "hash": "wYsGfIGq6ZSRpSyfbhpESg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageReference.html",
+          "hash": "r8EWy9lDXrKXxXBQKuK4NA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageType.html",
+          "hash": "3U9dL1YKP0vAbLWe+kBtog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.MessageUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.MessageUpdatePayload.html",
+          "hash": "wYAcEIGR7a3y/x0EGHh37w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.OpCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.OpCode.html",
+          "hash": "14X3zx5RYgLUDpJjeEwqng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Permission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Permission.html",
+          "hash": "AJU9njcPtHmDLHzQadGztQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.PermissionOverwrite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.PermissionOverwrite.html",
+          "hash": "MX0SBD1WnIVniVRUs2zKGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.PremiumTier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.PremiumTier.html",
+          "hash": "2E3D9wO6ofQDqc8cNGwZmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.PremiumType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.PremiumType.html",
+          "hash": "xTjuFfo7t0Vi31ZwsHS4GA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Presence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Presence.html",
+          "hash": "eJ1gbzzTw/EshXrtgrv03w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.PresenceUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.PresenceUpdatePayload.html",
+          "hash": "bQWd0Pc3kzXbAm8ldRTbRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Reaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Reaction.html",
+          "hash": "AVbu12TQfah5w0Gda5wPUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ReadyDispatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ReadyDispatch.html",
+          "hash": "p4T3MYhazIMD6bcAcRQKEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ReceivePacket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ReceivePacket.html",
+          "hash": "9eOZK2yAYmBYerZ/9hB0AA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.RequestGuildMembersDispatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.RequestGuildMembersDispatch.html",
+          "hash": "r7GWJ7NQ4mxp2J3HwopuFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.ResumePacket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.ResumePacket.html",
+          "hash": "JA0DaTj1kzQQOKsKfBd3Zw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Role.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Role.html",
+          "hash": "xvlJHu3rrxY6m00L3btzXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.SendPacket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.SendPacket.html",
+          "hash": "PTQnQZUbm5B9rCWsBNXYzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.SendableDispatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.SendableDispatch.html",
+          "hash": "4X90OyweFrVr4OagwRkDVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.SendableMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.SendableMessage.html",
+          "hash": "XKFoWUwft/lPjZDCAd7cCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.SessionStartLimit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.SessionStartLimit.html",
+          "hash": "fkWvxQo+5qPnPSROAZktfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Status.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Status.html",
+          "hash": "usPbRRVrMkxUppnLOZYxmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Team.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Team.html",
+          "hash": "48P8MMMjA3/9DTMXGzFjZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.TeamMember.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.TeamMember.html",
+          "hash": "jRDR2eXVDod53InwL/5p3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.TypingStartPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.TypingStartPayload.html",
+          "hash": "4McHooKQgE8/NBFzgXUP5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.UnavailableGuild.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.UnavailableGuild.html",
+          "hash": "95e1apO8leaFs/P9FuTa/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.UpdateStatusDispatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.UpdateStatusDispatch.html",
+          "hash": "9Ub1Wx+aMYKVOCtcdCCEww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.UpdateVoiceStateDispatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.UpdateVoiceStateDispatch.html",
+          "hash": "c/8HCGtwwU7M5GbDeNgGYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.User.html",
+          "hash": "Dq0lZpeo/3VC8Ufsx6uGrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.UserFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.UserFlags.html",
+          "hash": "8aEBgTPSqaJS3KRk7fMfTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.UserType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.UserType.html",
+          "hash": "XXluRr9c1L3y6LwMqzOr1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.VerificationLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.VerificationLevel.html",
+          "hash": "VdTGRL6glLvoTI0nr1kstA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.VoiceServerUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.VoiceServerUpdatePayload.html",
+          "hash": "SGY4vTVIJee1ef46JPinhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.VoiceState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.VoiceState.html",
+          "hash": "q5H9ChAa+/PUQQJJjvpAIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Webhook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Webhook.html",
+          "hash": "414czsPS3CHb2ZGjN5EVqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.WebhookUpdatePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.WebhookUpdatePayload.html",
+          "hash": "sNgYK3XLXKrXE9jmUFAl8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.html",
+          "hash": "+effStMbA4+R0onZCgkG+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.Extensions.StringExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.Extensions.StringExtension.html",
+          "hash": "3U5j7z12Po1tqJS/cKpU2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.Extensions.html",
+          "hash": "tbLyfgJJ+iK2RNN+hr9VJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.Logging.LogEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.Logging.LogEventArgs.html",
+          "hash": "0rflK7anq7P29Qd/BIsHFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.Logging.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.Logging.LogLevel.html",
+          "hash": "wbH7Fl/FtfWqtuV6R136nQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.Logging.html",
+          "hash": "PDwpFWAqhp7ASzr5HlNwOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.Util.html",
+          "hash": "Soo+Bzu6euqvVPVsM/RgTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Util.html",
+          "hash": "G4D6LegaLcFZKsHGe3hpTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "E9QEt+XgjLvWBOILFRQF1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "PEU2+pCf1t1D3qlELrnYJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "kfeixxyJfRQDrnsTRj8OnA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "1Xdjw8Ib7j95/TiJDj+CFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 192,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

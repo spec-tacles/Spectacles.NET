@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AuditLogs
+   | Spectacles.Net Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AuditLogs
+   | Spectacles.Net Documentation ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.AuditLogs">
+  
+  
+  <h1 id="Spectacles_NET_Types_AuditLogs" data-uid="Spectacles.NET.Types.AuditLogs" class="text-break">Class AuditLogs
+  </h1>
+  <div class="markdown level0 summary"><p>Whenever an admin action is performed on the API, an entry is added to the respective guild's audit log. You can
+specify the reason by attaching the X-Audit-Log-Reason request header. This header supports url encoded utf8
+characters.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AuditLogs</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
+  <h5 id="Spectacles_NET_Types_AuditLogs_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AuditLogs : object</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_AuditLogEntries.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.AuditLogEntries%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L27">View Source</a>
+  </span>
+  <a id="Spectacles_NET_Types_AuditLogs_AuditLogEntries_" data-uid="Spectacles.NET.Types.AuditLogs.AuditLogEntries*"></a>
+  <h4 id="Spectacles_NET_Types_AuditLogs_AuditLogEntries" data-uid="Spectacles.NET.Types.AuditLogs.AuditLogEntries">AuditLogEntries</h4>
+  <div class="markdown level1 summary"><p>list of audit log entries</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AuditLogEntry[] AuditLogEntries { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Spectacles.NET.Types.AuditLogEntry.html">AuditLogEntry</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Integration.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Integration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L33">View Source</a>
+  </span>
+  <a id="Spectacles_NET_Types_AuditLogs_Integration_" data-uid="Spectacles.NET.Types.AuditLogs.Integration*"></a>
+  <h4 id="Spectacles_NET_Types_AuditLogs_Integration" data-uid="Spectacles.NET.Types.AuditLogs.Integration">Integration</h4>
+  <div class="markdown level1 summary"><p>list of partial integration objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Integration[] Integration { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Spectacles.NET.Types.Integration.html">Integration</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Users.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Users%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L21">View Source</a>
+  </span>
+  <a id="Spectacles_NET_Types_AuditLogs_Users_" data-uid="Spectacles.NET.Types.AuditLogs.Users*"></a>
+  <h4 id="Spectacles_NET_Types_AuditLogs_Users" data-uid="Spectacles.NET.Types.AuditLogs.Users">Users</h4>
+  <div class="markdown level1 summary"><p>list of users found in the audit log</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public User[] Users { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Spectacles.NET.Types.User.html">User</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Webhooks.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Webhooks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L15">View Source</a>
+  </span>
+  <a id="Spectacles_NET_Types_AuditLogs_Webhooks_" data-uid="Spectacles.NET.Types.AuditLogs.Webhooks*"></a>
+  <h4 id="Spectacles_NET_Types_AuditLogs_Webhooks" data-uid="Spectacles.NET.Types.AuditLogs.Webhooks">Webhooks</h4>
+  <div class="markdown level1 summary"><p>list of webhooks found in the audit log</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Webhook[] Webhooks { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Spectacles.NET.Types.Webhook.html">Webhook</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Spectacles (c) 2018-2019
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

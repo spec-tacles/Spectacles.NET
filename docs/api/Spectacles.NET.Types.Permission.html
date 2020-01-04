@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enum Permission
+   | Spectacles.Net Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enum Permission
+   | Spectacles.Net Documentation ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.Permission">
+  
+  
+  <h1 id="Spectacles_NET_Types_Permission" data-uid="Spectacles.NET.Types.Permission" class="text-break">Enum Permission
+  </h1>
+  <div class="markdown level0 summary"><p>Permissions in Discord are a way to limit and grant certain abilities to users. A set of base permissions can be
+configured at the guild level for different roles. When these roles are attached to users, they grant or revoke
+specific privileges within the guild. Along with the guild-level permissions, Discord also supports permission
+overwrites that can be assigned to individual guild roles or guild members on a per-channel basis.
+Permissions are stored within a 53-bit integer and are calculated using bitwise operations. The total permissions
+integer can be determined by ORing together each individual value, and flags can be checked using AND operations.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
+  <h5 id="Spectacles_NET_Types_Permission_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum Permission : int</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_ADD_REACTIONS">ADD_REACTIONS</td>
+        <td><p>Allows for the addition of reactions to messages</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_ADMINISTRATOR">ADMINISTRATOR</td>
+        <td><p>Allows all permissions and bypasses channel permission overwrites</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_ALL">ALL</td>
+        <td><p>All permissions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_ALL_TEXT">ALL_TEXT</td>
+        <td><p>All permissions related to Text Channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_ALL_VOICE">ALL_VOICE</td>
+        <td><p>All permissions related to Voice Channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_ATTACH_FILES">ATTACH_FILES</td>
+        <td><p>Allows for uploading images and files</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_BAN_MEMBERS">BAN_MEMBERS</td>
+        <td><p>Allows banning members</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_CHANGE_NICKNAME">CHANGE_NICKNAME</td>
+        <td><p>Allows for modification of own nickname</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_CONNECT">CONNECT</td>
+        <td><p>Allows for joining of a voice channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_CREATE_INSTANT_INVITE">CREATE_INSTANT_INVITE</td>
+        <td><p>Allows creation of instant invites</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_DEAFEN_MEMBERS">DEAFEN_MEMBERS</td>
+        <td><p>Allows for deafening of members in a voice channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_DEFAULT">DEFAULT</td>
+        <td><p>Default permissions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_EMBED_LINKS">EMBED_LINKS</td>
+        <td><p>Links sent by users with this permission will be auto-embedded</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_KICK_MEMBERS">KICK_MEMBERS</td>
+        <td><p>Allows kicking members</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_CHANNELS">MANAGE_CHANNELS</td>
+        <td><p>Allows management and editing of channels</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_EMOJIS">MANAGE_EMOJIS</td>
+        <td><p>Allows management and editing of emojis</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_GUILD">MANAGE_GUILD</td>
+        <td><p>Allows management and editing of the guild</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_MESSAGES">MANAGE_MESSAGES</td>
+        <td><p>Allows for deletion of other users messages</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_NICKNAMES">MANAGE_NICKNAMES</td>
+        <td><p>Allows for modification of other users nicknames</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_ROLES">MANAGE_ROLES</td>
+        <td><p>Allows management and editing of roles</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MANAGE_WEBHOOKS">MANAGE_WEBHOOKS</td>
+        <td><p>Allows management and editing of webhooks</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MENTION_EVERYONE">MENTION_EVERYONE</td>
+        <td><p>Allows for using the @everyone tag to notify all users in a channel, and the @here tag to notify all online users in a channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MOVE_MEMBERS">MOVE_MEMBERS</td>
+        <td><p>Allows for moving of members between voice channels</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_MUTE_MEMBERS">MUTE_MEMBERS</td>
+        <td><p>Allows for muting members in a voice channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_NONE">NONE</td>
+        <td><p>No permissions</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_PRIORITY_SPEAKER">PRIORITY_SPEAKER</td>
+        <td><p>Allows for using priority speaker in a voice channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_READ_MESSAGE_HISTORY">READ_MESSAGE_HISTORY</td>
+        <td><p>Allows for reading of message history</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_SEND_MESSAGES">SEND_MESSAGES</td>
+        <td><p>Allows for sending messages in a channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_SEND_TTS_MESSAGES">SEND_TTS_MESSAGES</td>
+        <td><p>Allows for sending of /tts messages</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_SPEAK">SPEAK</td>
+        <td><p>Allows for speaking in a voice channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_STREAM">STREAM</td>
+        <td><p>Allows the user to go live</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_USE_EXTERNAL_EMOJIS">USE_EXTERNAL_EMOJIS</td>
+        <td><p>Allows the usage of custom emojis from other servers</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_USE_VAD">USE_VAD</td>
+        <td><p>Allows for using voice-activity-detection in a voice channel</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_VIEW_AUDIT_LOG">VIEW_AUDIT_LOG</td>
+        <td><p>Allows for viewing of audit logs</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Types_Permission_VIEW_CHANNEL">VIEW_CHANNEL</td>
+        <td><p>Allows guild members to view a channel, which includes reading messages in text channels</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/apiSpec/new?filename=Spectacles_NET_Types_Permission.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Permission%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/2d2e416cc4738f4a0b00b4e8175ac6b726644e60/Spectacles.NET.Types/Permission/Permission.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Spectacles (c) 2018-2019
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
