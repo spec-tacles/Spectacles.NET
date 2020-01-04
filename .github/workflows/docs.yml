@@ -19,9 +19,9 @@ jobs:
           args: .docs/docfx.json
       - name: Move docs
         run: |
-          branch=$(echo ${{ github.ref }} | cut -d '/' -f 3- -)
+          branch=$(echo ${GITHUB_REF#refs/heads/})
           mkdir -p $branch
-          sudo mv .docs/_site docs/$branch
+          sudo mv .docs/_site $branch
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v2
         env:
