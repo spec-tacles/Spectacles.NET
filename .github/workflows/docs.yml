@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - master
+    - stable
   release:
     types: [created]
 jobs:
@@ -16,10 +17,15 @@ jobs:
         name: Build Documentation
         with:
           args: .docs/docfx.json
-  
-    # Publish generated site using GitHub Pages
-      - uses: maxheld83/ghpages@master
-        name: Publish Documentation on GitHub Pages
+      - name: Move docs
+        run: |
+          mkdir -p docs/${GITHUB_REF#refs/heads/}
+          sudo mv .docs/_site/* docs/${GITHUB_REF#refs/heads/}
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v2
         env:
-          BUILD_DIR: .docs/_site # docfx's default output directory is _site
-          GH_PAT: ${{ secrets.GH_PAT }} # See https://github.com/maxheld83/ghpages
+          PERSONAL_TOKEN: ${{ secrets.GH_PAT }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./docs
+        with:
+          keepFiles: true
