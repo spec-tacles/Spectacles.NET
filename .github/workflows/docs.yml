@@ -20,6 +20,7 @@ jobs:
       - name: Move docs
         run: |
           branch=$(echo ${{ github.ref }} | cut -d '/' -f 3- -)
+          mkdir docs
           mkdir -p $branch
           mv .docs/_site docs/$branch
       - name: Deploy docs
