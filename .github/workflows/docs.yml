@@ -19,7 +19,7 @@ jobs:
           args: .docs/docfx.json
       - name: Move docs
         run: |
-          branch=echo ${{ github.ref }} | cut -d '/' -f 3- -
+          branch=$(echo ${{ github.ref }} | cut -d '/' -f 3- -)
           mkdir -p $branch
           mv .docs/_site docs/$branch
       - name: Deploy docs
@@ -28,3 +28,5 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.PERSONAL_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./docs
+        with:
+          keepFiles: true
