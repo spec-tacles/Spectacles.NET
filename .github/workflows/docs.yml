@@ -3,7 +3,7 @@ on:
   push:
     branches:
     - master
-    - docs
+    - stable
   release:
     types: [created]
 jobs:
