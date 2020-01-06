@@ -8,7 +8,7 @@ This is where you will find documentation for all members and objects in Spectac
 
 # Commonly Used Entities
 
-* @Spectacles.NET.Gateway.Gateway
+* @Spectacles.NET.Gateway.Cluster
 * @Spectacles.NET.Gateway.Shard
 * @Spectacles.NET.Rest.RestClient
 * @Spectacles.NET.Types.Guild
