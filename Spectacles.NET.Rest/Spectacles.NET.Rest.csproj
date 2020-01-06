@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.10.0</PackageVersion>
+        <PackageVersion>0.10.1</PackageVersion>
         <Title>Spectacles.NET.Rest</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,7 +14,15 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>A REST module for the Discord API.</Description>
-        <PackageReleaseNotes>- Fix Delete Ratelimit Handling</PackageReleaseNotes>
+        <PackageReleaseNotes>- Add Client Application View
+
+- Remove RequestMethod enum in favor of HttpMethod class
+
+- Add missing Docs
+
+- Split DiscordApiErrorResponse into own file
+
+- Update small snipped to make usage of C# 8 feature</PackageReleaseNotes>
         <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
