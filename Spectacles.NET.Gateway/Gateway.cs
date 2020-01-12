@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -8,99 +7,99 @@ using Spectacles.NET.Types;
 
 namespace Spectacles.NET.Gateway
 {
-	/// <summary>
-	///     Gateway
-	/// </summary>
-	public class Gateway
+	/// <inheritdoc />
+	public class Gateway : IGateway
 	{
-		private readonly string _token;
-
 		/// <summary>
-		///     Creates a new instance of Gateway from a Token and uses the recommend shardCount
+		/// Creates a new instance of Gateway from a Token & a Shard Count.
 		/// </summary>
 		/// <param name="token">The token of this Gateway</param>
-		/// <param name="shardCount">Optional the shard count this token will use</param>
-		public Gateway(string token, int? shardCount = null)
+		/// <param name="shardCount">The Shard Count to use for this Gateway</param>
+		/// <param name="shardingSystem">The Sharding System to use for this Gateway</param>
+		public Gateway(string token, int? shardCount, ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
 		{
-			_token = token;
+			RawToken = token;
 			ProvidedShardCount = shardCount;
+			ShardingSystem = shardingSystem;
 		}
+		
+		/// <inheritdoc />
+		public IRateLimiter RateLimiter { get; } = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromSeconds(5));
 
-		/// <summary>
-		///     Storage of all known Gateways in this Application
-		/// </summary>
-		private static Dictionary<string, Gateway> Tokens { get; } = new Dictionary<string, Gateway>();
+		/// <inheritdoc />
+		public GatewayBot Data { get; private set; }
 
-		/// <summary>
-		///     The Ratelimiter for the Identify limit.
-		/// </summary>
-		public TimeLimiter Ratelimiter { get; } =
-			TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromMilliseconds(5250));
-
-		/// <summary>
-		///     If this Gateway is ready to use
-		/// </summary>
+		/// <inheritdoc />
 		public bool Ready
 			=> Data != null;
 
-		/// <summary>
-		///     The Gateway Data of this instance, fetched from the Gateway/bot endpoint
-		/// </summary>
-		public GatewayBot Data { get; private set; }
+		/// <inheritdoc />
+		public string Token
+			=> $"Bot {RawToken}";
 
-		/// <summary>
-		///     The shard count this Gateway will use
-		/// </summary>
-		protected int? ProvidedShardCount { get; }
-
-		/// <summary>
-		///     ShardCount getter which either gets the provided or recommend shard count.
-		/// </summary>
+		/// <inheritdoc />
 		public int ShardCount
 			=> ProvidedShardCount ?? Data.Shards;
-
+		
 		/// <summary>
-		///     URL of the Discord Websocket Gateway.
+		/// Raw token provided
 		/// </summary>
-		public string URL
-			=> Data.URL;
-
+		private string RawToken { get; }
+		
 		/// <summary>
-		///     The Token of this Gateway
+		/// Optional shard count provided
 		/// </summary>
-		public string Token
-			=> $"Bot {_token}";
-
+		private int? ProvidedShardCount { get; }
+		
 		/// <summary>
-		///     Gets or Creates a Gateway from a token
+		/// Start Range Id of Current Shard Bucket
 		/// </summary>
-		/// <param name="token">The token for this Gateway</param>
-		/// <param name="shardCount">Optional shard count the bot will be using</param>
-		/// <returns></returns>
-		public static Gateway Get(string token, int? shardCount = null)
+		private int? ShardStartRange { get; set; }
+		
+		/// <summary>
+		/// End Range Id of Current Shard Bucket
+		/// </summary>
+		private int? ShardEndRange { get; set; }
+		
+		/// <summary>
+		/// Sharding System of this Gateway
+		/// </summary>
+		private ShardingSystem ShardingSystem { get; }
+
+		/// <inheritdoc />
+		public async Task InitializeAsync()
 		{
-			if (Tokens.ContainsKey(token)) return Tokens[token];
-			var instance = new Gateway(token, shardCount);
-			Tokens.Add(token, instance);
-			return instance;
+			if (Ready) return;
+			await FetchGatewayAsync();
 		}
 
+		/// <inheritdoc />
+		public async Task PerformIdentifyAsync(Func<Task> lambda, int shardId)
+		{
+			if (ShardingSystem == ShardingSystem.DEFAULT)
+				await RateLimiter.Perform(lambda);
+			else if (shardId > ShardStartRange && shardId <= ShardEndRange) await lambda();
+			else
+			{
+				await RateLimiter.Perform(lambda);
+				ShardStartRange = shardId;
+				ShardEndRange = shardId + (int) ShardingSystem;
+			}
+		}
+		
 		/// <summary>
 		///     Fetches the /Gateway/Bot endpoint and caches it
 		/// </summary>
 		/// <returns></returns>
-		public async Task FetchGatewayAsync()
+		private async Task FetchGatewayAsync()
 		{
-			if (Ready) return;
-			using (var httpClient = new HttpClient())
-			{
-				httpClient.DefaultRequestHeaders.Add("Authorization", Token);
-				httpClient.DefaultRequestHeaders.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
-				var res = await httpClient.GetAsync($"{APIEndpoints.APIBaseURL}/{APIEndpoints.BotGateway}");
-				res.EnsureSuccessStatusCode();
-				var body = await res.Content.ReadAsStringAsync();
-				Data = JsonConvert.DeserializeObject<GatewayBot>(body);
-			}
+			var message = new HttpRequestMessage();
+			message.Headers.Add("Authorization", Token);
+			message.Headers.Add("User-Agent", "DiscordBot (https://github.com/spec-tacles) v1");
+			message.RequestUri = new Uri($"{APIEndpoints.APIBaseURL}/{APIEndpoints.BotGateway}");
+			var res = await Singletons.HttpClient.SendAsync(message);
+			res.EnsureSuccessStatusCode();
+			Data = JsonConvert.DeserializeObject<GatewayBot>(await res.Content.ReadAsStringAsync());
 		}
 	}
 }

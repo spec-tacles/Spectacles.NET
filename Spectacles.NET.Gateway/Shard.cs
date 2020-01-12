@@ -10,7 +10,6 @@ using Newtonsoft.Json.Linq;
 using RateLimiter;
 using Spectacles.NET.Gateway.Event;
 using Spectacles.NET.Types;
-using Spectacles.NET.Util.Extensions;
 using Spectacles.NET.Util.Logging;
 using WS.NET;
 using Timer = System.Timers.Timer;
@@ -44,11 +43,12 @@ namespace Spectacles.NET.Gateway
 		/// <param name="id">The Id of this Shard.</param>
 		/// <param name="shardCount">The shard count that is used.</param>
 		/// <param name="identifyOptions">Options to send while Identifying</param>
+		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
 		// ReSharper disable once UnusedMember.Global
-		public Shard(string token, int id, int shardCount, IdentifyOptions identifyOptions = null)
+		public Shard(string token, int id, int shardCount, IdentifyOptions identifyOptions = null, ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
 		{
 			IdentifyOptions = identifyOptions;
-			ShardGateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
+			ShardGateway = Util.GetGateway(token, shardCount, shardingSystem);
 			Id = id;
 		}
 		
@@ -75,13 +75,13 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		///     The Gateway of this Shard or of the Cluster this shard is part of.
 		/// </summary>
-		public Gateway Gateway
+		public IGateway Gateway
 			=> Cluster.Gateway ?? ShardGateway;
 
 		/// <summary>
 		///     The Gateway of this Shard
 		/// </summary>
-		private Gateway ShardGateway { get; }
+		private IGateway ShardGateway { get; }
 
 		/// <summary>
 		///     The Cluster this Shard is part of if any.
@@ -162,7 +162,7 @@ namespace Spectacles.NET.Gateway
 		/// <returns>Task</returns>
 		public async Task ConnectAsync()
 		{
-			if (!Gateway.Ready) await Gateway.FetchGatewayAsync();
+			if (!Gateway.Ready) await Gateway.InitializeAsync();
 
 			LastHeartbeatAcked = true;
 
@@ -177,7 +177,7 @@ namespace Spectacles.NET.Gateway
 				_stopHeartbeatTimer();
 			}
 
-			WebSocketClient = new WebSocketClient(Gateway.URL);
+			WebSocketClient = new WebSocketClient(Gateway.Url);
 
 			WebSocketClient.Open += _onOpen;
 			WebSocketClient.Message += _onMessage;
@@ -353,7 +353,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <returns>Task</returns>
 		private Task _queueIdentifyAsync()
-			=> Gateway.Ratelimiter.Perform(_identifyAsync);
+			=> Gateway.PerformIdentifyAsync(_identifyAsync, Id);
 
 		/// <summary>
 		///     Sends an Identify Message to the WebSocket Server.

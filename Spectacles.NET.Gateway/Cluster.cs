@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Spectacles.NET.Gateway.Event;
-using Spectacles.NET.Util.Extensions;
 using Spectacles.NET.Util.Logging;
 
 namespace Spectacles.NET.Gateway
@@ -21,9 +20,10 @@ namespace Spectacles.NET.Gateway
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
 		/// <param name="identifyOptions">Options to send while Identifying</param>
-		public Cluster(string token, int? shardCount = null, IdentifyOptions identifyOptions = null)
+		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
+		public Cluster(string token, int? shardCount = null, IdentifyOptions identifyOptions = null, ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
 		{
-			Gateway = Gateway.Get(token.RemoveTokenPrefix(), shardCount);
+			Gateway = Util.GetGateway(token, shardCount, shardingSystem);
 			IdentifyOptions = identifyOptions;
 		}
 
@@ -34,7 +34,8 @@ namespace Spectacles.NET.Gateway
 		/// <param name="shardCount">The shard count to use.</param>
 		/// <param name="shardIds">The ids of shards to spawn.</param>
 		/// <param name="identifyOptions">Options to send while Identifying</param>
-		public Cluster(string token, int shardCount, IEnumerable<int> shardIds, IdentifyOptions identifyOptions = null) : this(token, shardCount, identifyOptions)
+		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
+		public Cluster(string token, int shardCount, IEnumerable<int> shardIds, IdentifyOptions identifyOptions = null, ShardingSystem shardingSystem = ShardingSystem.DEFAULT) : this(token, shardCount, identifyOptions, shardingSystem)
 			=> ShardIds = shardIds;
 
 		/// <summary>
@@ -45,7 +46,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		///     The Gateway of this Cluster
 		/// </summary>
-		public Gateway Gateway { get; }
+		public IGateway Gateway { get; }
 		
 		/// <summary>
 		/// The ShardIds this Cluster will spawn
@@ -105,7 +106,7 @@ namespace Spectacles.NET.Gateway
 		/// <returns>Task</returns>
 		public async Task ConnectAsync()
 		{
-			if (!Gateway.Ready) await Gateway.FetchGatewayAsync();
+			if (!Gateway.Ready) await Gateway.InitializeAsync();
 
 			if (ShardIds != null)
 				foreach (var shardId in ShardIds)
