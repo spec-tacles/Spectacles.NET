@@ -505,24 +505,24 @@ references:
   commentId: T:Spectacles.NET.Gateway.Cluster
   fullName: Spectacles.NET.Gateway.Cluster
   nameWithType: Cluster
-- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions)
-  name: Cluster(String, Int32, IEnumerable<Int32>, IdentifyOptions)
-  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Int32_IEnumerable_System_Int32__Spectacles_NET_Gateway_IdentifyOptions_
-  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions)
-  name.vb: Cluster(String, Int32, IEnumerable(Of Int32), IdentifyOptions)
-  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable<System.Int32>, Spectacles.NET.Gateway.IdentifyOptions)
-  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable(Of System.Int32), Spectacles.NET.Gateway.IdentifyOptions)
-  nameWithType: Cluster.Cluster(String, Int32, IEnumerable<Int32>, IdentifyOptions)
-  nameWithType.vb: Cluster.Cluster(String, Int32, IEnumerable(Of Int32), IdentifyOptions)
-- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions)
-  name: Cluster(String, Nullable<Int32>, IdentifyOptions)
-  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_IdentifyOptions_
-  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions)
-  name.vb: Cluster(String, Nullable(Of Int32), IdentifyOptions)
-  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable<System.Int32>, Spectacles.NET.Gateway.IdentifyOptions)
-  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable(Of System.Int32), Spectacles.NET.Gateway.IdentifyOptions)
-  nameWithType: Cluster.Cluster(String, Nullable<Int32>, IdentifyOptions)
-  nameWithType.vb: Cluster.Cluster(String, Nullable(Of Int32), IdentifyOptions)
+- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
+  name: Cluster(String, Int32, IEnumerable<Int32>, IdentifyOptions, ShardingSystem)
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Int32_IEnumerable_System_Int32__Spectacles_NET_Gateway_IdentifyOptions_Spectacles_NET_Gateway_ShardingSystem_
+  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
+  name.vb: Cluster(String, Int32, IEnumerable(Of Int32), IdentifyOptions, ShardingSystem)
+  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable<System.Int32>, Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
+  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable(Of System.Int32), Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
+  nameWithType: Cluster.Cluster(String, Int32, IEnumerable<Int32>, IdentifyOptions, ShardingSystem)
+  nameWithType.vb: Cluster.Cluster(String, Int32, IEnumerable(Of Int32), IdentifyOptions, ShardingSystem)
+- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
+  name: Cluster(String, Nullable<Int32>, IdentifyOptions, ShardingSystem)
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_IdentifyOptions_Spectacles_NET_Gateway_ShardingSystem_
+  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
+  name.vb: Cluster(String, Nullable(Of Int32), IdentifyOptions, ShardingSystem)
+  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable<System.Int32>, Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
+  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable(Of System.Int32), Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
+  nameWithType: Cluster.Cluster(String, Nullable<Int32>, IdentifyOptions, ShardingSystem)
+  nameWithType.vb: Cluster.Cluster(String, Nullable(Of Int32), IdentifyOptions, ShardingSystem)
 - uid: Spectacles.NET.Gateway.Cluster.#ctor*
   name: Cluster
   href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_
@@ -805,15 +805,15 @@ references:
   commentId: T:Spectacles.NET.Gateway.Gateway
   fullName: Spectacles.NET.Gateway.Gateway
   nameWithType: Gateway
-- uid: Spectacles.NET.Gateway.Gateway.#ctor(System.String,System.Nullable{System.Int32})
-  name: Gateway(String, Nullable<Int32>)
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway__ctor_System_String_System_Nullable_System_Int32__
-  commentId: M:Spectacles.NET.Gateway.Gateway.#ctor(System.String,System.Nullable{System.Int32})
-  name.vb: Gateway(String, Nullable(Of Int32))
-  fullName: Spectacles.NET.Gateway.Gateway.Gateway(System.String, System.Nullable<System.Int32>)
-  fullName.vb: Spectacles.NET.Gateway.Gateway.Gateway(System.String, System.Nullable(Of System.Int32))
-  nameWithType: Gateway.Gateway(String, Nullable<Int32>)
-  nameWithType.vb: Gateway.Gateway(String, Nullable(Of Int32))
+- uid: Spectacles.NET.Gateway.Gateway.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ShardingSystem)
+  name: Gateway(String, Nullable<Int32>, ShardingSystem)
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway__ctor_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_ShardingSystem_
+  commentId: M:Spectacles.NET.Gateway.Gateway.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ShardingSystem)
+  name.vb: Gateway(String, Nullable(Of Int32), ShardingSystem)
+  fullName: Spectacles.NET.Gateway.Gateway.Gateway(System.String, System.Nullable<System.Int32>, Spectacles.NET.Gateway.ShardingSystem)
+  fullName.vb: Spectacles.NET.Gateway.Gateway.Gateway(System.String, System.Nullable(Of System.Int32), Spectacles.NET.Gateway.ShardingSystem)
+  nameWithType: Gateway.Gateway(String, Nullable<Int32>, ShardingSystem)
+  nameWithType.vb: Gateway.Gateway(String, Nullable(Of Int32), ShardingSystem)
 - uid: Spectacles.NET.Gateway.Gateway.#ctor*
   name: Gateway
   href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway__ctor_
@@ -834,61 +834,48 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Gateway.Data
   nameWithType: Gateway.Data
-- uid: Spectacles.NET.Gateway.Gateway.FetchGatewayAsync
-  name: FetchGatewayAsync()
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_FetchGatewayAsync
-  commentId: M:Spectacles.NET.Gateway.Gateway.FetchGatewayAsync
-  fullName: Spectacles.NET.Gateway.Gateway.FetchGatewayAsync()
-  nameWithType: Gateway.FetchGatewayAsync()
-- uid: Spectacles.NET.Gateway.Gateway.FetchGatewayAsync*
-  name: FetchGatewayAsync
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_FetchGatewayAsync_
-  commentId: Overload:Spectacles.NET.Gateway.Gateway.FetchGatewayAsync
+- uid: Spectacles.NET.Gateway.Gateway.InitializeAsync
+  name: InitializeAsync()
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_InitializeAsync
+  commentId: M:Spectacles.NET.Gateway.Gateway.InitializeAsync
+  fullName: Spectacles.NET.Gateway.Gateway.InitializeAsync()
+  nameWithType: Gateway.InitializeAsync()
+- uid: Spectacles.NET.Gateway.Gateway.InitializeAsync*
+  name: InitializeAsync
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_InitializeAsync_
+  commentId: Overload:Spectacles.NET.Gateway.Gateway.InitializeAsync
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Gateway.FetchGatewayAsync
-  nameWithType: Gateway.FetchGatewayAsync
-- uid: Spectacles.NET.Gateway.Gateway.Get(System.String,System.Nullable{System.Int32})
-  name: Get(String, Nullable<Int32>)
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_Get_System_String_System_Nullable_System_Int32__
-  commentId: M:Spectacles.NET.Gateway.Gateway.Get(System.String,System.Nullable{System.Int32})
-  name.vb: Get(String, Nullable(Of Int32))
-  fullName: Spectacles.NET.Gateway.Gateway.Get(System.String, System.Nullable<System.Int32>)
-  fullName.vb: Spectacles.NET.Gateway.Gateway.Get(System.String, System.Nullable(Of System.Int32))
-  nameWithType: Gateway.Get(String, Nullable<Int32>)
-  nameWithType.vb: Gateway.Get(String, Nullable(Of Int32))
-- uid: Spectacles.NET.Gateway.Gateway.Get*
-  name: Get
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_Get_
-  commentId: Overload:Spectacles.NET.Gateway.Gateway.Get
+  fullName: Spectacles.NET.Gateway.Gateway.InitializeAsync
+  nameWithType: Gateway.InitializeAsync
+- uid: Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync(Func{Task},System.Int32)
+  name: PerformIdentifyAsync(Func<Task>, Int32)
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_PerformIdentifyAsync_Func_Task__System_Int32_
+  commentId: M:Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync(Func{Task},System.Int32)
+  name.vb: PerformIdentifyAsync(Func(Of Task), Int32)
+  fullName: Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync(Func<Task>, System.Int32)
+  fullName.vb: Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync(Func(Of Task), System.Int32)
+  nameWithType: Gateway.PerformIdentifyAsync(Func<Task>, Int32)
+  nameWithType.vb: Gateway.PerformIdentifyAsync(Func(Of Task), Int32)
+- uid: Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync*
+  name: PerformIdentifyAsync
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_PerformIdentifyAsync_
+  commentId: Overload:Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Gateway.Get
-  nameWithType: Gateway.Get
-- uid: Spectacles.NET.Gateway.Gateway.ProvidedShardCount
-  name: ProvidedShardCount
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_ProvidedShardCount
-  commentId: P:Spectacles.NET.Gateway.Gateway.ProvidedShardCount
-  fullName: Spectacles.NET.Gateway.Gateway.ProvidedShardCount
-  nameWithType: Gateway.ProvidedShardCount
-- uid: Spectacles.NET.Gateway.Gateway.ProvidedShardCount*
-  name: ProvidedShardCount
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_ProvidedShardCount_
-  commentId: Overload:Spectacles.NET.Gateway.Gateway.ProvidedShardCount
+  fullName: Spectacles.NET.Gateway.Gateway.PerformIdentifyAsync
+  nameWithType: Gateway.PerformIdentifyAsync
+- uid: Spectacles.NET.Gateway.Gateway.RateLimiter
+  name: RateLimiter
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_RateLimiter
+  commentId: P:Spectacles.NET.Gateway.Gateway.RateLimiter
+  fullName: Spectacles.NET.Gateway.Gateway.RateLimiter
+  nameWithType: Gateway.RateLimiter
+- uid: Spectacles.NET.Gateway.Gateway.RateLimiter*
+  name: RateLimiter
+  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_RateLimiter_
+  commentId: Overload:Spectacles.NET.Gateway.Gateway.RateLimiter
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Gateway.ProvidedShardCount
-  nameWithType: Gateway.ProvidedShardCount
-- uid: Spectacles.NET.Gateway.Gateway.Ratelimiter
-  name: Ratelimiter
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_Ratelimiter
-  commentId: P:Spectacles.NET.Gateway.Gateway.Ratelimiter
-  fullName: Spectacles.NET.Gateway.Gateway.Ratelimiter
-  nameWithType: Gateway.Ratelimiter
-- uid: Spectacles.NET.Gateway.Gateway.Ratelimiter*
-  name: Ratelimiter
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_Ratelimiter_
-  commentId: Overload:Spectacles.NET.Gateway.Gateway.Ratelimiter
-  isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Gateway.Ratelimiter
-  nameWithType: Gateway.Ratelimiter
+  fullName: Spectacles.NET.Gateway.Gateway.RateLimiter
+  nameWithType: Gateway.RateLimiter
 - uid: Spectacles.NET.Gateway.Gateway.Ready
   name: Ready
   href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_Ready
@@ -928,19 +915,6 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Gateway.Token
   nameWithType: Gateway.Token
-- uid: Spectacles.NET.Gateway.Gateway.URL
-  name: URL
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_URL
-  commentId: P:Spectacles.NET.Gateway.Gateway.URL
-  fullName: Spectacles.NET.Gateway.Gateway.URL
-  nameWithType: Gateway.URL
-- uid: Spectacles.NET.Gateway.Gateway.URL*
-  name: URL
-  href: api/Spectacles.NET.Gateway.Gateway.html#Spectacles_NET_Gateway_Gateway_URL_
-  commentId: Overload:Spectacles.NET.Gateway.Gateway.URL
-  isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Gateway.URL
-  nameWithType: Gateway.URL
 - uid: Spectacles.NET.Gateway.IdentifyOptions
   name: IdentifyOptions
   href: api/Spectacles.NET.Gateway.IdentifyOptions.html
@@ -1012,6 +986,119 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.IdentifyOptions.Presence
   nameWithType: IdentifyOptions.Presence
+- uid: Spectacles.NET.Gateway.IGateway
+  name: IGateway
+  href: api/Spectacles.NET.Gateway.IGateway.html
+  commentId: T:Spectacles.NET.Gateway.IGateway
+  fullName: Spectacles.NET.Gateway.IGateway
+  nameWithType: IGateway
+- uid: Spectacles.NET.Gateway.IGateway.Data
+  name: Data
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Data
+  commentId: P:Spectacles.NET.Gateway.IGateway.Data
+  fullName: Spectacles.NET.Gateway.IGateway.Data
+  nameWithType: IGateway.Data
+- uid: Spectacles.NET.Gateway.IGateway.Data*
+  name: Data
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Data_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.Data
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.Data
+  nameWithType: IGateway.Data
+- uid: Spectacles.NET.Gateway.IGateway.InitializeAsync
+  name: InitializeAsync()
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_InitializeAsync
+  commentId: M:Spectacles.NET.Gateway.IGateway.InitializeAsync
+  fullName: Spectacles.NET.Gateway.IGateway.InitializeAsync()
+  nameWithType: IGateway.InitializeAsync()
+- uid: Spectacles.NET.Gateway.IGateway.InitializeAsync*
+  name: InitializeAsync
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_InitializeAsync_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.InitializeAsync
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.InitializeAsync
+  nameWithType: IGateway.InitializeAsync
+- uid: Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync(Func{Task},System.Int32)
+  name: PerformIdentifyAsync(Func<Task>, Int32)
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_PerformIdentifyAsync_Func_Task__System_Int32_
+  commentId: M:Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync(Func{Task},System.Int32)
+  name.vb: PerformIdentifyAsync(Func(Of Task), Int32)
+  fullName: Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync(Func<Task>, System.Int32)
+  fullName.vb: Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync(Func(Of Task), System.Int32)
+  nameWithType: IGateway.PerformIdentifyAsync(Func<Task>, Int32)
+  nameWithType.vb: IGateway.PerformIdentifyAsync(Func(Of Task), Int32)
+- uid: Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync*
+  name: PerformIdentifyAsync
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_PerformIdentifyAsync_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.PerformIdentifyAsync
+  nameWithType: IGateway.PerformIdentifyAsync
+- uid: Spectacles.NET.Gateway.IGateway.RateLimiter
+  name: RateLimiter
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_RateLimiter
+  commentId: P:Spectacles.NET.Gateway.IGateway.RateLimiter
+  fullName: Spectacles.NET.Gateway.IGateway.RateLimiter
+  nameWithType: IGateway.RateLimiter
+- uid: Spectacles.NET.Gateway.IGateway.RateLimiter*
+  name: RateLimiter
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_RateLimiter_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.RateLimiter
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.RateLimiter
+  nameWithType: IGateway.RateLimiter
+- uid: Spectacles.NET.Gateway.IGateway.Ready
+  name: Ready
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Ready
+  commentId: P:Spectacles.NET.Gateway.IGateway.Ready
+  fullName: Spectacles.NET.Gateway.IGateway.Ready
+  nameWithType: IGateway.Ready
+- uid: Spectacles.NET.Gateway.IGateway.Ready*
+  name: Ready
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Ready_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.Ready
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.Ready
+  nameWithType: IGateway.Ready
+- uid: Spectacles.NET.Gateway.IGateway.ShardCount
+  name: ShardCount
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_ShardCount
+  commentId: P:Spectacles.NET.Gateway.IGateway.ShardCount
+  fullName: Spectacles.NET.Gateway.IGateway.ShardCount
+  nameWithType: IGateway.ShardCount
+- uid: Spectacles.NET.Gateway.IGateway.ShardCount*
+  name: ShardCount
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_ShardCount_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.ShardCount
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.ShardCount
+  nameWithType: IGateway.ShardCount
+- uid: Spectacles.NET.Gateway.IGateway.Token
+  name: Token
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Token
+  commentId: P:Spectacles.NET.Gateway.IGateway.Token
+  fullName: Spectacles.NET.Gateway.IGateway.Token
+  nameWithType: IGateway.Token
+- uid: Spectacles.NET.Gateway.IGateway.Token*
+  name: Token
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Token_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.Token
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.Token
+  nameWithType: IGateway.Token
+- uid: Spectacles.NET.Gateway.IGateway.Url
+  name: Url
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Url
+  commentId: P:Spectacles.NET.Gateway.IGateway.Url
+  fullName: Spectacles.NET.Gateway.IGateway.Url
+  nameWithType: IGateway.Url
+- uid: Spectacles.NET.Gateway.IGateway.Url*
+  name: Url
+  href: api/Spectacles.NET.Gateway.IGateway.html#Spectacles_NET_Gateway_IGateway_Url_
+  commentId: Overload:Spectacles.NET.Gateway.IGateway.Url
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.IGateway.Url
+  nameWithType: IGateway.Url
 - uid: Spectacles.NET.Gateway.Shard
   name: Shard
   href: api/Spectacles.NET.Gateway.Shard.html
@@ -1024,12 +1111,12 @@ references:
   commentId: M:Spectacles.NET.Gateway.Shard.#ctor(Spectacles.NET.Gateway.Cluster,System.Int32,Spectacles.NET.Gateway.IdentifyOptions)
   fullName: Spectacles.NET.Gateway.Shard.Shard(Spectacles.NET.Gateway.Cluster, System.Int32, Spectacles.NET.Gateway.IdentifyOptions)
   nameWithType: Shard.Shard(Cluster, Int32, IdentifyOptions)
-- uid: Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.IdentifyOptions)
-  name: Shard(String, Int32, Int32, IdentifyOptions)
-  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_System_String_System_Int32_System_Int32_Spectacles_NET_Gateway_IdentifyOptions_
-  commentId: M:Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.IdentifyOptions)
-  fullName: Spectacles.NET.Gateway.Shard.Shard(System.String, System.Int32, System.Int32, Spectacles.NET.Gateway.IdentifyOptions)
-  nameWithType: Shard.Shard(String, Int32, Int32, IdentifyOptions)
+- uid: Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
+  name: Shard(String, Int32, Int32, IdentifyOptions, ShardingSystem)
+  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_System_String_System_Int32_System_Int32_Spectacles_NET_Gateway_IdentifyOptions_Spectacles_NET_Gateway_ShardingSystem_
+  commentId: M:Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
+  fullName: Spectacles.NET.Gateway.Shard.Shard(System.String, System.Int32, System.Int32, Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
+  nameWithType: Shard.Shard(String, Int32, Int32, IdentifyOptions, ShardingSystem)
 - uid: Spectacles.NET.Gateway.Shard.#ctor*
   name: Shard
   href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_
@@ -1152,6 +1239,84 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Shard.SendAsync
   nameWithType: Shard.SendAsync
+- uid: Spectacles.NET.Gateway.ShardingSystem
+  name: ShardingSystem
+  href: api/Spectacles.NET.Gateway.ShardingSystem.html
+  commentId: T:Spectacles.NET.Gateway.ShardingSystem
+  fullName: Spectacles.NET.Gateway.ShardingSystem
+  nameWithType: ShardingSystem
+- uid: Spectacles.NET.Gateway.ShardingSystem.BIG_BOT_SHARDING
+  name: BIG_BOT_SHARDING
+  href: api/Spectacles.NET.Gateway.ShardingSystem.html#Spectacles_NET_Gateway_ShardingSystem_BIG_BOT_SHARDING
+  commentId: F:Spectacles.NET.Gateway.ShardingSystem.BIG_BOT_SHARDING
+  fullName: Spectacles.NET.Gateway.ShardingSystem.BIG_BOT_SHARDING
+  nameWithType: ShardingSystem.BIG_BOT_SHARDING
+- uid: Spectacles.NET.Gateway.ShardingSystem.DEFAULT
+  name: DEFAULT
+  href: api/Spectacles.NET.Gateway.ShardingSystem.html#Spectacles_NET_Gateway_ShardingSystem_DEFAULT
+  commentId: F:Spectacles.NET.Gateway.ShardingSystem.DEFAULT
+  fullName: Spectacles.NET.Gateway.ShardingSystem.DEFAULT
+  nameWithType: ShardingSystem.DEFAULT
+- uid: Spectacles.NET.Gateway.ShardingSystem.VERY_BIG_BOT_SHARDING
+  name: VERY_BIG_BOT_SHARDING
+  href: api/Spectacles.NET.Gateway.ShardingSystem.html#Spectacles_NET_Gateway_ShardingSystem_VERY_BIG_BOT_SHARDING
+  commentId: F:Spectacles.NET.Gateway.ShardingSystem.VERY_BIG_BOT_SHARDING
+  fullName: Spectacles.NET.Gateway.ShardingSystem.VERY_BIG_BOT_SHARDING
+  nameWithType: ShardingSystem.VERY_BIG_BOT_SHARDING
+- uid: Spectacles.NET.Gateway.Singletons
+  name: Singletons
+  href: api/Spectacles.NET.Gateway.Singletons.html
+  commentId: T:Spectacles.NET.Gateway.Singletons
+  fullName: Spectacles.NET.Gateway.Singletons
+  nameWithType: Singletons
+- uid: Spectacles.NET.Gateway.Singletons.Gateways
+  name: Gateways
+  href: api/Spectacles.NET.Gateway.Singletons.html#Spectacles_NET_Gateway_Singletons_Gateways
+  commentId: P:Spectacles.NET.Gateway.Singletons.Gateways
+  fullName: Spectacles.NET.Gateway.Singletons.Gateways
+  nameWithType: Singletons.Gateways
+- uid: Spectacles.NET.Gateway.Singletons.Gateways*
+  name: Gateways
+  href: api/Spectacles.NET.Gateway.Singletons.html#Spectacles_NET_Gateway_Singletons_Gateways_
+  commentId: Overload:Spectacles.NET.Gateway.Singletons.Gateways
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Singletons.Gateways
+  nameWithType: Singletons.Gateways
+- uid: Spectacles.NET.Gateway.Singletons.HttpClient
+  name: HttpClient
+  href: api/Spectacles.NET.Gateway.Singletons.html#Spectacles_NET_Gateway_Singletons_HttpClient
+  commentId: P:Spectacles.NET.Gateway.Singletons.HttpClient
+  fullName: Spectacles.NET.Gateway.Singletons.HttpClient
+  nameWithType: Singletons.HttpClient
+- uid: Spectacles.NET.Gateway.Singletons.HttpClient*
+  name: HttpClient
+  href: api/Spectacles.NET.Gateway.Singletons.html#Spectacles_NET_Gateway_Singletons_HttpClient_
+  commentId: Overload:Spectacles.NET.Gateway.Singletons.HttpClient
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Singletons.HttpClient
+  nameWithType: Singletons.HttpClient
+- uid: Spectacles.NET.Gateway.Util
+  name: Util
+  href: api/Spectacles.NET.Gateway.Util.html
+  commentId: T:Spectacles.NET.Gateway.Util
+  fullName: Spectacles.NET.Gateway.Util
+  nameWithType: Util
+- uid: Spectacles.NET.Gateway.Util.GetGateway(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ShardingSystem)
+  name: GetGateway(String, Nullable<Int32>, ShardingSystem)
+  href: api/Spectacles.NET.Gateway.Util.html#Spectacles_NET_Gateway_Util_GetGateway_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_ShardingSystem_
+  commentId: M:Spectacles.NET.Gateway.Util.GetGateway(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ShardingSystem)
+  name.vb: GetGateway(String, Nullable(Of Int32), ShardingSystem)
+  fullName: Spectacles.NET.Gateway.Util.GetGateway(System.String, System.Nullable<System.Int32>, Spectacles.NET.Gateway.ShardingSystem)
+  fullName.vb: Spectacles.NET.Gateway.Util.GetGateway(System.String, System.Nullable(Of System.Int32), Spectacles.NET.Gateway.ShardingSystem)
+  nameWithType: Util.GetGateway(String, Nullable<Int32>, ShardingSystem)
+  nameWithType.vb: Util.GetGateway(String, Nullable(Of Int32), ShardingSystem)
+- uid: Spectacles.NET.Gateway.Util.GetGateway*
+  name: GetGateway
+  href: api/Spectacles.NET.Gateway.Util.html#Spectacles_NET_Gateway_Util_GetGateway_
+  commentId: Overload:Spectacles.NET.Gateway.Util.GetGateway
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Util.GetGateway
+  nameWithType: Util.GetGateway
 - uid: Spectacles.NET.Rest
   name: Spectacles.NET.Rest
   href: api/Spectacles.NET.Rest.html

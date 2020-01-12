@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class GuildMemberChunkPayload
+    <title>Class Singletons
    | Spectacles.Net Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class GuildMemberChunkPayload
+    <meta name="title" content="Class Singletons
    | Spectacles.Net Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -78,42 +78,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.GuildMemberChunkPayload">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Gateway.Singletons">
   
   
-  <h1 id="Spectacles_NET_Types_GuildMemberChunkPayload" data-uid="Spectacles.NET.Types.GuildMemberChunkPayload" class="text-break">Class GuildMemberChunkPayload
+  <h1 id="Spectacles_NET_Gateway_Singletons" data-uid="Spectacles.NET.Gateway.Singletons" class="text-break">Class Singletons
   </h1>
-  <div class="markdown level0 summary"><p>The Payload for the GuildMemberChunk event.</p>
+  <div class="markdown level0 summary"><p>Singletons</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">GuildMemberChunkPayload</span></div>
+    <div class="level1"><span class="xref">Singletons</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
-  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
-  <h5 id="Spectacles_NET_Types_GuildMemberChunkPayload_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Gateway.html">Spectacles.NET.Gateway</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Gateway.dll</h6>
+  <h5 id="Spectacles_NET_Gateway_Singletons_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GuildMemberChunkPayload : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Singletons : object</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/32058d084cef6612b7792361cc455392ebf7a3b3/apiSpec/new?filename=Spectacles_NET_Types_GuildMemberChunkPayload_GuildId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.GuildMemberChunkPayload.GuildId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/32058d084cef6612b7792361cc455392ebf7a3b3/apiSpec/new?filename=Spectacles_NET_Gateway_Singletons_Gateways.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Singletons.Gateways%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/32058d084cef6612b7792361cc455392ebf7a3b3/Spectacles.NET.Types/Payload/GuildMemberChunkPayload.cs/#L13">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/32058d084cef6612b7792361cc455392ebf7a3b3/Spectacles.NET.Gateway/Singletons.cs/#L17">View Source</a>
   </span>
-  <a id="Spectacles_NET_Types_GuildMemberChunkPayload_GuildId_" data-uid="Spectacles.NET.Types.GuildMemberChunkPayload.GuildId*"></a>
-  <h4 id="Spectacles_NET_Types_GuildMemberChunkPayload_GuildId" data-uid="Spectacles.NET.Types.GuildMemberChunkPayload.GuildId">GuildId</h4>
-  <div class="markdown level1 summary"><p>the id of the guild</p>
+  <a id="Spectacles_NET_Gateway_Singletons_Gateways_" data-uid="Spectacles.NET.Gateway.Singletons.Gateways*"></a>
+  <h4 id="Spectacles_NET_Gateway_Singletons_Gateways" data-uid="Spectacles.NET.Gateway.Singletons.Gateways">Gateways</h4>
+  <div class="markdown level1 summary"><p>All Known Gateway</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GuildId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static ConcurrentDictionary&lt;string, IGateway&gt; Gateways { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -125,26 +125,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">ConcurrentDictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Spectacles.NET.Gateway.IGateway.html">IGateway</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/32058d084cef6612b7792361cc455392ebf7a3b3/apiSpec/new?filename=Spectacles_NET_Types_GuildMemberChunkPayload_GuildMembers.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.GuildMemberChunkPayload.GuildMembers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/32058d084cef6612b7792361cc455392ebf7a3b3/apiSpec/new?filename=Spectacles_NET_Gateway_Singletons_HttpClient.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Singletons.HttpClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/32058d084cef6612b7792361cc455392ebf7a3b3/Spectacles.NET.Types/Payload/GuildMemberChunkPayload.cs/#L19">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/32058d084cef6612b7792361cc455392ebf7a3b3/Spectacles.NET.Gateway/Singletons.cs/#L22">View Source</a>
   </span>
-  <a id="Spectacles_NET_Types_GuildMemberChunkPayload_GuildMembers_" data-uid="Spectacles.NET.Types.GuildMemberChunkPayload.GuildMembers*"></a>
-  <h4 id="Spectacles_NET_Types_GuildMemberChunkPayload_GuildMembers" data-uid="Spectacles.NET.Types.GuildMemberChunkPayload.GuildMembers">GuildMembers</h4>
-  <div class="markdown level1 summary"><p>set of guild members</p>
+  <a id="Spectacles_NET_Gateway_Singletons_HttpClient_" data-uid="Spectacles.NET.Gateway.Singletons.HttpClient*"></a>
+  <h4 id="Spectacles_NET_Gateway_Singletons_HttpClient" data-uid="Spectacles.NET.Gateway.Singletons.HttpClient">HttpClient</h4>
+  <div class="markdown level1 summary"><p>Singleton HttpClient</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuildMember[] GuildMembers { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static HttpClient HttpClient { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,7 +156,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Spectacles.NET.Types.GuildMember.html">GuildMember</a>[]</td>
+        <td><span class="xref">HttpClient</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -169,10 +169,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/32058d084cef6612b7792361cc455392ebf7a3b3/apiSpec/new?filename=Spectacles_NET_Types_GuildMemberChunkPayload.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.GuildMemberChunkPayload%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/32058d084cef6612b7792361cc455392ebf7a3b3/apiSpec/new?filename=Spectacles_NET_Gateway_Singletons.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Singletons%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/32058d084cef6612b7792361cc455392ebf7a3b3/Spectacles.NET.Types/Payload/GuildMemberChunkPayload.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/32058d084cef6612b7792361cc455392ebf7a3b3/Spectacles.NET.Gateway/Singletons.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
