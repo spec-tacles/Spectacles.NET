@@ -4,7 +4,7 @@ A distributed Discord API wrapper.
 
 ## Docs
 
-There are [Master Docs](https://spec-tacles.github.io/Spectacles.NET/master/) and [Stable Docs](https://spec-tacles.github.io/Spectacles.NET/stable/) avaible.
+There are [Master Docs](https://spec-tacles.github.io/Spectacles.NET/master/) and [Stable Docs](https://spec-tacles.github.io/Spectacles.NET/stable/) available.
 
 ## Installing
 You can download Spectacles.NET Releases from Nuget [here](https://www.nuget.org/packages?q=Spectacles.Net).
