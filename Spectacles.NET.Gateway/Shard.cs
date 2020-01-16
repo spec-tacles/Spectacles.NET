@@ -290,9 +290,14 @@ namespace Spectacles.NET.Gateway
 					}
 
 					if (packet.Seq != null) Sequence = (int) packet.Seq;
+
+					if (packet.Type == null)
+					{
+						_log(LogLevel.WARN, $"Received Dispatch with missing type, {packet.Data}");
+						break;
+					}
 					
-					Dispatch?.Invoke(this,
-						new DispatchEventArgs(Id, packet.Data, (GatewayEvent) packet.Type));
+					Dispatch?.Invoke(this, new DispatchEventArgs(Id, packet.Data, (GatewayEvent) packet.Type));
 					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 					break;
 				}
