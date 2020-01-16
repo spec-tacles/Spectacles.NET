@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum ChannelType
+    <title>Class Util
    | Spectacles.Net Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum ChannelType
+    <meta name="title" content="Class Util
    | Spectacles.Net Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -78,67 +78,88 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.ChannelType">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Gateway.Util">
   
   
-  <h1 id="Spectacles_NET_Types_ChannelType" data-uid="Spectacles.NET.Types.ChannelType" class="text-break">Enum ChannelType
+  <h1 id="Spectacles_NET_Gateway_Util" data-uid="Spectacles.NET.Gateway.Util" class="text-break">Class Util
   </h1>
-  <div class="markdown level0 summary"><p>Type of a Discord Channel</p>
+  <div class="markdown level0 summary"><p>Utility functions used in Spectacles Gateway</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
-  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
-  <h5 id="Spectacles_NET_Types_ChannelType_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ChannelType : int</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Util</span></div>
   </div>
-  <h3 id="fields">Fields
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Gateway.html">Spectacles.NET.Gateway</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Gateway.dll</h6>
+  <h5 id="Spectacles_NET_Gateway_Util_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Util : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Gateway_Util_GetGateway_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_ShardingSystem_.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Util.GetGateway(System.String%2CSystem.Nullable%7BSystem.Int32%7D%2CSpectacles.NET.Gateway.ShardingSystem)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Gateway/Util.cs/#L18">View Source</a>
+  </span>
+  <a id="Spectacles_NET_Gateway_Util_GetGateway_" data-uid="Spectacles.NET.Gateway.Util.GetGateway*"></a>
+  <h4 id="Spectacles_NET_Gateway_Util_GetGateway_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_ShardingSystem_" data-uid="Spectacles.NET.Gateway.Util.GetGateway(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ShardingSystem)">GetGateway(String, Nullable&lt;Int32&gt;, ShardingSystem)</h4>
+  <div class="markdown level1 summary"><p>Gets a Gateway by a Token</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IGateway GetGateway(string token, int? shardCount, ShardingSystem shardingSystem = default(ShardingSystem))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="Spectacles_NET_Types_ChannelType_DM">DM</td>
-        <td><p>a direct message between users</p>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>The token of the Gateway</p>
 </td>
       </tr>
       <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GROUP_DM">GROUP_DM</td>
-        <td><p>a direct message between multiple users</p>
-</td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">shardCount</span></td>
+        <td></td>
       </tr>
       <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_CATEGORY">GUILD_CATEGORY</td>
-        <td><p>an organizational category that contains channels</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_NEWS">GUILD_NEWS</td>
-        <td><p>a channel that users can follow and crosspost into their own server</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_STORE">GUILD_STORE</td>
-        <td><p>a channel in which game developers can sell their game on Discord</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_TEXT">GUILD_TEXT</td>
-        <td><p>a text channel within a server</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_VOICE">GUILD_VOICE</td>
-        <td><p>a voice channel within a server</p>
+        <td><a class="xref" href="Spectacles.NET.Gateway.ShardingSystem.html">ShardingSystem</a></td>
+        <td><span class="parametername">shardingSystem</span></td>
+        <td><p>The Sharding System to use for this Gateway</p>
 </td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Spectacles.NET.Gateway.IGateway.html">IGateway</a></td>
+        <td><p>IGateway</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -147,10 +168,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Types_ChannelType.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ChannelType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Gateway_Util.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Util%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Types/Channel/ChannelType.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Gateway/Util.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

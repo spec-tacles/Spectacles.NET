@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum ChannelType
+    <title>Enum ShardingSystem
    | Spectacles.Net Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum ChannelType
+    <meta name="title" content="Enum ShardingSystem
    | Spectacles.Net Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -78,19 +78,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.ChannelType">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Gateway.ShardingSystem">
   
   
-  <h1 id="Spectacles_NET_Types_ChannelType" data-uid="Spectacles.NET.Types.ChannelType" class="text-break">Enum ChannelType
+  <h1 id="Spectacles_NET_Gateway_ShardingSystem" data-uid="Spectacles.NET.Gateway.ShardingSystem" class="text-break">Enum ShardingSystem
   </h1>
-  <div class="markdown level0 summary"><p>Type of a Discord Channel</p>
+  <div class="markdown level0 summary"><p>Discord Allows Big Bots to Login with multiple Shards at the same time. This represent how much Shards can Login at the same time</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
-  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
-  <h5 id="Spectacles_NET_Types_ChannelType_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Gateway.html">Spectacles.NET.Gateway</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Gateway.dll</h6>
+  <h5 id="Spectacles_NET_Gateway_ShardingSystem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ChannelType : int</code></pre>
+    <pre><code class="lang-csharp hljs">public enum ShardingSystem : int</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -103,38 +103,18 @@
     <thead>
     <tbody>
       <tr>
-        <td id="Spectacles_NET_Types_ChannelType_DM">DM</td>
-        <td><p>a direct message between users</p>
+        <td id="Spectacles_NET_Gateway_ShardingSystem_BIG_BOT_SHARDING">BIG_BOT_SHARDING</td>
+        <td><p>Big Bots Sharding, allows to spawn up to 16 Shards of the same Queue.</p>
 </td>
       </tr>
       <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GROUP_DM">GROUP_DM</td>
-        <td><p>a direct message between multiple users</p>
+        <td id="Spectacles_NET_Gateway_ShardingSystem_DEFAULT">DEFAULT</td>
+        <td><p>Default Sharding System, allows to only spawn 1 Shard at a Time.</p>
 </td>
       </tr>
       <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_CATEGORY">GUILD_CATEGORY</td>
-        <td><p>an organizational category that contains channels</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_NEWS">GUILD_NEWS</td>
-        <td><p>a channel that users can follow and crosspost into their own server</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_STORE">GUILD_STORE</td>
-        <td><p>a channel in which game developers can sell their game on Discord</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_TEXT">GUILD_TEXT</td>
-        <td><p>a text channel within a server</p>
-</td>
-      </tr>
-      <tr>
-        <td id="Spectacles_NET_Types_ChannelType_GUILD_VOICE">GUILD_VOICE</td>
-        <td><p>a voice channel within a server</p>
+        <td id="Spectacles_NET_Gateway_ShardingSystem_VERY_BIG_BOT_SHARDING">VERY_BIG_BOT_SHARDING</td>
+        <td><p>Very Big Bots Sharding, allows to spawn up to 64 Shards of the same Queue.</p>
 </td>
       </tr>
     </tbody>
@@ -147,10 +127,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Types_ChannelType.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ChannelType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Gateway_ShardingSystem.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.ShardingSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Types/Channel/ChannelType.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Gateway/ShardingSystem.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

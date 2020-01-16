@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class UnavailableGuild
+    <title>Class Singletons
    | Spectacles.Net Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class UnavailableGuild
+    <meta name="title" content="Class Singletons
    | Spectacles.Net Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -78,43 +78,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.UnavailableGuild">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Gateway.Singletons">
   
   
-  <h1 id="Spectacles_NET_Types_UnavailableGuild" data-uid="Spectacles.NET.Types.UnavailableGuild" class="text-break">Class UnavailableGuild
+  <h1 id="Spectacles_NET_Gateway_Singletons" data-uid="Spectacles.NET.Gateway.Singletons" class="text-break">Class Singletons
   </h1>
-  <div class="markdown level0 summary"><p>A partial guild object. Represents an Offline Guild, or a Guild whose information has not been provided through
-Guild Create events during the Gateway connect.</p>
+  <div class="markdown level0 summary"><p>Singletons</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">UnavailableGuild</span></div>
+    <div class="level1"><span class="xref">Singletons</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
-  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
-  <h5 id="Spectacles_NET_Types_UnavailableGuild_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Gateway.html">Spectacles.NET.Gateway</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Gateway.dll</h6>
+  <h5 id="Spectacles_NET_Gateway_Singletons_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class UnavailableGuild : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Singletons : object</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Types_UnavailableGuild_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.UnavailableGuild.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Gateway_Singletons_Gateways.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Singletons.Gateways%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Types/Guild/UnavailableGuild.cs/#L14">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Gateway/Singletons.cs/#L17">View Source</a>
   </span>
-  <a id="Spectacles_NET_Types_UnavailableGuild_Id_" data-uid="Spectacles.NET.Types.UnavailableGuild.Id*"></a>
-  <h4 id="Spectacles_NET_Types_UnavailableGuild_Id" data-uid="Spectacles.NET.Types.UnavailableGuild.Id">Id</h4>
-  <div class="markdown level1 summary"><p>guild id</p>
+  <a id="Spectacles_NET_Gateway_Singletons_Gateways_" data-uid="Spectacles.NET.Gateway.Singletons.Gateways*"></a>
+  <h4 id="Spectacles_NET_Gateway_Singletons_Gateways" data-uid="Spectacles.NET.Gateway.Singletons.Gateways">Gateways</h4>
+  <div class="markdown level1 summary"><p>All Known Gateway</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static ConcurrentDictionary&lt;string, IGateway&gt; Gateways { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -126,26 +125,26 @@ Guild Create events during the Gateway connect.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">ConcurrentDictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Spectacles.NET.Gateway.IGateway.html">IGateway</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Types_UnavailableGuild_Unavailable.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.UnavailableGuild.Unavailable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Gateway_Singletons_HttpClient.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Singletons.HttpClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Types/Guild/UnavailableGuild.cs/#L20">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Gateway/Singletons.cs/#L22">View Source</a>
   </span>
-  <a id="Spectacles_NET_Types_UnavailableGuild_Unavailable_" data-uid="Spectacles.NET.Types.UnavailableGuild.Unavailable*"></a>
-  <h4 id="Spectacles_NET_Types_UnavailableGuild_Unavailable" data-uid="Spectacles.NET.Types.UnavailableGuild.Unavailable">Unavailable</h4>
-  <div class="markdown level1 summary"><p>is this guild unavailable</p>
+  <a id="Spectacles_NET_Gateway_Singletons_HttpClient_" data-uid="Spectacles.NET.Gateway.Singletons.HttpClient*"></a>
+  <h4 id="Spectacles_NET_Gateway_Singletons_HttpClient" data-uid="Spectacles.NET.Gateway.Singletons.HttpClient">HttpClient</h4>
+  <div class="markdown level1 summary"><p>Singleton HttpClient</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Unavailable { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static HttpClient HttpClient { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -157,7 +156,7 @@ Guild Create events during the Gateway connect.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">HttpClient</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -170,10 +169,10 @@ Guild Create events during the Gateway connect.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Types_UnavailableGuild.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.UnavailableGuild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/0df036e2b557ddc02cba6c6a57519ed8667b7588/apiSpec/new?filename=Spectacles_NET_Gateway_Singletons.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.Singletons%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Types/Guild/UnavailableGuild.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/0df036e2b557ddc02cba6c6a57519ed8667b7588/Spectacles.NET.Gateway/Singletons.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
