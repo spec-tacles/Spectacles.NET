@@ -2,7 +2,6 @@
 
 using System;
 using System.Net.WebSockets;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using Newtonsoft.Json;
@@ -13,7 +12,6 @@ using Spectacles.NET.Types;
 using Spectacles.NET.Util.Logging;
 using WS.NET;
 using Timer = System.Timers.Timer;
-#pragma warning disable 4014
 
 namespace Spectacles.NET.Gateway
 {
@@ -45,13 +43,14 @@ namespace Spectacles.NET.Gateway
 		/// <param name="identifyOptions">Options to send while Identifying</param>
 		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
 		// ReSharper disable once UnusedMember.Global
-		public Shard(string token, int id, int shardCount, IdentifyOptions identifyOptions = null, ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
+		public Shard(string token, int id, int shardCount, IdentifyOptions identifyOptions = null,
+			ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
 		{
 			IdentifyOptions = identifyOptions;
 			ShardGateway = Util.GetGateway(token, shardCount, shardingSystem);
 			Id = id;
 		}
-		
+
 		/// <summary>
 		/// 	Options to send while Identifying
 		/// </summary>
@@ -251,7 +250,7 @@ namespace Spectacles.NET.Gateway
 		///     Handles incoming messages.
 		/// </summary>
 		/// <param name="json">the incoming json as string</param>
-		private void _handleMessage(string json)
+		private async void _handleMessage(string json)
 		{
 			ReceivePacket packet;
 			try
@@ -264,80 +263,90 @@ namespace Spectacles.NET.Gateway
 				return;
 			}
 
-			// ReSharper disable once SwitchStatementMissingSomeCases
-			switch (packet.OpCode)
+			try
 			{
-				case OpCode.DISPATCH:
+				// ReSharper disable once SwitchStatementMissingSomeCases
+				switch (packet.OpCode)
 				{
-					// ReSharper disable once SwitchStatementMissingSomeCases
-					switch (packet.Type)
+					case OpCode.DISPATCH:
 					{
-						case GatewayEvent.READY:
-							var readyDispatch = ((JObject) packet.Data).ToObject<ReadyDispatch>();
-							SessionId = readyDispatch.SessionId;
-							_log(LogLevel.DEBUG, $"Ready {readyDispatch.SessionId}");
-							_log(LogLevel.INFO, "Shard Ready");
-							Identified?.Invoke(this, null);
-							break;
-						case GatewayEvent.RESUMED:
+						// ReSharper disable once SwitchStatementMissingSomeCases
+						switch (packet.Type)
 						{
-							var replayed = CloseSequence - Sequence;
-							_log(LogLevel.DEBUG,
-								$"RESUMED {SessionId} | replayed {replayed} events.");
-							_log(LogLevel.INFO, "Shard resumed connection");
+							case GatewayEvent.READY:
+								var readyDispatch = ((JObject) packet.Data).ToObject<ReadyDispatch>();
+								SessionId = readyDispatch.SessionId;
+								_log(LogLevel.DEBUG, $"Ready {readyDispatch.SessionId}");
+								_log(LogLevel.INFO, "Shard Ready");
+								Identified?.Invoke(this, null);
+								break;
+							case GatewayEvent.RESUMED:
+							{
+								var replayed = CloseSequence - Sequence;
+								_log(LogLevel.DEBUG,
+									$"RESUMED {SessionId} | replayed {replayed} events.");
+								_log(LogLevel.INFO, "Shard resumed connection");
+								break;
+							}
+						}
+
+						if (packet.Seq != null) Sequence = (int) packet.Seq;
+
+						if (packet.Type == null)
+						{
+							_log(LogLevel.WARN, $"Received Dispatch with missing type, {packet.Data}");
 							break;
 						}
-					}
 
-					if (packet.Seq != null) Sequence = (int) packet.Seq;
-
-					if (packet.Type == null)
-					{
-						_log(LogLevel.WARN, $"Received Dispatch with missing type, {packet.Data}");
+						Dispatch?.Invoke(this, new DispatchEventArgs(Id, packet.Data, (GatewayEvent) packet.Type));
+						_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
 						break;
 					}
-					
-					Dispatch?.Invoke(this, new DispatchEventArgs(Id, packet.Data, (GatewayEvent) packet.Type));
-					_log(LogLevel.DEBUG, $"Received Dispatch of type {packet.Type}");
-					break;
+					case OpCode.HEARTBEAT:
+						_log(LogLevel.DEBUG, $"Received Keep-Alive request  (OP {packet.OpCode}). Sending response...");
+						await _heartbeatAsync().ConfigureAwait(false);
+						break;
+					case OpCode.RECONNECT:
+						_log(LogLevel.DEBUG,
+							$"Received Reconnect request (OP {packet.OpCode}). Closing connection now...");
+						break;
+					case OpCode.INVALID_SESSION:
+						_log(LogLevel.DEBUG, $"Received Invalidate request (OP {packet.OpCode}). Invalidating....");
+						var data = (bool) packet.Data;
+						if (data)
+						{
+							await DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR, "Session Invalidated")
+								.ConfigureAwait(false);
+							break;
+						}
+
+						SessionId = null;
+						Sequence = null;
+						await Task.Run(async () =>
+						{
+							await Task.Delay(TimeSpan.FromSeconds(5));
+							await DisconnectAsync((int) WebSocketCloseStatus.NormalClosure, "Session Invalidated");
+						});
+						break;
+					case OpCode.HELLO:
+						_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
+						var helloData = ((JObject) packet.Data).ToObject<HelloPacket>();
+						_startHeartbeatTimer(helloData.HeartbeatInterval);
+
+						await _authenticateAsync();
+						break;
+					case OpCode.HEARTBEAT_ACK:
+						_log(LogLevel.DEBUG, $"Received Heartbeat Ack (OP {packet.OpCode})");
+						LastHeartbeatAcked = true;
+						break;
+					default:
+						_log(LogLevel.DEBUG, $"Received unknown op-code: {packet.OpCode}");
+						break;
 				}
-				case OpCode.HEARTBEAT:
-					_log(LogLevel.DEBUG, $"Received Keep-Alive request  (OP {packet.OpCode}). Sending response...");
-					_heartbeatAsync().ConfigureAwait(false);
-					break;
-				case OpCode.RECONNECT:
-					_log(LogLevel.DEBUG, $"Received Reconnect request (OP {packet.OpCode}). Closing connection now...");
-					break;
-				case OpCode.INVALID_SESSION:
-					_log(LogLevel.DEBUG, $"Received Invalidate request (OP {packet.OpCode}). Invalidating....");
-					var data = (bool) packet.Data;
-					if (data)
-					{
-						DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR, "Session Invalidated")
-							.ConfigureAwait(false);
-						break;
-					}
-
-					SessionId = null;
-					Sequence = null;
-					Thread.Sleep(TimeSpan.FromSeconds(5));
-					DisconnectAsync((int) WebSocketCloseStatus.NormalClosure, "Session Invalidated")
-						.ConfigureAwait(false);
-					break;
-				case OpCode.HELLO:
-					_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
-					var helloData = ((JObject) packet.Data).ToObject<HelloPacket>();
-					_startHeartbeatTimer(helloData.HeartbeatInterval);
-
-					_authenticateAsync();
-					break;
-				case OpCode.HEARTBEAT_ACK:
-					_log(LogLevel.DEBUG, $"Received Heartbeat Ack (OP {packet.OpCode})");
-					LastHeartbeatAcked = true;
-					break;
-				default:
-					_log(LogLevel.DEBUG, $"Received unknown op-code: {packet.OpCode}");
-					break;
+			}
+			catch (Exception e)
+			{
+				_log(LogLevel.ERROR, $"Exception in Shard#_handleMessage, {e}");
 			}
 		}
 
