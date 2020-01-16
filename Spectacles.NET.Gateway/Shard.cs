@@ -452,7 +452,7 @@ namespace Spectacles.NET.Gateway
 				{
 					_log(LogLevel.WARN,
 						$"Couldn't Disconnect the Connection with the reason: {e.Message}, Reconnecting...");
-					ConnectAsync().ConfigureAwait(false);
+					await ConnectAsync().ConfigureAwait(false);
 					return;
 				}
 
@@ -463,7 +463,7 @@ namespace Spectacles.NET.Gateway
 			catch (Exception e)
 			{
 				_log(LogLevel.WARN, $"Couldn't send a Heartbeat with the reason: {e.Message}, Reconnecting...");
-				ConnectAsync().ConfigureAwait(false);
+				await ConnectAsync().ConfigureAwait(false);
 			}
 		}
 
