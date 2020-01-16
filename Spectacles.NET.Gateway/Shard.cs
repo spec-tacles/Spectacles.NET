@@ -340,7 +340,7 @@ namespace Spectacles.NET.Gateway
 						LastHeartbeatAcked = true;
 						break;
 					default:
-						_log(LogLevel.DEBUG, $"Received unknown op-code: {packet.OpCode}");
+						_log(LogLevel.WARN, $"Received unknown op-code: {packet.OpCode}");
 						break;
 				}
 			}
