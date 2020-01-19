@@ -104,6 +104,16 @@ namespace Spectacles.NET.Types
 		///     guild role was deleted
 		/// </summary>
 		GUILD_ROLE_DELETE,
+		
+		/// <summary>
+		/// 	invite to a channel was created
+		/// </summary>
+		INVITE_CREATE,
+		
+		/// <summary>
+		/// 	invite to a channel was deleted
+		/// </summary>
+		INVITE_DELETE,
 
 		/// <summary>
 		///     message was created
@@ -139,6 +149,11 @@ namespace Spectacles.NET.Types
 		///     all reactions were explicitly removed from a message
 		/// </summary>
 		MESSAGE_REACTION_REMOVE_ALL,
+		
+		/// <summary>
+		/// 	all reactions for a given emoji were explicitly removed from a message
+		/// </summary>
+		MESSAGE_REACTION_REMOVE_EMOJI,
 
 		/// <summary>
 		///     user was updated
