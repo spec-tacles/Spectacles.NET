@@ -14,7 +14,9 @@ namespace Spectacles.NET.Rest.View
 		{
 			get
 			{
-				User = id.ToString();
+				var idString = id.ToString();
+				if (Id == null) Id = idString;
+				else User = idString;
 				return this;
 			}
 		}
