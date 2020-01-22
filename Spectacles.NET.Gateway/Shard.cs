@@ -332,11 +332,8 @@ namespace Spectacles.NET.Gateway
 
 						SessionId = null;
 						Sequence = null;
-						await Task.Run(async () =>
-						{
-							await Task.Delay(TimeSpan.FromSeconds(5));
-							await DisconnectAsync((int) WebSocketCloseStatus.NormalClosure, "Session Invalidated");
-						});
+						await Task.Delay(TimeSpan.FromSeconds(5));
+						await DisconnectAsync((int) WebSocketCloseStatus.NormalClosure, "Session Invalidated");
 						break;
 					case OpCode.HELLO:
 						_log(LogLevel.DEBUG, $"Received HELLO packet (OP {packet.OpCode}). Initializing keep-alive...");
