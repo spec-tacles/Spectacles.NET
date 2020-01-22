@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <PackageVersion>0.7.3</PackageVersion>
+        <PackageVersion>0.7.4</PackageVersion>
         <Title>Spectacles.NET.Gateway</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
@@ -15,9 +15,7 @@
         <Authors>DevYukine</Authors>
         <Copyright> </Copyright>
         <Description>Spawns shards and manages a bot's lifetime on the Discord WebSocket gateway.</Description>
-        <PackageReleaseNotes>- Refactor Gateway, Add different Sharding Systems
-
-- Cleanup Shard Websocket handling</PackageReleaseNotes>
+        <PackageReleaseNotes>- Add LatencyUpdate Event </PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 

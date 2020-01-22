@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.9.4</PackageVersion>
+        <PackageVersion>0.9.5</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,15 +14,9 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>- Add Client Application
+        <PackageReleaseNotes>- Add new GatewayEvents
 
-- Remove ActivityEmoji in favor or Emoji
-
-- Add missing docs
-
-- Add User#System
-
-- Add Message#Flags &amp; Message#Reference</PackageReleaseNotes>
+- Add new Payloads</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
