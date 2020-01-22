@@ -99,6 +99,11 @@ namespace Spectacles.NET.Gateway
 		///     Event emitted when Shards send packets.
 		/// </summary>
 		public event EventHandler<SendEventArgs> Send;
+		
+		/// <summary>
+		/// 	Event emitted when Shards Heartbeat changes, Latency in ms.
+		/// </summary>
+		public event EventHandler<LatencyUpdateArgs> LatencyUpdate;
 
 		/// <summary>
 		///     Connects all Shards of this Cluster to the Gateway.
@@ -123,6 +128,7 @@ namespace Spectacles.NET.Gateway
 				shard.Error += (sender, e) => Error?.Invoke(sender, new ExceptionEventArgs(shard.Id, e));
 				shard.Dispatch += Dispatch;
 				shard.Send += Send;
+				shard.LatencyUpdate += LatencyUpdate;
 				await shard.ConnectAsync();
 			}
 

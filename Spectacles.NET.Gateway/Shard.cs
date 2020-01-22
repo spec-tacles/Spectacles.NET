@@ -101,6 +101,11 @@ namespace Spectacles.NET.Gateway
 		///     If the last Heartbeat was acknowledged.
 		/// </summary>
 		private bool LastHeartbeatAcked { get; set; } = true;
+		
+		/// <summary>
+		/// 	When the Heartbeat was sent, used to calculate the latency.
+		/// </summary>
+		private DateTime HeartbeatSentAt { get; set; }
 
 		/// <summary>
 		///     The current Sequence of this Shard.
@@ -149,6 +154,11 @@ namespace Spectacles.NET.Gateway
 		///     Event emitted when this Shard send packets.
 		/// </summary>
 		public event EventHandler<SendEventArgs> Send;
+
+		/// <summary>
+		/// 	Event emitted when this Shard Heartbeat changes, Latency in ms.
+		/// </summary>
+		public event EventHandler<LatencyUpdateArgs> LatencyUpdate;
 
 		/// <summary>
 		///     Event emitted when this Shard send there Identify packet.
@@ -336,8 +346,10 @@ namespace Spectacles.NET.Gateway
 						await _authenticateAsync();
 						break;
 					case OpCode.HEARTBEAT_ACK:
-						_log(LogLevel.DEBUG, $"Received Heartbeat Ack (OP {packet.OpCode})");
+						var latency = DateTime.Now - HeartbeatSentAt;
+						_log(LogLevel.DEBUG, $"Received Heartbeat Ack (OP {packet.OpCode}), Latency of {latency.TotalMilliseconds}ms");
 						LastHeartbeatAcked = true;
+						LatencyUpdate?.Invoke(this, new LatencyUpdateArgs(Id, (int) latency.TotalMilliseconds));
 						break;
 					default:
 						_log(LogLevel.WARN, $"Received unknown op-code: {packet.OpCode}");
@@ -420,6 +432,7 @@ namespace Spectacles.NET.Gateway
 		{
 			_log(LogLevel.DEBUG, "Sending a Heartbeat");
 			LastHeartbeatAcked = false;
+			HeartbeatSentAt = DateTime.Now;
 
 			return SendAsync(OpCode.HEARTBEAT, Sequence);
 		}
