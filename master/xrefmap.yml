@@ -594,6 +594,12 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Cluster.IdentifyOptions
   nameWithType: Cluster.IdentifyOptions
+- uid: Spectacles.NET.Gateway.Cluster.LatencyUpdate
+  name: LatencyUpdate
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_LatencyUpdate
+  commentId: E:Spectacles.NET.Gateway.Cluster.LatencyUpdate
+  fullName: Spectacles.NET.Gateway.Cluster.LatencyUpdate
+  nameWithType: Cluster.LatencyUpdate
 - uid: Spectacles.NET.Gateway.Cluster.Log
   name: Log
   href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_Log
@@ -741,6 +747,51 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId
   nameWithType: ExceptionEventArgs.ShardId
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs
+  name: LatencyUpdateArgs
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html
+  commentId: T:Spectacles.NET.Gateway.Event.LatencyUpdateArgs
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs
+  nameWithType: LatencyUpdateArgs
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor(System.Int32,System.Int32)
+  name: LatencyUpdateArgs(Int32, Int32)
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs__ctor_System_Int32_System_Int32_
+  commentId: M:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor(System.Int32,System.Int32)
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.LatencyUpdateArgs(System.Int32, System.Int32)
+  nameWithType: LatencyUpdateArgs.LatencyUpdateArgs(Int32, Int32)
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor*
+  name: LatencyUpdateArgs
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs__ctor_
+  commentId: Overload:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.LatencyUpdateArgs
+  nameWithType: LatencyUpdateArgs.LatencyUpdateArgs
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  name: Latency
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_Latency
+  commentId: P:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  nameWithType: LatencyUpdateArgs.Latency
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency*
+  name: Latency
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_Latency_
+  commentId: Overload:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  nameWithType: LatencyUpdateArgs.Latency
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  name: ShardId
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_ShardId
+  commentId: P:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  nameWithType: LatencyUpdateArgs.ShardId
+- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId*
+  name: ShardId
+  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_ShardId_
+  commentId: Overload:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  nameWithType: LatencyUpdateArgs.ShardId
 - uid: Spectacles.NET.Gateway.Event.SendEventArgs
   name: SendEventArgs
   href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html
@@ -1214,6 +1265,12 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Shard.Id
   nameWithType: Shard.Id
+- uid: Spectacles.NET.Gateway.Shard.LatencyUpdate
+  name: LatencyUpdate
+  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard_LatencyUpdate
+  commentId: E:Spectacles.NET.Gateway.Shard.LatencyUpdate
+  fullName: Spectacles.NET.Gateway.Shard.LatencyUpdate
+  nameWithType: Shard.LatencyUpdate
 - uid: Spectacles.NET.Gateway.Shard.Log
   name: Log
   href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard_Log
