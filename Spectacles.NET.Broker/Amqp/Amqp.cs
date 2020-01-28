@@ -17,47 +17,6 @@ using static Spectacles.NET.Util.Util;
 
 namespace Spectacles.NET.Broker.Amqp
 {
-	/// <summary>
-	///     Class representing ConnectOptions to Amqp.
-	/// </summary>
-	public class AmqpConnectOptions
-	{
-		/// <summary>
-		///     The Username of the AMQP Server
-		/// </summary>
-		public string Username { get; set; }
-
-		/// <summary>
-		///     The Password of the AMQP Server
-		/// </summary>
-		public string Password { get; set; }
-
-		/// <summary>
-		///     The Virtual Host of the AMQP Server
-		/// </summary>
-		public string VirtualHost { get; set; }
-
-		/// <summary>
-		///     The Host Name of the AMQP Server
-		/// </summary>
-		public string HostName { get; set; }
-
-		/// <summary>
-		///     Optional Port for the AMQP Server
-		/// </summary>
-		public int? Port { get; set; }
-
-		/// <summary>
-		///     If the Client should try to Recover connections which disconnect.
-		/// </summary>
-		public bool? AutomaticRecoveryEnabled { get; set; }
-
-		/// <summary>
-		///     How long to wait before retrying to connect.
-		/// </summary>
-		public TimeSpan NetworkRecoveryInterval { get; set; }
-	}
-
 	/// <inheritdoc />
 	/// <summary>
 	///     Broker made for Amqp using RabbitMQ .NET Library.
@@ -140,23 +99,10 @@ namespace Spectacles.NET.Broker.Amqp
 		/// <summary>
 		///     ConnectAsync connects this Client to the Amqp Server .
 		/// </summary>
-		/// <param name="options">The options for the Connection.</param>
+		/// <param name="factory">Factory creating Connections</param>
 		/// <returns>Task</returns>
-		public async Task ConnectAsync(AmqpConnectOptions options)
-		{
-			var factory = new ConnectionFactory
-			{
-				UserName = options.Username,
-				Password = options.Password,
-				VirtualHost = options.VirtualHost,
-				HostName = options.HostName,
-				NetworkRecoveryInterval = options.NetworkRecoveryInterval
-			};
-			factory.Port = options.Port ?? factory.Port;
-			factory.AutomaticRecoveryEnabled = options.AutomaticRecoveryEnabled ?? factory.AutomaticRecoveryEnabled;
-
-			await CreateConnections(factory);
-		}
+		public Task ConnectAsync(ConnectionFactory factory)
+			=> CreateConnections(factory);
 
 		/// <summary>
 		///     ConnectAsync connects this Client to the Amqp Server.
