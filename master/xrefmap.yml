@@ -61,12 +61,12 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Broker.Amqp.AmqpBroker.AutoAck
   nameWithType: AmqpBroker.AutoAck
-- uid: Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(Spectacles.NET.Broker.Amqp.AmqpConnectOptions)
-  name: ConnectAsync(AmqpConnectOptions)
-  href: api/Spectacles.NET.Broker.Amqp.AmqpBroker.html#Spectacles_NET_Broker_Amqp_AmqpBroker_ConnectAsync_Spectacles_NET_Broker_Amqp_AmqpConnectOptions_
-  commentId: M:Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(Spectacles.NET.Broker.Amqp.AmqpConnectOptions)
-  fullName: Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(Spectacles.NET.Broker.Amqp.AmqpConnectOptions)
-  nameWithType: AmqpBroker.ConnectAsync(AmqpConnectOptions)
+- uid: Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(ConnectionFactory)
+  name: ConnectAsync(ConnectionFactory)
+  href: api/Spectacles.NET.Broker.Amqp.AmqpBroker.html#Spectacles_NET_Broker_Amqp_AmqpBroker_ConnectAsync_ConnectionFactory_
+  commentId: M:Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(ConnectionFactory)
+  fullName: Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(ConnectionFactory)
+  nameWithType: AmqpBroker.ConnectAsync(ConnectionFactory)
 - uid: Spectacles.NET.Broker.Amqp.AmqpBroker.ConnectAsync(System.String)
   name: ConnectAsync(String)
   href: api/Spectacles.NET.Broker.Amqp.AmqpBroker.html#Spectacles_NET_Broker_Amqp_AmqpBroker_ConnectAsync_System_String_
@@ -272,176 +272,85 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Broker.Amqp.AmqpBroker.WriteConnection
   nameWithType: AmqpBroker.WriteConnection
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions
-  name: AmqpConnectOptions
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html
-  commentId: T:Spectacles.NET.Broker.Amqp.AmqpConnectOptions
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions
-  nameWithType: AmqpConnectOptions
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.AutomaticRecoveryEnabled
-  name: AutomaticRecoveryEnabled
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_AutomaticRecoveryEnabled
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.AutomaticRecoveryEnabled
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.AutomaticRecoveryEnabled
-  nameWithType: AmqpConnectOptions.AutomaticRecoveryEnabled
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.AutomaticRecoveryEnabled*
-  name: AutomaticRecoveryEnabled
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_AutomaticRecoveryEnabled_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.AutomaticRecoveryEnabled
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.AutomaticRecoveryEnabled
-  nameWithType: AmqpConnectOptions.AutomaticRecoveryEnabled
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.HostName
-  name: HostName
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_HostName
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.HostName
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.HostName
-  nameWithType: AmqpConnectOptions.HostName
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.HostName*
-  name: HostName
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_HostName_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.HostName
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.HostName
-  nameWithType: AmqpConnectOptions.HostName
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.NetworkRecoveryInterval
-  name: NetworkRecoveryInterval
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_NetworkRecoveryInterval
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.NetworkRecoveryInterval
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.NetworkRecoveryInterval
-  nameWithType: AmqpConnectOptions.NetworkRecoveryInterval
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.NetworkRecoveryInterval*
-  name: NetworkRecoveryInterval
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_NetworkRecoveryInterval_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.NetworkRecoveryInterval
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.NetworkRecoveryInterval
-  nameWithType: AmqpConnectOptions.NetworkRecoveryInterval
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Password
-  name: Password
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_Password
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Password
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Password
-  nameWithType: AmqpConnectOptions.Password
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Password*
-  name: Password
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_Password_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Password
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Password
-  nameWithType: AmqpConnectOptions.Password
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Port
-  name: Port
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_Port
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Port
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Port
-  nameWithType: AmqpConnectOptions.Port
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Port*
-  name: Port
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_Port_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Port
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Port
-  nameWithType: AmqpConnectOptions.Port
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Username
-  name: Username
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_Username
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Username
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Username
-  nameWithType: AmqpConnectOptions.Username
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Username*
-  name: Username
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_Username_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Username
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.Username
-  nameWithType: AmqpConnectOptions.Username
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.VirtualHost
-  name: VirtualHost
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_VirtualHost
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.VirtualHost
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.VirtualHost
-  nameWithType: AmqpConnectOptions.VirtualHost
-- uid: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.VirtualHost*
-  name: VirtualHost
-  href: api/Spectacles.NET.Broker.Amqp.AmqpConnectOptions.html#Spectacles_NET_Broker_Amqp_AmqpConnectOptions_VirtualHost_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpConnectOptions.VirtualHost
-  isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpConnectOptions.VirtualHost
-  nameWithType: AmqpConnectOptions.VirtualHost
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs
+- uid: Spectacles.NET.Broker.Amqp.EventArgs
+  name: Spectacles.NET.Broker.Amqp.EventArgs
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.html
+  commentId: N:Spectacles.NET.Broker.Amqp.EventArgs
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs
+  nameWithType: Spectacles.NET.Broker.Amqp.EventArgs
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs
   name: AmqpReceiveEventArgs
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html
-  commentId: T:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html
+  commentId: T:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs
   nameWithType: AmqpReceiveEventArgs
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.#ctor(System.String,System.Byte[],IBasicProperties,System.UInt64)
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.#ctor(System.String,System.Byte[],IBasicProperties,System.UInt64)
   name: AmqpReceiveEventArgs(String, Byte[], IBasicProperties, UInt64)
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs__ctor_System_String_System_Byte___IBasicProperties_System_UInt64_
-  commentId: M:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.#ctor(System.String,System.Byte[],IBasicProperties,System.UInt64)
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs__ctor_System_String_System_Byte___IBasicProperties_System_UInt64_
+  commentId: M:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.#ctor(System.String,System.Byte[],IBasicProperties,System.UInt64)
   name.vb: AmqpReceiveEventArgs(String, Byte(), IBasicProperties, UInt64)
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.AmqpReceiveEventArgs(System.String, System.Byte[], IBasicProperties, System.UInt64)
-  fullName.vb: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.AmqpReceiveEventArgs(System.String, System.Byte(), IBasicProperties, System.UInt64)
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.AmqpReceiveEventArgs(System.String, System.Byte[], IBasicProperties, System.UInt64)
+  fullName.vb: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.AmqpReceiveEventArgs(System.String, System.Byte(), IBasicProperties, System.UInt64)
   nameWithType: AmqpReceiveEventArgs.AmqpReceiveEventArgs(String, Byte[], IBasicProperties, UInt64)
   nameWithType.vb: AmqpReceiveEventArgs.AmqpReceiveEventArgs(String, Byte(), IBasicProperties, UInt64)
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.#ctor*
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.#ctor*
   name: AmqpReceiveEventArgs
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs__ctor_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.#ctor
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs__ctor_
+  commentId: Overload:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.#ctor
   isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.AmqpReceiveEventArgs
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.AmqpReceiveEventArgs
   nameWithType: AmqpReceiveEventArgs.AmqpReceiveEventArgs
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Data
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Data
   name: Data
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_Data
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Data
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Data
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_Data
+  commentId: P:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Data
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Data
   nameWithType: AmqpReceiveEventArgs.Data
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Data*
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Data*
   name: Data
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_Data_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Data
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_Data_
+  commentId: Overload:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Data
   isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Data
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Data
   nameWithType: AmqpReceiveEventArgs.Data
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.DeliveryTag
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.DeliveryTag
   name: DeliveryTag
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_DeliveryTag
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.DeliveryTag
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.DeliveryTag
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_DeliveryTag
+  commentId: P:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.DeliveryTag
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.DeliveryTag
   nameWithType: AmqpReceiveEventArgs.DeliveryTag
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.DeliveryTag*
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.DeliveryTag*
   name: DeliveryTag
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_DeliveryTag_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.DeliveryTag
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_DeliveryTag_
+  commentId: Overload:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.DeliveryTag
   isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.DeliveryTag
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.DeliveryTag
   nameWithType: AmqpReceiveEventArgs.DeliveryTag
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Event
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Event
   name: Event
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_Event
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Event
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Event
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_Event
+  commentId: P:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Event
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Event
   nameWithType: AmqpReceiveEventArgs.Event
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Event*
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Event*
   name: Event
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_Event_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Event
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_Event_
+  commentId: Overload:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Event
   isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Event
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Event
   nameWithType: AmqpReceiveEventArgs.Event
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Properties
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Properties
   name: Properties
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_Properties
-  commentId: P:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Properties
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Properties
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_Properties
+  commentId: P:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Properties
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Properties
   nameWithType: AmqpReceiveEventArgs.Properties
-- uid: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Properties*
+- uid: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Properties*
   name: Properties
-  href: api/Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_AmqpReceiveEventArgs_Properties_
-  commentId: Overload:Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Properties
+  href: api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html#Spectacles_NET_Broker_Amqp_EventArgs_AmqpReceiveEventArgs_Properties_
+  commentId: Overload:Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Properties
   isSpec: "True"
-  fullName: Spectacles.NET.Broker.Amqp.AmqpReceiveEventArgs.Properties
+  fullName: Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.Properties
   nameWithType: AmqpReceiveEventArgs.Properties
 - uid: Spectacles.NET.Broker.IBroker
   name: IBroker
