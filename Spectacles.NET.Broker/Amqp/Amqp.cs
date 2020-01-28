@@ -109,15 +109,8 @@ namespace Spectacles.NET.Broker.Amqp
 		/// </summary>
 		/// <param name="url">The Connection uri as string.</param>
 		/// <returns>Task</returns>
-		public async Task ConnectAsync(string url)
-		{
-			var factory = new ConnectionFactory
-			{
-				Uri = new Uri(url)
-			};
-
-			await CreateConnections(factory);
-		}
+		public Task ConnectAsync(string url)
+			=> ConnectAsync(new Uri(url));
 
 		/// <summary>
 		///     ConnectAsync connects this Client to the Amqp Server.
