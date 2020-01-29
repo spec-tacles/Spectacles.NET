@@ -344,9 +344,10 @@ namespace Spectacles.NET.Gateway
 						break;
 					case OpCode.HEARTBEAT_ACK:
 						var latency = DateTime.Now - HeartbeatSentAt;
-						_log(LogLevel.DEBUG, $"Received Heartbeat Ack (OP {packet.OpCode}), Latency of {latency.TotalMilliseconds}ms");
+						var pingMs = (int) latency.TotalMilliseconds;
+						_log(LogLevel.DEBUG, $"Received Heartbeat Ack (OP {packet.OpCode}), Latency of {pingMs}ms");
 						LastHeartbeatAcked = true;
-						LatencyUpdate?.Invoke(this, new LatencyUpdateArgs(Id, (int) latency.TotalMilliseconds));
+						LatencyUpdate?.Invoke(this, new LatencyUpdateArgs(Id, pingMs));
 						break;
 					default:
 						_log(LogLevel.WARN, $"Received unknown op-code: {packet.OpCode}");
