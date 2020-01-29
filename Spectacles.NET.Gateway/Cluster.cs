@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Spectacles.NET.Gateway.Event;
+using Spectacles.NET.Gateway.EventArgs;
 using Spectacles.NET.Util.Logging;
 
 namespace Spectacles.NET.Gateway
