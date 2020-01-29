@@ -1,13 +1,12 @@
-using System;
 using Spectacles.NET.Types;
 
-namespace Spectacles.NET.Gateway.Event
+namespace Spectacles.NET.Gateway.EventArgs
 {
 	/// <inheritdoc />
 	/// <summary>
 	///     EventArgs for the DispatchEvent
 	/// </summary>
-	public class DispatchEventArgs : EventArgs
+	public class DispatchEventArgs : System.EventArgs
 	{
 		/// <inheritdoc />
 		/// <summary>

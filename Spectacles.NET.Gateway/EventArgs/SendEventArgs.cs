@@ -1,12 +1,12 @@
 using System;
 using Spectacles.NET.Types;
 
-namespace Spectacles.NET.Gateway.Event
+namespace Spectacles.NET.Gateway.EventArgs
 {
 	/// <summary>
 	///     EventArgs for the SendEvent
 	/// </summary>
-	public class SendEventArgs : EventArgs
+	public class SendEventArgs : System.EventArgs
 	{
 		/// <summary>
 		/// </summary>

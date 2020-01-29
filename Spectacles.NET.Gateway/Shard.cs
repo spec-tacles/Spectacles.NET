@@ -7,7 +7,7 @@ using System.Timers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RateLimiter;
-using Spectacles.NET.Gateway.Event;
+using Spectacles.NET.Gateway.EventArgs;
 using Spectacles.NET.Types;
 using Spectacles.NET.Util.Logging;
 using WS.NET;

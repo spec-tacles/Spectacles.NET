@@ -1,6 +1,6 @@
 using System;
 
-namespace Spectacles.NET.Gateway.Event
+namespace Spectacles.NET.Gateway.EventArgs
 {
 	/// <summary>
 	///     EventArgs for the ExceptionEvent

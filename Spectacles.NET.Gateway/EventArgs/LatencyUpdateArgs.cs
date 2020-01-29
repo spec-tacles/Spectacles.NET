@@ -1,11 +1,9 @@
-using System;
-
-namespace Spectacles.NET.Gateway.Event
+namespace Spectacles.NET.Gateway.EventArgs
 {
 	/// <summary>
 	/// EventArgs for the LatencyUpdateEvent
 	/// </summary>
-	public class LatencyUpdateArgs : EventArgs
+	public class LatencyUpdateArgs : System.EventArgs
 	{
 		/// <summary>
 		///     Creates a new LatencyUpdateArgs instance
