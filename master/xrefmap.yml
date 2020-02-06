@@ -547,217 +547,217 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Cluster.Shards
   nameWithType: Cluster.Shards
-- uid: Spectacles.NET.Gateway.Event
-  name: Spectacles.NET.Gateway.Event
-  href: api/Spectacles.NET.Gateway.Event.html
-  commentId: N:Spectacles.NET.Gateway.Event
-  fullName: Spectacles.NET.Gateway.Event
-  nameWithType: Spectacles.NET.Gateway.Event
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs
+- uid: Spectacles.NET.Gateway.EventArgs
+  name: Spectacles.NET.Gateway.EventArgs
+  href: api/Spectacles.NET.Gateway.EventArgs.html
+  commentId: N:Spectacles.NET.Gateway.EventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs
+  nameWithType: Spectacles.NET.Gateway.EventArgs
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs
   name: DispatchEventArgs
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html
-  commentId: T:Spectacles.NET.Gateway.Event.DispatchEventArgs
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html
+  commentId: T:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs
   nameWithType: DispatchEventArgs
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.#ctor(System.Int32,System.Object,Spectacles.NET.Types.GatewayEvent)
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.#ctor(System.Int32,System.Object,Spectacles.NET.Types.GatewayEvent)
   name: DispatchEventArgs(Int32, Object, GatewayEvent)
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs__ctor_System_Int32_System_Object_Spectacles_NET_Types_GatewayEvent_
-  commentId: M:Spectacles.NET.Gateway.Event.DispatchEventArgs.#ctor(System.Int32,System.Object,Spectacles.NET.Types.GatewayEvent)
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.DispatchEventArgs(System.Int32, System.Object, Spectacles.NET.Types.GatewayEvent)
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs__ctor_System_Int32_System_Object_Spectacles_NET_Types_GatewayEvent_
+  commentId: M:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.#ctor(System.Int32,System.Object,Spectacles.NET.Types.GatewayEvent)
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.DispatchEventArgs(System.Int32, System.Object, Spectacles.NET.Types.GatewayEvent)
   nameWithType: DispatchEventArgs.DispatchEventArgs(Int32, Object, GatewayEvent)
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.#ctor*
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.#ctor*
   name: DispatchEventArgs
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs__ctor_
-  commentId: Overload:Spectacles.NET.Gateway.Event.DispatchEventArgs.#ctor
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs__ctor_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.#ctor
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.DispatchEventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.DispatchEventArgs
   nameWithType: DispatchEventArgs.DispatchEventArgs
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.Data
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Data
   name: Data
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs_Data
-  commentId: P:Spectacles.NET.Gateway.Event.DispatchEventArgs.Data
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.Data
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs_Data
+  commentId: P:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Data
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Data
   nameWithType: DispatchEventArgs.Data
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.Data*
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Data*
   name: Data
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs_Data_
-  commentId: Overload:Spectacles.NET.Gateway.Event.DispatchEventArgs.Data
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs_Data_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Data
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.Data
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Data
   nameWithType: DispatchEventArgs.Data
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.Event
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Event
   name: Event
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs_Event
-  commentId: P:Spectacles.NET.Gateway.Event.DispatchEventArgs.Event
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.Event
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs_Event
+  commentId: P:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Event
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Event
   nameWithType: DispatchEventArgs.Event
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.Event*
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Event*
   name: Event
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs_Event_
-  commentId: Overload:Spectacles.NET.Gateway.Event.DispatchEventArgs.Event
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs_Event_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Event
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.Event
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.Event
   nameWithType: DispatchEventArgs.Event
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.ShardId
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.ShardId
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs_ShardId
-  commentId: P:Spectacles.NET.Gateway.Event.DispatchEventArgs.ShardId
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs_ShardId
+  commentId: P:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.ShardId
   nameWithType: DispatchEventArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.DispatchEventArgs.ShardId*
+- uid: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.ShardId*
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.DispatchEventArgs.html#Spectacles_NET_Gateway_Event_DispatchEventArgs_ShardId_
-  commentId: Overload:Spectacles.NET.Gateway.Event.DispatchEventArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html#Spectacles_NET_Gateway_EventArgs_DispatchEventArgs_ShardId_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.ShardId
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.DispatchEventArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.ShardId
   nameWithType: DispatchEventArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs
   name: ExceptionEventArgs
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html
-  commentId: T:Spectacles.NET.Gateway.Event.ExceptionEventArgs
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html
+  commentId: T:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs
   nameWithType: ExceptionEventArgs
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs.#ctor(System.Int32,Exception)
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.#ctor(System.Int32,Exception)
   name: ExceptionEventArgs(Int32, Exception)
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html#Spectacles_NET_Gateway_Event_ExceptionEventArgs__ctor_System_Int32_Exception_
-  commentId: M:Spectacles.NET.Gateway.Event.ExceptionEventArgs.#ctor(System.Int32,Exception)
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ExceptionEventArgs(System.Int32, Exception)
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html#Spectacles_NET_Gateway_EventArgs_ExceptionEventArgs__ctor_System_Int32_Exception_
+  commentId: M:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.#ctor(System.Int32,Exception)
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ExceptionEventArgs(System.Int32, Exception)
   nameWithType: ExceptionEventArgs.ExceptionEventArgs(Int32, Exception)
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs.#ctor*
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.#ctor*
   name: ExceptionEventArgs
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html#Spectacles_NET_Gateway_Event_ExceptionEventArgs__ctor_
-  commentId: Overload:Spectacles.NET.Gateway.Event.ExceptionEventArgs.#ctor
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html#Spectacles_NET_Gateway_EventArgs_ExceptionEventArgs__ctor_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.#ctor
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ExceptionEventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ExceptionEventArgs
   nameWithType: ExceptionEventArgs.ExceptionEventArgs
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs.Exception
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.Exception
   name: Exception
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html#Spectacles_NET_Gateway_Event_ExceptionEventArgs_Exception
-  commentId: P:Spectacles.NET.Gateway.Event.ExceptionEventArgs.Exception
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.Exception
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html#Spectacles_NET_Gateway_EventArgs_ExceptionEventArgs_Exception
+  commentId: P:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.Exception
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.Exception
   nameWithType: ExceptionEventArgs.Exception
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs.Exception*
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.Exception*
   name: Exception
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html#Spectacles_NET_Gateway_Event_ExceptionEventArgs_Exception_
-  commentId: Overload:Spectacles.NET.Gateway.Event.ExceptionEventArgs.Exception
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html#Spectacles_NET_Gateway_EventArgs_ExceptionEventArgs_Exception_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.Exception
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.Exception
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.Exception
   nameWithType: ExceptionEventArgs.Exception
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ShardId
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html#Spectacles_NET_Gateway_Event_ExceptionEventArgs_ShardId
-  commentId: P:Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html#Spectacles_NET_Gateway_EventArgs_ExceptionEventArgs_ShardId
+  commentId: P:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ShardId
   nameWithType: ExceptionEventArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId*
+- uid: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ShardId*
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.ExceptionEventArgs.html#Spectacles_NET_Gateway_Event_ExceptionEventArgs_ShardId_
-  commentId: Overload:Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html#Spectacles_NET_Gateway_EventArgs_ExceptionEventArgs_ShardId_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ShardId
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.ExceptionEventArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.ShardId
   nameWithType: ExceptionEventArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs
   name: LatencyUpdateArgs
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html
-  commentId: T:Spectacles.NET.Gateway.Event.LatencyUpdateArgs
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html
+  commentId: T:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs
   nameWithType: LatencyUpdateArgs
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor(System.Int32,System.Int32)
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.#ctor(System.Int32,System.Int32)
   name: LatencyUpdateArgs(Int32, Int32)
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs__ctor_System_Int32_System_Int32_
-  commentId: M:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor(System.Int32,System.Int32)
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.LatencyUpdateArgs(System.Int32, System.Int32)
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html#Spectacles_NET_Gateway_EventArgs_LatencyUpdateArgs__ctor_System_Int32_System_Int32_
+  commentId: M:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.#ctor(System.Int32,System.Int32)
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.LatencyUpdateArgs(System.Int32, System.Int32)
   nameWithType: LatencyUpdateArgs.LatencyUpdateArgs(Int32, Int32)
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor*
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.#ctor*
   name: LatencyUpdateArgs
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs__ctor_
-  commentId: Overload:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.#ctor
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html#Spectacles_NET_Gateway_EventArgs_LatencyUpdateArgs__ctor_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.#ctor
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.LatencyUpdateArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.LatencyUpdateArgs
   nameWithType: LatencyUpdateArgs.LatencyUpdateArgs
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.Latency
   name: Latency
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_Latency
-  commentId: P:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html#Spectacles_NET_Gateway_EventArgs_LatencyUpdateArgs_Latency
+  commentId: P:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.Latency
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.Latency
   nameWithType: LatencyUpdateArgs.Latency
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency*
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.Latency*
   name: Latency
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_Latency_
-  commentId: Overload:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html#Spectacles_NET_Gateway_EventArgs_LatencyUpdateArgs_Latency_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.Latency
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.Latency
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.Latency
   nameWithType: LatencyUpdateArgs.Latency
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.ShardId
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_ShardId
-  commentId: P:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html#Spectacles_NET_Gateway_EventArgs_LatencyUpdateArgs_ShardId
+  commentId: P:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.ShardId
   nameWithType: LatencyUpdateArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId*
+- uid: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.ShardId*
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.LatencyUpdateArgs.html#Spectacles_NET_Gateway_Event_LatencyUpdateArgs_ShardId_
-  commentId: Overload:Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html#Spectacles_NET_Gateway_EventArgs_LatencyUpdateArgs_ShardId_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.ShardId
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.LatencyUpdateArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.ShardId
   nameWithType: LatencyUpdateArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs
   name: SendEventArgs
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html
-  commentId: T:Spectacles.NET.Gateway.Event.SendEventArgs
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html
+  commentId: T:Spectacles.NET.Gateway.EventArgs.SendEventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs
   nameWithType: SendEventArgs
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.#ctor(System.Int32,Spectacles.NET.Types.OpCode,System.Object)
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.#ctor(System.Int32,Spectacles.NET.Types.OpCode,System.Object)
   name: SendEventArgs(Int32, OpCode, Object)
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs__ctor_System_Int32_Spectacles_NET_Types_OpCode_System_Object_
-  commentId: M:Spectacles.NET.Gateway.Event.SendEventArgs.#ctor(System.Int32,Spectacles.NET.Types.OpCode,System.Object)
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.SendEventArgs(System.Int32, Spectacles.NET.Types.OpCode, System.Object)
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs__ctor_System_Int32_Spectacles_NET_Types_OpCode_System_Object_
+  commentId: M:Spectacles.NET.Gateway.EventArgs.SendEventArgs.#ctor(System.Int32,Spectacles.NET.Types.OpCode,System.Object)
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.SendEventArgs(System.Int32, Spectacles.NET.Types.OpCode, System.Object)
   nameWithType: SendEventArgs.SendEventArgs(Int32, OpCode, Object)
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.#ctor*
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.#ctor*
   name: SendEventArgs
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs__ctor_
-  commentId: Overload:Spectacles.NET.Gateway.Event.SendEventArgs.#ctor
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs__ctor_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.SendEventArgs.#ctor
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.SendEventArgs
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.SendEventArgs
   nameWithType: SendEventArgs.SendEventArgs
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.Data
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.Data
   name: Data
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs_Data
-  commentId: P:Spectacles.NET.Gateway.Event.SendEventArgs.Data
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.Data
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs_Data
+  commentId: P:Spectacles.NET.Gateway.EventArgs.SendEventArgs.Data
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.Data
   nameWithType: SendEventArgs.Data
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.Data*
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.Data*
   name: Data
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs_Data_
-  commentId: Overload:Spectacles.NET.Gateway.Event.SendEventArgs.Data
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs_Data_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.SendEventArgs.Data
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.Data
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.Data
   nameWithType: SendEventArgs.Data
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.OpCode
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.OpCode
   name: OpCode
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs_OpCode
-  commentId: P:Spectacles.NET.Gateway.Event.SendEventArgs.OpCode
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.OpCode
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs_OpCode
+  commentId: P:Spectacles.NET.Gateway.EventArgs.SendEventArgs.OpCode
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.OpCode
   nameWithType: SendEventArgs.OpCode
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.OpCode*
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.OpCode*
   name: OpCode
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs_OpCode_
-  commentId: Overload:Spectacles.NET.Gateway.Event.SendEventArgs.OpCode
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs_OpCode_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.SendEventArgs.OpCode
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.OpCode
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.OpCode
   nameWithType: SendEventArgs.OpCode
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.ShardId
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.ShardId
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs_ShardId
-  commentId: P:Spectacles.NET.Gateway.Event.SendEventArgs.ShardId
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs_ShardId
+  commentId: P:Spectacles.NET.Gateway.EventArgs.SendEventArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.ShardId
   nameWithType: SendEventArgs.ShardId
-- uid: Spectacles.NET.Gateway.Event.SendEventArgs.ShardId*
+- uid: Spectacles.NET.Gateway.EventArgs.SendEventArgs.ShardId*
   name: ShardId
-  href: api/Spectacles.NET.Gateway.Event.SendEventArgs.html#Spectacles_NET_Gateway_Event_SendEventArgs_ShardId_
-  commentId: Overload:Spectacles.NET.Gateway.Event.SendEventArgs.ShardId
+  href: api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html#Spectacles_NET_Gateway_EventArgs_SendEventArgs_ShardId_
+  commentId: Overload:Spectacles.NET.Gateway.EventArgs.SendEventArgs.ShardId
   isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Event.SendEventArgs.ShardId
+  fullName: Spectacles.NET.Gateway.EventArgs.SendEventArgs.ShardId
   nameWithType: SendEventArgs.ShardId
 - uid: Spectacles.NET.Gateway.Gateway
   name: Gateway
