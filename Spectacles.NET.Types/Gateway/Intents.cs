@@ -25,6 +25,7 @@ namespace Spectacles.NET.Types
 		///     - GUILD_MEMBER_ADD
 		///		- GUILD_MEMBER_UPDATE
 		///		- GUILD_MEMBER_REMOVE
+		/// <remarks>You need to be whitelisted to use this, otherwise you will receive an error while connecting.</remarks>
 		/// </summary>
 		GUILD_MEMBERS = 1 << 1,
 		
@@ -62,6 +63,7 @@ namespace Spectacles.NET.Types
 		
 		/// <summary>
 		///     - PRESENCE_UPDATE
+		/// <remarks>You need to be whitelisted to use this, otherwise you will receive an error while connecting.</remarks>
 		/// </summary>
 		GUILD_PRESENCES = 1 << 8,
 		
