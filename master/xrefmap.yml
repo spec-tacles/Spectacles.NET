@@ -7982,6 +7982,18 @@ references:
   commentId: F:Spectacles.NET.Types.GatewayCloseCode.DECODE_ERROR
   fullName: Spectacles.NET.Types.GatewayCloseCode.DECODE_ERROR
   nameWithType: GatewayCloseCode.DECODE_ERROR
+- uid: Spectacles.NET.Types.GatewayCloseCode.DISALLOWED_INTENTS
+  name: DISALLOWED_INTENTS
+  href: api/Spectacles.NET.Types.GatewayCloseCode.html#Spectacles_NET_Types_GatewayCloseCode_DISALLOWED_INTENTS
+  commentId: F:Spectacles.NET.Types.GatewayCloseCode.DISALLOWED_INTENTS
+  fullName: Spectacles.NET.Types.GatewayCloseCode.DISALLOWED_INTENTS
+  nameWithType: GatewayCloseCode.DISALLOWED_INTENTS
+- uid: Spectacles.NET.Types.GatewayCloseCode.INVALID_INTENTS
+  name: INVALID_INTENTS
+  href: api/Spectacles.NET.Types.GatewayCloseCode.html#Spectacles_NET_Types_GatewayCloseCode_INVALID_INTENTS
+  commentId: F:Spectacles.NET.Types.GatewayCloseCode.INVALID_INTENTS
+  fullName: Spectacles.NET.Types.GatewayCloseCode.INVALID_INTENTS
+  nameWithType: GatewayCloseCode.INVALID_INTENTS
 - uid: Spectacles.NET.Types.GatewayCloseCode.INVALID_SEQ
   name: INVALID_SEQ
   href: api/Spectacles.NET.Types.GatewayCloseCode.html#Spectacles_NET_Types_GatewayCloseCode_INVALID_SEQ
