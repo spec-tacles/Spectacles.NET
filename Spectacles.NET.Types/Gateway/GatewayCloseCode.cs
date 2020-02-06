@@ -59,6 +59,16 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     The session would have handled too many guilds - you are required to shard your connection in order to connect.
 		/// </summary>
-		SHARDING_REQUIRED
+		SHARDING_REQUIRED,
+		
+		/// <summary>
+		/// 	You sent an invalid value for a Gateway <see cref="Intents"/>. You may have incorrectly calculated the bitwise value, or tried to specify an intent that you have not enabled or are not whitelisted for.
+		/// </summary>
+		INVALID_INTENTS,
+		
+		/// <summary>
+		/// 	Disallowed intents. Your bot might not be eligible to request a privileged intent such as GUILD_PRESENCES or GUILD_MEMBERS.
+		/// </summary>
+		DISALLOWED_INTENTS
 	}
 }
