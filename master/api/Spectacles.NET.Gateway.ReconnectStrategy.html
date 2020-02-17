@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum DefaultMessageNotificationLevel
+    <title>Enum ReconnectStrategy
    | Spectacles.Net Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum DefaultMessageNotificationLevel
+    <meta name="title" content="Enum ReconnectStrategy
    | Spectacles.Net Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -78,19 +78,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Types.DefaultMessageNotificationLevel">
+            <article class="content wrap" id="_content" data-uid="Spectacles.NET.Gateway.ReconnectStrategy">
   
   
-  <h1 id="Spectacles_NET_Types_DefaultMessageNotificationLevel" data-uid="Spectacles.NET.Types.DefaultMessageNotificationLevel" class="text-break">Enum DefaultMessageNotificationLevel
+  <h1 id="Spectacles_NET_Gateway_ReconnectStrategy" data-uid="Spectacles.NET.Gateway.ReconnectStrategy" class="text-break">Enum ReconnectStrategy
   </h1>
-  <div class="markdown level0 summary"><p>Default Message Notification Level for a Guild</p>
+  <div class="markdown level0 summary"><p>Reconnect Strategies to use when Connect</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
-  <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
-  <h5 id="Spectacles_NET_Types_DefaultMessageNotificationLevel_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Gateway.html">Spectacles.NET.Gateway</a></h6>
+  <h6><strong>Assembly</strong>: Spectacles.NET.Gateway.dll</h6>
+  <h5 id="Spectacles_NET_Gateway_ReconnectStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum DefaultMessageNotificationLevel : int</code></pre>
+    <pre><code class="lang-csharp hljs">public enum ReconnectStrategy : int</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -103,13 +103,18 @@
     <thead>
     <tbody>
       <tr>
-        <td id="Spectacles_NET_Types_DefaultMessageNotificationLevel_ALL_MESSAGES">ALL_MESSAGES</td>
-        <td><p>All Messages Notification Level</p>
+        <td id="Spectacles_NET_Gateway_ReconnectStrategy_EXPONENTIAL">EXPONENTIAL</td>
+        <td><p>Increase timeout between connection attempts exponential</p>
 </td>
       </tr>
       <tr>
-        <td id="Spectacles_NET_Types_DefaultMessageNotificationLevel_ONLY_MENTIONS">ONLY_MENTIONS</td>
-        <td><p>Only Mentions Notification Level</p>
+        <td id="Spectacles_NET_Gateway_ReconnectStrategy_FIBONACCI">FIBONACCI</td>
+        <td><p>Increase timeout between connection attempts using Fibonacci</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Spectacles_NET_Gateway_ReconnectStrategy_PERIODICALLY">PERIODICALLY</td>
+        <td><p>Uses the same timeout between connection attempts</p>
 </td>
       </tr>
     </tbody>
@@ -122,10 +127,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/60cb518560da7c38e6517d186ea47f59b13ff440/apiSpec/new?filename=Spectacles_NET_Types_DefaultMessageNotificationLevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.DefaultMessageNotificationLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/60cb518560da7c38e6517d186ea47f59b13ff440/apiSpec/new?filename=Spectacles_NET_Gateway_ReconnectStrategy.md&amp;value=---%0Auid%3A%20Spectacles.NET.Gateway.ReconnectStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/60cb518560da7c38e6517d186ea47f59b13ff440/Spectacles.NET.Types/Guild/DefaultMessageNotificationLevel.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/60cb518560da7c38e6517d186ea47f59b13ff440/Spectacles.NET.Gateway/ReconnectStrategy.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

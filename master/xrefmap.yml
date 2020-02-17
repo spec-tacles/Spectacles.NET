@@ -414,24 +414,24 @@ references:
   commentId: T:Spectacles.NET.Gateway.Cluster
   fullName: Spectacles.NET.Gateway.Cluster
   nameWithType: Cluster
-- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
-  name: Cluster(String, Int32, IEnumerable<Int32>, IdentifyOptions, ShardingSystem)
-  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Int32_IEnumerable_System_Int32__Spectacles_NET_Gateway_IdentifyOptions_Spectacles_NET_Gateway_ShardingSystem_
-  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
-  name.vb: Cluster(String, Int32, IEnumerable(Of Int32), IdentifyOptions, ShardingSystem)
-  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable<System.Int32>, Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
-  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable(Of System.Int32), Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
-  nameWithType: Cluster.Cluster(String, Int32, IEnumerable<Int32>, IdentifyOptions, ShardingSystem)
-  nameWithType.vb: Cluster.Cluster(String, Int32, IEnumerable(Of Int32), IdentifyOptions, ShardingSystem)
-- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
-  name: Cluster(String, Nullable<Int32>, IdentifyOptions, ShardingSystem)
-  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_IdentifyOptions_Spectacles_NET_Gateway_ShardingSystem_
-  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
-  name.vb: Cluster(String, Nullable(Of Int32), IdentifyOptions, ShardingSystem)
-  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable<System.Int32>, Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
-  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable(Of System.Int32), Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
-  nameWithType: Cluster.Cluster(String, Nullable<Int32>, IdentifyOptions, ShardingSystem)
-  nameWithType.vb: Cluster.Cluster(String, Nullable(Of Int32), IdentifyOptions, ShardingSystem)
+- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.ConnectionOptions)
+  name: Cluster(String, Int32, IEnumerable<Int32>, ConnectionOptions)
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Int32_IEnumerable_System_Int32__Spectacles_NET_Gateway_ConnectionOptions_
+  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Int32,IEnumerable{System.Int32},Spectacles.NET.Gateway.ConnectionOptions)
+  name.vb: Cluster(String, Int32, IEnumerable(Of Int32), ConnectionOptions)
+  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable<System.Int32>, Spectacles.NET.Gateway.ConnectionOptions)
+  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Int32, IEnumerable(Of System.Int32), Spectacles.NET.Gateway.ConnectionOptions)
+  nameWithType: Cluster.Cluster(String, Int32, IEnumerable<Int32>, ConnectionOptions)
+  nameWithType.vb: Cluster.Cluster(String, Int32, IEnumerable(Of Int32), ConnectionOptions)
+- uid: Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ConnectionOptions)
+  name: Cluster(String, Nullable<Int32>, ConnectionOptions)
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_ConnectionOptions_
+  commentId: M:Spectacles.NET.Gateway.Cluster.#ctor(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ConnectionOptions)
+  name.vb: Cluster(String, Nullable(Of Int32), ConnectionOptions)
+  fullName: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable<System.Int32>, Spectacles.NET.Gateway.ConnectionOptions)
+  fullName.vb: Spectacles.NET.Gateway.Cluster.Cluster(System.String, System.Nullable(Of System.Int32), Spectacles.NET.Gateway.ConnectionOptions)
+  nameWithType: Cluster.Cluster(String, Nullable<Int32>, ConnectionOptions)
+  nameWithType.vb: Cluster.Cluster(String, Nullable(Of Int32), ConnectionOptions)
 - uid: Spectacles.NET.Gateway.Cluster.#ctor*
   name: Cluster
   href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster__ctor_
@@ -452,6 +452,19 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Cluster.ConnectAsync
   nameWithType: Cluster.ConnectAsync
+- uid: Spectacles.NET.Gateway.Cluster.ConnectionOptions
+  name: ConnectionOptions
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_ConnectionOptions
+  commentId: P:Spectacles.NET.Gateway.Cluster.ConnectionOptions
+  fullName: Spectacles.NET.Gateway.Cluster.ConnectionOptions
+  nameWithType: Cluster.ConnectionOptions
+- uid: Spectacles.NET.Gateway.Cluster.ConnectionOptions*
+  name: ConnectionOptions
+  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_ConnectionOptions_
+  commentId: Overload:Spectacles.NET.Gateway.Cluster.ConnectionOptions
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Cluster.ConnectionOptions
+  nameWithType: Cluster.ConnectionOptions
 - uid: Spectacles.NET.Gateway.Cluster.Dispatch
   name: Dispatch
   href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_Dispatch
@@ -490,19 +503,6 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Cluster.Gateway
   nameWithType: Cluster.Gateway
-- uid: Spectacles.NET.Gateway.Cluster.IdentifyOptions
-  name: IdentifyOptions
-  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_IdentifyOptions
-  commentId: P:Spectacles.NET.Gateway.Cluster.IdentifyOptions
-  fullName: Spectacles.NET.Gateway.Cluster.IdentifyOptions
-  nameWithType: Cluster.IdentifyOptions
-- uid: Spectacles.NET.Gateway.Cluster.IdentifyOptions*
-  name: IdentifyOptions
-  href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_IdentifyOptions_
-  commentId: Overload:Spectacles.NET.Gateway.Cluster.IdentifyOptions
-  isSpec: "True"
-  fullName: Spectacles.NET.Gateway.Cluster.IdentifyOptions
-  nameWithType: Cluster.IdentifyOptions
 - uid: Spectacles.NET.Gateway.Cluster.LatencyUpdate
   name: LatencyUpdate
   href: api/Spectacles.NET.Gateway.Cluster.html#Spectacles_NET_Gateway_Cluster_LatencyUpdate
@@ -547,6 +547,64 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.Cluster.Shards
   nameWithType: Cluster.Shards
+- uid: Spectacles.NET.Gateway.ConnectionOptions
+  name: ConnectionOptions
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html
+  commentId: T:Spectacles.NET.Gateway.ConnectionOptions
+  fullName: Spectacles.NET.Gateway.ConnectionOptions
+  nameWithType: ConnectionOptions
+- uid: Spectacles.NET.Gateway.ConnectionOptions.IdentifyOptions
+  name: IdentifyOptions
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_IdentifyOptions
+  commentId: P:Spectacles.NET.Gateway.ConnectionOptions.IdentifyOptions
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.IdentifyOptions
+  nameWithType: ConnectionOptions.IdentifyOptions
+- uid: Spectacles.NET.Gateway.ConnectionOptions.IdentifyOptions*
+  name: IdentifyOptions
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_IdentifyOptions_
+  commentId: Overload:Spectacles.NET.Gateway.ConnectionOptions.IdentifyOptions
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.IdentifyOptions
+  nameWithType: ConnectionOptions.IdentifyOptions
+- uid: Spectacles.NET.Gateway.ConnectionOptions.ReconnectStrategy
+  name: ReconnectStrategy
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_ReconnectStrategy
+  commentId: P:Spectacles.NET.Gateway.ConnectionOptions.ReconnectStrategy
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.ReconnectStrategy
+  nameWithType: ConnectionOptions.ReconnectStrategy
+- uid: Spectacles.NET.Gateway.ConnectionOptions.ReconnectStrategy*
+  name: ReconnectStrategy
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_ReconnectStrategy_
+  commentId: Overload:Spectacles.NET.Gateway.ConnectionOptions.ReconnectStrategy
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.ReconnectStrategy
+  nameWithType: ConnectionOptions.ReconnectStrategy
+- uid: Spectacles.NET.Gateway.ConnectionOptions.ReconnectValue
+  name: ReconnectValue
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_ReconnectValue
+  commentId: P:Spectacles.NET.Gateway.ConnectionOptions.ReconnectValue
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.ReconnectValue
+  nameWithType: ConnectionOptions.ReconnectValue
+- uid: Spectacles.NET.Gateway.ConnectionOptions.ReconnectValue*
+  name: ReconnectValue
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_ReconnectValue_
+  commentId: Overload:Spectacles.NET.Gateway.ConnectionOptions.ReconnectValue
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.ReconnectValue
+  nameWithType: ConnectionOptions.ReconnectValue
+- uid: Spectacles.NET.Gateway.ConnectionOptions.ShardingSystem
+  name: ShardingSystem
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_ShardingSystem
+  commentId: P:Spectacles.NET.Gateway.ConnectionOptions.ShardingSystem
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.ShardingSystem
+  nameWithType: ConnectionOptions.ShardingSystem
+- uid: Spectacles.NET.Gateway.ConnectionOptions.ShardingSystem*
+  name: ShardingSystem
+  href: api/Spectacles.NET.Gateway.ConnectionOptions.html#Spectacles_NET_Gateway_ConnectionOptions_ShardingSystem_
+  commentId: Overload:Spectacles.NET.Gateway.ConnectionOptions.ShardingSystem
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.ConnectionOptions.ShardingSystem
+  nameWithType: ConnectionOptions.ShardingSystem
 - uid: Spectacles.NET.Gateway.EventArgs
   name: Spectacles.NET.Gateway.EventArgs
   href: api/Spectacles.NET.Gateway.EventArgs.html
@@ -1059,24 +1117,48 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Gateway.IGateway.Url
   nameWithType: IGateway.Url
+- uid: Spectacles.NET.Gateway.ReconnectStrategy
+  name: ReconnectStrategy
+  href: api/Spectacles.NET.Gateway.ReconnectStrategy.html
+  commentId: T:Spectacles.NET.Gateway.ReconnectStrategy
+  fullName: Spectacles.NET.Gateway.ReconnectStrategy
+  nameWithType: ReconnectStrategy
+- uid: Spectacles.NET.Gateway.ReconnectStrategy.EXPONENTIAL
+  name: EXPONENTIAL
+  href: api/Spectacles.NET.Gateway.ReconnectStrategy.html#Spectacles_NET_Gateway_ReconnectStrategy_EXPONENTIAL
+  commentId: F:Spectacles.NET.Gateway.ReconnectStrategy.EXPONENTIAL
+  fullName: Spectacles.NET.Gateway.ReconnectStrategy.EXPONENTIAL
+  nameWithType: ReconnectStrategy.EXPONENTIAL
+- uid: Spectacles.NET.Gateway.ReconnectStrategy.FIBONACCI
+  name: FIBONACCI
+  href: api/Spectacles.NET.Gateway.ReconnectStrategy.html#Spectacles_NET_Gateway_ReconnectStrategy_FIBONACCI
+  commentId: F:Spectacles.NET.Gateway.ReconnectStrategy.FIBONACCI
+  fullName: Spectacles.NET.Gateway.ReconnectStrategy.FIBONACCI
+  nameWithType: ReconnectStrategy.FIBONACCI
+- uid: Spectacles.NET.Gateway.ReconnectStrategy.PERIODICALLY
+  name: PERIODICALLY
+  href: api/Spectacles.NET.Gateway.ReconnectStrategy.html#Spectacles_NET_Gateway_ReconnectStrategy_PERIODICALLY
+  commentId: F:Spectacles.NET.Gateway.ReconnectStrategy.PERIODICALLY
+  fullName: Spectacles.NET.Gateway.ReconnectStrategy.PERIODICALLY
+  nameWithType: ReconnectStrategy.PERIODICALLY
 - uid: Spectacles.NET.Gateway.Shard
   name: Shard
   href: api/Spectacles.NET.Gateway.Shard.html
   commentId: T:Spectacles.NET.Gateway.Shard
   fullName: Spectacles.NET.Gateway.Shard
   nameWithType: Shard
-- uid: Spectacles.NET.Gateway.Shard.#ctor(Spectacles.NET.Gateway.Cluster,System.Int32,Spectacles.NET.Gateway.IdentifyOptions)
-  name: Shard(Cluster, Int32, IdentifyOptions)
-  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_Spectacles_NET_Gateway_Cluster_System_Int32_Spectacles_NET_Gateway_IdentifyOptions_
-  commentId: M:Spectacles.NET.Gateway.Shard.#ctor(Spectacles.NET.Gateway.Cluster,System.Int32,Spectacles.NET.Gateway.IdentifyOptions)
-  fullName: Spectacles.NET.Gateway.Shard.Shard(Spectacles.NET.Gateway.Cluster, System.Int32, Spectacles.NET.Gateway.IdentifyOptions)
-  nameWithType: Shard.Shard(Cluster, Int32, IdentifyOptions)
-- uid: Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
-  name: Shard(String, Int32, Int32, IdentifyOptions, ShardingSystem)
-  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_System_String_System_Int32_System_Int32_Spectacles_NET_Gateway_IdentifyOptions_Spectacles_NET_Gateway_ShardingSystem_
-  commentId: M:Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.IdentifyOptions,Spectacles.NET.Gateway.ShardingSystem)
-  fullName: Spectacles.NET.Gateway.Shard.Shard(System.String, System.Int32, System.Int32, Spectacles.NET.Gateway.IdentifyOptions, Spectacles.NET.Gateway.ShardingSystem)
-  nameWithType: Shard.Shard(String, Int32, Int32, IdentifyOptions, ShardingSystem)
+- uid: Spectacles.NET.Gateway.Shard.#ctor(Spectacles.NET.Gateway.Cluster,System.Int32,Spectacles.NET.Gateway.ConnectionOptions)
+  name: Shard(Cluster, Int32, ConnectionOptions)
+  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_Spectacles_NET_Gateway_Cluster_System_Int32_Spectacles_NET_Gateway_ConnectionOptions_
+  commentId: M:Spectacles.NET.Gateway.Shard.#ctor(Spectacles.NET.Gateway.Cluster,System.Int32,Spectacles.NET.Gateway.ConnectionOptions)
+  fullName: Spectacles.NET.Gateway.Shard.Shard(Spectacles.NET.Gateway.Cluster, System.Int32, Spectacles.NET.Gateway.ConnectionOptions)
+  nameWithType: Shard.Shard(Cluster, Int32, ConnectionOptions)
+- uid: Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.ConnectionOptions)
+  name: Shard(String, Int32, Int32, ConnectionOptions)
+  href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_System_String_System_Int32_System_Int32_Spectacles_NET_Gateway_ConnectionOptions_
+  commentId: M:Spectacles.NET.Gateway.Shard.#ctor(System.String,System.Int32,System.Int32,Spectacles.NET.Gateway.ConnectionOptions)
+  fullName: Spectacles.NET.Gateway.Shard.Shard(System.String, System.Int32, System.Int32, Spectacles.NET.Gateway.ConnectionOptions)
+  nameWithType: Shard.Shard(String, Int32, Int32, ConnectionOptions)
 - uid: Spectacles.NET.Gateway.Shard.#ctor*
   name: Shard
   href: api/Spectacles.NET.Gateway.Shard.html#Spectacles_NET_Gateway_Shard__ctor_
@@ -1267,6 +1349,19 @@ references:
   commentId: T:Spectacles.NET.Gateway.Util
   fullName: Spectacles.NET.Gateway.Util
   nameWithType: Util
+- uid: Spectacles.NET.Gateway.Util.Fibonacci(System.Int32)
+  name: Fibonacci(Int32)
+  href: api/Spectacles.NET.Gateway.Util.html#Spectacles_NET_Gateway_Util_Fibonacci_System_Int32_
+  commentId: M:Spectacles.NET.Gateway.Util.Fibonacci(System.Int32)
+  fullName: Spectacles.NET.Gateway.Util.Fibonacci(System.Int32)
+  nameWithType: Util.Fibonacci(Int32)
+- uid: Spectacles.NET.Gateway.Util.Fibonacci*
+  name: Fibonacci
+  href: api/Spectacles.NET.Gateway.Util.html#Spectacles_NET_Gateway_Util_Fibonacci_
+  commentId: Overload:Spectacles.NET.Gateway.Util.Fibonacci
+  isSpec: "True"
+  fullName: Spectacles.NET.Gateway.Util.Fibonacci
+  nameWithType: Util.Fibonacci
 - uid: Spectacles.NET.Gateway.Util.GetGateway(System.String,System.Nullable{System.Int32},Spectacles.NET.Gateway.ShardingSystem)
   name: GetGateway(String, Nullable<Int32>, ShardingSystem)
   href: api/Spectacles.NET.Gateway.Util.html#Spectacles_NET_Gateway_Util_GetGateway_System_String_System_Nullable_System_Int32__Spectacles_NET_Gateway_ShardingSystem_
