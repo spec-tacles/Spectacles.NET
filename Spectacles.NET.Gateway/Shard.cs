@@ -26,10 +26,13 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="cluster">The Cluster this Shard is part of.</param>
 		/// <param name="id">The Id of this Shard.</param>
-		/// <param name="identifyOptions">Options to send while Identifying</param>
-		public Shard(Cluster cluster, int id, IdentifyOptions identifyOptions = null)
+		/// <param name="options">Options for the Connection of this Shard</param>
+		public Shard(Cluster cluster, int id, ConnectionOptions options)
 		{
-			IdentifyOptions = identifyOptions;
+			options ??= new ConnectionOptions();
+			IdentifyOptions = options.IdentifyOptions;
+			ReconnectStrategy = options.ReconnectStrategy;
+			ReconnectValue = options.ReconnectValue == 5000 && options.ReconnectStrategy == ReconnectStrategy.FIBONACCI ? 1 : options.ReconnectValue;
 			Cluster = cluster;
 			Id = id;
 		}
@@ -40,14 +43,16 @@ namespace Spectacles.NET.Gateway
 		/// <param name="token">The Token to use.</param>
 		/// <param name="id">The Id of this Shard.</param>
 		/// <param name="shardCount">The shard count that is used.</param>
-		/// <param name="identifyOptions">Options to send while Identifying</param>
-		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
+		/// <param name="options">Options for the Connection of this Shard</param>
 		// ReSharper disable once UnusedMember.Global
-		public Shard(string token, int id, int shardCount, IdentifyOptions identifyOptions = null,
-			ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
+		public Shard(string token, int id, int shardCount, ConnectionOptions options)
 		{
-			IdentifyOptions = identifyOptions;
-			ShardGateway = Util.GetGateway(token, shardCount, shardingSystem);
+			options ??= new ConnectionOptions();
+			IdentifyOptions = options.IdentifyOptions;
+			ShardGateway = Util.GetGateway(token, shardCount, options.ShardingSystem);
+			ReconnectStrategy = options.ReconnectStrategy;
+			ReconnectValue = options.ReconnectValue == 5000 && options.ReconnectStrategy == ReconnectStrategy.FIBONACCI ? 1 : options.ReconnectValue;
+			DefaultReconnectValue = ReconnectValue;
 			Id = id;
 		}
 
@@ -67,9 +72,19 @@ namespace Spectacles.NET.Gateway
 		private Timer HeartbeatTimer { get; set; }
 
 		/// <summary>
-		///     The delay which should be used between reconnect attempts in ms.
+		///     The delay which should be used between reconnect attempts in ms or the Fibonacci number.
 		/// </summary>
-		private int ReconnectDelay { get; set; }
+		private int ReconnectValue { get; set; }
+		
+		/// <summary>
+		/// 	The default value of <see cref="ReconnectValue"/>
+		/// </summary>
+		private int DefaultReconnectValue { get; set; }
+		
+		/// <summary>
+		/// 	The Reconnect Strategy of this 
+		/// </summary>
+		private ReconnectStrategy ReconnectStrategy { get; }
 
 		/// <summary>
 		///     The Gateway of this Shard or of the Cluster this shard is part of.
@@ -82,7 +97,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		private IGateway ShardGateway { get; }
 
-		/// <summary>
+		/// <summary> 
 		///     The Cluster this Shard is part of if any.
 		/// </summary>
 		public Cluster Cluster { get; }
@@ -198,17 +213,27 @@ namespace Spectacles.NET.Gateway
 			try
 			{
 				await WebSocketClient.ConnectAsync();
-				ReconnectDelay = 0;
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
-				if (ReconnectDelay == 0)
-					ReconnectDelay = 1000;
-				else
-					ReconnectDelay *= 2;
-				_log(LogLevel.ERROR,
-					$"Websocket connection errored with {e.Message}, retrying in {TimeSpan.FromMilliseconds(ReconnectDelay).TotalSeconds} seconds...");
-				await Task.Delay(ReconnectDelay);
+				int delay;
+				switch (ReconnectStrategy)
+				{
+					case ReconnectStrategy.FIBONACCI:
+						delay = Util.Fibonacci(ReconnectValue);
+						ReconnectValue++;
+						break;
+					case ReconnectStrategy.EXPONENTIAL:
+						delay = ReconnectValue;
+						ReconnectValue *= 2;
+						break;
+					case ReconnectStrategy.PERIODICALLY:
+						delay = ReconnectValue;
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+				await Task.Delay(delay);
 				await ConnectAsync();
 				return;
 			}
@@ -510,7 +535,7 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="sender">The sender of the Event.</param>
 		/// <param name="args">The EventArgs.</param>
-		private void _onOpen(object sender, EventArgs args)
+		private void _onOpen(object sender, System.EventArgs args)
 			=> _log(LogLevel.DEBUG, "Websocket connection opened");
 
 		/// <summary>
@@ -526,17 +551,32 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="sender">The sender of the Event.</param>
 		/// <param name="args">The WebSocketCloseEventArgs.</param>
-		private void _onClose(object sender, WebSocketCloseEventArgs args)
+		private async void _onClose(object sender, WebSocketCloseEventArgs args)
 		{
 			_log(LogLevel.WARN, $"Websocket disconnected with {args.CloseCode}: {args.Reason}");
 			CloseSequence = Sequence;
-			if ((GatewayCloseCode) args.CloseCode == GatewayCloseCode.INVALID_SHARD ||
-			    (GatewayCloseCode) args.CloseCode == GatewayCloseCode.SHARDING_REQUIRED ||
-			    (GatewayCloseCode) args.CloseCode == GatewayCloseCode.AUTHENTICATION_FAILED)
-				Error?.Invoke(this,
-					new Exception($"Websocket Disconnected with unrecoverable code {args.CloseCode}: {args.Reason}"));
-			else
-				ConnectAsync().ConfigureAwait(false);
+			var closeCode = (GatewayCloseCode) args.CloseCode;
+			
+			// ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
+			switch (closeCode)
+			{
+				case GatewayCloseCode.AUTHENTICATION_FAILED:
+				case GatewayCloseCode.INVALID_SHARD:
+				case GatewayCloseCode.SHARDING_REQUIRED:
+				case GatewayCloseCode.INVALID_INTENTS:
+				case GatewayCloseCode.DISALLOWED_INTENTS:
+					Error?.Invoke(this,
+						new Exception($"Websocket Disconnected with unrecoverable code {args.CloseCode}: {args.Reason}"));
+					return;
+			}
+			try
+			{
+				await ConnectAsync().ConfigureAwait(false);
+			}
+			catch (Exception)
+			{
+				// ignored
+			}
 		}
 
 		/// <summary>
@@ -544,10 +584,10 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="sender">The sender of the Event.</param>
 		/// <param name="error">The Exception.</param>
-		private void _onError(object sender, Exception error)
+		private async void _onError(object sender, Exception error)
 		{
 			_log(LogLevel.WARN, $"Websocket encountered Exception {error.Message}, reconnecting...");
-			ConnectAsync().ConfigureAwait(false);
+			await ConnectAsync().ConfigureAwait(false);
 		}
 
 		/// <summary>

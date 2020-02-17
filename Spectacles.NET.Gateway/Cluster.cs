@@ -19,23 +19,22 @@ namespace Spectacles.NET.Gateway
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
-		/// <param name="identifyOptions">Options to send while Identifying</param>
-		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
-		public Cluster(string token, int? shardCount = null, IdentifyOptions identifyOptions = null, ShardingSystem shardingSystem = ShardingSystem.DEFAULT)
+		/// <param name="options">Connection Options this cluster should use</param>
+		public Cluster(string token, int? shardCount = null, ConnectionOptions options = null)
 		{
-			Gateway = Util.GetGateway(token, shardCount, shardingSystem);
-			IdentifyOptions = identifyOptions;
+			options ??= new ConnectionOptions();
+			Gateway = Util.GetGateway(token, shardCount, options.ShardingSystem);
+			ConnectionOptions = options;
 		}
 
 		/// <summary>
-		/// Creates a new instance which spawns a range of Shards from id.
+		/// 	Creates a new instance which spawns a range of Shards from id.
 		/// </summary>
 		/// <param name="token">The token of the bot.</param>
 		/// <param name="shardCount">The shard count to use.</param>
 		/// <param name="shardIds">The ids of shards to spawn.</param>
-		/// <param name="identifyOptions">Options to send while Identifying</param>
-		/// <param name="shardingSystem">The Sharding System to use by the Gateway</param>
-		public Cluster(string token, int shardCount, IEnumerable<int> shardIds, IdentifyOptions identifyOptions = null, ShardingSystem shardingSystem = ShardingSystem.DEFAULT) : this(token, shardCount, identifyOptions, shardingSystem)
+		/// <param name="options">Connection Options this cluster should use</param>
+		public Cluster(string token, int shardCount, IEnumerable<int> shardIds, ConnectionOptions options = null) : this(token, shardCount, options)
 			=> ShardIds = shardIds;
 
 		/// <summary>
@@ -54,9 +53,9 @@ namespace Spectacles.NET.Gateway
 		public IEnumerable<int> ShardIds { get; }
 		
 		/// <summary>
-		/// The Identify Options this Cluster should use for each shard
+		/// The Connection Options this Cluster should use for each shard
 		/// </summary>
-		public IdentifyOptions IdentifyOptions { get; }
+		public ConnectionOptions ConnectionOptions { get; }
 
 		/// <summary>
 		///     The ShardCount provided by the Constructor.
@@ -115,10 +114,10 @@ namespace Spectacles.NET.Gateway
 
 			if (ShardIds != null)
 				foreach (var shardId in ShardIds)
-					Shards.Add(shardId, new Shard(this, shardId, (IdentifyOptions) IdentifyOptions.Clone()));
+					Shards.Add(shardId, new Shard(this, shardId, ConnectionOptions));
 			else
 				for (var i = 0; i < ShardCount; i++)
-					Shards.Add(i, new Shard(this, i, (IdentifyOptions) IdentifyOptions.Clone()));
+					Shards.Add(i, new Shard(this, i, ConnectionOptions));
 
 			_log(LogLevel.INFO, $"Spawning {Shards.Count} shard(s)");
 

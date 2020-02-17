@@ -6,7 +6,7 @@ using Spectacles.NET.Types;
 namespace Spectacles.NET.Gateway
 {
 	/// <summary>
-	/// A Gateway instance holds information about a Discord Bot Application & Information needed to manages a bot's lifetime on the Discord WebSocket gateway.
+	/// A Gateway instance holds information about a Discord Bot Application and Information needed to manages a bot's lifetime on the Discord WebSocket gateway.
 	/// </summary>
 	public interface IGateway
 	{
