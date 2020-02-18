@@ -7,7 +7,7 @@ namespace Spectacles.NET.Rest.Bucket
 	public class RedisBucketFactory : IBucketFactory
 	{
 		/// <summary>
-		/// 
+		/// Creates a new instance of RedisBucketFactory
 		/// </summary>
 		/// <param name="redisPool">The ConnectionPool to use</param>
 		public RedisBucketFactory(ConnectionPool redisPool)
