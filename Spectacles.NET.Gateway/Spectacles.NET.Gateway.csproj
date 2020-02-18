@@ -15,7 +15,17 @@
         <Authors>DevYukine</Authors>
         <Copyright> </Copyright>
         <Description>Spawns shards and manages a bot's lifetime on the Discord WebSocket gateway.</Description>
-        <PackageReleaseNotes>- Add LatencyUpdate Event </PackageReleaseNotes>
+        <PackageReleaseNotes>- Move Events to EventArgs Namespace
+
+- Round Heartbeat Ack debug message
+
+- Add Reconnect Options, group ConnectionOptions
+
+- Add missing docs
+
+- Claim Request before executing
+
+- Fix RedisBucket#IsLimited</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 

@@ -14,9 +14,9 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>- Add new GatewayEvents
+        <PackageReleaseNotes>- Add comments to Intents which need whitelisting
 
-- Add new Payloads</PackageReleaseNotes>
+- Add new GatewayCloseCode</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
