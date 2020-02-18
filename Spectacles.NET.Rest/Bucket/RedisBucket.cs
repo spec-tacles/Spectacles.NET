@@ -138,7 +138,7 @@ namespace Spectacles.NET.Rest.Bucket
 
 		/// <inheritdoc />
 		public async Task<bool> IsLimited()
-			=> (await IsGloballyLimited() || await GetRemaining() < 1) && await GetTimeout() > 0;
+			=> await IsGloballyLimited() || (await GetRemaining() < 1 && await GetTimeout() > 0);
 
 		/// <inheritdoc />
 		public async Task<bool> IsGloballyLimited()
