@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <PackageVersion>0.7.4</PackageVersion>
+        <PackageVersion>0.8.0</PackageVersion>
         <Title>Spectacles.NET.Gateway</Title>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/spec-tacles/Spectacles.NET/blob/master/LICENSE</PackageLicenseUrl>
