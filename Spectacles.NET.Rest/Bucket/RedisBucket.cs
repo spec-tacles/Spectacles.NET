@@ -117,11 +117,17 @@ namespace Spectacles.NET.Rest.Bucket
 
 		/// <inheritdoc />
 		public async Task<int> GetLimit()
-			=> Convert.ToInt32((await Redis.StringGetAsync(Constants.Limit(FormattedRoute))).ToString());
+		{
+			var res = await Redis.StringGetAsync(Constants.Limit(FormattedRoute));
+			return res.IsNull ? 1 : Convert.ToInt32(res.ToString());
+		}
 
 		/// <inheritdoc />
 		public async Task<int> GetRemaining()
-			=> Convert.ToInt32((await Redis.StringGetAsync(Constants.Remaining(FormattedRoute))).ToString());
+		{
+			var res = await Redis.StringGetAsync(Constants.Remaining(FormattedRoute));
+			return res.IsNull ? 1 : Convert.ToInt32(res.ToString());
+		}
 
 		/// <inheritdoc />
 		public async Task<int> GetTimeout()
@@ -162,10 +168,17 @@ namespace Spectacles.NET.Rest.Bucket
 			while (_queue.TryDequeue(out var request))
 			{
 				await _handleTimeout();
+				await _claim();
 				await request.Execute();
 			}
 
 			_started = false;
+		}
+
+		private async Task _claim()
+		{
+			await SetRemaining(await GetRemaining() - 1);
+			await SetTimeout(TimeSpan.FromSeconds(1));
 		}
 
 		private async Task _handleTimeout()
