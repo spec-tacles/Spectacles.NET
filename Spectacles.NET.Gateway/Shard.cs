@@ -260,7 +260,7 @@ namespace Spectacles.NET.Gateway
 		/// <param name="data">The Data of this Message.</param>
 		/// <returns>Task</returns>
 		public Task SendAsync(OpCode opCode, object data)
-			=> Ratelimiter.Perform(() => _sendAsync(opCode, data));
+			=> Ratelimiter.Enqueue(() => _sendAsync(opCode, data));
 
 		/// <summary>
 		///     Sends a Message to the WebSocket Server.

@@ -39,7 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="RateLimiter" Version="1.1.1" />
+      <PackageReference Include="RateLimiter" Version="2.1.0" />
       <PackageReference Include="WS.NET" Version="1.1.1" />
     </ItemGroup>
 

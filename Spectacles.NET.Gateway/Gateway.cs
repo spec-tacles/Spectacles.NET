@@ -24,7 +24,7 @@ namespace Spectacles.NET.Gateway
 		}
 		
 		/// <inheritdoc />
-		public IRateLimiter RateLimiter { get; } = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromSeconds(5));
+		public TimeLimiter RateLimiter { get; } = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromSeconds(5));
 
 		/// <inheritdoc />
 		public GatewayBot Data { get; private set; }
@@ -77,11 +77,11 @@ namespace Spectacles.NET.Gateway
 		public async Task PerformIdentifyAsync(Func<Task> lambda, int shardId)
 		{
 			if (ShardingSystem == ShardingSystem.DEFAULT)
-				await RateLimiter.Perform(lambda);
+				await RateLimiter.Enqueue(lambda);
 			else if (shardId > ShardStartRange && shardId <= ShardEndRange) await lambda();
 			else
 			{
-				await RateLimiter.Perform(lambda);
+				await RateLimiter.Enqueue(lambda);
 				ShardStartRange = shardId;
 				ShardEndRange = shardId + (int) ShardingSystem;
 			}

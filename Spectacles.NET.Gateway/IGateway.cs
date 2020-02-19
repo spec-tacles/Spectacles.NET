@@ -13,7 +13,7 @@ namespace Spectacles.NET.Gateway
 		/// <summary>
 		/// Ratelimiter for this Gateway.
 		/// </summary>
-		public IRateLimiter RateLimiter { get; }
+		public TimeLimiter RateLimiter { get; }
 		
 		/// <summary>
 		/// The Discord Gateway Bot Data of this Gateway, fetched from the Gateway/Bot endpoint.
