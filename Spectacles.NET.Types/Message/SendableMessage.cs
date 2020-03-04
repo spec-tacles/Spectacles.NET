@@ -19,5 +19,11 @@ namespace Spectacles.NET.Types
 		/// </summary>
 		[JsonProperty("embed")]
 		public Embed Embed { get; set; }
+		
+		/// <summary>
+		/// allowed mentions for a message
+		/// </summary>
+		[JsonProperty("allowed_mentions")]
+		public AllowedMentions AllowedMentions { get; set; }
 	}
 }
