@@ -5376,6 +5376,75 @@ references:
   commentId: F:Spectacles.NET.Types.ActivityType.WATCHING
   fullName: Spectacles.NET.Types.ActivityType.WATCHING
   nameWithType: ActivityType.WATCHING
+- uid: Spectacles.NET.Types.AllowedMentions
+  name: AllowedMentions
+  href: api/Spectacles.NET.Types.AllowedMentions.html
+  commentId: T:Spectacles.NET.Types.AllowedMentions
+  fullName: Spectacles.NET.Types.AllowedMentions
+  nameWithType: AllowedMentions
+- uid: Spectacles.NET.Types.AllowedMentions.Parse
+  name: Parse
+  href: api/Spectacles.NET.Types.AllowedMentions.html#Spectacles_NET_Types_AllowedMentions_Parse
+  commentId: P:Spectacles.NET.Types.AllowedMentions.Parse
+  fullName: Spectacles.NET.Types.AllowedMentions.Parse
+  nameWithType: AllowedMentions.Parse
+- uid: Spectacles.NET.Types.AllowedMentions.Parse*
+  name: Parse
+  href: api/Spectacles.NET.Types.AllowedMentions.html#Spectacles_NET_Types_AllowedMentions_Parse_
+  commentId: Overload:Spectacles.NET.Types.AllowedMentions.Parse
+  isSpec: "True"
+  fullName: Spectacles.NET.Types.AllowedMentions.Parse
+  nameWithType: AllowedMentions.Parse
+- uid: Spectacles.NET.Types.AllowedMentions.Roles
+  name: Roles
+  href: api/Spectacles.NET.Types.AllowedMentions.html#Spectacles_NET_Types_AllowedMentions_Roles
+  commentId: P:Spectacles.NET.Types.AllowedMentions.Roles
+  fullName: Spectacles.NET.Types.AllowedMentions.Roles
+  nameWithType: AllowedMentions.Roles
+- uid: Spectacles.NET.Types.AllowedMentions.Roles*
+  name: Roles
+  href: api/Spectacles.NET.Types.AllowedMentions.html#Spectacles_NET_Types_AllowedMentions_Roles_
+  commentId: Overload:Spectacles.NET.Types.AllowedMentions.Roles
+  isSpec: "True"
+  fullName: Spectacles.NET.Types.AllowedMentions.Roles
+  nameWithType: AllowedMentions.Roles
+- uid: Spectacles.NET.Types.AllowedMentions.Users
+  name: Users
+  href: api/Spectacles.NET.Types.AllowedMentions.html#Spectacles_NET_Types_AllowedMentions_Users
+  commentId: P:Spectacles.NET.Types.AllowedMentions.Users
+  fullName: Spectacles.NET.Types.AllowedMentions.Users
+  nameWithType: AllowedMentions.Users
+- uid: Spectacles.NET.Types.AllowedMentions.Users*
+  name: Users
+  href: api/Spectacles.NET.Types.AllowedMentions.html#Spectacles_NET_Types_AllowedMentions_Users_
+  commentId: Overload:Spectacles.NET.Types.AllowedMentions.Users
+  isSpec: "True"
+  fullName: Spectacles.NET.Types.AllowedMentions.Users
+  nameWithType: AllowedMentions.Users
+- uid: Spectacles.NET.Types.AllowedMentionsType
+  name: AllowedMentionsType
+  href: api/Spectacles.NET.Types.AllowedMentionsType.html
+  commentId: T:Spectacles.NET.Types.AllowedMentionsType
+  fullName: Spectacles.NET.Types.AllowedMentionsType
+  nameWithType: AllowedMentionsType
+- uid: Spectacles.NET.Types.AllowedMentionsType.EVERYONE
+  name: EVERYONE
+  href: api/Spectacles.NET.Types.AllowedMentionsType.html#Spectacles_NET_Types_AllowedMentionsType_EVERYONE
+  commentId: F:Spectacles.NET.Types.AllowedMentionsType.EVERYONE
+  fullName: Spectacles.NET.Types.AllowedMentionsType.EVERYONE
+  nameWithType: AllowedMentionsType.EVERYONE
+- uid: Spectacles.NET.Types.AllowedMentionsType.ROLES
+  name: ROLES
+  href: api/Spectacles.NET.Types.AllowedMentionsType.html#Spectacles_NET_Types_AllowedMentionsType_ROLES
+  commentId: F:Spectacles.NET.Types.AllowedMentionsType.ROLES
+  fullName: Spectacles.NET.Types.AllowedMentionsType.ROLES
+  nameWithType: AllowedMentionsType.ROLES
+- uid: Spectacles.NET.Types.AllowedMentionsType.USERS
+  name: USERS
+  href: api/Spectacles.NET.Types.AllowedMentionsType.html#Spectacles_NET_Types_AllowedMentionsType_USERS
+  commentId: F:Spectacles.NET.Types.AllowedMentionsType.USERS
+  fullName: Spectacles.NET.Types.AllowedMentionsType.USERS
+  nameWithType: AllowedMentionsType.USERS
 - uid: Spectacles.NET.Types.APIEndpoints
   name: APIEndpoints
   href: api/Spectacles.NET.Types.APIEndpoints.html
@@ -12487,6 +12556,19 @@ references:
   commentId: T:Spectacles.NET.Types.SendableMessage
   fullName: Spectacles.NET.Types.SendableMessage
   nameWithType: SendableMessage
+- uid: Spectacles.NET.Types.SendableMessage.AllowedMentions
+  name: AllowedMentions
+  href: api/Spectacles.NET.Types.SendableMessage.html#Spectacles_NET_Types_SendableMessage_AllowedMentions
+  commentId: P:Spectacles.NET.Types.SendableMessage.AllowedMentions
+  fullName: Spectacles.NET.Types.SendableMessage.AllowedMentions
+  nameWithType: SendableMessage.AllowedMentions
+- uid: Spectacles.NET.Types.SendableMessage.AllowedMentions*
+  name: AllowedMentions
+  href: api/Spectacles.NET.Types.SendableMessage.html#Spectacles_NET_Types_SendableMessage_AllowedMentions_
+  commentId: Overload:Spectacles.NET.Types.SendableMessage.AllowedMentions
+  isSpec: "True"
+  fullName: Spectacles.NET.Types.SendableMessage.AllowedMentions
+  nameWithType: SendableMessage.AllowedMentions
 - uid: Spectacles.NET.Types.SendableMessage.Embed
   name: Embed
   href: api/Spectacles.NET.Types.SendableMessage.html#Spectacles_NET_Types_SendableMessage_Embed
