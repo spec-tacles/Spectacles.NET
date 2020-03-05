@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Broker.Amqp.AmqpBroker.html",
-          "hash": "GX5T9S/Fm8U0r/y29cH8Ew=="
+          "hash": "65LuJKbcCuK2xtUqeES0Nw=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Broker.Amqp.EventArgs.AmqpReceiveEventArgs.html",
-          "hash": "65LUPdAOEE2Lv2OLM1iHfg=="
+          "hash": "NZCyJUzKkE+FbKvXynEVSQ=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Broker.IBroker.html",
-          "hash": "vCIMgUmxe2eNZ4AK8gQz2Q=="
+          "hash": "f5hymB1gW96hnsofIpIZ/w=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.Cluster.html",
-          "hash": "Lrzq59TFYGI2lVTkwNQcVQ=="
+          "hash": "aBV0Gp9670eQIcpOvIO6fw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.ConnectionOptions.html",
-          "hash": "JvzsOxEacAGWsIi6TY/xIw=="
+          "hash": "Am2es/z2piJaFQYJ4Vuf1g=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.EventArgs.DispatchEventArgs.html",
-          "hash": "LJ5cUdLN4oWsHNUES5b5dA=="
+          "hash": "U+LCFZWwF5c8dGfOpEx7GA=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.EventArgs.ExceptionEventArgs.html",
-          "hash": "Wq8SQt4dQ1oySyLbi7yGVg=="
+          "hash": "jUntFuP0ZTEQAbEiS9LrwQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.EventArgs.LatencyUpdateArgs.html",
-          "hash": "F9lwoDJ+9jrVhVE06gJ+pw=="
+          "hash": "NHSRvJstXPJicE3VfVXoxQ=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.EventArgs.SendEventArgs.html",
-          "hash": "HQrqhwAHQXJYJM55ELFZ+Q=="
+          "hash": "d/cvf4S8WfGZ7LNs8VSjjQ=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.Gateway.html",
-          "hash": "Xal8HptqH/+r9tLDkBtO8g=="
+          "hash": "/Yg7bgrY5oI4kBAZc0lnRA=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.IGateway.html",
-          "hash": "fppkPer0/qoDGqCavnD+tA=="
+          "hash": "2JZtmOkbhbzDt+bgK47wqQ=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.IdentifyOptions.html",
-          "hash": "5U8OVghbKo78IhUk4L2M4g=="
+          "hash": "QA5/+hx/qy3OFsF5F+ZSbg=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.ReconnectStrategy.html",
-          "hash": "HDBLfr4ViTo+CEB0vZYPrA=="
+          "hash": "Ub1eCjYO05BzhfPxggz4Mw=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.Shard.html",
-          "hash": "omphghdIweypmz5q65nvvQ=="
+          "hash": "WikQC0y3LMGiUj5sTvBrGg=="
         }
       },
       "is_incremental": false,
@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.ShardingSystem.html",
-          "hash": "qDfcK4D0o5SSk3VivQRgRA=="
+          "hash": "opJYM8Rn3PB6PyB66XfOWQ=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.Singletons.html",
-          "hash": "BGJ5XrW8fEX+0BqfdYTkOA=="
+          "hash": "QrDkbhPuAsNQwnEO7Mjqsg=="
         }
       },
       "is_incremental": false,
@@ -258,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Gateway.Util.html",
-          "hash": "Taq7UH/5GAr0lZFDusc2mA=="
+          "hash": "ges/yvF4J/0EvL8cRqnwGw=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.APIError.DiscordAPIErrorResponse.html",
-          "hash": "T5DYTNWLz4C+gpwxiy/ajQ=="
+          "hash": "PRuQjvTP5f6R2DOKYqefpA=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.APIError.DiscordAPIException.html",
-          "hash": "jL4XW4a+4rDKllO6NNBiMA=="
+          "hash": "tNDaYtPh1RvGfmTIzT3TmA=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.IBucket.html",
-          "hash": "8lpYBZy4JpHSRa8cTCEcOA=="
+          "hash": "ADrX5vyNkAiICoKh1TUV+A=="
         }
       },
       "is_incremental": false,
@@ -330,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.IBucketFactory.html",
-          "hash": "iLMyW4hI85qp+4oAo2yFbQ=="
+          "hash": "80qDpsOrrd2ZTd3/ZKkZ+w=="
         }
       },
       "is_incremental": false,
@@ -342,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.InMemoryBucket.html",
-          "hash": "AubFAYTnYaXB7ibEY8DUTw=="
+          "hash": "4eJWko/++cECCvFM/+Ttjw=="
         }
       },
       "is_incremental": false,
@@ -354,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.InMemoryBucketFactory.html",
-          "hash": "ByukchrA5iaB5FBiezjxGg=="
+          "hash": "6/4GNCahTBgHs8Jnd7UkQw=="
         }
       },
       "is_incremental": false,
@@ -366,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.RateLimitInfo.html",
-          "hash": "N8wN33zu5ceqvX/TzTE7ug=="
+          "hash": "JLIxr20Vd2klDqEhDEi6nw=="
         }
       },
       "is_incremental": false,
@@ -378,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.RedisBucket.html",
-          "hash": "wrDHzx51U0tRPLychMhOMA=="
+          "hash": "VNVAv2tmtltsWFFmltGqCA=="
         }
       },
       "is_incremental": false,
@@ -390,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.RedisBucketFactory.html",
-          "hash": "JvOx2zpqJhFEjKOLQn589g=="
+          "hash": "jkb7e3939Io7Vv5bjLp/Xw=="
         }
       },
       "is_incremental": false,
@@ -402,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Bucket.Request.html",
-          "hash": "eoLcm58naps/GDcqz5orzg=="
+          "hash": "kV8wti83/km3sDfVPkwevQ=="
         }
       },
       "is_incremental": false,
@@ -426,7 +426,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Redis.ConnectionPool.html",
-          "hash": "kFLkXUfPbgcCR3nZY2w9fA=="
+          "hash": "tYdRUC0yU6DY1a6q04BlUg=="
         }
       },
       "is_incremental": false,
@@ -450,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.RestClient.html",
-          "hash": "p19fsSgcSMWCc+AuNu+3zg=="
+          "hash": "LgzFNb/zEU8/QqxH7vi7kg=="
         }
       },
       "is_incremental": false,
@@ -462,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.Util.Constants.html",
-          "hash": "GHqfCYVP87gCPLbYH58qJg=="
+          "hash": "+epLCtKbUVLhUl78KxrGAA=="
         }
       },
       "is_incremental": false,
@@ -486,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ApplicationView.html",
-          "hash": "c/oy6Oq8+4GNSRZf/wp/XA=="
+          "hash": "4vmQnSXs9L99nCKgfjltjg=="
         }
       },
       "is_incremental": false,
@@ -498,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.BulkDeleteView.html",
-          "hash": "lr5PC1txgsCNUSjhy4BN+w=="
+          "hash": "KPRjeMKlLlw0S/33wPp7NQ=="
         }
       },
       "is_incremental": false,
@@ -510,7 +510,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelInvitesView.html",
-          "hash": "0mKXkv+hkEWX4Ca/Pg6Kmg=="
+          "hash": "V/VYmWLY6Yh29bD8PT+kkQ=="
         }
       },
       "is_incremental": false,
@@ -522,7 +522,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelMessagesView.html",
-          "hash": "56hpD9GUk+GFZ+MxrIZwCg=="
+          "hash": "z05ASRiv6W+KNYl31WAfFQ=="
         }
       },
       "is_incremental": false,
@@ -534,7 +534,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelPermissionsView.html",
-          "hash": "8A5qwB2fLSAbWlHQHI3BJg=="
+          "hash": "FEqR1OSnGWIb7iP2cMlSWg=="
         }
       },
       "is_incremental": false,
@@ -546,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelPinsView.html",
-          "hash": "Q4wEDHOCsD/kB8cgAz0iiw=="
+          "hash": "+CvJAy0jS1wgORwVZ/RYTg=="
         }
       },
       "is_incremental": false,
@@ -558,7 +558,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelTypingView.html",
-          "hash": "dW12UQvsILkYp30IR7LXrQ=="
+          "hash": "FaDFuKdPERmLjKXrMaBy5w=="
         }
       },
       "is_incremental": false,
@@ -570,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelWebhooksView.html",
-          "hash": "shwAOF0yhBUeKcRlRdK6Qg=="
+          "hash": "/Peo8SxJihq/g8izAvMbqw=="
         }
       },
       "is_incremental": false,
@@ -582,7 +582,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ChannelsView.html",
-          "hash": "tf1baJGCMtTYGOSgxtogWg=="
+          "hash": "5uU9p9rRK1fudJBwGj4a7Q=="
         }
       },
       "is_incremental": false,
@@ -594,7 +594,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.CurrentGuildMemberNickView.html",
-          "hash": "V/tp9GklKfRPd+DJTXzndw=="
+          "hash": "n0RXoqqWTHv1nYrXh6FPGA=="
         }
       },
       "is_incremental": false,
@@ -606,7 +606,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserChannelsView.html",
-          "hash": "HnKhYAitRV/AaOW7hihSUw=="
+          "hash": "vnsOFIB9anLwd5PJpUY+Xg=="
         }
       },
       "is_incremental": false,
@@ -618,7 +618,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserConnectionsView.html",
-          "hash": "kdqFFasEYo9tQvvLKC/L1w=="
+          "hash": "0sJ2Lk/gIxp+IsFbwI+wIw=="
         }
       },
       "is_incremental": false,
@@ -630,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserDMView.html",
-          "hash": "Ma2eVPOr4Nll4CY/xZJB2A=="
+          "hash": "MmeGEgIwQVxfSwK9CxPtNw=="
         }
       },
       "is_incremental": false,
@@ -642,7 +642,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.CurrentUserGuildsView.html",
-          "hash": "k1nmsvNQZT1ZgWji9wI1+g=="
+          "hash": "qva8qRpJRv1h8AUdWJuHuQ=="
         }
       },
       "is_incremental": false,
@@ -654,7 +654,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.DMChannelRecipientView.html",
-          "hash": "hXz8dKh6C1LrsoR4ANqkFQ=="
+          "hash": "1ABNzEQJ8lFyKxHeOSTrjg=="
         }
       },
       "is_incremental": false,
@@ -666,7 +666,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.ExecuteWebhookView.html",
-          "hash": "sPjRQUcZt4dZVS47IvC+6A=="
+          "hash": "5Ur05SGf0gHsgq2KV1gTuA=="
         }
       },
       "is_incremental": false,
@@ -678,7 +678,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildAuditLogsView.html",
-          "hash": "ac2Kh5F5vpcxDz1kQHrbGA=="
+          "hash": "tAZKx+5VlFWxymHqPXJG1w=="
         }
       },
       "is_incremental": false,
@@ -690,7 +690,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildBansView.html",
-          "hash": "DzCfkgT0QNQIb4nFWkoBsQ=="
+          "hash": "PUSWpUW79T3eHSrYwN44Qw=="
         }
       },
       "is_incremental": false,
@@ -702,7 +702,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildChannelsView.html",
-          "hash": "S6yoJRF2mYn6srv8R30/tw=="
+          "hash": "vCOtWd6Ra8hrrQ6Db5kkvg=="
         }
       },
       "is_incremental": false,
@@ -714,7 +714,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildEmbedView.html",
-          "hash": "fr2jofkqBKKj1mM2v6wRZA=="
+          "hash": "ELRn0X0H7m49YFDVQMJ5cA=="
         }
       },
       "is_incremental": false,
@@ -726,7 +726,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildEmojisView.html",
-          "hash": "mn2zlsnA8RKfeiwX8aNlXA=="
+          "hash": "eLEQCXaQXF5QS+TNeLmFLQ=="
         }
       },
       "is_incremental": false,
@@ -738,7 +738,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildIntegrationSyncView.html",
-          "hash": "xexdAtv0+4OysMmvU1QL6g=="
+          "hash": "XJazZyl8qn83HIEvRLp+RA=="
         }
       },
       "is_incremental": false,
@@ -750,7 +750,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildIntegrationsView.html",
-          "hash": "V+CaYxNtm3YEu0qqWMKl8A=="
+          "hash": "6jOgnUgvroxTWQXEN+6ppg=="
         }
       },
       "is_incremental": false,
@@ -762,7 +762,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildInvitesView.html",
-          "hash": "tDl7PPO7N3Gl4v4u7MdVJw=="
+          "hash": "sEEvNy33Rod5gHTcNHk16A=="
         }
       },
       "is_incremental": false,
@@ -774,7 +774,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildMemberRolesView.html",
-          "hash": "NV76soQyBPUp9MghcyHl6Q=="
+          "hash": "TQXnXL1CPpCvc0WksTlw5w=="
         }
       },
       "is_incremental": false,
@@ -786,7 +786,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildMembersView.html",
-          "hash": "DgRXQW1yvG/pQLlu/52OSQ=="
+          "hash": "wBpb6V3k1ihS5tQjF/9Ipg=="
         }
       },
       "is_incremental": false,
@@ -798,7 +798,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildPruneView.html",
-          "hash": "FB+CmmceDz4IMbNFqOTSIQ=="
+          "hash": "rlVD8UkyBOTULP7JOsuhcw=="
         }
       },
       "is_incremental": false,
@@ -810,7 +810,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildRegionsView.html",
-          "hash": "g0PUIHCL62wKXdxWgISX3Q=="
+          "hash": "TtH9WSMAZo8VyHEXbjb/0w=="
         }
       },
       "is_incremental": false,
@@ -822,7 +822,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildRolesView.html",
-          "hash": "qFLjTr8n3nuN+X44lamgWg=="
+          "hash": "yBWg8MgY9xzJ2dlvJqwzYg=="
         }
       },
       "is_incremental": false,
@@ -834,7 +834,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildVanityURLView.html",
-          "hash": "ooxpw5+gByMuz4Tb+a1t+Q=="
+          "hash": "9XjUV4bcFjfWozxGGNSh1A=="
         }
       },
       "is_incremental": false,
@@ -846,7 +846,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildWebhooksView.html",
-          "hash": "M176+4bEpx1VP9c5ozzDLw=="
+          "hash": "JbNBr71k5cI95fZMzyN++A=="
         }
       },
       "is_incremental": false,
@@ -858,7 +858,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildWidgetView.html",
-          "hash": "C065EwrKlSsjwwp25ZZz3w=="
+          "hash": "BnUf5GCyDxeMvgltJqs/Sg=="
         }
       },
       "is_incremental": false,
@@ -870,7 +870,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.GuildsView.html",
-          "hash": "Zo0R8dNR6DM4r69ydo9mAA=="
+          "hash": "y5dwVW8sd0CzzzmO07QUSw=="
         }
       },
       "is_incremental": false,
@@ -882,7 +882,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.InvitesView.html",
-          "hash": "F0Rox987cOgmDrkS2EpaLw=="
+          "hash": "YQHu8YP92epcQJaXpyCtKg=="
         }
       },
       "is_incremental": false,
@@ -894,7 +894,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.MessageReactionView.html",
-          "hash": "c/oiNDnkXOXIxTKxI+hAgw=="
+          "hash": "nNjFPGMYDvhNeaSA4dLKLg=="
         }
       },
       "is_incremental": false,
@@ -906,7 +906,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.UsersView.html",
-          "hash": "F3vxM+1+FJLVOayHX/AGLw=="
+          "hash": "f+KWtvKnHlPSpwSPrEZTFQ=="
         }
       },
       "is_incremental": false,
@@ -918,7 +918,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.View.html",
-          "hash": "z+UAhD54yC/IZ/tc0p1ACA=="
+          "hash": "3KXFy1mEF1HipTLeldzPPw=="
         }
       },
       "is_incremental": false,
@@ -930,7 +930,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.VoiceView.html",
-          "hash": "nXR3Uctc6BHRvX7Q/n4Tcw=="
+          "hash": "qLT4qZLuMUttWQA6/5L1+g=="
         }
       },
       "is_incremental": false,
@@ -942,7 +942,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Rest.View.WebhooksView.html",
-          "hash": "JGikW4O44wpW5l+OudcxoQ=="
+          "hash": "Of9AWV7yuybaZSHJ57qLgQ=="
         }
       },
       "is_incremental": false,
@@ -978,7 +978,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.APIEndpoints.html",
-          "hash": "vF0hQiI/bQGhhZGNoKxPhw=="
+          "hash": "4JXLTd0azEIaFd3XNWO8sg=="
         }
       },
       "is_incremental": false,
@@ -990,7 +990,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Activity.html",
-          "hash": "V4tnZQe87lc/UCx9gDx9FA=="
+          "hash": "L1ewLuhAWs2An1shwg3GQQ=="
         }
       },
       "is_incremental": false,
@@ -1002,7 +1002,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ActivityAssets.html",
-          "hash": "GVA0vF83PNLmfhPcd9AN+w=="
+          "hash": "uNCNFUeHF0/mmtEwfZhGEg=="
         }
       },
       "is_incremental": false,
@@ -1014,7 +1014,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ActivityFlags.html",
-          "hash": "xtT0AF/a5XiOTjkaJ7dAaA=="
+          "hash": "I686J/Z/TfuGVz1Ofj6fKw=="
         }
       },
       "is_incremental": false,
@@ -1026,7 +1026,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ActivityParty.html",
-          "hash": "plhOLiE2q//NKTHg+HskRg=="
+          "hash": "fRli/aWEfI6RNfYdB4mGFQ=="
         }
       },
       "is_incremental": false,
@@ -1038,7 +1038,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ActivitySecrets.html",
-          "hash": "DDRHQWCxOC1CFZgcm4j3Jw=="
+          "hash": "Bj+45BdWo+pmUa7dgDAf3Q=="
         }
       },
       "is_incremental": false,
@@ -1050,7 +1050,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ActivityTimestamps.html",
-          "hash": "kJIAa+Bt9yxaY6fNBjVSew=="
+          "hash": "AJk/MIyVKei8LnxDA0ycQw=="
         }
       },
       "is_incremental": false,
@@ -1062,7 +1062,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ActivityType.html",
-          "hash": "iKGzYzSAhmkmpf1q/cCbsw=="
+          "hash": "MvT1ewkLIoCVgJbZZZun1Q=="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1074,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AllowedMentions.html",
-          "hash": "PMHGIaWjyDNqzqiq1kPbAQ=="
+          "hash": "VbE8mh3B3F5Vq/432rvXDw=="
         }
       },
       "is_incremental": false,
@@ -1086,7 +1086,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AllowedMentionsType.html",
-          "hash": "w6mUd0QJKWmY/vF8uEyiZw=="
+          "hash": "B6ghdJMBzNJkmD8xDfd7MQ=="
         }
       },
       "is_incremental": false,
@@ -1098,7 +1098,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Attachment.html",
-          "hash": "qvW14uvYTTyp0zFfSNVp3w=="
+          "hash": "u3ZjYpoRqZBAme/AelvyBA=="
         }
       },
       "is_incremental": false,
@@ -1110,7 +1110,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogBoolChange.html",
-          "hash": "hlLZUCsJtHk0csn4hX4lCw=="
+          "hash": "6SmAbn6rqfbuYKxXDOTOUg=="
         }
       },
       "is_incremental": false,
@@ -1122,7 +1122,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogChangeBase.html",
-          "hash": "F7l7cOftS1ic+CSWbuupnw=="
+          "hash": "4HI8UntDphBjHYX0GqT7sg=="
         }
       },
       "is_incremental": false,
@@ -1134,7 +1134,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogEntry.html",
-          "hash": "F4kiKLHNXn1oHf5LcFaqxg=="
+          "hash": "mjcRM1I7gVupTq4BcL3E4A=="
         }
       },
       "is_incremental": false,
@@ -1146,7 +1146,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogEntryInfo.html",
-          "hash": "NQcym3j6D1t8Ka/N7mAbDg=="
+          "hash": "7WZU9+g31waDi5se+ppTyw=="
         }
       },
       "is_incremental": false,
@@ -1158,7 +1158,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogEvent.html",
-          "hash": "twpYBhP2p7YjCcHconkNXQ=="
+          "hash": "M3a5uuPKzEtL4N2rWXmwqA=="
         }
       },
       "is_incremental": false,
@@ -1170,7 +1170,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogIntegerChange.html",
-          "hash": "SnKs/LeoV0al8efU0gTdWA=="
+          "hash": "aJfWwwEvFa9r5hyTv7M4UA=="
         }
       },
       "is_incremental": false,
@@ -1182,7 +1182,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogOverwriteChange.html",
-          "hash": "Y0bJRGn/bTgFeY8Y2q2pTA=="
+          "hash": "dTmpMtQSCZCkCqSWtgJXxw=="
         }
       },
       "is_incremental": false,
@@ -1194,7 +1194,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogRoleChange.html",
-          "hash": "raVnND8AS3zll5wZaXS+MA=="
+          "hash": "ALEHGxOw8WRHYYOOsPqJUA=="
         }
       },
       "is_incremental": false,
@@ -1206,7 +1206,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogStringChange.html",
-          "hash": "vUiBrrDEjWIftfCR4+CC/w=="
+          "hash": "udbMJKFvGKTjHxBNKlHwTA=="
         }
       },
       "is_incremental": false,
@@ -1218,7 +1218,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.AuditLogs.html",
-          "hash": "PP3DyB1Lm+m/E7mUW+B2Hg=="
+          "hash": "9O22UIFTr92O6Bqpi0NK8g=="
         }
       },
       "is_incremental": false,
@@ -1230,7 +1230,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Channel.html",
-          "hash": "88B0FMNonhEH21AVqfHUUQ=="
+          "hash": "6jqWcJ7Wl3r7pC98zDLWrg=="
         }
       },
       "is_incremental": false,
@@ -1242,7 +1242,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ChannelMention.html",
-          "hash": "yQs1PpGgB4SDz6NTkQJmkw=="
+          "hash": "Af7vzP/oarH5MWUerlYVRg=="
         }
       },
       "is_incremental": false,
@@ -1254,7 +1254,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ChannelType.html",
-          "hash": "WL8uYaobcgT0Ur+muYnsaw=="
+          "hash": "BAjMIVfIfbCcuseCDX0i8A=="
         }
       },
       "is_incremental": false,
@@ -1266,7 +1266,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ClientApplication.html",
-          "hash": "y20AKwNcDEXy89fVqt2p+A=="
+          "hash": "UvxEjw4EXglFsspFB9E1DQ=="
         }
       },
       "is_incremental": false,
@@ -1278,7 +1278,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ClientStatus.html",
-          "hash": "GHqORZJJXqDNtt2v4EpFGA=="
+          "hash": "WkKtJNeTvArOMRUqltVWtQ=="
         }
       },
       "is_incremental": false,
@@ -1290,7 +1290,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.CreateDMPayload.html",
-          "hash": "DIzChhW0oFQI6PwgqSZ1sw=="
+          "hash": "JqjlJ+eiGnK7jMiFqDeerw=="
         }
       },
       "is_incremental": false,
@@ -1302,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.DefaultMessageNotificationLevel.html",
-          "hash": "YgMPvVZoRIUWR2RT/O6iIg=="
+          "hash": "E1FJtBFbfafoYhq0WY4srw=="
         }
       },
       "is_incremental": false,
@@ -1314,7 +1314,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Embed.html",
-          "hash": "izlmFQJwHYpeaJnTYvbDFw=="
+          "hash": "foh7kPd33mf2xy0u1Z+kfA=="
         }
       },
       "is_incremental": false,
@@ -1326,7 +1326,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedAuthor.html",
-          "hash": "kGsCQ1HqUkIryyWujbBLlg=="
+          "hash": "8gdMzcC+yYanH6EPbGysWw=="
         }
       },
       "is_incremental": false,
@@ -1338,7 +1338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedField.html",
-          "hash": "5j9JJL+mAy2I+Uqx7wAH3A=="
+          "hash": "+CnMOoVXm38cATA0uFoEuA=="
         }
       },
       "is_incremental": false,
@@ -1350,7 +1350,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedFooter.html",
-          "hash": "hlX84vcJ0taf307StKZfWg=="
+          "hash": "lazI66SzCekrfhXXmHAITw=="
         }
       },
       "is_incremental": false,
@@ -1362,7 +1362,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedImage.html",
-          "hash": "3x6wle0Ebjra1Tug6m//8g=="
+          "hash": "tNG/XCpRweNjHyjqm/e27g=="
         }
       },
       "is_incremental": false,
@@ -1374,7 +1374,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedProvider.html",
-          "hash": "fKJOpfqMtt3qeuIbe/fe+Q=="
+          "hash": "8no/8HUUfQANGBax4Ot2Aw=="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedThumbnail.html",
-          "hash": "hRojTHWJQZmLuaZ/i4PH5Q=="
+          "hash": "kyO6I3Jve7vP/oFkOySLtA=="
         }
       },
       "is_incremental": false,
@@ -1398,7 +1398,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.EmbedVideo.html",
-          "hash": "XFCMNzfHTwRkBQFI8q5M5A=="
+          "hash": "J0q6chuYOLzxJg/LEaiFiQ=="
         }
       },
       "is_incremental": false,
@@ -1410,7 +1410,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Emoji.html",
-          "hash": "Yx+uazxBRQM3F1Q97piT3g=="
+          "hash": "/eIacz0ptVKEMGcNq7MLaQ=="
         }
       },
       "is_incremental": false,
@@ -1422,7 +1422,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ExplicitContentFilterLevel.html",
-          "hash": "ygwhT76ihAVyUEeMUg/4Qg=="
+          "hash": "rgZQZ4naYIyAbRpPN4Okog=="
         }
       },
       "is_incremental": false,
@@ -1434,7 +1434,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Gateway.html",
-          "hash": "fXdJYVCp9BVyNToWfG0Ung=="
+          "hash": "cxlu4Eoz2Zk5Hv6XNYlsoQ=="
         }
       },
       "is_incremental": false,
@@ -1446,7 +1446,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GatewayBot.html",
-          "hash": "u/sA+Q9RuMrxMWN13CNROA=="
+          "hash": "N+MUlnh1Sxx0/9YMyku2lw=="
         }
       },
       "is_incremental": false,
@@ -1458,7 +1458,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GatewayCloseCode.html",
-          "hash": "PkHijYZUz5zz0VYMUGndZQ=="
+          "hash": "0KgUJ7DimjrkJMteHaXvvQ=="
         }
       },
       "is_incremental": false,
@@ -1470,7 +1470,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GatewayEvent.html",
-          "hash": "18295rTh0/90X4achphHTw=="
+          "hash": "/LPkWncK8kbG4D5bSEgwRw=="
         }
       },
       "is_incremental": false,
@@ -1482,7 +1482,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Guild.html",
-          "hash": "BoIw7RpHtvmVq263tk0/Fw=="
+          "hash": "m6vVrPlr+MFFJK0hqMVzvQ=="
         }
       },
       "is_incremental": false,
@@ -1494,7 +1494,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildBanAddPayload.html",
-          "hash": "sM+c0WGTdfOPnxSjSqDf4w=="
+          "hash": "LW7z19OjVd7Nw0hyMmIRSw=="
         }
       },
       "is_incremental": false,
@@ -1506,7 +1506,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildBanRemovePayload.html",
-          "hash": "M9f3tZOevysR/SgnTZ2UvA=="
+          "hash": "114aujrzvx17fjnXWuoMsg=="
         }
       },
       "is_incremental": false,
@@ -1518,7 +1518,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildEmojisUpdate.html",
-          "hash": "OaWXm59/9mlbPuCPfu1XkA=="
+          "hash": "Yx9e+ktZLLS2jiztgLgGKw=="
         }
       },
       "is_incremental": false,
@@ -1530,7 +1530,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildFeature.html",
-          "hash": "8GYPY3NbEdJlR6JKoxuRGw=="
+          "hash": "fe/YqwQYT6G0xKQMko1sEw=="
         }
       },
       "is_incremental": false,
@@ -1542,7 +1542,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildIntegrationsUpdatePayload.html",
-          "hash": "U+T3n2q5X574ZZMjflr92Q=="
+          "hash": "PpV7Mgwuyo7w23Zmut9U5A=="
         }
       },
       "is_incremental": false,
@@ -1554,7 +1554,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildMember.html",
-          "hash": "o2s6QNx+LeWqlpx+j6p0Ug=="
+          "hash": "CGaKByBcrSToS40bvKRDlA=="
         }
       },
       "is_incremental": false,
@@ -1566,7 +1566,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildMemberAddPayload.html",
-          "hash": "8twLrEVuzykppRCH8GGmNA=="
+          "hash": "3AmR/3d5HfkVWGe+NecgFw=="
         }
       },
       "is_incremental": false,
@@ -1578,7 +1578,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildMemberChunkPayload.html",
-          "hash": "iK24Al06SRociZVDMy7aVg=="
+          "hash": "kY8bY3LUCt5ec4HTepEsdA=="
         }
       },
       "is_incremental": false,
@@ -1590,7 +1590,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildMemberRemovePayload.html",
-          "hash": "F8i1QbU/N9R+LpXHasD/1Q=="
+          "hash": "/xNXcUQhdYs5CTStJfRFrQ=="
         }
       },
       "is_incremental": false,
@@ -1602,7 +1602,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildMemberUpdatePayload.html",
-          "hash": "2NnduMRkjFpgDWd63ebb5A=="
+          "hash": "12fCV8DmK+D+W46G8cxIpg=="
         }
       },
       "is_incremental": false,
@@ -1614,7 +1614,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildRoleCreatePayload.html",
-          "hash": "uNVG6BRjdzNL9XAqe2s9sQ=="
+          "hash": "VupYT0hsjsbjz0j0iVLqGA=="
         }
       },
       "is_incremental": false,
@@ -1626,7 +1626,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildRoleDeletePayload.html",
-          "hash": "CIG4JAzjjbSzg5/DJXp3ow=="
+          "hash": "d0xSARJ1nPUARm6cLJAuVg=="
         }
       },
       "is_incremental": false,
@@ -1638,7 +1638,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.GuildRoleUpdatePayload.html",
-          "hash": "7rz41NIP/TX/m1FiQiPr1w=="
+          "hash": "Zrq5ayNUVHyrGa+9dMvmVQ=="
         }
       },
       "is_incremental": false,
@@ -1650,7 +1650,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.HelloPacket.html",
-          "hash": "25I6s5Y5fQ6KRwmowYsXIw=="
+          "hash": "DN70snjjQS9USa9pOQ/Dgw=="
         }
       },
       "is_incremental": false,
@@ -1662,7 +1662,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.IAuditLogChange-1.html",
-          "hash": "z11kK3abuIfNVMPOGazWmA=="
+          "hash": "W8K5lRf49KRNSqfKtOT2iw=="
         }
       },
       "is_incremental": false,
@@ -1674,7 +1674,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.IFile.html",
-          "hash": "JL9GPmmd07nYl2UXdmKPqA=="
+          "hash": "WLYHzM0G3kFwvQB/rXCdyA=="
         }
       },
       "is_incremental": false,
@@ -1686,7 +1686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.IdentifyPacket.html",
-          "hash": "NYjHSkYrHERMgPQWhEiRqw=="
+          "hash": "JEvc/Y3rNMK11dfOkwv9yQ=="
         }
       },
       "is_incremental": false,
@@ -1698,7 +1698,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.IdentifyProperties.html",
-          "hash": "8V5juBXLjQr4CUaGqaIh+w=="
+          "hash": "35fyS5404ewFzkzpNMS2rQ=="
         }
       },
       "is_incremental": false,
@@ -1710,7 +1710,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Integration.html",
-          "hash": "th5oqOECm6O8QsGwqQQvPw=="
+          "hash": "Ur0GWaOvTLlk/VqIFJduHg=="
         }
       },
       "is_incremental": false,
@@ -1722,7 +1722,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.IntegrationAccount.html",
-          "hash": "cxzF58Uhrzib5manz/tQOg=="
+          "hash": "GEl3L08xyHEYYmmA6orNWA=="
         }
       },
       "is_incremental": false,
@@ -1734,7 +1734,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Intents.html",
-          "hash": "IZMWTUnExqj/xydi9/4B1g=="
+          "hash": "xSuf4zQkNTlnzeG8fqd5gw=="
         }
       },
       "is_incremental": false,
@@ -1746,7 +1746,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Invite.html",
-          "hash": "0rATgIMN6GJKDjONAJQycw=="
+          "hash": "xvcZF2SQHWiJWQ0p9htVLQ=="
         }
       },
       "is_incremental": false,
@@ -1758,7 +1758,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.InviteCreatePayload.html",
-          "hash": "ZJM2E9dNI/05tDsh4ohULA=="
+          "hash": "lCLSas2E4OMCZDlPaS9w5w=="
         }
       },
       "is_incremental": false,
@@ -1770,7 +1770,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.InviteDeletePayload.html",
-          "hash": "g6lCmxP87XA7+BTbF3UhOw=="
+          "hash": "EU7Lb0vR6K08drcupNbJ9w=="
         }
       },
       "is_incremental": false,
@@ -1782,7 +1782,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MFALevel.html",
-          "hash": "SY4Nd+vWnJ0ooY3CfQWzMQ=="
+          "hash": "lyJ6h8EaFsy4rB7HrVo+fg=="
         }
       },
       "is_incremental": false,
@@ -1794,7 +1794,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MembershipState.html",
-          "hash": "3mnoD5I460cNJ7j33HZ2/g=="
+          "hash": "gy0x5CjwcG4zmfhPWfofHQ=="
         }
       },
       "is_incremental": false,
@@ -1806,7 +1806,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MentionUser.html",
-          "hash": "Q/Mz06s7tqzkqTJ7GD1SAQ=="
+          "hash": "c+6OWVYZMM54vBkL5UFl0w=="
         }
       },
       "is_incremental": false,
@@ -1818,7 +1818,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Message.html",
-          "hash": "wzOoxa6tiByerv8XHyTnHw=="
+          "hash": "K8lRwC1jlkfj3WSzjg0TLw=="
         }
       },
       "is_incremental": false,
@@ -1830,7 +1830,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageActivity.html",
-          "hash": "QmnIqaIBgqYQHCp0rDRXMg=="
+          "hash": "QZ9GF8TCKWa6AZRALwG7ew=="
         }
       },
       "is_incremental": false,
@@ -1842,7 +1842,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageActivityType.html",
-          "hash": "VAMZeSmuMf9wjeEIzQ3ZWw=="
+          "hash": "KkZHTJjNQboghf2THH+2FQ=="
         }
       },
       "is_incremental": false,
@@ -1854,7 +1854,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageApplication.html",
-          "hash": "tl/eO6uRaKLXhm3QKp6Uyg=="
+          "hash": "hqri4im+TVkJP6lH9WHXCA=="
         }
       },
       "is_incremental": false,
@@ -1866,7 +1866,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageDeleteBulkPayload.html",
-          "hash": "c3ATIba2NjvsSzeXNHVU/A=="
+          "hash": "uubsQY8UkDNHwlvXd2w0mA=="
         }
       },
       "is_incremental": false,
@@ -1878,7 +1878,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageDeletePayload.html",
-          "hash": "nt0DHtjDZS+PQBER3qqyTQ=="
+          "hash": "tgz2Qf//nPG/OXpfRwN04w=="
         }
       },
       "is_incremental": false,
@@ -1890,7 +1890,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageFlags.html",
-          "hash": "MyVEMw53Xdkk6ySOKlXr3w=="
+          "hash": "8T0UNV19/Vp8MpOzS0CbdQ=="
         }
       },
       "is_incremental": false,
@@ -1902,7 +1902,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageReactionAddPayload.html",
-          "hash": "tPocHqNlUtGl4n9MVcdK8Q=="
+          "hash": "IOu4vZYtJuxdL7id8wcIxg=="
         }
       },
       "is_incremental": false,
@@ -1914,7 +1914,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageReactionRemoveAllPayload.html",
-          "hash": "QGsAIKZ57mK4mjI4FOtY6Q=="
+          "hash": "NQBiX0PeDEVTWzXqRP1U4Q=="
         }
       },
       "is_incremental": false,
@@ -1926,7 +1926,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageReactionRemoveEmojiPayload.html",
-          "hash": "S5/WV15sn2YAUiFR6VQqHw=="
+          "hash": "ecWqy2ugxRaqdbJtn87JLQ=="
         }
       },
       "is_incremental": false,
@@ -1938,7 +1938,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageReactionRemovePayload.html",
-          "hash": "0FfFRWWFK2+fYRc4wHlmvg=="
+          "hash": "crEKNvLNy3z+oP+kj35qKg=="
         }
       },
       "is_incremental": false,
@@ -1950,7 +1950,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageReference.html",
-          "hash": "MrGRHn1P6sI9xsgLYkM7Ng=="
+          "hash": "VPoQnX6cmOpNfnviTL9dAQ=="
         }
       },
       "is_incremental": false,
@@ -1962,7 +1962,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageType.html",
-          "hash": "ptv7kep3REEEgDkVs/OF6w=="
+          "hash": "RcOpXVjCcReED9v8iS8YjA=="
         }
       },
       "is_incremental": false,
@@ -1974,7 +1974,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.MessageUpdatePayload.html",
-          "hash": "O9vRpFr8rrDtb6amwMUYuw=="
+          "hash": "PTqaQ9GxjIqPauIcbK+DBw=="
         }
       },
       "is_incremental": false,
@@ -1986,7 +1986,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.OpCode.html",
-          "hash": "QQ4s815lcSABAHq3ouL8rA=="
+          "hash": "54CZa4jEYxCl/ymZsPbJ6A=="
         }
       },
       "is_incremental": false,
@@ -1998,7 +1998,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Permission.html",
-          "hash": "K74GRBB49xPAcSoI7ZpvRA=="
+          "hash": "/yfVjY332Ic/eOVOlXefyg=="
         }
       },
       "is_incremental": false,
@@ -2010,7 +2010,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.PermissionOverwrite.html",
-          "hash": "GOYNME6Q6c2F3ZuJtXtcWA=="
+          "hash": "rRKf6/wmfi/rE6QqoxJJiA=="
         }
       },
       "is_incremental": false,
@@ -2022,7 +2022,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.PremiumTier.html",
-          "hash": "/7Anywfm2VB512hW0jhCCg=="
+          "hash": "Srkkc5gKaEuHSN0w8dAasg=="
         }
       },
       "is_incremental": false,
@@ -2034,7 +2034,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.PremiumType.html",
-          "hash": "52indRWSIWKFo1xq/g9RIg=="
+          "hash": "vSVjTDv0mGqMP8S5vzn2pw=="
         }
       },
       "is_incremental": false,
@@ -2046,7 +2046,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Presence.html",
-          "hash": "b9sWyTsmAS2tvfttq8MQEQ=="
+          "hash": "811lxFgto8OffPSql4oREQ=="
         }
       },
       "is_incremental": false,
@@ -2058,7 +2058,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.PresenceUpdatePayload.html",
-          "hash": "X6nAvvWVPCAR54VUr0Mt2A=="
+          "hash": "oUFu25IPUwVDoJCkUrm9uw=="
         }
       },
       "is_incremental": false,
@@ -2070,7 +2070,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Reaction.html",
-          "hash": "YbP9V8NO5z0EOsgr3+nOgw=="
+          "hash": "hyP6K+78qHaGlqkgGJ7CqA=="
         }
       },
       "is_incremental": false,
@@ -2082,7 +2082,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ReadyDispatch.html",
-          "hash": "yGlTx1IsDLP2Rgp9Zrcnug=="
+          "hash": "UWdX8f5MonHfV4YQYKve1Q=="
         }
       },
       "is_incremental": false,
@@ -2094,7 +2094,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ReceivePacket.html",
-          "hash": "2lD7aohKj2PaC3hzE7Pseg=="
+          "hash": "1fD4NDCclAP1BaBpGkv/CQ=="
         }
       },
       "is_incremental": false,
@@ -2106,7 +2106,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.RequestGuildMembersDispatch.html",
-          "hash": "RoPJySHrhFfbjY7b9GtNFg=="
+          "hash": "LyTc2tveJO2OECkIIIRE9Q=="
         }
       },
       "is_incremental": false,
@@ -2118,7 +2118,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.ResumePacket.html",
-          "hash": "bdXwthjbNXNJG0Yj+h3AKQ=="
+          "hash": "mOAAR9b3Cn+E60vZpgYgKw=="
         }
       },
       "is_incremental": false,
@@ -2130,7 +2130,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Role.html",
-          "hash": "gJ1Eg+RKirOn2zSDz+l4NQ=="
+          "hash": "CBcVpzxdjYxnLShMokHE/w=="
         }
       },
       "is_incremental": false,
@@ -2142,7 +2142,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.SendPacket.html",
-          "hash": "h22Mn5il63WH3SrGgchE6w=="
+          "hash": "Lj7kkfV5AkAQ88D237EBBg=="
         }
       },
       "is_incremental": false,
@@ -2154,7 +2154,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.SendableDispatch.html",
-          "hash": "DHNxZfwC1pxaXxR89/XZ8g=="
+          "hash": "vcJJ8doO0Qj1uupl/nhaGQ=="
         }
       },
       "is_incremental": false,
@@ -2166,7 +2166,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.SendableMessage.html",
-          "hash": "jRUj1lbkIOEeTt7QllBtSw=="
+          "hash": "5dc4GArnglSzDsMQxKEzUQ=="
         }
       },
       "is_incremental": false,
@@ -2178,7 +2178,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.SessionStartLimit.html",
-          "hash": "6txu5G6BS4cpNNo1ZYXCcQ=="
+          "hash": "+wAJ50kLuSH+7vWBNosGtg=="
         }
       },
       "is_incremental": false,
@@ -2190,7 +2190,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Status.html",
-          "hash": "ned1XCpvehSum8qNRKzWRg=="
+          "hash": "M5MuKi78bssAxSYm2Yg4Hg=="
         }
       },
       "is_incremental": false,
@@ -2202,7 +2202,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Team.html",
-          "hash": "LGBkmiX7UpBozBw6uMoy1A=="
+          "hash": "VlAmffx9GliZSla/3fo5mg=="
         }
       },
       "is_incremental": false,
@@ -2214,7 +2214,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.TeamMember.html",
-          "hash": "BoWzMyckM+zMeddr8+9dyg=="
+          "hash": "MQVyLa3kAP10+0hJC1YHng=="
         }
       },
       "is_incremental": false,
@@ -2226,7 +2226,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.TypingStartPayload.html",
-          "hash": "vUJF7juIUfHrD2onTjuKUg=="
+          "hash": "qmteqExKa+afqTLifVRTbw=="
         }
       },
       "is_incremental": false,
@@ -2238,7 +2238,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.UnavailableGuild.html",
-          "hash": "gymyihhhy+bjbKgNi+65QQ=="
+          "hash": "1x0ejL2ti30B3eAYLO3rTw=="
         }
       },
       "is_incremental": false,
@@ -2250,7 +2250,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.UpdateStatusDispatch.html",
-          "hash": "WeM0ss1fEhuhl72WeSfeTw=="
+          "hash": "kg5FMXEwfzCevLsoYLqtnA=="
         }
       },
       "is_incremental": false,
@@ -2262,7 +2262,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.UpdateVoiceStateDispatch.html",
-          "hash": "8JRf4CunkiRnV35qHG/kWg=="
+          "hash": "qCEqhLn5cfwabwPfPCDqGg=="
         }
       },
       "is_incremental": false,
@@ -2274,7 +2274,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.User.html",
-          "hash": "vXyNvBqNnipKx6BMpG9hkA=="
+          "hash": "NqPVqO71hgZczpj0Iidv+A=="
         }
       },
       "is_incremental": false,
@@ -2286,7 +2286,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.UserFlags.html",
-          "hash": "D+uiFWQyNtwJbiyWPhJLvA=="
+          "hash": "m3ewNdelUJrKvEsaMilL0A=="
         }
       },
       "is_incremental": false,
@@ -2298,7 +2298,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.UserType.html",
-          "hash": "Gq2NmkvKFGI/bk2ac/5zRA=="
+          "hash": "EgnOG7tyEWH2cm8p79oHTg=="
         }
       },
       "is_incremental": false,
@@ -2310,7 +2310,31 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.VerificationLevel.html",
-          "hash": "42Va0RyPXGj+6tgk9sVphA=="
+          "hash": "Bdmgt4zwgDK9nXipAWSLOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Voice.VoiceRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Voice.VoiceRegion.html",
+          "hash": "ZBw/tUoTZdJonElLVq8K6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Spectacles.NET.Types.Voice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Spectacles.NET.Types.Voice.html",
+          "hash": "3W2k3Ur+AN0I6kgX9djSxQ=="
         }
       },
       "is_incremental": false,
@@ -2322,7 +2346,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.VoiceServerUpdatePayload.html",
-          "hash": "mrKm/DVnq7RZ6QRqIAX1iA=="
+          "hash": "sB5/gR5TyF6V+AEq9w6n2Q=="
         }
       },
       "is_incremental": false,
@@ -2334,7 +2358,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.VoiceState.html",
-          "hash": "LINzEQxA0PbKuryPK77HhA=="
+          "hash": "To4SfPjXhPkhJK5BoqzbpA=="
         }
       },
       "is_incremental": false,
@@ -2346,7 +2370,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.Webhook.html",
-          "hash": "BQ5A4ZgQcrK+0ZOtZxHtvg=="
+          "hash": "8EOMc2m2KWqzH/6NGXpIIw=="
         }
       },
       "is_incremental": false,
@@ -2358,7 +2382,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Types.WebhookUpdatePayload.html",
-          "hash": "GTUfuMHRIxjp7rwQKVyGMQ=="
+          "hash": "p5mK4igN5yHodV1Z1ozPPg=="
         }
       },
       "is_incremental": false,
@@ -2382,7 +2406,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Util.Extensions.StringExtension.html",
-          "hash": "081jbri2hrujkeBpWLlMFA=="
+          "hash": "HLj0HrSlN4Xw4MBcnI2jkw=="
         }
       },
       "is_incremental": false,
@@ -2406,7 +2430,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Util.Logging.LogEventArgs.html",
-          "hash": "yeAd02Lz0PBFvW1J1Pgy6w=="
+          "hash": "at/ZF6IRa5bykvoswjEi/w=="
         }
       },
       "is_incremental": false,
@@ -2418,7 +2442,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Util.Logging.LogLevel.html",
-          "hash": "0fTqPy1FLxYIg8l9FjSCIg=="
+          "hash": "tmwc0gbrdiXN8UsjMUs7nQ=="
         }
       },
       "is_incremental": false,
@@ -2442,7 +2466,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Spectacles.NET.Util.Util.html",
-          "hash": "3e70UN1Nck8ZYsPnWI/18g=="
+          "hash": "Uo18fMD6ToRxN+TpnjA5UA=="
         }
       },
       "is_incremental": false,
@@ -2466,7 +2490,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "fu2maEIeK/HvgpjjKvBH2g=="
+          "hash": "EYUEw/vWGs8NrwTwNq/VCQ=="
         }
       },
       "is_incremental": false,
@@ -2478,7 +2502,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "aGiWsuvXH+j7KlMH0K2wuw=="
+          "hash": "eg/6PXUa8Bf8+CUUfqpYYQ=="
         }
       },
       "is_incremental": false,
@@ -2490,7 +2514,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "1AAlYIpPTZ5wIAYuZbqxjA=="
+          "hash": "xT3oBRUWCwfx4cUoUq+4wQ=="
         }
       },
       "is_incremental": false,
@@ -2527,16 +2551,16 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 204,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 206,
           "skipped_file_count": 0
         }
       }
