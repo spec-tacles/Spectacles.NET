@@ -118,7 +118,7 @@ namespace Spectacles.NET.Rest.Bucket
 				};
 			}
 
-			if (Reason != null) request.Headers.Add("X-Audit-Log-Reason", HttpUtility.UrlEncode(Reason));
+			if (Reason != null) request.Headers.Add("X-Audit-Log-Reason", Reason);
 
 			HttpResponseMessage res;
 			try
