@@ -133,7 +133,7 @@ namespace Spectacles.NET.Rest.Bucket
 				return;
 			}
 
-			var ratelimit = new RateLimitInfo(res.Headers.ToDictionary(a => a.Key, a => a.Value.First()));
+			var ratelimit = new RateLimitInfo(res.Headers.ToDictionary(a => a.Key.ToLower(), a => a.Value.First()));
 
 			_log(LogLevel.DEBUG,
 				$"Created Ratelimit Info:\nLag: {ratelimit.Lag.TotalSeconds} Seconds\nLimit: {ratelimit.Limit}\nRemaining: {ratelimit.Remaining}\nReset: {ratelimit.Reset}\nGlobal Ratelimited: {ratelimit.IsGlobal}\nRetry-After: {ratelimit.RetryAfter}");

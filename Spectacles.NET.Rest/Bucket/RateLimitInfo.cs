@@ -40,25 +40,25 @@ namespace Spectacles.NET.Rest.Bucket
 
 		internal RateLimitInfo(IReadOnlyDictionary<string, string> headers)
 		{
-			IsGlobal = headers.TryGetValue("X-RateLimit-Global", out var temp) &&
+			IsGlobal = headers.TryGetValue("x-ratelimit-global", out var temp) &&
 			           bool.TryParse(temp, out var isGlobal) && isGlobal;
-			Limit = headers.TryGetValue("X-RateLimit-Limit", out temp) &&
+			Limit = headers.TryGetValue("x-ratelimit-limit", out temp) &&
 			        int.TryParse(temp, out var limit)
 				? limit
 				: (int?) null;
-			Remaining = headers.TryGetValue("X-RateLimit-Remaining", out temp) &&
+			Remaining = headers.TryGetValue("x-ratelimit-remaining", out temp) &&
 			            int.TryParse(temp, out var remaining)
 				? remaining
 				: (int?) null;
-			Lag = headers.TryGetValue("Date", out temp) &&
+			Lag = headers.TryGetValue("date", out temp) &&
 			      DateTimeOffset.TryParse(temp, out var date)
 				? date - DateTimeOffset.UtcNow
 				: TimeSpan.Zero;
-			Reset = headers.TryGetValue("X-RateLimit-Reset", out temp) &&
+			Reset = headers.TryGetValue("x-ratelimit-reset", out temp) &&
 			        int.TryParse(temp, out var reset)
 				? DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(Math.Ceiling(reset - Lag.TotalSeconds)))
 				: (DateTimeOffset?) null;
-			RetryAfter = headers.TryGetValue("Retry-After", out temp) &&
+			RetryAfter = headers.TryGetValue("retry-after", out temp) &&
 			             int.TryParse(temp, out var retryAfter)
 				? retryAfter
 				: (int?) null;
