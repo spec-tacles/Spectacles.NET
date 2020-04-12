@@ -344,6 +344,8 @@ namespace Spectacles.NET.Gateway
 					case OpCode.RECONNECT:
 						_log(LogLevel.DEBUG,
 							$"Received Reconnect request (OP {packet.OpCode}). Closing connection now...");
+						await DisconnectAsync((int) GatewayCloseCode.UNKNOWN_ERROR, "Received Reconnect request")
+							.ConfigureAwait(false);
 						break;
 					case OpCode.INVALID_SESSION:
 						_log(LogLevel.DEBUG, $"Received Invalidate request (OP {packet.OpCode}). Invalidating....");
