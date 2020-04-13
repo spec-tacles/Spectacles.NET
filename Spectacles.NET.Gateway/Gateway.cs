@@ -24,7 +24,7 @@ namespace Spectacles.NET.Gateway
 		}
 		
 		/// <inheritdoc />
-		public TimeLimiter RateLimiter { get; } = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromSeconds(5));
+		public TimeLimiter RateLimiter { get; } = TimeLimiter.GetFromMaxCountByInterval(1, TimeSpan.FromMilliseconds(5250));
 
 		/// <inheritdoc />
 		public GatewayBot Data { get; private set; }
