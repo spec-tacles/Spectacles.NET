@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.9.7</PackageVersion>
+        <PackageVersion>0.9.8</PackageVersion>
         <Title>Spectacles.NET.Types</Title>
         <Authors>DevYukine</Authors>
         <PackageProjectUrl>https://github.com/spec-tacles</PackageProjectUrl>
@@ -14,9 +14,7 @@
         <PackageTags>Spectacles</PackageTags>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Description>Typings for Discord objects.</Description>
-        <PackageReleaseNotes>- Add Voice Region
-
-- Add AllowedMentions</PackageReleaseNotes>
+        <PackageReleaseNotes>- Update JsonSubTypes dependency</PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
