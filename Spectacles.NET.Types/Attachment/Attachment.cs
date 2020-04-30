@@ -1,52 +1,53 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
 	/// <summary>
 	/// Represents an attachment in a message.
 	/// </summary>
+	[DataContract]
 	public class Attachment
 	{
 		/// <summary>
 		///     attachment id
 		/// </summary>
-		[JsonProperty("id")]
+		[DataMember(Name="id", Order=1)]
 		public string Id { get; set; }
 
 		/// <summary>
 		///     name of file attached
 		/// </summary>
-		[JsonProperty("filename")]
+		[DataMember(Name="filename", Order=2)]
 		public string FileName { get; set; }
 
 		/// <summary>
 		///     size of file in bytes
 		/// </summary>
-		[JsonProperty("size")]
+		[DataMember(Name="size", Order=3)]
 		public int Size { get; set; }
 
 		/// <summary>
 		///     source url of file
 		/// </summary>
-		[JsonProperty("url")]
+		[DataMember(Name="url", Order=4)]
 		public string URL { get; set; }
 
 		/// <summary>
 		///     a proxied url of file
 		/// </summary>
-		[JsonProperty("proxy_url")]
+		[DataMember(Name="proxy_url", Order=5)]
 		public string ProxyURL { get; set; }
 
 		/// <summary>
 		///     height of file (if image)
 		/// </summary>
-		[JsonProperty("height")]
+		[DataMember(Name="height", Order=6)]
 		public int? Height { get; set; }
 
 		/// <summary>
 		///     width of file (if image)
 		/// </summary>
-		[JsonProperty("width")]
+		[DataMember(Name="width", Order=7)]
 		public int? Width { get; set; }
 	}
 }

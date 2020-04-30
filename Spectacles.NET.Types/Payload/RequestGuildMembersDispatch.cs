@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
@@ -9,24 +9,25 @@ namespace Spectacles.NET.Types
 	///     will send Guild Members Chunk events in response with up to 1000 members per chunk until all members that match the
 	///     request have been sent.
 	/// </summary>
+	[DataContract]
 	public class RequestGuildMembersDispatch
 	{
 		/// <summary>
 		///     id of the guild(s) to get offline members for
 		/// </summary>
-		[JsonProperty("guild_id")]
+		[DataMember(Name="guild_id", Order=1)]
 		public object GuildId { get; set; }
 
 		/// <summary>
 		///     string that username starts with, or an empty string to return all members
 		/// </summary>
-		[JsonProperty("query")]
+		[DataMember(Name="query", Order=2)]
 		public string Query { get; set; }
 
 		/// <summary>
 		///     maximum number of members to send or 0 to request all members matched
 		/// </summary>
-		[JsonProperty("limit")]
+		[DataMember(Name="limit", Order=3)]
 		public int Limit { get; set; }
 	}
 }
