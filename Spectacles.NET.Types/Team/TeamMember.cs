@@ -1,34 +1,35 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
 	/// <summary>
 	/// Represents a Client OAuth2 Application Team Member.
 	/// </summary>
+	[DataContract]
 	public class TeamMember
 	{
 		/// <summary>
 		/// The Membership State of this Team Member.
 		/// </summary>
-		[JsonProperty("membership_state")]
+		[DataMember(Name="membership_state", Order=1)]
 		public MembershipState MembershipState { get; set; }
 
 		/// <summary>
 		/// The permissions this Team Member has with regard to the team.
 		/// </summary>
-		[JsonProperty("permissions")]
+		[DataMember(Name="permissions", Order=2)]
 		public string[] Permissions { get; set; }
 
 		/// <summary>
 		/// The Team id this member is part of
 		/// </summary>
-		[JsonProperty("team_id")]
+		[DataMember(Name="team_id", Order=3)]
 		public string TeamId { get; set; }
 
 		/// <summary>
 		/// The user for this Team Member
 		/// </summary>
-		[JsonProperty("user")]
+		[DataMember(Name="user", Order=4)]
 		public User User { get; set; }
 	}
 }

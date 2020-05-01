@@ -1,28 +1,29 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
 	/// <summary>
 	///     The Payload for the MessageDeleteBulk event.
 	/// </summary>
+	[DataContract]
 	public class MessageDeleteBulkPayload
 	{
 		/// <summary>
 		///     the ids of the messages
 		/// </summary>
-		[JsonProperty("ids")]
+		[DataMember(Name="ids", Order=1)]
 		public string[] Ids { get; set; }
 
 		/// <summary>
 		///     the id of the channel
 		/// </summary>
-		[JsonProperty("channel_id")]
+		[DataMember(Name="channel_id", Order=2)]
 		public string ChannelId { get; set; }
 
 		/// <summary>
 		///     the id of the guild
 		/// </summary>
-		[JsonProperty("guild_id")]
+		[DataMember(Name="guild_id", Order=3)]
 		public string GuildId { get; set; }
 	}
 }

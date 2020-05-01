@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
@@ -7,54 +7,55 @@ namespace Spectacles.NET.Types
 	///     "pinned" to the side bar, causing their members to be listed separately. Roles are unique per guild, and can have
 	///     separate permission profiles for the global context (guild) and channel context.
 	/// </summary>
+	[DataContract]
 	public class Role
 	{
 		/// <summary>
 		///     role id
 		/// </summary>
-		[JsonProperty("id")]
+		[DataMember(Name = "id", Order = 1)]
 		public string Id { get; set; }
 
 		/// <summary>
 		///     role name
 		/// </summary>
-		[JsonProperty("name")]
+		[DataMember(Name = "name", Order = 2)]
 		public string Name { get; set; }
 
 		/// <summary>
 		///     integer representation of hexadecimal color code
 		/// </summary>
-		[JsonProperty("color")]
+		[DataMember(Name = "color", Order = 3)]
 		public int Color { get; set; }
 
 		/// <summary>
 		///     if this role is pinned in the user listing
 		/// </summary>
-		[JsonProperty("hoist")]
+		[DataMember(Name = "hoist", Order = 4)]
 		public bool Hoist { get; set; }
 
 		/// <summary>
 		///     position of this role
 		/// </summary>
-		[JsonProperty("position")]
+		[DataMember(Name = "position", Order = 5)]
 		public int Position { get; set; }
 
 		/// <summary>
 		///     permission bit set
 		/// </summary>
-		[JsonProperty("permissions")]
+		[DataMember(Name = "permissions", Order = 6)]
 		public int Permissions { get; set; }
 
 		/// <summary>
 		///     whether this role is managed by an integration
 		/// </summary>
-		[JsonProperty("managed")]
+		[DataMember(Name = "managed", Order = 7)]
 		public bool Managed { get; set; }
 
 		/// <summary>
 		///     whether this role is mentionable
 		/// </summary>
-		[JsonProperty("mentionable")]
+		[DataMember(Name = "mentionable", Order = 8)]
 		public bool Mentionable { get; set; }
 	}
 }

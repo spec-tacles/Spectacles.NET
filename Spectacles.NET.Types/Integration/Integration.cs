@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
@@ -11,67 +11,67 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     integration id
 		/// </summary>
-		[JsonProperty("id")]
+		[DataMember(Name = "id", Order = 1)]
 		public string Id { get; set; }
 
 		/// <summary>
 		///     integration name
 		/// </summary>
-		[JsonProperty("name")]
+		[DataMember(Name = "name", Order = 2)]
 		public string Name { get; set; }
-		
+
 		/// <summary>
 		/// 	integration type (twitch, youtube, etc)
 		/// </summary>
-		[JsonProperty("type")]
+		[DataMember(Name = "type", Order = 3)]
 		public string Type { get; set; }
-		
+
 		/// <summary>
 		/// 	is this integration enabled
 		/// </summary>
-		[JsonProperty("enabled")]
+		[DataMember(Name = "enabled", Order = 4)]
 		public bool? Enabled { get; set; }
-		
+
 		/// <summary>
 		/// 	is this integration syncing
 		/// </summary>
-		[JsonProperty("syncing")]
+		[DataMember(Name = "syncing", Order = 5)]
 		public bool? Syncing { get; set; }
-		
+
 		/// <summary>
 		/// 	is that this integration uses for "subscribers"
 		/// </summary>
-		[JsonProperty("role_id")]
+		[DataMember(Name = "role_id", Order = 6)]
 		public string RoleId { get; set; }
-		
+
 		/// <summary>
 		/// 	the behavior of expiring subscribers
 		/// </summary>
-		[JsonProperty("expire_behavior")]
+		[DataMember(Name = "expire_behavior", Order = 7)]
 		public int? ExpireBehavior { get; set; }
-		
+
 		/// <summary>
 		/// 	the grace period before expiring subscribers
 		/// </summary>
-		[JsonProperty("expire_grace_period")]
+		[DataMember(Name = "expire_grace_period", Order = 8)]
 		public int? ExpireGracePeriod { get; set; }
-		
+
 		/// <summary>
 		/// 	user for this integration
 		/// </summary>
-		[JsonProperty("user")]
+		[DataMember(Name = "user", Order = 9)]
 		public User User { get; set; }
-		
+
 		/// <summary>
 		/// 	integration account information
 		/// </summary>
-		[JsonProperty("account")]
+		[DataMember(Name = "account", Order = 10)]
 		public IntegrationAccount Account { get; set; }
-		
+
 		/// <summary>
 		/// 	when this integration was last synced
 		/// </summary>
-		[JsonProperty("synced_at")]
+		[DataMember(Name = "synced_at", Order = 11)]
 		public DateTime SyncedAt { get; set; }
 	}
 }

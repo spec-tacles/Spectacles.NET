@@ -1,28 +1,29 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Spectacles.NET.Types
 {
 	/// <summary>
 	/// Video of an Embed
 	/// </summary>
+	[DataContract]
 	public class EmbedVideo
 	{
 		/// <summary>
 		///     source url of video
 		/// </summary>
-		[JsonProperty("url")]
+		[DataMember(Name = "url", Order = 1)]
 		public string URL { get; set; }
 
 		/// <summary>
 		///     height of video
 		/// </summary>
-		[JsonProperty("height")]
+		[DataMember(Name = "height", Order = 2)]
 		public int? Height { get; set; }
 
 		/// <summary>
 		///     width of video
 		/// </summary>
-		[JsonProperty("width")]
+		[DataMember(Name = "width", Order = 3)]
 		public int? Width { get; set; }
 	}
 }
