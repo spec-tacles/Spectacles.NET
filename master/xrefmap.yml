@@ -6145,38 +6145,49 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Types.Attachment.Width
   nameWithType: Attachment.Width
-- uid: Spectacles.NET.Types.AuditLogBoolChange
-  name: AuditLogBoolChange
-  href: api/Spectacles.NET.Types.AuditLogBoolChange.html
-  commentId: T:Spectacles.NET.Types.AuditLogBoolChange
-  fullName: Spectacles.NET.Types.AuditLogBoolChange
-  nameWithType: AuditLogBoolChange
-- uid: Spectacles.NET.Types.AuditLogBoolChange.NewValue
+- uid: Spectacles.NET.Types.AuditLogChange`1
+  name: AuditLogChange<T>
+  href: api/Spectacles.NET.Types.AuditLogChange-1.html
+  commentId: T:Spectacles.NET.Types.AuditLogChange`1
+  name.vb: AuditLogChange(Of T)
+  fullName: Spectacles.NET.Types.AuditLogChange<T>
+  fullName.vb: Spectacles.NET.Types.AuditLogChange(Of T)
+  nameWithType: AuditLogChange<T>
+  nameWithType.vb: AuditLogChange(Of T)
+- uid: Spectacles.NET.Types.AuditLogChange`1.NewValue
   name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogBoolChange.html#Spectacles_NET_Types_AuditLogBoolChange_NewValue
-  commentId: P:Spectacles.NET.Types.AuditLogBoolChange.NewValue
-  fullName: Spectacles.NET.Types.AuditLogBoolChange.NewValue
-  nameWithType: AuditLogBoolChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogBoolChange.NewValue*
+  href: api/Spectacles.NET.Types.AuditLogChange-1.html#Spectacles_NET_Types_AuditLogChange_1_NewValue
+  commentId: P:Spectacles.NET.Types.AuditLogChange`1.NewValue
+  fullName: Spectacles.NET.Types.AuditLogChange<T>.NewValue
+  fullName.vb: Spectacles.NET.Types.AuditLogChange(Of T).NewValue
+  nameWithType: AuditLogChange<T>.NewValue
+  nameWithType.vb: AuditLogChange(Of T).NewValue
+- uid: Spectacles.NET.Types.AuditLogChange`1.NewValue*
   name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogBoolChange.html#Spectacles_NET_Types_AuditLogBoolChange_NewValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogBoolChange.NewValue
+  href: api/Spectacles.NET.Types.AuditLogChange-1.html#Spectacles_NET_Types_AuditLogChange_1_NewValue_
+  commentId: Overload:Spectacles.NET.Types.AuditLogChange`1.NewValue
   isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogBoolChange.NewValue
-  nameWithType: AuditLogBoolChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogBoolChange.OldValue
+  fullName: Spectacles.NET.Types.AuditLogChange<T>.NewValue
+  fullName.vb: Spectacles.NET.Types.AuditLogChange(Of T).NewValue
+  nameWithType: AuditLogChange<T>.NewValue
+  nameWithType.vb: AuditLogChange(Of T).NewValue
+- uid: Spectacles.NET.Types.AuditLogChange`1.OldValue
   name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogBoolChange.html#Spectacles_NET_Types_AuditLogBoolChange_OldValue
-  commentId: P:Spectacles.NET.Types.AuditLogBoolChange.OldValue
-  fullName: Spectacles.NET.Types.AuditLogBoolChange.OldValue
-  nameWithType: AuditLogBoolChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogBoolChange.OldValue*
+  href: api/Spectacles.NET.Types.AuditLogChange-1.html#Spectacles_NET_Types_AuditLogChange_1_OldValue
+  commentId: P:Spectacles.NET.Types.AuditLogChange`1.OldValue
+  fullName: Spectacles.NET.Types.AuditLogChange<T>.OldValue
+  fullName.vb: Spectacles.NET.Types.AuditLogChange(Of T).OldValue
+  nameWithType: AuditLogChange<T>.OldValue
+  nameWithType.vb: AuditLogChange(Of T).OldValue
+- uid: Spectacles.NET.Types.AuditLogChange`1.OldValue*
   name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogBoolChange.html#Spectacles_NET_Types_AuditLogBoolChange_OldValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogBoolChange.OldValue
+  href: api/Spectacles.NET.Types.AuditLogChange-1.html#Spectacles_NET_Types_AuditLogChange_1_OldValue_
+  commentId: Overload:Spectacles.NET.Types.AuditLogChange`1.OldValue
   isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogBoolChange.OldValue
-  nameWithType: AuditLogBoolChange.OldValue
+  fullName: Spectacles.NET.Types.AuditLogChange<T>.OldValue
+  fullName.vb: Spectacles.NET.Types.AuditLogChange(Of T).OldValue
+  nameWithType: AuditLogChange<T>.OldValue
+  nameWithType.vb: AuditLogChange(Of T).OldValue
 - uid: Spectacles.NET.Types.AuditLogChangeBase
   name: AuditLogChangeBase
   href: api/Spectacles.NET.Types.AuditLogChangeBase.html
@@ -6196,6 +6207,32 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Types.AuditLogChangeBase.Key
   nameWithType: AuditLogChangeBase.Key
+- uid: Spectacles.NET.Types.AuditLogChangeBase.NewValue
+  name: NewValue
+  href: api/Spectacles.NET.Types.AuditLogChangeBase.html#Spectacles_NET_Types_AuditLogChangeBase_NewValue
+  commentId: P:Spectacles.NET.Types.AuditLogChangeBase.NewValue
+  fullName: Spectacles.NET.Types.AuditLogChangeBase.NewValue
+  nameWithType: AuditLogChangeBase.NewValue
+- uid: Spectacles.NET.Types.AuditLogChangeBase.NewValue*
+  name: NewValue
+  href: api/Spectacles.NET.Types.AuditLogChangeBase.html#Spectacles_NET_Types_AuditLogChangeBase_NewValue_
+  commentId: Overload:Spectacles.NET.Types.AuditLogChangeBase.NewValue
+  isSpec: "True"
+  fullName: Spectacles.NET.Types.AuditLogChangeBase.NewValue
+  nameWithType: AuditLogChangeBase.NewValue
+- uid: Spectacles.NET.Types.AuditLogChangeBase.OldValue
+  name: OldValue
+  href: api/Spectacles.NET.Types.AuditLogChangeBase.html#Spectacles_NET_Types_AuditLogChangeBase_OldValue
+  commentId: P:Spectacles.NET.Types.AuditLogChangeBase.OldValue
+  fullName: Spectacles.NET.Types.AuditLogChangeBase.OldValue
+  nameWithType: AuditLogChangeBase.OldValue
+- uid: Spectacles.NET.Types.AuditLogChangeBase.OldValue*
+  name: OldValue
+  href: api/Spectacles.NET.Types.AuditLogChangeBase.html#Spectacles_NET_Types_AuditLogChangeBase_OldValue_
+  commentId: Overload:Spectacles.NET.Types.AuditLogChangeBase.OldValue
+  isSpec: "True"
+  fullName: Spectacles.NET.Types.AuditLogChangeBase.OldValue
+  nameWithType: AuditLogChangeBase.OldValue
 - uid: Spectacles.NET.Types.AuditLogEntry
   name: AuditLogEntry
   href: api/Spectacles.NET.Types.AuditLogEntry.html
@@ -6619,102 +6656,6 @@ references:
   commentId: F:Spectacles.NET.Types.AuditLogEvent.WEBHOOK_UPDATE
   fullName: Spectacles.NET.Types.AuditLogEvent.WEBHOOK_UPDATE
   nameWithType: AuditLogEvent.WEBHOOK_UPDATE
-- uid: Spectacles.NET.Types.AuditLogIntegerChange
-  name: AuditLogIntegerChange
-  href: api/Spectacles.NET.Types.AuditLogIntegerChange.html
-  commentId: T:Spectacles.NET.Types.AuditLogIntegerChange
-  fullName: Spectacles.NET.Types.AuditLogIntegerChange
-  nameWithType: AuditLogIntegerChange
-- uid: Spectacles.NET.Types.AuditLogIntegerChange.NewValue
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogIntegerChange.html#Spectacles_NET_Types_AuditLogIntegerChange_NewValue
-  commentId: P:Spectacles.NET.Types.AuditLogIntegerChange.NewValue
-  fullName: Spectacles.NET.Types.AuditLogIntegerChange.NewValue
-  nameWithType: AuditLogIntegerChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogIntegerChange.NewValue*
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogIntegerChange.html#Spectacles_NET_Types_AuditLogIntegerChange_NewValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogIntegerChange.NewValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogIntegerChange.NewValue
-  nameWithType: AuditLogIntegerChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogIntegerChange.OldValue
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogIntegerChange.html#Spectacles_NET_Types_AuditLogIntegerChange_OldValue
-  commentId: P:Spectacles.NET.Types.AuditLogIntegerChange.OldValue
-  fullName: Spectacles.NET.Types.AuditLogIntegerChange.OldValue
-  nameWithType: AuditLogIntegerChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogIntegerChange.OldValue*
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogIntegerChange.html#Spectacles_NET_Types_AuditLogIntegerChange_OldValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogIntegerChange.OldValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogIntegerChange.OldValue
-  nameWithType: AuditLogIntegerChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogOverwriteChange
-  name: AuditLogOverwriteChange
-  href: api/Spectacles.NET.Types.AuditLogOverwriteChange.html
-  commentId: T:Spectacles.NET.Types.AuditLogOverwriteChange
-  fullName: Spectacles.NET.Types.AuditLogOverwriteChange
-  nameWithType: AuditLogOverwriteChange
-- uid: Spectacles.NET.Types.AuditLogOverwriteChange.NewValue
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogOverwriteChange.html#Spectacles_NET_Types_AuditLogOverwriteChange_NewValue
-  commentId: P:Spectacles.NET.Types.AuditLogOverwriteChange.NewValue
-  fullName: Spectacles.NET.Types.AuditLogOverwriteChange.NewValue
-  nameWithType: AuditLogOverwriteChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogOverwriteChange.NewValue*
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogOverwriteChange.html#Spectacles_NET_Types_AuditLogOverwriteChange_NewValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogOverwriteChange.NewValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogOverwriteChange.NewValue
-  nameWithType: AuditLogOverwriteChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogOverwriteChange.OldValue
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogOverwriteChange.html#Spectacles_NET_Types_AuditLogOverwriteChange_OldValue
-  commentId: P:Spectacles.NET.Types.AuditLogOverwriteChange.OldValue
-  fullName: Spectacles.NET.Types.AuditLogOverwriteChange.OldValue
-  nameWithType: AuditLogOverwriteChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogOverwriteChange.OldValue*
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogOverwriteChange.html#Spectacles_NET_Types_AuditLogOverwriteChange_OldValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogOverwriteChange.OldValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogOverwriteChange.OldValue
-  nameWithType: AuditLogOverwriteChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogRoleChange
-  name: AuditLogRoleChange
-  href: api/Spectacles.NET.Types.AuditLogRoleChange.html
-  commentId: T:Spectacles.NET.Types.AuditLogRoleChange
-  fullName: Spectacles.NET.Types.AuditLogRoleChange
-  nameWithType: AuditLogRoleChange
-- uid: Spectacles.NET.Types.AuditLogRoleChange.NewValue
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogRoleChange.html#Spectacles_NET_Types_AuditLogRoleChange_NewValue
-  commentId: P:Spectacles.NET.Types.AuditLogRoleChange.NewValue
-  fullName: Spectacles.NET.Types.AuditLogRoleChange.NewValue
-  nameWithType: AuditLogRoleChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogRoleChange.NewValue*
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogRoleChange.html#Spectacles_NET_Types_AuditLogRoleChange_NewValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogRoleChange.NewValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogRoleChange.NewValue
-  nameWithType: AuditLogRoleChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogRoleChange.OldValue
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogRoleChange.html#Spectacles_NET_Types_AuditLogRoleChange_OldValue
-  commentId: P:Spectacles.NET.Types.AuditLogRoleChange.OldValue
-  fullName: Spectacles.NET.Types.AuditLogRoleChange.OldValue
-  nameWithType: AuditLogRoleChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogRoleChange.OldValue*
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogRoleChange.html#Spectacles_NET_Types_AuditLogRoleChange_OldValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogRoleChange.OldValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogRoleChange.OldValue
-  nameWithType: AuditLogRoleChange.OldValue
 - uid: Spectacles.NET.Types.AuditLogs
   name: AuditLogs
   href: api/Spectacles.NET.Types.AuditLogs.html
@@ -6773,38 +6714,6 @@ references:
   isSpec: "True"
   fullName: Spectacles.NET.Types.AuditLogs.Webhooks
   nameWithType: AuditLogs.Webhooks
-- uid: Spectacles.NET.Types.AuditLogStringChange
-  name: AuditLogStringChange
-  href: api/Spectacles.NET.Types.AuditLogStringChange.html
-  commentId: T:Spectacles.NET.Types.AuditLogStringChange
-  fullName: Spectacles.NET.Types.AuditLogStringChange
-  nameWithType: AuditLogStringChange
-- uid: Spectacles.NET.Types.AuditLogStringChange.NewValue
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogStringChange.html#Spectacles_NET_Types_AuditLogStringChange_NewValue
-  commentId: P:Spectacles.NET.Types.AuditLogStringChange.NewValue
-  fullName: Spectacles.NET.Types.AuditLogStringChange.NewValue
-  nameWithType: AuditLogStringChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogStringChange.NewValue*
-  name: NewValue
-  href: api/Spectacles.NET.Types.AuditLogStringChange.html#Spectacles_NET_Types_AuditLogStringChange_NewValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogStringChange.NewValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogStringChange.NewValue
-  nameWithType: AuditLogStringChange.NewValue
-- uid: Spectacles.NET.Types.AuditLogStringChange.OldValue
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogStringChange.html#Spectacles_NET_Types_AuditLogStringChange_OldValue
-  commentId: P:Spectacles.NET.Types.AuditLogStringChange.OldValue
-  fullName: Spectacles.NET.Types.AuditLogStringChange.OldValue
-  nameWithType: AuditLogStringChange.OldValue
-- uid: Spectacles.NET.Types.AuditLogStringChange.OldValue*
-  name: OldValue
-  href: api/Spectacles.NET.Types.AuditLogStringChange.html#Spectacles_NET_Types_AuditLogStringChange_OldValue_
-  commentId: Overload:Spectacles.NET.Types.AuditLogStringChange.OldValue
-  isSpec: "True"
-  fullName: Spectacles.NET.Types.AuditLogStringChange.OldValue
-  nameWithType: AuditLogStringChange.OldValue
 - uid: Spectacles.NET.Types.Channel
   name: Channel
   href: api/Spectacles.NET.Types.Channel.html
