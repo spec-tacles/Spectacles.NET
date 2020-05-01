@@ -1,14 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Types", "Spectacles.NET.Types\Spectacles.NET.Types.csproj", "{BC286C07-DCCE-4AF3-9109-2FA1351328D7}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spectacles.NET.Types", "Spectacles.NET.Types\Spectacles.NET.Types.csproj", "{BC286C07-DCCE-4AF3-9109-2FA1351328D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Broker", "Spectacles.NET.Broker\Spectacles.NET.Broker.csproj", "{B707767F-96F4-4C2F-80A6-6F328409F541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spectacles.NET.Broker", "Spectacles.NET.Broker\Spectacles.NET.Broker.csproj", "{B707767F-96F4-4C2F-80A6-6F328409F541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Rest", "Spectacles.NET.Rest\Spectacles.NET.Rest.csproj", "{79A68579-17FB-456A-9D0A-31643248F480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spectacles.NET.Rest", "Spectacles.NET.Rest\Spectacles.NET.Rest.csproj", "{79A68579-17FB-456A-9D0A-31643248F480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Gateway", "Spectacles.NET.Gateway\Spectacles.NET.Gateway.csproj", "{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spectacles.NET.Gateway", "Spectacles.NET.Gateway\Spectacles.NET.Gateway.csproj", "{38FD08BD-9A95-4EB7-BC8B-30B046A4F695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacles.NET.Util", "Spectacles.NET.Util\Spectacles.NET.Util.csproj", "{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spectacles.NET.Util", "Spectacles.NET.Util\Spectacles.NET.Util.csproj", "{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42279650-E43E-4B06-BB93-E5AB26CA8FAE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +44,11 @@ Global
 		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A74BBCBB-AD27-409A-8DA6-4DA3044FAE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2D6D394-46D3-4A88-854C-E696C9B071D5}
 	EndGlobalSection
 EndGlobal

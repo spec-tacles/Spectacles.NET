@@ -5,6 +5,7 @@ namespace Spectacles.NET.Types
 	/// <summary>
 	///     The Payload for the MessageDeleteBulk event.
 	/// </summary>
+	[DataContract]
 	public class MessageReactionRemoveAllPayload
 	{
 		/// <summary>
