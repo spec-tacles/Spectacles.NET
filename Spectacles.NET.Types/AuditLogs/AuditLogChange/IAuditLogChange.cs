@@ -1,6 +1,6 @@
 namespace Spectacles.NET.Types
 {
-    /// <summary>
+	/// <summary>
 	/// Represent an AuditLogChange with T as Value Type
 	/// </summary>
 	/// <typeparam name="T">The Type of the changed Value</typeparam>

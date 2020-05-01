@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 namespace Spectacles.NET.Types
 {
 
-    /// <summary>
+	/// <summary>
 	/// Unix timestamps for start and/or end of the game
 	/// </summary>
 	[DataContract]
@@ -12,13 +12,13 @@ namespace Spectacles.NET.Types
 		/// <summary>
 		///     unix time (in milliseconds) of when the activity started
 		/// </summary>
-		[DataMember(Name="start", Order=1)]
+		[DataMember(Name = "start", Order = 1)]
 		public long? Start { get; set; }
 
 		/// <summary>
 		///     unix time (in milliseconds) of when the activity ends
 		/// </summary>
-		[DataMember(Name="end", Order=2)]
+		[DataMember(Name = "end", Order = 2)]
 		public long? End { get; set; }
 	}
 }
