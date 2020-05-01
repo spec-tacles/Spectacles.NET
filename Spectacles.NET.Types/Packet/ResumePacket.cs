@@ -1,6 +1,5 @@
 using System.Runtime.Serialization;
 
-
 namespace Spectacles.NET.Types
 {
 	/// <summary>
