@@ -93,20 +93,45 @@ state required for a client to begin interacting with the rest of the platform.<
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReadyDispatch</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
   <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
   <h5 id="Spectacles_NET_Types_ReadyDispatch_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ReadyDispatch : object</code></pre>
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class ReadyDispatch</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_GatewayVersion.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.GatewayVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_GatewayVersion.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.GatewayVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L16">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L16">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_ReadyDispatch_GatewayVersion_" data-uid="Spectacles.NET.Types.ReadyDispatch.GatewayVersion*"></a>
   <h4 id="Spectacles_NET_Types_ReadyDispatch_GatewayVersion" data-uid="Spectacles.NET.Types.ReadyDispatch.GatewayVersion">GatewayVersion</h4>
@@ -115,7 +140,8 @@ state required for a client to begin interacting with the rest of the platform.<
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int GatewayVersion { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;v&quot;, Order = 1)]
+public int GatewayVersion { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -134,10 +160,10 @@ state required for a client to begin interacting with the rest of the platform.<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_Guilds.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.Guilds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_Guilds.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.Guilds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L28">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L28">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_ReadyDispatch_Guilds_" data-uid="Spectacles.NET.Types.ReadyDispatch.Guilds*"></a>
   <h4 id="Spectacles_NET_Types_ReadyDispatch_Guilds" data-uid="Spectacles.NET.Types.ReadyDispatch.Guilds">Guilds</h4>
@@ -146,7 +172,8 @@ state required for a client to begin interacting with the rest of the platform.<
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnavailableGuild[] Guilds { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;guilds&quot;, Order = 3)]
+public UnavailableGuild[] Guilds { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,10 +192,10 @@ state required for a client to begin interacting with the rest of the platform.<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_SessionId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.SessionId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_SessionId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.SessionId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L34">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L34">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_ReadyDispatch_SessionId_" data-uid="Spectacles.NET.Types.ReadyDispatch.SessionId*"></a>
   <h4 id="Spectacles_NET_Types_ReadyDispatch_SessionId" data-uid="Spectacles.NET.Types.ReadyDispatch.SessionId">SessionId</h4>
@@ -177,7 +204,8 @@ state required for a client to begin interacting with the rest of the platform.<
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SessionId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;session_id&quot;, Order = 4)]
+public string SessionId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,10 +224,10 @@ state required for a client to begin interacting with the rest of the platform.<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_Shard.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.Shard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_Shard.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.Shard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L40">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L40">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_ReadyDispatch_Shard_" data-uid="Spectacles.NET.Types.ReadyDispatch.Shard*"></a>
   <h4 id="Spectacles_NET_Types_ReadyDispatch_Shard" data-uid="Spectacles.NET.Types.ReadyDispatch.Shard">Shard</h4>
@@ -208,7 +236,8 @@ state required for a client to begin interacting with the rest of the platform.<
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? [] Shard { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;shard&quot;, Order = 5)]
+public int? [] Shard { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,10 +256,10 @@ state required for a client to begin interacting with the rest of the platform.<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_User.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch_User.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L22">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L22">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_ReadyDispatch_User_" data-uid="Spectacles.NET.Types.ReadyDispatch.User*"></a>
   <h4 id="Spectacles_NET_Types_ReadyDispatch_User" data-uid="Spectacles.NET.Types.ReadyDispatch.User">User</h4>
@@ -239,7 +268,8 @@ state required for a client to begin interacting with the rest of the platform.<
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public User User { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;user&quot;, Order = 2)]
+public User User { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -264,10 +294,10 @@ state required for a client to begin interacting with the rest of the platform.<
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_ReadyDispatch.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.ReadyDispatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Dispatch/ReadyDispatch.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

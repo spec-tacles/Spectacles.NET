@@ -93,20 +93,45 @@ separate permission profiles for the global context (guild) and channel context.
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Role</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
   <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
   <h5 id="Spectacles_NET_Types_Role_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Role : object</code></pre>
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class Role</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Color.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Color%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Color.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Color%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L28">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L28">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Color_" data-uid="Spectacles.NET.Types.Role.Color*"></a>
   <h4 id="Spectacles_NET_Types_Role_Color" data-uid="Spectacles.NET.Types.Role.Color">Color</h4>
@@ -115,7 +140,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Color { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;color&quot;, Order = 3)]
+public int Color { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -134,10 +160,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Hoist.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Hoist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Hoist.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Hoist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L34">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L34">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Hoist_" data-uid="Spectacles.NET.Types.Role.Hoist*"></a>
   <h4 id="Spectacles_NET_Types_Role_Hoist" data-uid="Spectacles.NET.Types.Role.Hoist">Hoist</h4>
@@ -146,7 +172,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Hoist { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;hoist&quot;, Order = 4)]
+public bool Hoist { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,10 +192,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L16">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L16">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Id_" data-uid="Spectacles.NET.Types.Role.Id*"></a>
   <h4 id="Spectacles_NET_Types_Role_Id" data-uid="Spectacles.NET.Types.Role.Id">Id</h4>
@@ -177,7 +204,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;id&quot;, Order = 1)]
+public string Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,10 +224,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Managed.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Managed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Managed.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Managed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L52">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L52">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Managed_" data-uid="Spectacles.NET.Types.Role.Managed*"></a>
   <h4 id="Spectacles_NET_Types_Role_Managed" data-uid="Spectacles.NET.Types.Role.Managed">Managed</h4>
@@ -208,7 +236,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Managed { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;managed&quot;, Order = 7)]
+public bool Managed { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,10 +256,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Mentionable.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Mentionable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Mentionable.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Mentionable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L58">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L58">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Mentionable_" data-uid="Spectacles.NET.Types.Role.Mentionable*"></a>
   <h4 id="Spectacles_NET_Types_Role_Mentionable" data-uid="Spectacles.NET.Types.Role.Mentionable">Mentionable</h4>
@@ -239,7 +268,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Mentionable { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;mentionable&quot;, Order = 8)]
+public bool Mentionable { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -258,10 +288,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Name.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Name.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L22">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L22">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Name_" data-uid="Spectacles.NET.Types.Role.Name*"></a>
   <h4 id="Spectacles_NET_Types_Role_Name" data-uid="Spectacles.NET.Types.Role.Name">Name</h4>
@@ -270,7 +300,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;name&quot;, Order = 2)]
+public string Name { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -289,10 +320,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Permissions.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Permissions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Permissions.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Permissions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L46">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L46">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Permissions_" data-uid="Spectacles.NET.Types.Role.Permissions*"></a>
   <h4 id="Spectacles_NET_Types_Role_Permissions" data-uid="Spectacles.NET.Types.Role.Permissions">Permissions</h4>
@@ -301,7 +332,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Permissions { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;permissions&quot;, Order = 6)]
+public int Permissions { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -320,10 +352,10 @@ separate permission profiles for the global context (guild) and channel context.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role_Position.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role_Position.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L40">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L40">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Role_Position_" data-uid="Spectacles.NET.Types.Role.Position*"></a>
   <h4 id="Spectacles_NET_Types_Role_Position" data-uid="Spectacles.NET.Types.Role.Position">Position</h4>
@@ -332,7 +364,8 @@ separate permission profiles for the global context (guild) and channel context.
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Position { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;position&quot;, Order = 5)]
+public int Position { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -357,10 +390,10 @@ separate permission profiles for the global context (guild) and channel context.
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Role.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Role.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Role%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Role/Role.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Role/Role.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

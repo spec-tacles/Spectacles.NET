@@ -91,20 +91,45 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">TeamMember</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
   <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
   <h5 id="Spectacles_NET_Types_TeamMember_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TeamMember : object</code></pre>
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class TeamMember</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_MembershipState.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.MembershipState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_MembershipState.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.MembershipState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Team/TeamMember.cs/#L14">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Team/TeamMember.cs/#L14">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_TeamMember_MembershipState_" data-uid="Spectacles.NET.Types.TeamMember.MembershipState*"></a>
   <h4 id="Spectacles_NET_Types_TeamMember_MembershipState" data-uid="Spectacles.NET.Types.TeamMember.MembershipState">MembershipState</h4>
@@ -113,7 +138,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MembershipState MembershipState { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;membership_state&quot;, Order = 1)]
+public MembershipState MembershipState { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,10 +158,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_Permissions.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.Permissions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_Permissions.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.Permissions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Team/TeamMember.cs/#L20">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Team/TeamMember.cs/#L20">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_TeamMember_Permissions_" data-uid="Spectacles.NET.Types.TeamMember.Permissions*"></a>
   <h4 id="Spectacles_NET_Types_TeamMember_Permissions" data-uid="Spectacles.NET.Types.TeamMember.Permissions">Permissions</h4>
@@ -144,7 +170,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string[] Permissions { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;permissions&quot;, Order = 2)]
+public string[] Permissions { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -163,10 +190,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_TeamId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.TeamId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_TeamId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.TeamId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Team/TeamMember.cs/#L26">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Team/TeamMember.cs/#L26">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_TeamMember_TeamId_" data-uid="Spectacles.NET.Types.TeamMember.TeamId*"></a>
   <h4 id="Spectacles_NET_Types_TeamMember_TeamId" data-uid="Spectacles.NET.Types.TeamMember.TeamId">TeamId</h4>
@@ -175,7 +202,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string TeamId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;team_id&quot;, Order = 3)]
+public string TeamId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -194,10 +222,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_User.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_TeamMember_User.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Team/TeamMember.cs/#L32">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Team/TeamMember.cs/#L32">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_TeamMember_User_" data-uid="Spectacles.NET.Types.TeamMember.User*"></a>
   <h4 id="Spectacles_NET_Types_TeamMember_User" data-uid="Spectacles.NET.Types.TeamMember.User">User</h4>
@@ -206,7 +234,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public User User { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;user&quot;, Order = 4)]
+public User User { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,10 +260,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_TeamMember.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_TeamMember.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.TeamMember%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Team/TeamMember.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Team/TeamMember.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

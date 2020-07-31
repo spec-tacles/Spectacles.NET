@@ -93,20 +93,45 @@ characters.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">AuditLogs</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
   <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
   <h5 id="Spectacles_NET_Types_AuditLogs_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AuditLogs : object</code></pre>
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class AuditLogs</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_AuditLogEntries.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.AuditLogEntries%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_AuditLogEntries.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.AuditLogEntries%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L28">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L28">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_AuditLogs_AuditLogEntries_" data-uid="Spectacles.NET.Types.AuditLogs.AuditLogEntries*"></a>
   <h4 id="Spectacles_NET_Types_AuditLogs_AuditLogEntries" data-uid="Spectacles.NET.Types.AuditLogs.AuditLogEntries">AuditLogEntries</h4>
@@ -115,7 +140,8 @@ characters.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AuditLogEntry[] AuditLogEntries { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;audit_log_entries&quot;, Order = 3)]
+public AuditLogEntry[] AuditLogEntries { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -134,10 +160,10 @@ characters.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Integration.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Integration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Integration.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Integration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L34">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L34">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_AuditLogs_Integration_" data-uid="Spectacles.NET.Types.AuditLogs.Integration*"></a>
   <h4 id="Spectacles_NET_Types_AuditLogs_Integration" data-uid="Spectacles.NET.Types.AuditLogs.Integration">Integration</h4>
@@ -146,7 +172,8 @@ characters.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Integration[] Integration { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;integrations&quot;, Order = 4)]
+public Integration[] Integration { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,10 +192,10 @@ characters.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Users.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Users%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Users.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Users%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L22">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L22">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_AuditLogs_Users_" data-uid="Spectacles.NET.Types.AuditLogs.Users*"></a>
   <h4 id="Spectacles_NET_Types_AuditLogs_Users" data-uid="Spectacles.NET.Types.AuditLogs.Users">Users</h4>
@@ -177,7 +204,8 @@ characters.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public User[] Users { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;users&quot;, Order = 2)]
+public User[] Users { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,10 +224,10 @@ characters.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Webhooks.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Webhooks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs_Webhooks.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs.Webhooks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L16">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L16">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_AuditLogs_Webhooks_" data-uid="Spectacles.NET.Types.AuditLogs.Webhooks*"></a>
   <h4 id="Spectacles_NET_Types_AuditLogs_Webhooks" data-uid="Spectacles.NET.Types.AuditLogs.Webhooks">Webhooks</h4>
@@ -208,7 +236,8 @@ characters.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Webhook[] Webhooks { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;webhooks&quot;, Order = 1)]
+public Webhook[] Webhooks { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -233,10 +262,10 @@ characters.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_AuditLogs.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.AuditLogs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/AuditLogs/AuditLogs.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

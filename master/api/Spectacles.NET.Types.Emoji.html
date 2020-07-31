@@ -92,20 +92,45 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Emoji</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
   <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
   <h5 id="Spectacles_NET_Types_Emoji_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Emoji : object</code></pre>
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class Emoji</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Animated.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Animated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Animated.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Animated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L52">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L52">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_Animated_" data-uid="Spectacles.NET.Types.Emoji.Animated*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_Animated" data-uid="Spectacles.NET.Types.Emoji.Animated">Animated</h4>
@@ -114,7 +139,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? Animated { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;animated&quot;, Order = 1)]
+public bool? Animated { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -133,10 +159,10 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L16">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L16">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_Id_" data-uid="Spectacles.NET.Types.Emoji.Id*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_Id" data-uid="Spectacles.NET.Types.Emoji.Id">Id</h4>
@@ -145,7 +171,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;id&quot;, Order = 1)]
+public string Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -164,10 +191,10 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Managed.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Managed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Managed.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Managed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L46">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L46">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_Managed_" data-uid="Spectacles.NET.Types.Emoji.Managed*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_Managed" data-uid="Spectacles.NET.Types.Emoji.Managed">Managed</h4>
@@ -176,7 +203,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? Managed { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;managed&quot;, Order = 1)]
+public bool? Managed { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -195,10 +223,10 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Name.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Name.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L22">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L22">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_Name_" data-uid="Spectacles.NET.Types.Emoji.Name*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_Name" data-uid="Spectacles.NET.Types.Emoji.Name">Name</h4>
@@ -207,7 +235,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;name&quot;, Order = 1)]
+public string Name { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,10 +255,10 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_RequireColons.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.RequireColons%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_RequireColons.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.RequireColons%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L40">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L40">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_RequireColons_" data-uid="Spectacles.NET.Types.Emoji.RequireColons*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_RequireColons" data-uid="Spectacles.NET.Types.Emoji.RequireColons">RequireColons</h4>
@@ -238,7 +267,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? RequireColons { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;require_colons&quot;, Order = 1)]
+public bool? RequireColons { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -257,10 +287,10 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Roles.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Roles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_Roles.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.Roles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L28">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L28">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_Roles_" data-uid="Spectacles.NET.Types.Emoji.Roles*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_Roles" data-uid="Spectacles.NET.Types.Emoji.Roles">Roles</h4>
@@ -269,7 +299,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Roles { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;roles&quot;, Order = 1)]
+public List&lt;string&gt; Roles { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -281,17 +312,17 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji_User.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji_User.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L34">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L34">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Emoji_User_" data-uid="Spectacles.NET.Types.Emoji.User*"></a>
   <h4 id="Spectacles_NET_Types_Emoji_User" data-uid="Spectacles.NET.Types.Emoji.User">User</h4>
@@ -300,7 +331,8 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public User User { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;user&quot;, Order = 1)]
+public User User { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -325,10 +357,10 @@ See <a href="http://discordapp.com/developers/docs/resources/emoji">this</a>.</p
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Emoji.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Emoji.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Emoji%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Emoji/Emoji.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Emoji/Emoji.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -92,20 +92,45 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Guild</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Spectacles.NET.Types.html">Spectacles.NET.Types</a></h6>
   <h6><strong>Assembly</strong>: Spectacles.NET.Types.dll</h6>
   <h5 id="Spectacles_NET_Types_Guild_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Guild : object</code></pre>
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class Guild</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_AFKChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.AFKChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_AFKChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.AFKChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L68">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L68">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_AFKChannelId_" data-uid="Spectacles.NET.Types.Guild.AFKChannelId*"></a>
   <h4 id="Spectacles_NET_Types_Guild_AFKChannelId" data-uid="Spectacles.NET.Types.Guild.AFKChannelId">AFKChannelId</h4>
@@ -114,7 +139,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AFKChannelId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;afk_channel_id&quot;, Order = 9)]
+public string AFKChannelId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -133,10 +159,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_AFKTimeout.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.AFKTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_AFKTimeout.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.AFKTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L74">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L74">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_AFKTimeout_" data-uid="Spectacles.NET.Types.Guild.AFKTimeout*"></a>
   <h4 id="Spectacles_NET_Types_Guild_AFKTimeout" data-uid="Spectacles.NET.Types.Guild.AFKTimeout">AFKTimeout</h4>
@@ -145,7 +171,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int AFKTimeout { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;afk_timeout&quot;, Order = 10)]
+public int AFKTimeout { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -164,10 +191,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_ApplicationId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.ApplicationId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_ApplicationId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.ApplicationId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L134">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L134">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_ApplicationId_" data-uid="Spectacles.NET.Types.Guild.ApplicationId*"></a>
   <h4 id="Spectacles_NET_Types_Guild_ApplicationId" data-uid="Spectacles.NET.Types.Guild.ApplicationId">ApplicationId</h4>
@@ -176,7 +203,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ApplicationId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;application_id&quot;, Order = 20)]
+public string ApplicationId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -195,10 +223,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Banner.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Banner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Banner.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Banner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L238">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L238">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Banner_" data-uid="Spectacles.NET.Types.Guild.Banner*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Banner" data-uid="Spectacles.NET.Types.Guild.Banner">Banner</h4>
@@ -207,7 +235,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Banner { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;banner&quot;, Order = 36)]
+public string Banner { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,10 +255,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Channels.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Channels%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Channels.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Channels%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L201">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L201">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Channels_" data-uid="Spectacles.NET.Types.Guild.Channels*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Channels" data-uid="Spectacles.NET.Types.Guild.Channels">Channels</h4>
@@ -239,7 +268,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Channel&gt; Channels { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;channels&quot;, Order = 30)]
+public List&lt;Channel&gt; Channels { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -251,17 +281,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Channel.html">Channel</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Channel.html">Channel</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_DefaultMessageNotificationLevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.DefaultMessageNotificationLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_DefaultMessageNotificationLevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.DefaultMessageNotificationLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L98">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L98">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_DefaultMessageNotificationLevel_" data-uid="Spectacles.NET.Types.Guild.DefaultMessageNotificationLevel*"></a>
   <h4 id="Spectacles_NET_Types_Guild_DefaultMessageNotificationLevel" data-uid="Spectacles.NET.Types.Guild.DefaultMessageNotificationLevel">DefaultMessageNotificationLevel</h4>
@@ -270,7 +300,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DefaultMessageNotificationLevel DefaultMessageNotificationLevel { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;default_message_notifications&quot;, Order = 14)]
+public DefaultMessageNotificationLevel DefaultMessageNotificationLevel { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -289,10 +320,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Description.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Description.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L232">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L232">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Description_" data-uid="Spectacles.NET.Types.Guild.Description*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Description" data-uid="Spectacles.NET.Types.Guild.Description">Description</h4>
@@ -301,7 +332,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Description { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;description&quot;, Order = 35)]
+public string Description { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -320,10 +352,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_EmbedChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.EmbedChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_EmbedChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.EmbedChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L86">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L86">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_EmbedChannelId_" data-uid="Spectacles.NET.Types.Guild.EmbedChannelId*"></a>
   <h4 id="Spectacles_NET_Types_Guild_EmbedChannelId" data-uid="Spectacles.NET.Types.Guild.EmbedChannelId">EmbedChannelId</h4>
@@ -332,7 +364,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string EmbedChannelId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;embed_channel_id&quot;, Order = 12)]
+public string EmbedChannelId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -351,10 +384,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_EmbedEnabled.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.EmbedEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_EmbedEnabled.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.EmbedEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L80">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L80">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_EmbedEnabled_" data-uid="Spectacles.NET.Types.Guild.EmbedEnabled*"></a>
   <h4 id="Spectacles_NET_Types_Guild_EmbedEnabled" data-uid="Spectacles.NET.Types.Guild.EmbedEnabled">EmbedEnabled</h4>
@@ -363,7 +396,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? EmbedEnabled { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;embed_enabled&quot;, Order = 11)]
+public bool? EmbedEnabled { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -382,10 +416,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Emojis.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Emojis%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Emojis.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Emojis%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L116">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L116">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Emojis_" data-uid="Spectacles.NET.Types.Guild.Emojis*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Emojis" data-uid="Spectacles.NET.Types.Guild.Emojis">Emojis</h4>
@@ -394,7 +428,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Emoji&gt; Emojis { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;emojis&quot;, Order = 17)]
+public List&lt;Emoji&gt; Emojis { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -406,17 +441,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Emoji.html">Emoji</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Emoji.html">Emoji</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_ExplicitContentFilter.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.ExplicitContentFilter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_ExplicitContentFilter.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.ExplicitContentFilter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L104">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L104">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_ExplicitContentFilter_" data-uid="Spectacles.NET.Types.Guild.ExplicitContentFilter*"></a>
   <h4 id="Spectacles_NET_Types_Guild_ExplicitContentFilter" data-uid="Spectacles.NET.Types.Guild.ExplicitContentFilter">ExplicitContentFilter</h4>
@@ -425,7 +460,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExplicitContentFilterLevel ExplicitContentFilter { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;explicit_content_filter&quot;, Order = 15)]
+public ExplicitContentFilterLevel ExplicitContentFilter { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -444,10 +480,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Features.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Features%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Features.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Features%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L122">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L122">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Features_" data-uid="Spectacles.NET.Types.Guild.Features*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Features" data-uid="Spectacles.NET.Types.Guild.Features">Features</h4>
@@ -456,7 +492,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;GuildFeature&gt; Features { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;features&quot;, Order = 18)]
+public List&lt;GuildFeature&gt; Features { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -468,17 +505,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.GuildFeature.html">GuildFeature</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.GuildFeature.html">GuildFeature</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Icon.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Icon%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Icon.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Icon%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L31">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L31">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Icon_" data-uid="Spectacles.NET.Types.Guild.Icon*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Icon" data-uid="Spectacles.NET.Types.Guild.Icon">Icon</h4>
@@ -487,7 +524,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Icon { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;icon&quot;, Order = 3)]
+public string Icon { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -506,10 +544,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Id.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L19">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L19">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Id_" data-uid="Spectacles.NET.Types.Guild.Id*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Id" data-uid="Spectacles.NET.Types.Guild.Id">Id</h4>
@@ -518,7 +556,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;id&quot;, Order = 1)]
+public string Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -537,10 +576,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_JoinedAt.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.JoinedAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_JoinedAt.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.JoinedAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L159">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L159">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_JoinedAt_" data-uid="Spectacles.NET.Types.Guild.JoinedAt*"></a>
   <h4 id="Spectacles_NET_Types_Guild_JoinedAt" data-uid="Spectacles.NET.Types.Guild.JoinedAt">JoinedAt</h4>
@@ -550,7 +589,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string JoinedAt { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;joined_at&quot;, Order = 24)]
+public string JoinedAt { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -569,10 +609,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Large.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Large%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Large.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Large%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L166">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L166">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Large_" data-uid="Spectacles.NET.Types.Guild.Large*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Large" data-uid="Spectacles.NET.Types.Guild.Large">Large</h4>
@@ -582,7 +622,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? Large { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;large&quot;, Order = 25)]
+public bool? Large { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -601,10 +642,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_MaxMembers.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MaxMembers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_MaxMembers.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MaxMembers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L220">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L220">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_MaxMembers_" data-uid="Spectacles.NET.Types.Guild.MaxMembers*"></a>
   <h4 id="Spectacles_NET_Types_Guild_MaxMembers" data-uid="Spectacles.NET.Types.Guild.MaxMembers">MaxMembers</h4>
@@ -613,7 +654,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int MaxMembers { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;max_members&quot;, Order = 33)]
+public int MaxMembers { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -632,10 +674,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_MaxPresences.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MaxPresences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_MaxPresences.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MaxPresences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L214">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L214">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_MaxPresences_" data-uid="Spectacles.NET.Types.Guild.MaxPresences*"></a>
   <h4 id="Spectacles_NET_Types_Guild_MaxPresences" data-uid="Spectacles.NET.Types.Guild.MaxPresences">MaxPresences</h4>
@@ -644,7 +686,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? MaxPresences { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;max_presences&quot;, Order = 32)]
+public int? MaxPresences { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -663,10 +706,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_MemberCount.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MemberCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_MemberCount.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MemberCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L180">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L180">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_MemberCount_" data-uid="Spectacles.NET.Types.Guild.MemberCount*"></a>
   <h4 id="Spectacles_NET_Types_Guild_MemberCount" data-uid="Spectacles.NET.Types.Guild.MemberCount">MemberCount</h4>
@@ -676,7 +719,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? MemberCount { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;member_count&quot;, Order = 27)]
+public int? MemberCount { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -695,10 +739,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Members.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Members%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Members.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Members%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L194">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L194">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Members_" data-uid="Spectacles.NET.Types.Guild.Members*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Members" data-uid="Spectacles.NET.Types.Guild.Members">Members</h4>
@@ -708,7 +752,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;GuildMember&gt; Members { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;members&quot;, Order = 29)]
+public List&lt;GuildMember&gt; Members { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -720,17 +765,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.GuildMember.html">GuildMember</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.GuildMember.html">GuildMember</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_MFALevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MFALevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_MFALevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.MFALevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L128">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L128">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_MFALevel_" data-uid="Spectacles.NET.Types.Guild.MFALevel*"></a>
   <h4 id="Spectacles_NET_Types_Guild_MFALevel" data-uid="Spectacles.NET.Types.Guild.MFALevel">MFALevel</h4>
@@ -739,7 +784,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MFALevel MFALevel { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;mfa_level&quot;, Order = 19)]
+public MFALevel MFALevel { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -758,10 +804,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Name.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Name.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L25">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L25">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Name_" data-uid="Spectacles.NET.Types.Guild.Name*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Name" data-uid="Spectacles.NET.Types.Guild.Name">Name</h4>
@@ -770,7 +816,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;name&quot;, Order = 2)]
+public string Name { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -789,10 +836,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Owner.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Owner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Owner.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Owner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L43">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L43">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Owner_" data-uid="Spectacles.NET.Types.Guild.Owner*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Owner" data-uid="Spectacles.NET.Types.Guild.Owner">Owner</h4>
@@ -801,7 +848,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? Owner { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;owner&quot;, IsRequired = false, Order = 5)]
+public bool? Owner { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -820,10 +868,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_OwnerId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.OwnerId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_OwnerId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.OwnerId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L50">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L50">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_OwnerId_" data-uid="Spectacles.NET.Types.Guild.OwnerId*"></a>
   <h4 id="Spectacles_NET_Types_Guild_OwnerId" data-uid="Spectacles.NET.Types.Guild.OwnerId">OwnerId</h4>
@@ -832,7 +880,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string OwnerId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;owner_id&quot;, Order = 6)]
+public string OwnerId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -851,10 +900,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Permissions.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Permissions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Permissions.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Permissions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L56">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L56">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Permissions_" data-uid="Spectacles.NET.Types.Guild.Permissions*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Permissions" data-uid="Spectacles.NET.Types.Guild.Permissions">Permissions</h4>
@@ -863,7 +912,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Permission? Permissions { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;permissions&quot;, Order = 7)]
+public Permission? Permissions { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -882,10 +932,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_PreferredLocale.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.PreferredLocale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_PreferredLocale.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.PreferredLocale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L256">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L256">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_PreferredLocale_" data-uid="Spectacles.NET.Types.Guild.PreferredLocale*"></a>
   <h4 id="Spectacles_NET_Types_Guild_PreferredLocale" data-uid="Spectacles.NET.Types.Guild.PreferredLocale">PreferredLocale</h4>
@@ -894,7 +944,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PreferredLocale { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;preferred_locale&quot;, Order = 39)]
+public string PreferredLocale { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -913,10 +964,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_PremiumSubscriberCount.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.PremiumSubscriberCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_PremiumSubscriberCount.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.PremiumSubscriberCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L250">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L250">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_PremiumSubscriberCount_" data-uid="Spectacles.NET.Types.Guild.PremiumSubscriberCount*"></a>
   <h4 id="Spectacles_NET_Types_Guild_PremiumSubscriberCount" data-uid="Spectacles.NET.Types.Guild.PremiumSubscriberCount">PremiumSubscriberCount</h4>
@@ -925,7 +976,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? PremiumSubscriberCount { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;premium_subscription_count&quot;, Order = 38)]
+public int? PremiumSubscriberCount { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -944,10 +996,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_PremiumTier.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.PremiumTier%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_PremiumTier.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.PremiumTier%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L244">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L244">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_PremiumTier_" data-uid="Spectacles.NET.Types.Guild.PremiumTier*"></a>
   <h4 id="Spectacles_NET_Types_Guild_PremiumTier" data-uid="Spectacles.NET.Types.Guild.PremiumTier">PremiumTier</h4>
@@ -956,7 +1008,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PremiumTier PremiumTier { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;premium_tier&quot;, Order = 37)]
+public PremiumTier PremiumTier { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -975,10 +1028,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Presences.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Presences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Presences.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Presences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L208">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L208">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Presences_" data-uid="Spectacles.NET.Types.Guild.Presences*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Presences" data-uid="Spectacles.NET.Types.Guild.Presences">Presences</h4>
@@ -988,7 +1041,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Presence&gt; Presences { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;presences&quot;, Order = 31)]
+public List&lt;Presence&gt; Presences { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1000,17 +1054,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Presence.html">Presence</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Presence.html">Presence</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Region.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Region%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Region.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Region%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L62">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L62">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Region_" data-uid="Spectacles.NET.Types.Guild.Region*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Region" data-uid="Spectacles.NET.Types.Guild.Region">Region</h4>
@@ -1019,7 +1073,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Region { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;region&quot;, Order = 8)]
+public string Region { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1038,10 +1093,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Roles.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Roles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Roles.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Roles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L110">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L110">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Roles_" data-uid="Spectacles.NET.Types.Guild.Roles*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Roles" data-uid="Spectacles.NET.Types.Guild.Roles">Roles</h4>
@@ -1050,7 +1105,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Role&gt; Roles { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;roles&quot;, Order = 16)]
+public List&lt;Role&gt; Roles { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1062,17 +1118,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Role.html">Role</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.Role.html">Role</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Splash.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Splash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Splash.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Splash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L37">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L37">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Splash_" data-uid="Spectacles.NET.Types.Guild.Splash*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Splash" data-uid="Spectacles.NET.Types.Guild.Splash">Splash</h4>
@@ -1081,7 +1137,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Splash { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;splash&quot;, Order = 4)]
+public string Splash { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1100,10 +1157,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_SystemChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.SystemChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_SystemChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.SystemChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L152">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L152">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_SystemChannelId_" data-uid="Spectacles.NET.Types.Guild.SystemChannelId*"></a>
   <h4 id="Spectacles_NET_Types_Guild_SystemChannelId" data-uid="Spectacles.NET.Types.Guild.SystemChannelId">SystemChannelId</h4>
@@ -1112,7 +1169,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SystemChannelId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;system_channel_id&quot;, Order = 23)]
+public string SystemChannelId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1131,10 +1189,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_Unavailable.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Unavailable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_Unavailable.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.Unavailable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L173">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L173">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_Unavailable_" data-uid="Spectacles.NET.Types.Guild.Unavailable*"></a>
   <h4 id="Spectacles_NET_Types_Guild_Unavailable" data-uid="Spectacles.NET.Types.Guild.Unavailable">Unavailable</h4>
@@ -1144,7 +1202,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? Unavailable { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;unavailable&quot;, Order = 26)]
+public bool? Unavailable { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1163,10 +1222,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_VanityURLCode.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.VanityURLCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_VanityURLCode.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.VanityURLCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L226">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L226">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_VanityURLCode_" data-uid="Spectacles.NET.Types.Guild.VanityURLCode*"></a>
   <h4 id="Spectacles_NET_Types_Guild_VanityURLCode" data-uid="Spectacles.NET.Types.Guild.VanityURLCode">VanityURLCode</h4>
@@ -1175,7 +1234,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string VanityURLCode { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;vanity_url_code&quot;, Order = 34)]
+public string VanityURLCode { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1194,10 +1254,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_VerificationLevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.VerificationLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_VerificationLevel.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.VerificationLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L92">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L92">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_VerificationLevel_" data-uid="Spectacles.NET.Types.Guild.VerificationLevel*"></a>
   <h4 id="Spectacles_NET_Types_Guild_VerificationLevel" data-uid="Spectacles.NET.Types.Guild.VerificationLevel">VerificationLevel</h4>
@@ -1206,7 +1266,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public VerificationLevel VerificationLevel { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;verification_level&quot;, Order = 13)]
+public VerificationLevel VerificationLevel { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1225,10 +1286,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_VoiceStates.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.VoiceStates%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_VoiceStates.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.VoiceStates%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L187">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L187">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_VoiceStates_" data-uid="Spectacles.NET.Types.Guild.VoiceStates*"></a>
   <h4 id="Spectacles_NET_Types_Guild_VoiceStates" data-uid="Spectacles.NET.Types.Guild.VoiceStates">VoiceStates</h4>
@@ -1238,7 +1299,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;VoiceState&gt; VoiceStates { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;voice_states&quot;, Order = 28)]
+public List&lt;VoiceState&gt; VoiceStates { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1250,17 +1312,17 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Spectacles.NET.Types.VoiceState.html">VoiceState</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Spectacles.NET.Types.VoiceState.html">VoiceState</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_WidgetChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.WidgetChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_WidgetChannelId.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.WidgetChannelId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L146">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L146">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_WidgetChannelId_" data-uid="Spectacles.NET.Types.Guild.WidgetChannelId*"></a>
   <h4 id="Spectacles_NET_Types_Guild_WidgetChannelId" data-uid="Spectacles.NET.Types.Guild.WidgetChannelId">WidgetChannelId</h4>
@@ -1269,7 +1331,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string WidgetChannelId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;widget_channel_id&quot;, Order = 22)]
+public string WidgetChannelId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1288,10 +1351,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild_WidgetEnabled.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.WidgetEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild_WidgetEnabled.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild.WidgetEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L140">View Source</a>
+    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L140">View Source</a>
   </span>
   <a id="Spectacles_NET_Types_Guild_WidgetEnabled_" data-uid="Spectacles.NET.Types.Guild.WidgetEnabled*"></a>
   <h4 id="Spectacles_NET_Types_Guild_WidgetEnabled" data-uid="Spectacles.NET.Types.Guild.WidgetEnabled">WidgetEnabled</h4>
@@ -1300,7 +1363,8 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? WidgetEnabled { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;widget_enabled&quot;, Order = 21)]
+public bool? WidgetEnabled { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1325,10 +1389,10 @@ the UI. See <a href="http://discordapp.com/developers/docs/resources/guild">here
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/480d87e145483d8d3d2023df9e36444864c58995/apiSpec/new?filename=Spectacles_NET_Types_Guild.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/new/178e62b29996dfd80c193503c33742b92f347de1/apiSpec/new?filename=Spectacles_NET_Types_Guild.md&amp;value=---%0Auid%3A%20Spectacles.NET.Types.Guild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/480d87e145483d8d3d2023df9e36444864c58995/Spectacles.NET.Types/Guild/Guild.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/spec-tacles/Spectacles.NET/blob/178e62b29996dfd80c193503c33742b92f347de1/Spectacles.NET.Types/Guild/Guild.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
