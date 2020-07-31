@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Timers;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using RabbitMQ.Client.Framing;
 using Spectacles.NET.Broker.Amqp.EventArgs;
 using static Spectacles.NET.Util.Util;
 
@@ -156,7 +155,7 @@ namespace Spectacles.NET.Broker.Amqp
 		{
 			lock (PublishChannel)
 			{
-				PublishChannel.BasicPublish(Group, @event, false, options ?? new BasicProperties(),
+				PublishChannel.BasicPublish(Group, @event, false, options,
 					data);
 			}
 
@@ -180,13 +179,13 @@ namespace Spectacles.NET.Broker.Amqp
 			void OnRPCConsumerOnReceived(object sender, BasicDeliverEventArgs args)
 			{
 				if (args.BasicProperties.CorrelationId != correlationId) return;
-				tcs.TrySetResult(args.Body);
+				tcs.TrySetResult(args.Body.ToArray());
 				RPCConsumer.Received -= OnRPCConsumerOnReceived;
 			}
 
 			RPCConsumer.Received += OnRPCConsumerOnReceived;
 
-			var basicProperties = options ?? new BasicProperties();
+			var basicProperties = options ?? GetOrCreateChannel(@event).CreateBasicProperties();
 
 			basicProperties.ReplyTo = RPCQueueName;
 			basicProperties.CorrelationId = correlationId;
@@ -238,7 +237,7 @@ namespace Spectacles.NET.Broker.Amqp
 
 			consumer.Received += (ch, ea) =>
 			{
-				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body, ea.BasicProperties, ea.DeliveryTag));
+				Receive?.Invoke(this, new AmqpReceiveEventArgs(@event, ea.Body.ToArray(), ea.BasicProperties, ea.DeliveryTag));
 			};
 
 			var consumerTag = model.BasicConsume(queueName, AutoAck, consumer);
